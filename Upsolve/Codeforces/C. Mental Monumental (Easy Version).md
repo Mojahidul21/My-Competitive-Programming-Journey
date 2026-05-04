@@ -3,7 +3,7 @@
 **Contest:** Codeforces Round 1095 (Div. 2)  
 **Problem:** https://codeforces.com/contest/2226/problem/C  
 **Solution:** https://codeforces.com/contest/2226/submission/373463633  
-**Tags:** binary searchdata structuresgreedymathtwo pointers
+**Tags:** binary searchdata structuresgreedymathtwo pointers  
 **Verdict:** Accepted
 
 ---
