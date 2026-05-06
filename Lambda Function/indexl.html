@@ -1,0 +1,2365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Lambdas &amp; count_if in C++ — Mojahidul Alam</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --bg: #0d1117;
+    --bg2: #161b22;
+    --bg3: #21262d;
+    --border: #30363d;
+    --accent: #58a6ff;
+    --accent2: #3fb950;
+    --accent3: #f78166;
+    --accent4: #d2a8ff;
+    --accent5: #ffa657;
+    --text: #e6edf3;
+    --text2: #8b949e;
+    --text3: #c9d1d9;
+    --keyword: #ff7b72;
+    --string: #a5d6ff;
+    --comment: #6e7781;
+    --type: #79c0ff;
+    --func: #d2a8ff;
+    --num: #f2cc60;
+    --nav-h: 60px;
+    --sidebar-w: 268px;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; font-size: 16px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    height: var(--nav-h);
+    background: rgba(13,17,23,0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 24px;
+    gap: 12px;
+  }
+  .nav-brand {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700; font-size: 0.9rem;
+    color: var(--accent); white-space: nowrap;
+  }
+  .nav-brand span { color: var(--accent2); }
+  .nav-toggle-sidebar {
+    display: none;
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text2); cursor: pointer; padding: 4px 10px; font-size: 0.8rem;
+    transition: all 0.2s;
+  }
+  .nav-toggle-sidebar:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-right {
+    display: flex; align-items: center; gap: 8px;
+  }
+  .nav-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem; color: var(--text2);
+    background: var(--bg3); border: 1px solid var(--border);
+    padding: 3px 9px; border-radius: 20px;
+  }
+
+  /* ── PAGE LAYOUT ── */
+  .page-wrapper {
+    display: flex;
+    margin-top: var(--nav-h);
+  }
+
+  /* ── SIDEBAR ── */
+  .sidebar {
+    position: fixed;
+    top: var(--nav-h);
+    left: 0;
+    width: var(--sidebar-w);
+    height: calc(100vh - var(--nav-h));
+    overflow-y: auto;
+    background: var(--bg2);
+    border-right: 1px solid var(--border);
+    padding: 20px 0 40px;
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    transition: transform 0.3s ease;
+  }
+  .sidebar::-webkit-scrollbar { width: 4px; }
+  .sidebar::-webkit-scrollbar-track { background: transparent; }
+  .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+  /* ── READING STATS ── */
+  .stats-panel {
+    padding: 16px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+  }
+  .stats-panel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; color: var(--accent2);
+    text-transform: uppercase; letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 8px;
+  }
+  .stat-item {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 6px; padding: 8px 10px;
+  }
+  .stat-item.full-width { grid-column: 1 / -1; }
+  .stat-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.58rem; color: var(--text2);
+    text-transform: uppercase; letter-spacing: 0.8px;
+    margin-bottom: 3px;
+  }
+  .stat-value {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.82rem; font-weight: 600; color: var(--text);
+    line-height: 1.2;
+  }
+  .stat-value.accent  { color: var(--accent); }
+  .stat-value.green   { color: var(--accent2); }
+  .stat-value.orange  { color: var(--accent5); }
+  .stat-value.purple  { color: var(--accent4); }
+  .stat-value.red     { color: var(--accent3); }
+
+  /* progress bar inside stats */
+  .stat-progress-bar {
+    height: 4px; background: var(--border);
+    border-radius: 2px; margin-top: 5px; overflow: hidden;
+  }
+  .stat-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent2), var(--accent));
+    border-radius: 2px;
+    transition: width 0.3s;
+  }
+
+  /* ── TOC PANEL ── */
+  .toc-panel {
+    padding: 0 16px 16px;
+    flex: 1;
+  }
+  .toc-panel-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 10px; padding-bottom: 10px;
+    border-bottom: 1px solid var(--border);
+  }
+  .toc-panel-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem; color: var(--accent2);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .toc-expand-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem; color: var(--text2);
+    background: none; border: 1px solid var(--border); border-radius: 4px;
+    padding: 2px 7px; cursor: pointer; transition: all 0.2s; white-space: nowrap;
+  }
+  .toc-expand-btn:hover { color: var(--accent); border-color: var(--accent); }
+  .sidebar-toc-list { list-style: none; padding: 0; }
+  .sidebar-toc-list li { margin-bottom: 1px; }
+  .sidebar-toc-list li a {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; color: var(--text2);
+    text-decoration: none; padding: 5px 8px; border-radius: 5px;
+    transition: all 0.15s; border-left: 2px solid transparent;
+  }
+  .sidebar-toc-list li a:hover {
+    color: var(--accent); background: rgba(88,166,255,0.07);
+    border-left-color: var(--accent); text-decoration: none;
+  }
+  .sidebar-toc-list li a.toc-active {
+    color: var(--accent); background: rgba(88,166,255,0.10);
+    border-left-color: var(--accent);
+  }
+  .sidebar-toc-num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.62rem; color: var(--accent);
+    min-width: 20px; flex-shrink: 0;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .main-content {
+    margin-left: var(--sidebar-w);
+    flex: 1;
+    min-width: 0;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 70px 24px 50px;
+    text-align: center;
+    background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(88,166,255,0.10) 0%, transparent 70%);
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(48,54,61,0.25) 39px, rgba(48,54,61,0.25) 40px),
+                repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(48,54,61,0.25) 39px, rgba(48,54,61,0.25) 40px);
+    pointer-events: none;
+  }
+  .hero-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem; color: var(--accent2);
+    background: rgba(63,185,80,0.1); border: 1px solid rgba(63,185,80,0.3);
+    padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800; line-height: 1.1;
+    background: linear-gradient(135deg, #e6edf3 0%, var(--accent) 50%, var(--accent4) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text; margin-bottom: 16px;
+  }
+  .hero-sub {
+    font-size: 1rem; color: var(--text2); max-width: 580px; margin: 0 auto 28px;
+  }
+  .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+  .badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    padding: 5px 12px; border-radius: 4px; border: 1px solid;
+  }
+  .badge-blue   { color: var(--accent);  border-color: var(--accent);  background: rgba(88,166,255,0.08); }
+  .badge-green  { color: var(--accent2); border-color: var(--accent2); background: rgba(63,185,80,0.08); }
+  .badge-purple { color: var(--accent4); border-color: var(--accent4); background: rgba(210,168,255,0.08); }
+  .badge-orange { color: var(--accent5); border-color: var(--accent5); background: rgba(255,166,87,0.08); }
+
+  /* ── CONTAINER ── */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+  /* ── SECTIONS ── */
+  .section {
+    margin-top: 48px;
+    padding: 28px 28px 28px;
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    scroll-margin-top: calc(var(--nav-h) + 16px);
+  }
+  .section-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 0;
+    cursor: pointer; user-select: none;
+  }
+  .section-header.open { margin-bottom: 24px; }
+  .section-num {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    color: var(--accent); background: rgba(88,166,255,0.12);
+    border: 1px solid rgba(88,166,255,0.3); border-radius: 4px;
+    padding: 3px 8px; flex-shrink: 0;
+  }
+  .section h2 {
+    font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 700;
+    color: var(--text); flex: 1;
+  }
+  .toggle-btn {
+    background: none; border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text2); cursor: pointer; padding: 4px 10px; font-size: 0.78rem;
+    transition: all 0.2s; flex-shrink: 0;
+  }
+  .toggle-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .section-body { overflow: hidden; }
+  .section-body.collapsed { display: none; }
+
+  /* ── PROSE ── */
+  p { color: var(--text3); margin-bottom: 14px; }
+  h3 {
+    font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700;
+    color: var(--text); margin: 24px 0 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  h4 {
+    font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;
+    color: var(--accent5); margin: 16px 0 8px;
+  }
+  ul, ol { padding-left: 22px; color: var(--text3); }
+  li { margin-bottom: 6px; }
+  strong { color: var(--text); }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  code.inline {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82em;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 4px; padding: 1px 6px; color: var(--accent4);
+  }
+
+  /* ── CODE BLOCKS ── */
+  .code-wrap { margin: 18px 0; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+  .code-header {
+    background: var(--bg3); padding: 8px 16px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .code-lang {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    color: var(--accent2); text-transform: uppercase; letter-spacing: 1px;
+  }
+  .copy-btn {
+    background: none; border: 1px solid var(--border); border-radius: 4px;
+    color: var(--text2); font-size: 0.7rem; padding: 2px 8px; cursor: pointer;
+    font-family: 'JetBrains Mono', monospace; transition: all 0.2s;
+  }
+  .copy-btn:hover { border-color: var(--accent2); color: var(--accent2); }
+  pre {
+    background: #0d1117; padding: 20px; overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; line-height: 1.65;
+    tab-size: 4;
+  }
+  .kw  { color: #ff7b72; font-weight: 600; }
+  .tp  { color: #79c0ff; }
+  .fn  { color: #d2a8ff; }
+  .str { color: #a5d6ff; }
+  .num { color: #f2cc60; }
+  .cm  { color: #6e7781; font-style: italic; }
+  .pp  { color: #ffa657; }
+  .op  { color: #ff7b72; }
+  .var { color: #e6edf3; }
+
+  /* ── TABLES ── */
+  .tbl-wrap { overflow-x: auto; margin: 16px 0; border-radius: 8px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+  th {
+    background: var(--bg3); color: var(--accent);
+    font-family: 'JetBrains Mono', monospace; font-size: 0.75rem;
+    text-transform: uppercase; letter-spacing: 0.5px;
+    padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border);
+  }
+  td { padding: 9px 14px; border-bottom: 1px solid rgba(48,54,61,0.6); color: var(--text3); }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(88,166,255,0.04); }
+
+  /* ── CALLOUTS ── */
+  .callout {
+    border-radius: 8px; padding: 14px 18px; margin: 16px 0;
+    border-left: 3px solid; display: flex; gap: 12px; align-items: flex-start;
+  }
+  .callout-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 1px; }
+  .callout-body { flex: 1; font-size: 0.9rem; color: var(--text3); }
+  .callout-body strong { color: var(--text); }
+  .callout.tip    { background: rgba(63,185,80,0.07);   border-color: var(--accent2); }
+  .callout.warn   { background: rgba(255,166,87,0.07);  border-color: var(--accent5); }
+  .callout.info   { background: rgba(88,166,255,0.07);  border-color: var(--accent); }
+  .callout.danger { background: rgba(247,129,102,0.07); border-color: var(--accent3); }
+
+  /* ── DIAGRAM ── */
+  .diagram {
+    background: #0d1117; border: 1px solid var(--border); border-radius: 8px;
+    padding: 20px; margin: 16px 0; overflow-x: auto;
+    font-family: 'JetBrains Mono', monospace; font-size: 0.78rem;
+    line-height: 1.8; color: var(--text3);
+  }
+  .d-title { color: var(--accent); font-weight: 700; margin-bottom: 8px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+  .d-box   { display: inline-block; border: 1px solid var(--accent4); border-radius: 4px; padding: 2px 8px; color: var(--accent4); }
+  .d-arrow { color: var(--accent2); }
+  .d-label { color: var(--accent5); }
+
+  /* ── PROBLEM CARDS ── */
+  .problem-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; margin-top: 16px; }
+  .problem-card {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px; transition: all 0.2s;
+  }
+  .problem-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+  .pc-platform {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px;
+  }
+  .pc-cf  { color: #e86b5f; }
+  .pc-cc  { color: #f9c24a; }
+  .pc-at  { color: #63b3ed; }
+  .pc-title { font-weight: 600; font-size: 0.88rem; color: var(--text); margin-bottom: 4px; }
+  .pc-desc  { font-size: 0.78rem; color: var(--text2); margin-bottom: 10px; line-height: 1.5; }
+  .pc-link {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    color: var(--accent); border: 1px solid rgba(88,166,255,0.3);
+    border-radius: 4px; padding: 3px 9px; display: inline-block; transition: all 0.2s;
+  }
+  .pc-link:hover { background: rgba(88,166,255,0.1); text-decoration: none; }
+  .pc-diff {
+    float: right; font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    padding: 2px 7px; border-radius: 10px; border: 1px solid;
+  }
+  .diff-easy   { color: var(--accent2); border-color: var(--accent2); background: rgba(63,185,80,0.08); }
+  .diff-medium { color: var(--accent5); border-color: var(--accent5); background: rgba(255,166,87,0.08); }
+  .diff-hard   { color: var(--accent3); border-color: var(--accent3); background: rgba(247,129,102,0.08); }
+
+  /* ── CHEATSHEET ── */
+  .cheat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 16px; }
+  @media(max-width: 600px) { .cheat-grid { grid-template-columns: 1fr; } }
+  .cheat-card {
+    background: var(--bg3); border: 1px solid var(--border); border-radius: 8px; padding: 14px;
+  }
+  .cheat-card h4 { margin-top: 0; }
+
+  /* ── AUTHOR ── */
+  .author-card {
+    background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+    border: 1px solid var(--border); border-radius: 12px;
+    padding: 28px; display: flex; gap: 24px; align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  .author-avatar {
+    width: 76px; height: 76px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--accent4) 100%);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 2rem; font-weight: 800;
+    color: var(--bg); flex-shrink: 0;
+  }
+  .author-info { flex: 1; min-width: 200px; }
+  .author-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 800; color: var(--text); margin-bottom: 2px; }
+  .author-title { color: var(--accent2); font-size: 0.83rem; margin-bottom: 14px; }
+  .author-dedication {
+    font-size: 0.82rem; color: var(--accent4); font-style: italic;
+    margin-bottom: 14px;
+    padding: 8px 12px;
+    background: rgba(210,168,255,0.07);
+    border-left: 2px solid var(--accent4);
+    border-radius: 4px;
+  }
+  .author-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .author-link {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem;
+    padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border);
+    color: var(--text2); text-decoration: none; transition: all 0.2s;
+    display: flex; align-items: center; gap: 5px;
+  }
+  .author-link:hover { color: var(--text); border-color: var(--accent); background: rgba(88,166,255,0.08); text-decoration: none; }
+  .author-contact { margin-top: 14px; }
+  .author-contact div { font-size: 0.83rem; color: var(--text2); margin-bottom: 5px; }
+  .author-contact span { color: var(--text3); }
+
+  /* ── PROGRESS BAR ── */
+  #progress-bar {
+    position: fixed; top: var(--nav-h); left: 0; right: 0;
+    height: 2px; background: transparent; z-index: 999;
+  }
+  #progress-fill {
+    height: 100%; width: 0;
+    background: linear-gradient(90deg, var(--accent2), var(--accent), var(--accent4));
+    transition: width 0.1s;
+  }
+
+  /* ── FLOAT BUTTONS ── */
+  .float-btns {
+    position: fixed; bottom: 28px; right: 24px;
+    display: flex; flex-direction: column; gap: 8px; z-index: 900;
+  }
+  .float-btn {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text2); font-size: 1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .float-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--bg2); transform: scale(1.05); }
+
+  /* ── COMPARISON ── */
+  .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 14px 0; }
+  @media(max-width:580px) { .compare-grid { grid-template-columns: 1fr; } }
+  .compare-card { border-radius: 8px; overflow: hidden; border: 1px solid var(--border); }
+  .compare-card .compare-label {
+    padding: 7px 14px; font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; font-weight: 700;
+  }
+  .compare-card.good .compare-label { background: rgba(63,185,80,0.12);   color: var(--accent2); border-bottom: 1px solid rgba(63,185,80,0.2); }
+  .compare-card.bad  .compare-label { background: rgba(247,129,102,0.12); color: var(--accent3); border-bottom: 1px solid rgba(247,129,102,0.2); }
+  .compare-card pre { border-radius: 0; font-size: 0.78rem; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--text2); }
+
+  /* ── ZEN MODE ── */
+  .main-content { transition: margin-left 0.35s cubic-bezier(0.4,0,0.2,1); }
+  body.zen-mode .sidebar { transform: translateX(-100%); }
+  body.zen-mode .main-content { margin-left: 0 !important; }
+  body.zen-mode .nav-toggle-sidebar { display: flex !important; }
+
+  /* ── TOAST SYSTEM ── */
+  #toast-container {
+    position: fixed; bottom: 88px; left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999; display: flex; flex-direction: column-reverse; gap: 6px;
+    pointer-events: none; align-items: center;
+  }
+  .toast {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.76rem;
+    color: var(--text); background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 8px;
+    padding: 7px 16px; opacity: 0; transform: translateY(6px);
+    transition: all 0.22s ease; white-space: nowrap;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .toast.show { opacity: 1; transform: translateY(0); }
+  .toast .toast-key {
+    background: rgba(88,166,255,0.15); border: 1px solid rgba(88,166,255,0.3);
+    color: var(--accent); border-radius: 3px; padding: 1px 6px; font-size: 0.7rem;
+  }
+
+  /* ── KEYBOARD HELP MODAL ── */
+  #kb-modal {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.72); backdrop-filter: blur(8px);
+    z-index: 9000; display: none; align-items: center; justify-content: center;
+  }
+  #kb-modal.open { display: flex; }
+  .kb-panel {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px 32px;
+    max-width: 500px; width: 92%; max-height: 82vh; overflow-y: auto;
+  }
+  .kb-header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .kb-title {
+    font-family: 'Syne', sans-serif; font-size: 1.15rem;
+    font-weight: 700; color: var(--text);
+  }
+  .kb-hint {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.68rem;
+    color: var(--text2); background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 4px; padding: 3px 8px;
+  }
+  .kb-section-label {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.62rem;
+    color: var(--accent2); text-transform: uppercase; letter-spacing: 1px;
+    margin: 18px 0 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .kb-row {
+    display: flex; align-items: center; gap: 14px;
+    padding: 5px 0;
+  }
+  .kb-keys { display: flex; gap: 5px; flex-shrink: 0; min-width: 100px; }
+  .kb-key {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.7rem;
+    color: var(--accent); background: rgba(88,166,255,0.1);
+    border: 1px solid rgba(88,166,255,0.3); border-radius: 4px;
+    padding: 2px 8px; display: inline-block; white-space: nowrap;
+  }
+  .kb-desc { font-size: 0.82rem; color: var(--text3); }
+  .kb-close {
+    margin-top: 20px; width: 100%;
+    background: none; border: 1px solid var(--border); border-radius: 8px;
+    color: var(--text2); font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem; padding: 9px; cursor: pointer; transition: all 0.2s;
+  }
+  .kb-close:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── READ INDICATORS ── */
+  .toc-read-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--border); flex-shrink: 0; margin-left: auto;
+    transition: background 0.4s, box-shadow 0.4s;
+  }
+  .toc-read-dot.done {
+    background: var(--accent2);
+    box-shadow: 0 0 4px rgba(63,185,80,0.6);
+  }
+
+  /* ── TOC SEARCH ── */
+  .toc-search-wrap { margin-bottom: 10px; position: relative; }
+  .toc-search {
+    width: 100%; background: var(--bg3);
+    border: 1px solid var(--border); border-radius: 6px;
+    color: var(--text2); font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem; padding: 6px 10px 6px 28px;
+    outline: none; transition: border-color 0.2s;
+  }
+  .toc-search:focus { border-color: var(--accent); color: var(--text); }
+  .toc-search::placeholder { color: var(--text2); opacity: 0.55; }
+  .toc-search-icon {
+    position: absolute; left: 9px; top: 50%; transform: translateY(-50%);
+    color: var(--text2); font-size: 0.72rem; pointer-events: none;
+  }
+  .sidebar-toc-list li.toc-hidden { display: none; }
+
+  /* ── NAV CONTROLS ── */
+  .nav-font-controls { display: flex; gap: 4px; align-items: center; }
+  .nav-icon-btn {
+    background: none; border: 1px solid var(--border); border-radius: 4px;
+    color: var(--text2); cursor: pointer; padding: 3px 7px;
+    font-size: 0.78rem; font-family: 'JetBrains Mono', monospace;
+    transition: all 0.2s; line-height: 1;
+  }
+  .nav-icon-btn:hover { border-color: var(--accent); color: var(--accent); }
+  .nav-icon-btn.active { border-color: var(--accent4); color: var(--accent4); background: rgba(210,168,255,0.08); }
+  .nav-font-size {
+    font-family: 'JetBrains Mono', monospace; font-size: 0.65rem;
+    color: var(--text2); min-width: 28px; text-align: center;
+  }
+
+  /* ── FOCUS: CURRENT SECTION HIGHLIGHT ── */
+  .section.current-section { border-color: rgba(88,166,255,0.3); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 28px 24px;
+    border-top: 1px solid var(--border);
+    font-family: 'JetBrains Mono', monospace; font-size: 0.72rem; color: var(--text2);
+  }
+  footer span { color: var(--accent); }
+  footer .footer-dedicated { color: var(--accent4); }
+  footer .footer-sep { color: var(--border); margin: 0 6px; }
+
+  /* ── RESPONSIVE ── */
+  @media(max-width: 900px) {
+    :root { --sidebar-w: 240px; }
+  }
+  @media(max-width: 700px) {
+    .sidebar {
+      transform: translateX(-100%);
+    }
+    .sidebar.open {
+      transform: translateX(0);
+      box-shadow: 4px 0 24px rgba(0,0,0,0.5);
+    }
+    .main-content { margin-left: 0; }
+    .nav-toggle-sidebar { display: flex; }
+    .float-btns { right: 14px; bottom: 16px; }
+  }
+  @media(max-width: 480px) {
+    .section { padding: 16px 14px; }
+    .author-card { padding: 18px; }
+    .hero { padding: 48px 16px 36px; }
+    .container { padding: 0 14px 60px; }
+  }
+
+  /* ── PRINT / PDF ── */
+  @media print {
+    /* Reset layout to full-width single column */
+    :root { --nav-h: 0px; }
+    body { background: #fff !important; color: #111 !important; font-size: 11pt !important; }
+
+    nav, aside, #progress-bar, .float-btns, #toast-container, #kb-modal,
+    .toc-expand-btn, .copy-btn, .section-toggle-btn, .nav-font-controls,
+    #zen-btn { display: none !important; }
+
+    .page-wrapper { display: block !important; }
+    .main-content { margin-left: 0 !important; padding: 0 !important; max-width: 100% !important; }
+    .container { padding: 0 !important; }
+
+    /* Hero */
+    .hero {
+      background: #1a1a2e !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      padding: 32pt 24pt 24pt !important;
+      border-radius: 0 !important;
+      page-break-after: avoid;
+    }
+    .hero-title { font-size: 22pt !important; }
+    .hero-subtitle { font-size: 11pt !important; }
+
+    /* Always expand all sections */
+    .section-body.collapsed { display: block !important; max-height: none !important; overflow: visible !important; }
+    .section-header.open .section-toggle-btn,
+    .section-toggle-btn { display: none !important; }
+    .section-header { cursor: default !important; page-break-after: avoid; }
+    .section-header::after { display: none !important; }
+
+    /* Sections */
+    .section {
+      border: 1pt solid #ddd !important;
+      border-radius: 6pt !important;
+      box-shadow: none !important;
+      page-break-inside: avoid;
+      margin-bottom: 18pt !important;
+      background: #fff !important;
+    }
+    .section-title { font-size: 14pt !important; color: #1a1a2e !important; }
+    .section-num { color: #555 !important; }
+
+    /* Code blocks */
+    .code-wrap {
+      page-break-inside: avoid;
+      background: #f5f5f5 !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      border: 1pt solid #ccc !important;
+    }
+    pre, code { font-size: 8.5pt !important; color: #111 !important; }
+    .code-lang-badge { background: #ddd !important; color: #333 !important; }
+
+    /* Tables */
+    table { border-collapse: collapse !important; width: 100% !important; page-break-inside: avoid; }
+    th { background: #e8e8f0 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    th, td { border: 1pt solid #ccc !important; padding: 4pt 8pt !important; font-size: 9pt !important; }
+
+    /* Reading stats panel */
+    .reading-stats-panel { display: none !important; }
+
+    /* Callout / tip boxes */
+    .tip-box, .warn-box, .note-box {
+      border-left: 3pt solid #555 !important;
+      background: #f9f9f9 !important;
+      -webkit-print-color-adjust: exact; print-color-adjust: exact;
+      page-break-inside: avoid;
+    }
+
+    /* Compare grid */
+    .compare-grid { grid-template-columns: 1fr 1fr !important; }
+
+    /* Cheat sheet */
+    .cheatsheet-grid { grid-template-columns: 1fr 1fr !important; }
+
+    /* Links */
+    a { color: #1a1a2e !important; text-decoration: underline !important; }
+    a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 7.5pt; color: #666; }
+
+    /* Footer */
+    footer { border-top: 1pt solid #ccc !important; background: #fff !important; color: #555 !important; }
+
+    /* Page setup */
+    @page {
+      margin: 18mm 16mm 18mm 16mm;
+      size: A4;
+    }
+    @page :first {
+      margin-top: 10mm;
+    }
+  }
+
+  /* Print button style */
+  .print-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 7px;
+    background: transparent; border: 1px solid var(--border);
+    color: var(--text2); font-size: 0.78rem; cursor: pointer;
+    transition: all 0.2s; font-family: inherit; white-space: nowrap;
+  }
+  .print-btn:hover { border-color: var(--accent2); color: var(--accent2); background: color-mix(in srgb, var(--accent2) 8%, transparent); }
+  .print-btn .print-icon { font-size: 1rem; }
+  .float-print-btn {
+    width: 40px; height: 40px; border-radius: 10px;
+    background: var(--bg3); border: 1px solid var(--border);
+    color: var(--text2); font-size: 1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; text-decoration: none;
+  }
+  .float-print-btn:hover { border-color: var(--accent2); color: var(--accent2); background: var(--bg2); transform: scale(1.05); }
+</style>
+</head>
+<body>
+
+<!-- PROGRESS BAR -->
+<div id="progress-bar"><div id="progress-fill"></div></div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">λ <span>count_if</span> &amp; Lambdas</div>
+  <div class="nav-right">
+    <span class="nav-badge" id="nav-clock">--:--:--</span>
+    <div class="nav-font-controls">
+      <button class="nav-icon-btn" onclick="changeFontSize(-1)" title="Decrease font size ([ key)">A−</button>
+      <span class="nav-font-size" id="nav-font-size">16</span>
+      <button class="nav-icon-btn" onclick="changeFontSize(1)" title="Increase font size (] key)">A+</button>
+    </div>
+    <button class="nav-icon-btn" id="zen-btn" onclick="toggleZen()" title="Focus mode — hide sidebar (F key)">⊡</button>
+    <button class="nav-icon-btn" onclick="showKbModal()" title="Keyboard shortcuts (? key)">?</button>
+    <button class="print-btn" onclick="printArticle()" title="Export / Print as PDF (P key)">
+      <span class="print-icon">🖨</span> Print / PDF
+    </button>
+    <button class="nav-toggle-sidebar" onclick="toggleSidebar()" title="Toggle Contents">☰ Contents</button>
+  </div>
+</nav>
+
+<!-- PAGE WRAPPER -->
+<div class="page-wrapper">
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- READING STATS -->
+    <div class="stats-panel">
+      <div class="stats-panel-title">⏱ Reading Session</div>
+      <div class="stats-grid">
+
+        <div class="stat-item full-width">
+          <div class="stat-label">Current Time</div>
+          <div class="stat-value accent" id="stat-clock">--:--:--</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-label">Est. Length</div>
+          <div class="stat-value green" id="stat-est">-- min</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Elapsed</div>
+          <div class="stat-value" id="stat-elapsed">0:00</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-label">Remaining</div>
+          <div class="stat-value orange" id="stat-remaining">-- min</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Coverage</div>
+          <div class="stat-value purple" id="stat-coverage">0%</div>
+        </div>
+
+        <div class="stat-item full-width">
+          <div class="stat-label">Progress</div>
+          <div class="stat-progress-bar">
+            <div class="stat-progress-fill" id="stat-progress-fill" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="stat-item full-width">
+          <div class="stat-label">Req. Pace to Finish</div>
+          <div class="stat-value red" id="stat-pace">-- wpm</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TOC -->
+    <div class="toc-panel">
+      <div class="toc-panel-header">
+        <div class="toc-panel-title">📋 Contents</div>
+        <div style="display:flex;gap:5px">
+          <button class="toc-expand-btn" onclick="toggleAll(true)" title="Expand all (E)">▼ All</button>
+          <button class="toc-expand-btn" onclick="toggleAll(false)" title="Collapse all (C)">▲ All</button>
+        </div>
+      </div>
+      <div class="toc-search-wrap">
+        <span class="toc-search-icon">🔍</span>
+        <input class="toc-search" id="toc-search" type="text" placeholder="Filter sections…" oninput="filterToc(this.value)" autocomplete="off"/>
+      </div>
+      <ul class="sidebar-toc-list" id="toc-list">
+        <li data-label="what problem does this solve"><a href="#s1"  class="toc-link" data-sec="1"><span class="sidebar-toc-num">01</span> What Problem Does This Solve?<span class="toc-read-dot" id="dot-1"></span></a></li>
+        <li data-label="lambda anatomy"><a href="#s2"  class="toc-link" data-sec="2"><span class="sidebar-toc-num">02</span> Lambda Anatomy<span class="toc-read-dot" id="dot-2"></span></a></li>
+        <li data-label="capture list deep dive"><a href="#s3"  class="toc-link" data-sec="3"><span class="sidebar-toc-num">03</span> Capture List Deep Dive<span class="toc-read-dot" id="dot-3"></span></a></li>
+        <li data-label="count_if explained"><a href="#s4"  class="toc-link" data-sec="4"><span class="sidebar-toc-num">04</span> count_if Explained<span class="toc-read-dot" id="dot-4"></span></a></li>
+        <li data-label="combined examples containers"><a href="#s5"  class="toc-link" data-sec="5"><span class="sidebar-toc-num">05</span> Combined Examples<span class="toc-read-dot" id="dot-5"></span></a></li>
+        <li data-label="when to use not use"><a href="#s6"  class="toc-link" data-sec="6"><span class="sidebar-toc-num">06</span> When to Use / Not Use<span class="toc-read-dot" id="dot-6"></span></a></li>
+        <li data-label="competitive programming patterns cp"><a href="#s7"  class="toc-link" data-sec="7"><span class="sidebar-toc-num">07</span> CP Patterns<span class="toc-read-dot" id="dot-7"></span></a></li>
+        <li data-label="common mistakes gotchas bugs"><a href="#s8"  class="toc-link" data-sec="8"><span class="sidebar-toc-num">08</span> Common Mistakes<span class="toc-read-dot" id="dot-8"></span></a></li>
+        <li data-label="practice problems codeforces atcoder codechef"><a href="#s9"  class="toc-link" data-sec="9"><span class="sidebar-toc-num">09</span> Practice Problems<span class="toc-read-dot" id="dot-9"></span></a></li>
+        <li data-label="complexity stl internals big o"><a href="#s10" class="toc-link" data-sec="10"><span class="sidebar-toc-num">10</span> Complexity &amp; Internals<span class="toc-read-dot" id="dot-10"></span></a></li>
+        <li data-label="cheat sheet quick reference"><a href="#s11" class="toc-link" data-sec="11"><span class="sidebar-toc-num">11</span> Cheat Sheet<span class="toc-read-dot" id="dot-11"></span></a></li>
+        <li data-label="author mojahidul"><a href="#s12" class="toc-link" data-sec="12"><span class="sidebar-toc-num">12</span> Author<span class="toc-read-dot" id="dot-12"></span></a></li>
+      </ul>
+      <div style="padding:10px 8px 0;font-family:'JetBrains Mono',monospace;font-size:0.6rem;color:var(--text2);text-align:center">
+        Press <span style="color:var(--accent)">?</span> for keyboard shortcuts
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ── MAIN CONTENT ── -->
+  <div class="main-content">
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="hero-tag">📘 C++ · STL · Competitive Programming</div>
+      <h1>Lambdas &amp; count_if in C++</h1>
+      <p class="hero-sub">From zero to competitive programming — a complete guide to lambda functions, capture lists, and STL count_if with real examples, patterns, and practice problems.</p>
+      <div class="hero-badges">
+        <span class="badge badge-blue">C++17</span>
+        <span class="badge badge-green">&lt;algorithm&gt;</span>
+        <span class="badge badge-purple">Lambda Captures</span>
+        <span class="badge badge-orange">Competitive Programming</span>
+      </div>
+    </div>
+
+    <!-- CONTAINER -->
+    <div class="container">
+
+      <!-- ══════════════════ SECTION 1 ══════════════════ -->
+      <div class="section" id="s1">
+        <div class="section-header" onclick="toggleSection('b1','t1')">
+          <span class="section-num">01</span>
+          <h2>What Problem Does This Solve?</h2>
+          <button class="toggle-btn" id="t1">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b1">
+
+          <p>Imagine you have a list of numbers and you want to count how many are even. The old way requires writing a loop, a counter variable, and a condition. It works, but it's verbose and distracting from the actual intent.</p>
+
+          <div class="compare-grid">
+            <div class="compare-card bad">
+              <div class="compare-label">❌ Old Way (Manual Loop)</div>
+              <pre><code><span class="tp">vector</span>&lt;<span class="tp">int</span>&gt; v = {<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>,<span class="num">4</span>,<span class="num">5</span>,<span class="num">6</span>};
+<span class="tp">int</span> <span class="var">cnt</span> = <span class="num">0</span>;
+<span class="kw">for</span> (<span class="tp">int</span> <span class="var">x</span> : <span class="var">v</span>)
+    <span class="kw">if</span> (<span class="var">x</span> % <span class="num">2</span> == <span class="num">0</span>) <span class="var">cnt</span>++;
+<span class="cm">// 4 lines just to count evens</span></code></pre>
+            </div>
+            <div class="compare-card good">
+              <div class="compare-label">✅ Modern Way (count_if + Lambda)</div>
+              <pre><code><span class="tp">vector</span>&lt;<span class="tp">int</span>&gt; v = {<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>,<span class="num">4</span>,<span class="num">5</span>,<span class="num">6</span>};
+<span class="tp">int</span> <span class="var">cnt</span> = <span class="fn">count_if</span>(
+    v.<span class="fn">begin</span>(), v.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>){ <span class="kw">return</span> <span class="var">x</span>%<span class="num">2</span>==<span class="num">0</span>; });
+<span class="cm">// Intent is crystal clear</span></code></pre>
+            </div>
+          </div>
+
+          <p>The modern version is <strong>shorter, more expressive, and reveals your intent immediately</strong>. This is why lambdas were introduced in C++11 — to allow you to write small, inline functions wherever a function is expected, without the ceremony of naming and defining them separately.</p>
+
+          <h3>⚡ Why This Matters in Competitive Programming</h3>
+          <ul>
+            <li>Saves lines → faster to write under contest time pressure</li>
+            <li>Reduces off-by-one and loop counter bugs</li>
+            <li>Composes naturally with other STL algorithms (<code class="inline">sort</code>, <code class="inline">find_if</code>, <code class="inline">remove_if</code>, etc.)</li>
+            <li>Makes code reviewable at a glance</li>
+          </ul>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 2 ══════════════════ -->
+      <div class="section" id="s2">
+        <div class="section-header" onclick="toggleSection('b2','t2')">
+          <span class="section-num">02</span>
+          <h2>Lambda Anatomy</h2>
+          <button class="toggle-btn" id="t2">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b2">
+
+          <p>A lambda expression has the following full syntax:</p>
+
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — Full Syntax</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code>[<span class="var">capture_list</span>](<span class="var">parameters</span>) <span class="kw">-></span> <span class="tp">return_type</span> {
+    <span class="cm">// body</span>
+    <span class="kw">return</span> <span class="var">value</span>;
+}</code></pre>
+          </div>
+
+          <div class="diagram">
+            <div class="d-title">Lambda Anatomy Diagram</div>
+<pre style="background:transparent;padding:0;border:none;color:var(--text3)">
+[&amp;threshold]  (int x)  ->  bool  { return x > threshold; }
+     │           │         │              │
+     ▼           ▼         ▼              ▼
+  Capture     Param    Return          Body
+   List        List     Type
+  (which      (input   (optional,    (logic goes
+  outside     args)    often         here)
+  vars can             inferred)
+  be used)
+</pre>
+          </div>
+
+          <h3>🔑 Each Part Explained</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Part</th><th>Required?</th><th>What it Does</th><th>Example</th></tr></thead>
+              <tbody>
+                <tr><td><code class="inline">[]</code> — Capture list</td><td>✅ Yes</td><td>Defines which outer variables are visible inside</td><td><code class="inline">[]</code>, <code class="inline">[&amp;]</code>, <code class="inline">[x]</code></td></tr>
+                <tr><td><code class="inline">(params)</code></td><td>✅ Yes*</td><td>Parameters the lambda receives when called</td><td><code class="inline">(int x)</code></td></tr>
+                <tr><td><code class="inline">-&gt; type</code></td><td>❌ Optional</td><td>Explicit return type (compiler infers it usually)</td><td><code class="inline">-&gt; bool</code></td></tr>
+                <tr><td><code class="inline">{ body }</code></td><td>✅ Yes</td><td>The actual logic</td><td><code class="inline">{ return x%2==0; }</code></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p><em>* <code class="inline">()</code> can be omitted if there are no parameters in C++14+</em></p>
+
+          <h3>📖 Examples of Valid Lambda Forms</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// Minimal — no captures, simple return</span>
+<span class="kw">auto</span> <span class="var">isEven</span> = [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> % <span class="num">2</span> == <span class="num">0</span>; };
+
+<span class="cm">// With capture by reference</span>
+<span class="tp">int</span> <span class="var">limit</span> = <span class="num">10</span>;
+<span class="kw">auto</span> <span class="var">underLimit</span> = [&amp;<span class="var">limit</span>](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &lt; <span class="var">limit</span>; };
+
+<span class="cm">// Explicit return type</span>
+<span class="kw">auto</span> <span class="var">safeDivide</span> = [](<span class="tp">double</span> <span class="var">a</span>, <span class="tp">double</span> <span class="var">b</span>) -&gt; <span class="tp">double</span> {
+    <span class="kw">if</span> (<span class="var">b</span> == <span class="num">0</span>) <span class="kw">return</span> <span class="num">0</span>;
+    <span class="kw">return</span> <span class="var">a</span> / <span class="var">b</span>;
+};
+
+<span class="cm">// Immediately invoked (IIFE style)</span>
+<span class="tp">int</span> <span class="var">result</span> = [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> * <span class="var">x</span>; }(<span class="num">5</span>); <span class="cm">// result = 25</span></code></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 3 ══════════════════ -->
+      <div class="section" id="s3">
+        <div class="section-header" onclick="toggleSection('b3','t3')">
+          <span class="section-num">03</span>
+          <h2>Capture List Deep Dive</h2>
+          <button class="toggle-btn" id="t3">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b3">
+
+          <p>The capture list controls what variables from the <strong>outer (enclosing) scope</strong> the lambda can see and use. Think of it as a gateway between the outside world and the lambda's inner world.</p>
+
+          <div class="diagram">
+            <div class="d-title">Capture Mental Model</div>
+<pre style="background:transparent;padding:0;border:none;font-size:0.76rem;color:var(--text3)">
+┌─── Outer Scope ──────────────────────────────────────────────┐
+│                                                              │
+│   int threshold = 5;   vector&lt;int&gt; v = {3,7,1,9};          │
+│                                                              │
+│   Lambda  []                 Lambda  [&amp;]                    │
+│   ┌─────────────────┐        ┌──────────────────────┐       │
+│   │  🔒 Sealed Box  │        │  🔓 Open Box         │       │
+│   │                 │        │                      │       │
+│   │  Can only use   │        │  Can read/write      │◄──────┤
+│   │  its own (int x)│        │  threshold, v, etc.  │       │
+│   └─────────────────┘        └──────────────────────┘       │
+│                                                              │
+│   Lambda  [=]                Lambda  [threshold]            │
+│   ┌─────────────────┐        ┌──────────────────────┐       │
+│   │  📸 Snapshot    │        │  🎯 Selective        │       │
+│   │                 │        │                      │       │
+│   │  Copies of all  │        │  Only 'threshold'    │       │
+│   │  vars at moment │        │  is captured         │       │
+│   └─────────────────┘        └──────────────────────┘       │
+└──────────────────────────────────────────────────────────────┘
+</pre>
+          </div>
+
+          <h3>📋 All Capture Variants</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Syntax</th><th>Meaning</th><th>Can Modify Original?</th><th>Use When</th></tr></thead>
+              <tbody>
+                <tr><td><code class="inline">[]</code></td><td>Capture nothing</td><td>N/A</td><td>Lambda needs no outer data</td></tr>
+                <tr><td><code class="inline">[&amp;]</code></td><td>All by reference</td><td>✅ Yes</td><td>Need to read/modify outer vars</td></tr>
+                <tr><td><code class="inline">[=]</code></td><td>All by value (copy)</td><td>❌ No (copy only)</td><td>Need snapshot, no modification</td></tr>
+                <tr><td><code class="inline">[x]</code></td><td>Only x by value</td><td>❌ No</td><td>Use only one specific var</td></tr>
+                <tr><td><code class="inline">[&amp;x]</code></td><td>Only x by reference</td><td>✅ Yes (x only)</td><td>Modify one specific var</td></tr>
+                <tr><td><code class="inline">[&amp;x, y]</code></td><td>x by ref, y by value</td><td>✅ x only</td><td>Mixed: modify x, read y</td></tr>
+                <tr><td><code class="inline">[this]</code></td><td>Current object</td><td>✅ Yes</td><td>Inside a class method</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>⚡ [] vs [&amp;] vs [=] — Live Comparison</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="pp">#include</span> <span class="str">&lt;bits/stdc++.h&gt;</span>
+<span class="kw">using namespace</span> <span class="tp">std</span>;
+
+<span class="tp">int</span> <span class="fn">main</span>() {
+    <span class="tp">int</span> <span class="var">val</span> = <span class="num">10</span>;
+
+    <span class="cm">// [] — capture nothing, val is unknown</span>
+    <span class="cm">// auto f1 = [](){ return val; }; // ❌ ERROR</span>
+
+    <span class="cm">// [&] — capture by reference, can modify original</span>
+    <span class="kw">auto</span> <span class="var">f2</span> = [&amp;]() { <span class="var">val</span> = <span class="num">99</span>; };
+    <span class="fn">f2</span>();
+    <span class="var">cout</span> &lt;&lt; <span class="var">val</span>; <span class="cm">// prints 99 — original changed</span>
+
+    <span class="cm">// [=] — capture by value (copy), original safe</span>
+    <span class="tp">int</span> <span class="var">x</span> = <span class="num">5</span>;
+    <span class="kw">auto</span> <span class="var">f3</span> = [=]() { <span class="kw">return</span> <span class="var">x</span> * <span class="num">2</span>; }; <span class="cm">// x is copied</span>
+    <span class="var">x</span> = <span class="num">100</span>; <span class="cm">// changing x doesn't affect f3's copy</span>
+    <span class="var">cout</span> &lt;&lt; <span class="fn">f3</span>(); <span class="cm">// still prints 10 (5*2, snapshot)</span>
+
+    <span class="cm">// [&x] — only capture x by reference</span>
+    <span class="tp">int</span> <span class="var">a</span> = <span class="num">1</span>, <span class="var">b</span> = <span class="num">2</span>;
+    <span class="kw">auto</span> <span class="var">f4</span> = [&amp;<span class="var">a</span>]() { <span class="var">a</span>++; }; <span class="cm">// only a is captured</span>
+    <span class="cm">// b is not accessible inside f4</span>
+}</code></pre>
+          </div>
+
+          <div class="callout warn">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body"><strong>Dangling Reference Risk:</strong> If you capture by reference <code class="inline">[&amp;]</code> and the lambda outlives the variable it captured (e.g., stored in a callback called later), you get undefined behavior. In competitive programming this rarely matters, but in production code be careful.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 4 ══════════════════ -->
+      <div class="section" id="s4">
+        <div class="section-header" onclick="toggleSection('b4','t4')">
+          <span class="section-num">04</span>
+          <h2>count_if Explained</h2>
+          <button class="toggle-btn" id="t4">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b4">
+
+          <p><code class="inline">count_if</code> is an STL algorithm from <code class="inline">&lt;algorithm&gt;</code> that counts how many elements in a range satisfy a given predicate (condition).</p>
+
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — Signature</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// From &lt;algorithm&gt;</span>
+<span class="kw">template</span>&lt;<span class="kw">class</span> <span class="tp">InputIt</span>, <span class="kw">class</span> <span class="tp">UnaryPredicate</span>&gt;
+<span class="tp">typename</span> <span class="tp">iterator_traits</span>&lt;<span class="tp">InputIt</span>&gt;::<span class="tp">difference_type</span>
+<span class="fn">count_if</span>(<span class="tp">InputIt</span> <span class="var">first</span>, <span class="tp">InputIt</span> <span class="var">last</span>, <span class="tp">UnaryPredicate</span> <span class="var">p</span>);</code></pre>
+          </div>
+
+          <div class="diagram">
+            <div class="d-title">How count_if Works Internally</div>
+<pre style="background:transparent;padding:0;border:none;font-size:0.76rem;color:var(--text3)">
+vector v = { 1,  4,  3,  8,  5,  6 }
+              ↓   ↓   ↓   ↓   ↓   ↓
+predicate:  ❌  ✅  ❌  ✅  ❌  ✅     (x % 2 == 0)
+              ↓   ↓   ↓   ↓   ↓   ↓
+count:        0   1   1   2   2   3   ← final count = 3
+
+count_if(v.begin(), v.end(), [](int x){ return x%2==0; }) → 3
+</pre>
+          </div>
+
+          <h3>📦 Parameters</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Parameter</th><th>Type</th><th>Description</th></tr></thead>
+              <tbody>
+                <tr><td><code class="inline">first</code></td><td>InputIterator</td><td>Beginning of range</td></tr>
+                <tr><td><code class="inline">last</code></td><td>InputIterator</td><td>End of range (one past the last element)</td></tr>
+                <tr><td><code class="inline">p</code></td><td>UnaryPredicate</td><td>A callable that takes one element and returns bool</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>📤 Return Value</h3>
+          <p>Returns <code class="inline">ptrdiff_t</code> (a signed integer type). In practice you can safely assign it to <code class="inline">int</code> or <code class="inline">long long</code> for competitive programming.</p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body"><strong>Tip:</strong> The predicate can be any callable — a lambda (most common), a regular function, a functor, or even <code class="inline">std::function</code>. Lambdas are preferred because they're inline and the compiler can inline-optimize them easily.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 5 ══════════════════ -->
+      <div class="section" id="s5">
+        <div class="section-header" onclick="toggleSection('b5','t5')">
+          <span class="section-num">05</span>
+          <h2>Combined Examples — All Containers</h2>
+          <button class="toggle-btn" id="t5">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b5">
+
+          <h3>🔷 vector&lt;int&gt;</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">vector</span>&lt;<span class="tp">int</span>&gt; <span class="var">v</span> = {<span class="num">3</span>, <span class="num">1</span>, <span class="num">4</span>, <span class="num">1</span>, <span class="num">5</span>, <span class="num">9</span>, <span class="num">2</span>, <span class="num">6</span>};
+
+<span class="cm">// Count even numbers</span>
+<span class="tp">int</span> <span class="var">evens</span> = <span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> % <span class="num">2</span> == <span class="num">0</span>; }); <span class="cm">// 3</span>
+
+<span class="cm">// Count elements greater than threshold</span>
+<span class="tp">int</span> <span class="var">threshold</span> = <span class="num">4</span>;
+<span class="tp">int</span> <span class="var">big</span> = <span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [&amp;<span class="var">threshold</span>](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &gt; <span class="var">threshold</span>; }); <span class="cm">// 3</span>
+
+<span class="cm">// Count elements in range [lo, hi]</span>
+<span class="tp">int</span> <span class="var">lo</span> = <span class="num">2</span>, <span class="var">hi</span> = <span class="num">5</span>;
+<span class="tp">int</span> <span class="var">in_range</span> = <span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [&amp;](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &gt;= <span class="var">lo</span> &amp;&amp; <span class="var">x</span> &lt;= <span class="var">hi</span>; }); <span class="cm">// 4</span></code></pre>
+          </div>
+
+          <h3>🔷 string</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">string</span> <span class="var">s</span> = <span class="str">"Hello, World! 123"</span>;
+
+<span class="cm">// Count uppercase letters</span>
+<span class="tp">int</span> <span class="var">uppers</span> = <span class="fn">count_if</span>(<span class="var">s</span>.<span class="fn">begin</span>(), <span class="var">s</span>.<span class="fn">end</span>(),
+    [](<span class="tp">char</span> <span class="var">c</span>) { <span class="kw">return</span> <span class="fn">isupper</span>(<span class="var">c</span>); }); <span class="cm">// 2</span>
+
+<span class="cm">// Count digits</span>
+<span class="tp">int</span> <span class="var">digits</span> = <span class="fn">count_if</span>(<span class="var">s</span>.<span class="fn">begin</span>(), <span class="var">s</span>.<span class="fn">end</span>(),
+    [](<span class="tp">char</span> <span class="var">c</span>) { <span class="kw">return</span> <span class="fn">isdigit</span>(<span class="var">c</span>); }); <span class="cm">// 3</span>
+
+<span class="cm">// Count vowels</span>
+<span class="tp">int</span> <span class="var">vowels</span> = <span class="fn">count_if</span>(<span class="var">s</span>.<span class="fn">begin</span>(), <span class="var">s</span>.<span class="fn">end</span>(),
+    [](<span class="tp">char</span> <span class="var">c</span>) {
+        <span class="tp">char</span> <span class="var">lc</span> = <span class="fn">tolower</span>(<span class="var">c</span>);
+        <span class="kw">return</span> <span class="var">lc</span>==<span class="str">'a'</span>||<span class="var">lc</span>==<span class="str">'e'</span>||<span class="var">lc</span>==<span class="str">'i'</span>||<span class="var">lc</span>==<span class="str">'o'</span>||<span class="var">lc</span>==<span class="str">'u'</span>;
+    }); <span class="cm">// 3</span></code></pre>
+          </div>
+
+          <h3>🔷 array&lt;int, N&gt;</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">array</span>&lt;<span class="tp">int</span>, <span class="num">6</span>&gt; <span class="var">arr</span> = {<span class="num">2</span>, <span class="num">4</span>, <span class="num">7</span>, <span class="num">1</span>, <span class="num">9</span>, <span class="num">3</span>};
+
+<span class="cm">// Count odd numbers in array</span>
+<span class="tp">int</span> <span class="var">odds</span> = <span class="fn">count_if</span>(<span class="var">arr</span>.<span class="fn">begin</span>(), <span class="var">arr</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> % <span class="num">2</span> != <span class="num">0</span>; }); <span class="cm">// 3</span>
+
+<span class="cm">// Works on raw C-style arrays too:</span>
+<span class="tp">int</span> <span class="var">raw</span>[] = {<span class="num">1</span>, <span class="num">2</span>, <span class="num">3</span>, <span class="num">4</span>, <span class="num">5</span>};
+<span class="tp">int</span> <span class="var">c</span> = <span class="fn">count_if</span>(<span class="var">raw</span>, <span class="var">raw</span> + <span class="num">5</span>,
+    [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &gt; <span class="num">3</span>; }); <span class="cm">// 2</span></code></pre>
+          </div>
+
+          <h3>🔷 map&lt;K, V&gt; and set&lt;T&gt;</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// ── map ──────────────────────────────────────────────</span>
+<span class="tp">map</span>&lt;<span class="tp">string</span>, <span class="tp">int</span>&gt; <span class="var">scores</span> = {
+    {<span class="str">"Alice"</span>, <span class="num">85</span>}, {<span class="str">"Bob"</span>, <span class="num">42</span>}, {<span class="str">"Carol"</span>, <span class="num">91</span>}, {<span class="str">"Dave"</span>, <span class="num">67</span>}
+};
+
+<span class="cm">// Count students who passed (score >= 60)</span>
+<span class="tp">int</span> <span class="var">passed</span> = <span class="fn">count_if</span>(<span class="var">scores</span>.<span class="fn">begin</span>(), <span class="var">scores</span>.<span class="fn">end</span>(),
+    [](<span class="kw">const</span> <span class="kw">auto</span>&amp; <span class="var">p</span>) { <span class="kw">return</span> <span class="var">p</span>.<span class="var">second</span> &gt;= <span class="num">60</span>; }); <span class="cm">// 3</span>
+
+<span class="cm">// ── set ──────────────────────────────────────────────</span>
+<span class="tp">set</span>&lt;<span class="tp">int</span>&gt; <span class="var">st</span> = {<span class="num">1</span>, <span class="num">3</span>, <span class="num">5</span>, <span class="num">7</span>, <span class="num">9</span>, <span class="num">11</span>};
+
+<span class="cm">// Count elements divisible by 3</span>
+<span class="tp">int</span> <span class="var">div3</span> = <span class="fn">count_if</span>(<span class="var">st</span>.<span class="fn">begin</span>(), <span class="var">st</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> % <span class="num">3</span> == <span class="num">0</span>; }); <span class="cm">// 2 (3, 9)</span></code></pre>
+          </div>
+
+          <h3>🔷 vector&lt;pair&gt; and vector&lt;string&gt;</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// ── vector of pairs ─────────────────────────────────</span>
+<span class="tp">vector</span>&lt;<span class="tp">pair</span>&lt;<span class="tp">int</span>,<span class="tp">int</span>&gt;&gt; <span class="var">edges</span> = {{<span class="num">1</span>,<span class="num">2</span>},{<span class="num">3</span>,<span class="num">4</span>},{<span class="num">5</span>,<span class="num">1</span>},{<span class="num">2</span>,<span class="num">2</span>}};
+
+<span class="cm">// Count self-loops (both endpoints same)</span>
+<span class="tp">int</span> <span class="var">loops</span> = <span class="fn">count_if</span>(<span class="var">edges</span>.<span class="fn">begin</span>(), <span class="var">edges</span>.<span class="fn">end</span>(),
+    [](<span class="kw">const</span> <span class="tp">pair</span>&lt;<span class="tp">int</span>,<span class="tp">int</span>&gt;&amp; <span class="var">e</span>) {
+        <span class="kw">return</span> <span class="var">e</span>.<span class="var">first</span> == <span class="var">e</span>.<span class="var">second</span>;
+    }); <span class="cm">// 1 ({2,2})</span>
+
+<span class="cm">// ── vector of strings ───────────────────────────────</span>
+<span class="tp">vector</span>&lt;<span class="tp">string</span>&gt; <span class="var">words</span> = {<span class="str">"apple"</span>,<span class="str">"banana"</span>,<span class="str">"apricot"</span>,<span class="str">"cherry"</span>};
+
+<span class="cm">// Count words starting with 'a'</span>
+<span class="tp">int</span> <span class="var">aWords</span> = <span class="fn">count_if</span>(<span class="var">words</span>.<span class="fn">begin</span>(), <span class="var">words</span>.<span class="fn">end</span>(),
+    [](<span class="kw">const</span> <span class="tp">string</span>&amp; <span class="var">w</span>) { <span class="kw">return</span> <span class="var">w</span>[<span class="num">0</span>] == <span class="str">'a'</span>; }); <span class="cm">// 2</span>
+
+<span class="cm">// Count words with length > 5</span>
+<span class="tp">int</span> <span class="var">longWords</span> = <span class="fn">count_if</span>(<span class="var">words</span>.<span class="fn">begin</span>(), <span class="var">words</span>.<span class="fn">end</span>(),
+    [](<span class="kw">const</span> <span class="tp">string</span>&amp; <span class="var">w</span>) { <span class="kw">return</span> <span class="var">w</span>.<span class="fn">size</span>() &gt; <span class="num">5</span>; }); <span class="cm">// 2</span></code></pre>
+          </div>
+
+          <h3>🔷 deque and list</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">deque</span>&lt;<span class="tp">int</span>&gt; <span class="var">dq</span> = {<span class="num">5</span>, <span class="num">10</span>, <span class="num">15</span>, <span class="num">20</span>, <span class="num">25</span>};
+
+<span class="cm">// Count multiples of 10</span>
+<span class="tp">int</span> <span class="var">tens</span> = <span class="fn">count_if</span>(<span class="var">dq</span>.<span class="fn">begin</span>(), <span class="var">dq</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> % <span class="num">10</span> == <span class="num">0</span>; }); <span class="cm">// 2</span>
+
+<span class="tp">list</span>&lt;<span class="tp">int</span>&gt; <span class="var">lst</span> = {<span class="num">-3</span>, <span class="num">-1</span>, <span class="num">0</span>, <span class="num">2</span>, <span class="num">4</span>};
+
+<span class="cm">// Count negative numbers</span>
+<span class="tp">int</span> <span class="var">negs</span> = <span class="fn">count_if</span>(<span class="var">lst</span>.<span class="fn">begin</span>(), <span class="var">lst</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &lt; <span class="num">0</span>; }); <span class="cm">// 2</span></code></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 6 ══════════════════ -->
+      <div class="section" id="s6">
+        <div class="section-header" onclick="toggleSection('b6','t6')">
+          <span class="section-num">06</span>
+          <h2>When to Use / When NOT to Use</h2>
+          <button class="toggle-btn" id="t6">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b6">
+
+          <div class="compare-grid">
+            <div class="compare-card good">
+              <div class="compare-label">✅ USE count_if when...</div>
+              <pre style="font-size:0.8rem;padding:14px;background:#0d1117"><code><span class="cm">// Condition is non-trivial</span>
+count_if(v.begin(), v.end(),
+  [](int x){ return x>0 && x%2==0; });
+
+<span class="cm">// Uses captured variable</span>
+count_if(v.begin(), v.end(),
+  [&amp;t](int x){ return x > t; });
+
+<span class="cm">// Checking string properties</span>
+count_if(words.begin(), words.end(),
+  [](const string&amp; w){
+    return w.size() > 3 &amp;&amp; w[0]=='a';
+  });</code></pre>
+            </div>
+            <div class="compare-card bad">
+              <div class="compare-label">❌ AVOID count_if when...</div>
+              <pre style="font-size:0.8rem;padding:14px;background:#0d1117"><code><span class="cm">// Exact value match — use count instead</span>
+count_if(v.begin(), v.end(),
+  [](int x){ return x == 5; }); // BAD
+count(v.begin(), v.end(), 5);   // GOOD
+
+<span class="cm">// Body is 20+ lines — extract function</span>
+count_if(v.begin(), v.end(),
+  [](int x){ /* huge logic */ });
+
+<span class="cm">// Need recursion inside predicate</span>
+<span class="cm">// lambdas can't directly recurse</span></code></pre>
+            </div>
+          </div>
+
+          <div class="callout info">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body"><strong>Rule of Thumb:</strong> If the predicate is more than 2–3 lines or is reused in multiple places, extract it into a named function. <code class="inline">count_if</code> shines for short, one-off conditions.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 7 ══════════════════ -->
+      <div class="section" id="s7">
+        <div class="section-header" onclick="toggleSection('b7','t7')">
+          <span class="section-num">07</span>
+          <h2>Competitive Programming Patterns</h2>
+          <button class="toggle-btn" id="t7">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b7">
+
+          <h3>🏆 Pattern 1 — Count Elements in Range</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — CP Pattern</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// How many elements of v are in [L, R]?</span>
+<span class="tp">int</span> <span class="var">L</span> = <span class="num">3</span>, <span class="var">R</span> = <span class="num">7</span>;
+<span class="tp">int</span> <span class="var">cnt</span> = <span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [&amp;](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &gt;= <span class="var">L</span> &amp;&amp; <span class="var">x</span> &lt;= <span class="var">R</span>; });</code></pre>
+          </div>
+
+          <h3>🏆 Pattern 2 — Count with Multiple Conditions</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — CP Pattern</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// Count elements satisfying multiple conditions</span>
+<span class="tp">int</span> <span class="var">result</span> = <span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) {
+        <span class="kw">return</span> <span class="var">x</span> &gt; <span class="num">0</span>          <span class="cm">// positive</span>
+            &amp;&amp; <span class="var">x</span> % <span class="num">2</span> == <span class="num">0</span>    <span class="cm">// even</span>
+            &amp;&amp; <span class="var">x</span> % <span class="num">3</span> == <span class="num">0</span>;   <span class="cm">// divisible by 3</span>
+    });</code></pre>
+          </div>
+
+          <h3>🏆 Pattern 3 — Count Strings Matching Property</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — CP Pattern</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// Count strings that are palindromes</span>
+<span class="kw">auto</span> <span class="var">isPalin</span> = [](<span class="kw">const</span> <span class="tp">string</span>&amp; <span class="var">s</span>) {
+    <span class="tp">string</span> <span class="var">r</span> = <span class="var">s</span>;
+    <span class="fn">reverse</span>(<span class="var">r</span>.<span class="fn">begin</span>(), <span class="var">r</span>.<span class="fn">end</span>());
+    <span class="kw">return</span> <span class="var">s</span> == <span class="var">r</span>;
+};
+<span class="tp">int</span> <span class="var">palinCount</span> = <span class="fn">count_if</span>(<span class="var">words</span>.<span class="fn">begin</span>(), <span class="var">words</span>.<span class="fn">end</span>(), <span class="var">isPalin</span>);</code></pre>
+          </div>
+
+          <h3>🏆 Pattern 4 — Count Pairs Satisfying Condition</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — CP Pattern</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// Count pairs where sum > target</span>
+<span class="tp">int</span> <span class="var">target</span> = <span class="num">10</span>;
+<span class="tp">int</span> <span class="var">cnt</span> = <span class="fn">count_if</span>(<span class="var">pairs</span>.<span class="fn">begin</span>(), <span class="var">pairs</span>.<span class="fn">end</span>(),
+    [&amp;](<span class="kw">const</span> <span class="tp">pair</span>&lt;<span class="tp">int</span>,<span class="tp">int</span>&gt;&amp; <span class="var">p</span>) {
+        <span class="kw">return</span> <span class="var">p</span>.<span class="var">first</span> + <span class="var">p</span>.<span class="var">second</span> &gt; <span class="var">target</span>;
+    });</code></pre>
+          </div>
+
+          <h3>🏆 Pattern 5 — Frequency Count per Character</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++ — CP Pattern</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">string</span> <span class="var">s</span> = <span class="str">"competitive programming"</span>;
+
+<span class="cm">// Count each vowel efficiently</span>
+<span class="kw">for</span> (<span class="tp">char</span> <span class="var">v</span> : <span class="tp">string</span>(<span class="str">"aeiou"</span>)) {
+    <span class="tp">int</span> <span class="var">freq</span> = <span class="fn">count_if</span>(<span class="var">s</span>.<span class="fn">begin</span>(), <span class="var">s</span>.<span class="fn">end</span>(),
+        [<span class="var">v</span>](<span class="tp">char</span> <span class="var">c</span>) { <span class="kw">return</span> <span class="var">c</span> == <span class="var">v</span>; });
+    <span class="var">cout</span> &lt;&lt; <span class="var">v</span> &lt;&lt; <span class="str">": "</span> &lt;&lt; <span class="var">freq</span> &lt;&lt; <span class="str">"\n"</span>;
+}</code></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 8 ══════════════════ -->
+      <div class="section" id="s8">
+        <div class="section-header" onclick="toggleSection('b8','t8')">
+          <span class="section-num">08</span>
+          <h2>Common Mistakes &amp; Gotchas</h2>
+          <button class="toggle-btn" id="t8">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b8">
+
+          <h3>🐛 Mistake 1 — Forgetting [&amp;] When Needed</h3>
+          <div class="compare-grid">
+            <div class="compare-card bad">
+              <div class="compare-label">❌ Bug</div>
+              <pre><code><span class="tp">int</span> <span class="var">threshold</span> = <span class="num">5</span>;
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [](<span class="tp">int</span> <span class="var">x</span>) {
+        <span class="cm">// ERROR: threshold not captured</span>
+        <span class="kw">return</span> <span class="var">x</span> &gt; <span class="var">threshold</span>;
+    });</code></pre>
+            </div>
+            <div class="compare-card good">
+              <div class="compare-label">✅ Fixed</div>
+              <pre><code><span class="tp">int</span> <span class="var">threshold</span> = <span class="num">5</span>;
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [&amp;<span class="var">threshold</span>](<span class="tp">int</span> <span class="var">x</span>) {
+        <span class="kw">return</span> <span class="var">x</span> &gt; <span class="var">threshold</span>;
+    });</code></pre>
+            </div>
+          </div>
+
+          <h3>🐛 Mistake 2 — Modifying with [=] (Copy)</h3>
+          <div class="compare-grid">
+            <div class="compare-card bad">
+              <div class="compare-label">❌ Bug — Original Unchanged</div>
+              <pre><code><span class="tp">int</span> <span class="var">cnt</span> = <span class="num">0</span>;
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [=](<span class="tp">int</span> <span class="var">x</span>) {
+        <span class="var">cnt</span>++; <span class="cm">// modifies copy!</span>
+        <span class="kw">return</span> <span class="var">x</span> &gt; <span class="num">0</span>;
+    });
+<span class="cm">// cnt is still 0 outside</span></code></pre>
+            </div>
+            <div class="compare-card good">
+              <div class="compare-label">✅ Fixed — Use [&amp;]</div>
+              <pre><code><span class="tp">int</span> <span class="var">cnt</span> = <span class="num">0</span>;
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),
+    [&amp;](<span class="tp">int</span> <span class="var">x</span>) {
+        <span class="kw">if</span> (<span class="var">x</span>&gt;<span class="num">0</span>) <span class="var">cnt</span>++; <span class="cm">// modifies original</span>
+        <span class="kw">return</span> <span class="var">x</span> &gt; <span class="num">0</span>;
+    });
+<span class="cm">// cnt is correct now</span></code></pre>
+            </div>
+          </div>
+
+          <h3>🐛 Mistake 3 — Wrong Iterator Range</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">vector</span>&lt;<span class="tp">int</span>&gt; <span class="var">v</span> = {<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>,<span class="num">4</span>,<span class="num">5</span>};
+
+<span class="cm">// ❌ Only counts first 3 elements (maybe intentional, maybe not)</span>
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">begin</span>() + <span class="num">3</span>, [](<span class="tp">int</span> <span class="var">x</span>){ <span class="kw">return</span> <span class="var">x</span>&gt;<span class="num">2</span>; });
+
+<span class="cm">// ✅ Count all elements</span>
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(),   [](<span class="tp">int</span> <span class="var">x</span>){ <span class="kw">return</span> <span class="var">x</span>&gt;<span class="num">2</span>; });</code></pre>
+          </div>
+
+          <h3>🐛 Mistake 4 — Using count_if When count Suffices</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">vector</span>&lt;<span class="tp">int</span>&gt; <span class="var">v</span> = {<span class="num">1</span>,<span class="num">2</span>,<span class="num">3</span>,<span class="num">2</span>,<span class="num">4</span>};
+
+<span class="cm">// ❌ Unnecessarily verbose</span>
+<span class="fn">count_if</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(), [](<span class="tp">int</span> <span class="var">x</span>){ <span class="kw">return</span> <span class="var">x</span> == <span class="num">2</span>; });
+
+<span class="cm">// ✅ Use plain count for exact value matching</span>
+<span class="fn">count</span>(<span class="var">v</span>.<span class="fn">begin</span>(), <span class="var">v</span>.<span class="fn">end</span>(), <span class="num">2</span>);</code></pre>
+          </div>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body"><strong>Rule of thumb:</strong> Use <code class="inline">count</code> for exact value matching. Use <code class="inline">count_if</code> when you need a condition (range check, property check, etc.).</div>
+          </div>
+
+          <h3>🐛 Mistake 5 — Signed/Unsigned Comparison Warning</h3>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">C++</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="tp">vector</span>&lt;<span class="tp">string</span>&gt; <span class="var">words</span> = {<span class="str">"hi"</span>, <span class="str">"hello"</span>, <span class="str">"hey"</span>};
+
+<span class="cm">// ⚠️ Warning: comparing signed int with unsigned size_t</span>
+<span class="fn">count_if</span>(<span class="var">words</span>.<span class="fn">begin</span>(), <span class="var">words</span>.<span class="fn">end</span>(),
+    [](<span class="kw">const</span> <span class="tp">string</span>&amp; <span class="var">w</span>) { <span class="kw">return</span> <span class="var">w</span>.<span class="fn">size</span>() &gt; <span class="num">2</span>; }); <span class="cm">// may warn</span>
+
+<span class="cm">// ✅ Clean: cast to int</span>
+<span class="fn">count_if</span>(<span class="var">words</span>.<span class="fn">begin</span>(), <span class="var">words</span>.<span class="fn">end</span>(),
+    [](<span class="kw">const</span> <span class="tp">string</span>&amp; <span class="var">w</span>) { <span class="kw">return</span> (<span class="tp">int</span>)<span class="var">w</span>.<span class="fn">size</span>() &gt; <span class="num">2</span>; });</code></pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 9 ══════════════════ -->
+      <div class="section" id="s9">
+        <div class="section-header" onclick="toggleSection('b9','t9')">
+          <span class="section-num">09</span>
+          <h2>Practice Problems</h2>
+          <button class="toggle-btn" id="t9">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b9">
+
+          <p>These problems are well-suited for practicing <code class="inline">count_if</code>, lambdas, and related STL algorithms. They range from easy to medium difficulty.</p>
+
+          <h3>🟢 Codeforces</h3>
+          <div class="problem-grid">
+            <div class="problem-card">
+              <div class="pc-platform pc-cf">Codeforces</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">Theatre Square (1A)</div>
+              <div class="pc-desc">Counting how many tiles fit — builds counting intuition with arithmetic conditions.</div>
+              <a href="https://codeforces.com/problemset/problem/1/A" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cf">Codeforces</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">Way Too Long Words (71A)</div>
+              <div class="pc-desc">Count characters in strings. Practice <code class="inline">count_if</code> on strings and character properties.</div>
+              <a href="https://codeforces.com/problemset/problem/71/A" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cf">Codeforces</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">Petya and Strings (112A)</div>
+              <div class="pc-desc">Character-by-character comparison. Use lambdas for per-character condition checking.</div>
+              <a href="https://codeforces.com/problemset/problem/112/A" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cf">Codeforces</div>
+              <span class="pc-diff diff-medium">Medium</span>
+              <div class="pc-title">Vasya and String (1768B)</div>
+              <div class="pc-desc">Count elements satisfying range conditions. Direct application of count_if with threshold.</div>
+              <a href="https://codeforces.com/problemset/problem/1768/B" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cf">Codeforces</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">Young Physicist (69A)</div>
+              <div class="pc-desc">Sum vectors — apply transform + lambda to compute sums across dimensions.</div>
+              <a href="https://codeforces.com/problemset/problem/69/A" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cf">Codeforces</div>
+              <span class="pc-diff diff-medium">Medium</span>
+              <div class="pc-title">Polycarp's Exercise (1041A)</div>
+              <div class="pc-desc">Count/check divisibility properties in array — natural fit for count_if with divisibility lambda.</div>
+              <a href="https://codeforces.com/problemset/problem/1041/A" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+          </div>
+
+          <h3>🟡 CodeChef</h3>
+          <div class="problem-grid">
+            <div class="problem-card">
+              <div class="pc-platform pc-cc">CodeChef</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">Count Odd Numbers</div>
+              <div class="pc-desc">Direct practice: count elements with a modular condition — textbook count_if usage.</div>
+              <a href="https://www.codechef.com/problems/COUNTODD" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cc">CodeChef</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">ATM (SnackDown)</div>
+              <div class="pc-desc">Condition-based decision making — use lambda to model eligibility conditions cleanly.</div>
+              <a href="https://www.codechef.com/problems/ATM" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-cc">CodeChef</div>
+              <span class="pc-diff diff-medium">Medium</span>
+              <div class="pc-title">Chef and Substrings</div>
+              <div class="pc-desc">Count substrings satisfying properties — combine string iteration with lambda predicates.</div>
+              <a href="https://www.codechef.com/problems/CHEFSTR1" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+          </div>
+
+          <h3>🔵 AtCoder</h3>
+          <div class="problem-grid">
+            <div class="problem-card">
+              <div class="pc-platform pc-at">AtCoder</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">ABC 086 A — Product</div>
+              <div class="pc-desc">Check if product is odd/even — clean lambda predicate application.</div>
+              <a href="https://atcoder.jp/contests/abc086/tasks/abc086_a" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-at">AtCoder</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">ABC 083 B — Some Sums</div>
+              <div class="pc-desc">Count numbers in range whose digit sum satisfies conditions — direct count_if use case.</div>
+              <a href="https://atcoder.jp/contests/abc083/tasks/abc083_b" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-at">AtCoder</div>
+              <span class="pc-diff diff-medium">Medium</span>
+              <div class="pc-title">ABC 128 C — Switches</div>
+              <div class="pc-desc">Count valid switch configurations — complex predicate with multiple conditions, great lambda practice.</div>
+              <a href="https://atcoder.jp/contests/abc128/tasks/abc128_c" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+            <div class="problem-card">
+              <div class="pc-platform pc-at">AtCoder</div>
+              <span class="pc-diff diff-easy">Easy</span>
+              <div class="pc-title">ABC 085 B — Kagami Mochi</div>
+              <div class="pc-desc">Count distinct elements — combine with lambda and set for uniqueness checking.</div>
+              <a href="https://atcoder.jp/contests/abc085/tasks/abc085_b" class="pc-link" target="_blank">Open Problem →</a>
+            </div>
+          </div>
+
+          <div class="callout info">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body"><strong>Strategy:</strong> For each problem above, try solving it first with a manual loop, then rewrite using <code class="inline">count_if</code> + lambda. Comparing both versions builds intuition for when the STL version is clearly superior.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 10 ══════════════════ -->
+      <div class="section" id="s10">
+        <div class="section-header" onclick="toggleSection('b10','t10')">
+          <span class="section-num">10</span>
+          <h2>Complexity &amp; STL Internals</h2>
+          <button class="toggle-btn" id="t10">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b10">
+
+          <h3>⏱️ Time Complexity</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Algorithm</th><th>Time</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td><code class="inline">count_if</code></td><td>O(n)</td><td>Visits every element exactly once</td></tr>
+                <tr><td><code class="inline">count</code></td><td>O(n)</td><td>Same — linear scan</td></tr>
+                <tr><td><code class="inline">find_if</code></td><td>O(n) worst</td><td>Stops at first match — O(1) best case</td></tr>
+                <tr><td><code class="inline">all_of / any_of / none_of</code></td><td>O(n) worst</td><td>Short-circuit evaluation</td></tr>
+                <tr><td><code class="inline">sort</code> with lambda</td><td>O(n log n)</td><td>Introsort; lambda is called O(n log n) times</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>🧠 Space Complexity</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Component</th><th>Space</th><th>Notes</th></tr></thead>
+              <tbody>
+                <tr><td>count_if call</td><td>O(1)</td><td>Only a counter variable internally</td></tr>
+                <tr><td>Lambda with <code class="inline">[]</code></td><td>O(1)</td><td>No captures — essentially a function pointer</td></tr>
+                <tr><td>Lambda with <code class="inline">[=]</code></td><td>O(k)</td><td>k = number of captured variables</td></tr>
+                <tr><td>Lambda with <code class="inline">[&amp;]</code></td><td>O(k)</td><td>k = number of reference pointers stored</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>⚙️ What the Compiler Does</h3>
+          <p>When you write a lambda, the compiler generates an anonymous class (called a <strong>closure type</strong>) with:</p>
+          <div class="code-wrap">
+            <div class="code-header"><span class="code-lang">Conceptual C++ — What Compiler Generates</span><button class="copy-btn" onclick="copyCode(this)">Copy</button></div>
+            <pre><code><span class="cm">// You write:</span>
+<span class="tp">int</span> <span class="var">t</span> = <span class="num">5</span>;
+<span class="kw">auto</span> <span class="var">f</span> = [&amp;<span class="var">t</span>](<span class="tp">int</span> <span class="var">x</span>) { <span class="kw">return</span> <span class="var">x</span> &gt; <span class="var">t</span>; };
+
+<span class="cm">// Compiler generates something like:</span>
+<span class="kw">struct</span> <span class="tp">__lambda_1</span> {
+    <span class="tp">int</span>&amp; <span class="var">t</span>; <span class="cm">// captured by reference</span>
+    <span class="tp">bool</span> <span class="kw">operator</span>()(<span class="tp">int</span> <span class="var">x</span>) <span class="kw">const</span> {
+        <span class="kw">return</span> <span class="var">x</span> &gt; <span class="var">t</span>;
+    }
+};
+<span class="tp">__lambda_1</span> <span class="var">f</span>{<span class="var">t</span>}; <span class="cm">// instance created with captured ref</span></code></pre>
+          </div>
+
+          <p>Because the compiler knows the exact type of the closure, it can <strong>inline the lambda call</strong> completely when used with STL algorithms — meaning there's <strong>zero overhead</strong> compared to a hand-written loop (unlike <code class="inline">std::function</code> which uses type erasure).</p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body"><strong>Performance:</strong> A lambda passed to <code class="inline">count_if</code> is <strong>at least as fast</strong> as a hand-written loop in optimized builds, because the compiler inlines it. Use <code class="inline">std::function</code> only when you need to store/pass lambdas polymorphically — it's slower due to virtual dispatch overhead.</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 11 ══════════════════ -->
+      <div class="section" id="s11">
+        <div class="section-header" onclick="toggleSection('b11','t11')">
+          <span class="section-num">11</span>
+          <h2>Quick Reference Cheat Sheet</h2>
+          <button class="toggle-btn" id="t11">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b11">
+
+          <div class="cheat-grid">
+            <div class="cheat-card">
+              <h4>📦 Capture List</h4>
+              <div class="code-wrap" style="margin-top:8px">
+                <pre style="font-size:0.75rem;padding:12px"><code><span class="cm">[]       </span><span class="cm">// capture nothing</span>
+<span class="cm">[&amp;]      </span><span class="cm">// all by reference</span>
+<span class="cm">[=]      </span><span class="cm">// all by value (copy)</span>
+<span class="cm">[x]      </span><span class="cm">// only x by value</span>
+<span class="cm">[&amp;x]     </span><span class="cm">// only x by reference</span>
+<span class="cm">[&amp;x, y]  </span><span class="cm">// x by ref, y by val</span></code></pre>
+              </div>
+            </div>
+            <div class="cheat-card">
+              <h4>🔧 count_if Patterns</h4>
+              <div class="code-wrap" style="margin-top:8px">
+                <pre style="font-size:0.75rem;padding:12px"><code><span class="cm">// Even numbers</span>
+<span class="fn">count_if</span>(<span class="var">b</span>,<span class="var">e</span>,[](int <span class="var">x</span>){<span class="kw">return</span> <span class="var">x</span>%<span class="num">2</span>==<span class="num">0</span>;});
+
+<span class="cm">// With threshold [&amp;]</span>
+<span class="fn">count_if</span>(<span class="var">b</span>,<span class="var">e</span>,[&amp;](<span class="tp">int</span> <span class="var">x</span>){<span class="kw">return</span> <span class="var">x</span>&gt;<span class="var">t</span>;});
+
+<span class="cm">// map values</span>
+<span class="fn">count_if</span>(<span class="var">b</span>,<span class="var">e</span>,[](const auto&amp; <span class="var">p</span>){
+    <span class="kw">return</span> <span class="var">p</span>.second&gt;<span class="num">60</span>;});</code></pre>
+              </div>
+            </div>
+            <div class="cheat-card">
+              <h4>⚡ Related Algorithms</h4>
+              <div class="code-wrap" style="margin-top:8px">
+                <pre style="font-size:0.75rem;padding:12px"><code><span class="fn">count</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">val</span>)       <span class="cm">// exact match</span>
+<span class="fn">find_if</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">pred</span>)    <span class="cm">// first match</span>
+<span class="fn">all_of</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">pred</span>)     <span class="cm">// all true?</span>
+<span class="fn">any_of</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">pred</span>)     <span class="cm">// any true?</span>
+<span class="fn">none_of</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">pred</span>)    <span class="cm">// none true?</span>
+<span class="fn">remove_if</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">pred</span>)  <span class="cm">// remove</span>
+<span class="fn">transform</span>(<span class="var">b</span>,<span class="var">e</span>,<span class="var">b</span>,<span class="var">f</span>)   <span class="cm">// map/transform</span></code></pre>
+              </div>
+            </div>
+            <div class="cheat-card">
+              <h4>⚠️ Golden Rules</h4>
+              <ul style="font-size:0.83rem;color:var(--text3);padding-left:16px;margin-top:8px">
+                <li>No outer var needed → <code class="inline">[]</code></li>
+                <li>Read outer var → <code class="inline">[&amp;var]</code></li>
+                <li>Modify outer var → <code class="inline">[&amp;]</code></li>
+                <li>Snapshot (no modify) → <code class="inline">[=]</code></li>
+                <li>Exact value → use <code class="inline">count</code>, not <code class="inline">count_if</code></li>
+                <li>Recursion → use named function</li>
+                <li>Long body → extract to named function</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>📊 STL Algorithm Decision Tree</h3>
+          <div class="diagram">
+<pre style="background:transparent;padding:0;border:none;font-size:0.76rem;color:var(--text3)">
+I want to...
+│
+├─ Count elements
+│   ├─ Exact value?           → <span style="color:#58a6ff">count(b, e, val)</span>
+│   └─ By condition?          → <span style="color:#3fb950">count_if(b, e, pred)</span>
+│
+├─ Find an element
+│   ├─ Exact value?           → <span style="color:#58a6ff">find(b, e, val)</span>
+│   └─ By condition?          → <span style="color:#3fb950">find_if(b, e, pred)</span>
+│
+├─ Check all/any/none
+│   ├─ All satisfy condition? → <span style="color:#d2a8ff">all_of(b, e, pred)</span>
+│   ├─ Any satisfies?         → <span style="color:#d2a8ff">any_of(b, e, pred)</span>
+│   └─ None satisfies?        → <span style="color:#d2a8ff">none_of(b, e, pred)</span>
+│
+├─ Remove elements
+│   └─ By condition?          → <span style="color:#ffa657">remove_if + erase</span>
+│
+└─ Transform elements
+    └─ Apply function to each → <span style="color:#ffa657">transform(b, e, b, f)</span>
+</pre>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ══════════════════ SECTION 12 — AUTHOR ══════════════════ -->
+      <div class="section" id="s12">
+        <div class="section-header" onclick="toggleSection('b12','t12')">
+          <span class="section-num">12</span>
+          <h2>Author</h2>
+          <button class="toggle-btn" id="t12">▶ Expand</button>
+        </div>
+        <div class="section-body collapsed" id="b12">
+          <div class="author-card">
+            <div class="author-avatar">M</div>
+            <div class="author-info">
+              <div class="author-name">Mojahidul Alam</div>
+              <div class="author-title">✦ Competitive Programmer &amp; C++ Educator</div>
+              <div class="author-dedication">Dedicated to: Dr. Mohammad Mamunur Rashid</div>
+              <div class="author-contact">
+                <div>📧 <span><a href="mailto:mojahidul.alam.21@gmail.com">mojahidul.alam.21@gmail.com</a></span></div>
+                <div>📱 <span>+880 1581-390193</span></div>
+              </div>
+              <div class="author-links" style="margin-top:16px">
+                <a href="https://codeforces.com/profile/Ace_Azimuth_Aviator" class="author-link" target="_blank">
+                  <span style="color:#e86b5f">⚡</span> Codeforces
+                </a>
+                <a href="https://www.codechef.com/users/mojahidul21" class="author-link" target="_blank">
+                  <span style="color:#f9c24a">🍴</span> CodeChef
+                </a>
+                <a href="https://atcoder.jp/users/MojahidulAlam" class="author-link" target="_blank">
+                  <span style="color:#63b3ed">🔵</span> AtCoder
+                </a>
+                <a href="https://ace-azimuth-aviator.itch.io/" class="author-link" target="_blank">
+                  <span style="color:#fa5c5c">🎮</span> Itch.io
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /container -->
+
+    <!-- FOOTER -->
+    <footer>
+      <p>
+        <span>Prepared by: Mojahidul Alam</span>
+        <span class="footer-sep">║</span>
+        <span class="footer-dedicated">Dedicated to: Dr. Mohammad Mamunur Rashid</span>
+      </p>
+      <p style="margin-top:6px;font-size:0.65rem">Lambdas &amp; count_if in C++ · For learning, teaching, and competitive programming reference</p>
+    </footer>
+
+  </div><!-- /main-content -->
+</div><!-- /page-wrapper -->
+
+<!-- FLOAT BUTTONS -->
+<div class="float-btns">
+  <a href="#" class="float-btn" title="Go to Top (Home)" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑</a>
+  <button class="float-btn" title="Previous section (K)" onclick="jumpSection(-1)">‹</button>
+  <button class="float-btn" title="Next section (J)" onclick="jumpSection(1)">›</button>
+  <a href="#s12" class="float-btn" title="Go to Bottom (End)">↓</a>
+  <button class="float-print-btn" title="Print / Export PDF (P key)" onclick="printArticle()">🖨</button>
+</div>
+
+<!-- TOAST CONTAINER -->
+<div id="toast-container"></div>
+
+<!-- KEYBOARD SHORTCUT MODAL -->
+<div id="kb-modal" onclick="hideKbModal()">
+  <div class="kb-panel" onclick="event.stopPropagation()">
+    <div class="kb-header">
+      <div class="kb-title">⌨ Keyboard Shortcuts</div>
+      <span class="kb-hint">Press Esc or ? to close</span>
+    </div>
+
+    <div class="kb-section-label">Navigation</div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">J</span></div><div class="kb-desc">Jump to next section</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">K</span></div><div class="kb-desc">Jump to previous section</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">Home</span></div><div class="kb-desc">Scroll to top of page</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">End</span></div><div class="kb-desc">Scroll to bottom of page</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">1</span><span class="kb-key">–</span><span class="kb-key">9</span></div><div class="kb-desc">Jump to section 1–9</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">0</span></div><div class="kb-desc">Jump to section 10 (Complexity)</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">-</span></div><div class="kb-desc">Jump to section 11 (Cheat Sheet)</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">=</span></div><div class="kb-desc">Jump to section 12 (Author)</div></div>
+
+    <div class="kb-section-label">Sections</div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">E</span></div><div class="kb-desc">Expand all sections</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">C</span></div><div class="kb-desc">Collapse all sections</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">Space</span></div><div class="kb-desc">Expand / collapse current section</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">M</span></div><div class="kb-desc">Mark current section as read</div></div>
+
+    <div class="kb-section-label">Reading</div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">F</span></div><div class="kb-desc">Focus / Zen mode (hide sidebar)</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">[</span></div><div class="kb-desc">Decrease font size</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">]</span></div><div class="kb-desc">Increase font size</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">R</span></div><div class="kb-desc">Reset font size to default</div></div>
+
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">P</span></div><div class="kb-desc">Print / Export as PDF</div></div>
+
+    <div class="kb-section-label">Search &amp; Help</div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">/</span></div><div class="kb-desc">Focus TOC search box</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">?</span></div><div class="kb-desc">Show / hide this shortcuts panel</div></div>
+    <div class="kb-row"><div class="kb-keys"><span class="kb-key">Esc</span></div><div class="kb-desc">Close this panel / clear search</div></div>
+
+    <button class="kb-close" onclick="hideKbModal()">Close</button>
+  </div>
+</div>
+
+<script>
+  // ═══════════════════════════════════════════════
+  // CONSTANTS & STATE
+  // ═══════════════════════════════════════════════
+  const SECTIONS = 12;
+  const WPM = 200;
+  const FONT_MIN = 12, FONT_MAX = 22, FONT_DEFAULT = 16;
+  const LS_KEY_READ  = 'lambda_art_read_v1';
+  const LS_KEY_FONT  = 'lambda_art_font_v1';
+  const LS_KEY_ZEN   = 'lambda_art_zen_v1';
+
+  let totalWords  = 0;
+  let estMinutes  = 0;
+  let currentSec  = 0;   // 1-based index of active section
+  let fontSize    = parseInt(localStorage.getItem(LS_KEY_FONT) || FONT_DEFAULT);
+  let zenMode     = localStorage.getItem(LS_KEY_ZEN) === '1';
+  let readSecs    = new Set(JSON.parse(localStorage.getItem(LS_KEY_READ) || '[]'));
+
+  const startTime = Date.now();
+
+  // ═══════════════════════════════════════════════
+  // TOAST
+  // ═══════════════════════════════════════════════
+  function showToast(html, duration = 1800) {
+    const c = document.getElementById('toast-container');
+    const t = document.createElement('div');
+    t.className = 'toast';
+    t.innerHTML = html;
+    c.appendChild(t);
+    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.add('show')));
+    setTimeout(() => {
+      t.classList.remove('show');
+      setTimeout(() => t.remove(), 300);
+    }, duration);
+  }
+  function toastKey(key, desc) {
+    showToast(`<span class="toast-key">${key}</span> ${desc}`);
+  }
+
+  // ═══════════════════════════════════════════════
+  // WORD COUNT
+  // ═══════════════════════════════════════════════
+  function calcWordCount() {
+    const el = document.querySelector('.main-content');
+    totalWords = el ? el.innerText.trim().split(/\s+/).length : 1500;
+    estMinutes = Math.max(1, Math.round(totalWords / WPM));
+    document.getElementById('stat-est').textContent = '~' + estMinutes + ' min';
+  }
+
+  // ═══════════════════════════════════════════════
+  // CLOCK & STATS
+  // ═══════════════════════════════════════════════
+  function formatTime(d) {
+    return d.toLocaleTimeString('en-GB', { hour12: false });
+  }
+  function formatElapsed(ms) {
+    const s = Math.floor(ms / 1000);
+    return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  }
+  function updateStats() {
+    const now       = new Date();
+    const timeStr   = formatTime(now);
+    document.getElementById('stat-clock').textContent = timeStr;
+    document.getElementById('nav-clock').textContent  = timeStr;
+
+    const elapsedMs  = Date.now() - startTime;
+    const elapsedMin = elapsedMs / 60000;
+    document.getElementById('stat-elapsed').textContent = formatElapsed(elapsedMs);
+
+    const doc        = document.documentElement;
+    const scrollable = doc.scrollHeight - doc.clientHeight;
+    const pct        = scrollable > 0 ? Math.min(100, Math.round((doc.scrollTop / scrollable) * 100)) : 0;
+
+    document.getElementById('stat-coverage').textContent      = pct + '%';
+    document.getElementById('stat-progress-fill').style.width = pct + '%';
+    document.getElementById('progress-fill').style.width       = pct + '%';
+
+    const wordsLeft    = totalWords - Math.round(totalWords * pct / 100);
+    const remainingMin = estMinutes - elapsedMin;
+
+    const remEl  = document.getElementById('stat-remaining');
+    const paceEl = document.getElementById('stat-pace');
+
+    if (pct >= 100) {
+      remEl.textContent  = 'Done! ✓';
+      remEl.className    = 'stat-value green';
+      paceEl.textContent = '—';
+      paceEl.className   = 'stat-value green';
+    } else if (remainingMin <= 0) {
+      remEl.textContent  = 'Past est.';
+      remEl.className    = 'stat-value red';
+      paceEl.textContent = '∞ wpm';
+      paceEl.className   = 'stat-value red';
+    } else {
+      const remStr = remainingMin >= 1
+        ? Math.ceil(remainingMin) + ' min'
+        : Math.ceil(remainingMin * 60) + ' sec';
+      remEl.textContent = remStr;
+      remEl.className   = remainingMin < 2 ? 'stat-value red' : 'stat-value orange';
+
+      const reqPace = Math.round(wordsLeft / remainingMin);
+      paceEl.textContent = reqPace + ' wpm';
+      paceEl.className   = reqPace > 350 ? 'stat-value red'
+                         : reqPace > 250 ? 'stat-value orange'
+                         : 'stat-value green';
+    }
+
+    // Auto-mark sections as read when scrolled past
+    autoMarkRead(pct);
+  }
+
+  window.addEventListener('scroll', updateStats, { passive: true });
+
+  // ═══════════════════════════════════════════════
+  // SECTION TOGGLE
+  // ═══════════════════════════════════════════════
+  function toggleSection(bodyId, btnId) {
+    const body   = document.getElementById(bodyId);
+    const btn    = document.getElementById(btnId);
+    const header = btn ? btn.closest('.section-header') : null;
+    if (!body || !btn) return;
+    const collapsed = body.classList.toggle('collapsed');
+    btn.textContent = collapsed ? '▶ Expand' : '▼ Collapse';
+    if (header) header.classList.toggle('open', !collapsed);
+  }
+
+  function setSectionOpen(i, open) {
+    const body   = document.getElementById('b' + i);
+    const btn    = document.getElementById('t' + i);
+    const header = btn ? btn.closest('.section-header') : null;
+    if (!body || !btn) return;
+    if (open) {
+      body.classList.remove('collapsed');
+      btn.textContent = '▼ Collapse';
+      if (header) header.classList.add('open');
+    } else {
+      body.classList.add('collapsed');
+      btn.textContent = '▶ Expand';
+      if (header) header.classList.remove('open');
+    }
+  }
+
+  function toggleAll(expand) {
+    for (let i = 1; i <= SECTIONS; i++) setSectionOpen(i, expand);
+    toastKey(expand ? 'E' : 'C', expand ? 'All sections expanded' : 'All sections collapsed');
+  }
+
+  // ═══════════════════════════════════════════════
+  // SECTION JUMP (J / K)
+  // ═══════════════════════════════════════════════
+  function jumpSection(dir) {
+    const ids   = Array.from({length: SECTIONS}, (_, i) => 's' + (i + 1));
+    const secEls = ids.map(id => document.getElementById(id)).filter(Boolean);
+
+    // Find which section is nearest the top of viewport
+    const navH = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h')) || 60;
+    let   best = 0;
+    let   bestDist = Infinity;
+    secEls.forEach((el, i) => {
+      const top = Math.abs(el.getBoundingClientRect().top - navH - 20);
+      if (top < bestDist) { bestDist = top; best = i; }
+    });
+
+    const target = Math.max(0, Math.min(secEls.length - 1, best + dir));
+    const targetEl = secEls[target];
+    if (!targetEl) return;
+
+    // Auto-expand if collapsed
+    const secNum = target + 1;
+    const body = document.getElementById('b' + secNum);
+    if (body && body.classList.contains('collapsed')) {
+      setSectionOpen(secNum, true);
+    }
+
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    currentSec = secNum;
+    toastKey(dir > 0 ? 'J' : 'K', 'Section ' + String(secNum).padStart(2,'0'));
+  }
+
+  function jumpToSection(n) {
+    const el = document.getElementById('s' + n);
+    if (!el) return;
+    const body = document.getElementById('b' + n);
+    if (body && body.classList.contains('collapsed')) setSectionOpen(n, true);
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    currentSec = n;
+  }
+
+  // ═══════════════════════════════════════════════
+  // PRINT / PDF
+  // ═══════════════════════════════════════════════
+  function printArticle() {
+    // 1. Remember which sections were collapsed
+    const wasCollapsed = [];
+    for (let i = 1; i <= SECTIONS; i++) {
+      const body = document.getElementById('b' + i);
+      if (body && body.classList.contains('collapsed')) {
+        wasCollapsed.push(i);
+      }
+    }
+
+    // 2. Expand everything silently
+    for (let i = 1; i <= SECTIONS; i++) setSectionOpen(i, true);
+
+    // 3. Show a brief toast, then open print dialog
+    toastKey('P', 'Preparing print-ready view…');
+
+    // Small delay to let browser repaint before opening dialog
+    setTimeout(() => {
+      window.print();
+
+      // 4. After dialog closes, restore collapsed state
+      setTimeout(() => {
+        wasCollapsed.forEach(i => setSectionOpen(i, false));
+      }, 400);
+    }, 200);
+  }
+
+  // ═══════════════════════════════════════════════
+  // COPY CODE
+  // ═══════════════════════════════════════════════
+  function copyCode(btn) {
+    const pre  = btn.closest('.code-wrap').querySelector('pre');
+    const text = pre.innerText;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent  = '✓ Copied!';
+      btn.style.color  = 'var(--accent2)';
+      setTimeout(() => { btn.textContent = orig; btn.style.color = ''; }, 1800);
+    });
+  }
+
+  // ═══════════════════════════════════════════════
+  // FONT SIZE
+  // ═══════════════════════════════════════════════
+  function applyFontSize(n) {
+    fontSize = Math.max(FONT_MIN, Math.min(FONT_MAX, n));
+    document.documentElement.style.fontSize = fontSize + 'px';
+    document.getElementById('nav-font-size').textContent = fontSize;
+    localStorage.setItem(LS_KEY_FONT, fontSize);
+  }
+  function changeFontSize(delta) {
+    applyFontSize(fontSize + delta);
+    toastKey(delta > 0 ? ']' : '[', 'Font size: ' + fontSize + 'px');
+  }
+  function resetFontSize() {
+    applyFontSize(FONT_DEFAULT);
+    toastKey('R', 'Font size reset to ' + FONT_DEFAULT + 'px');
+  }
+
+  // ═══════════════════════════════════════════════
+  // ZEN MODE
+  // ═══════════════════════════════════════════════
+  function applyZen(on) {
+    zenMode = on;
+    document.body.classList.toggle('zen-mode', on);
+    const btn = document.getElementById('zen-btn');
+    if (btn) btn.classList.toggle('active', on);
+    localStorage.setItem(LS_KEY_ZEN, on ? '1' : '0');
+  }
+  function toggleZen() {
+    applyZen(!zenMode);
+    toastKey('F', zenMode ? 'Focus mode ON — sidebar hidden' : 'Focus mode OFF');
+  }
+
+  // ═══════════════════════════════════════════════
+  // SIDEBAR TOGGLE (MOBILE)
+  // ═══════════════════════════════════════════════
+  function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('open');
+  }
+
+  // ═══════════════════════════════════════════════
+  // KEYBOARD MODAL
+  // ═══════════════════════════════════════════════
+  function showKbModal() {
+    document.getElementById('kb-modal').classList.add('open');
+  }
+  function hideKbModal() {
+    document.getElementById('kb-modal').classList.remove('open');
+  }
+
+  // ═══════════════════════════════════════════════
+  // READ TRACKING
+  // ═══════════════════════════════════════════════
+  function markRead(n, silent) {
+    readSecs.add(n);
+    localStorage.setItem(LS_KEY_READ, JSON.stringify([...readSecs]));
+    const dot = document.getElementById('dot-' + n);
+    if (dot) dot.classList.add('done');
+    if (!silent) toastKey('M', 'Section ' + String(n).padStart(2,'0') + ' marked as read ✓');
+  }
+  function markCurrentRead() {
+    if (currentSec >= 1) markRead(currentSec, false);
+  }
+
+  function autoMarkRead(scrollPct) {
+    // Mark a section as read when user has scrolled clearly past it
+    for (let i = 1; i <= SECTIONS; i++) {
+      if (readSecs.has(i)) continue;
+      const el = document.getElementById('s' + i);
+      if (!el) continue;
+      const rect = el.getBoundingClientRect();
+      if (rect.bottom < 0) {   // section has fully scrolled above viewport
+        markRead(i, true);
+      }
+    }
+  }
+
+  function restoreReadState() {
+    readSecs.forEach(n => {
+      const dot = document.getElementById('dot-' + n);
+      if (dot) dot.classList.add('done');
+    });
+  }
+
+  // ═══════════════════════════════════════════════
+  // TOC SEARCH / FILTER
+  // ═══════════════════════════════════════════════
+  function filterToc(query) {
+    const q = query.toLowerCase().trim();
+    const items = document.querySelectorAll('#toc-list li');
+    let shown = 0;
+    items.forEach(li => {
+      const label = li.getAttribute('data-label') || '';
+      const text  = li.textContent.toLowerCase();
+      const match = !q || label.includes(q) || text.includes(q);
+      li.classList.toggle('toc-hidden', !match);
+      if (match) shown++;
+    });
+  }
+
+  // ═══════════════════════════════════════════════
+  // ACTIVE TOC HIGHLIGHT
+  // ═══════════════════════════════════════════════
+  const sections = document.querySelectorAll('.section');
+  const tocLinks = document.querySelectorAll('.toc-link');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id    = entry.target.id;
+        const secN  = parseInt(id.replace('s', ''));
+        currentSec  = secN;
+        tocLinks.forEach(a => {
+          a.classList.toggle('toc-active', a.getAttribute('href') === '#' + id);
+        });
+        // Highlight current section card
+        sections.forEach(s => s.classList.remove('current-section'));
+        entry.target.classList.add('current-section');
+      }
+    });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+
+  // Close mobile sidebar on TOC click
+  tocLinks.forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 700) {
+        document.getElementById('sidebar').classList.remove('open');
+      }
+    });
+  });
+
+  // ═══════════════════════════════════════════════
+  // KEYBOARD SHORTCUTS
+  // ═══════════════════════════════════════════════
+  document.addEventListener('keydown', (e) => {
+    const tag = document.activeElement.tagName.toLowerCase();
+    const inInput = tag === 'input' || tag === 'textarea';
+    const modalOpen = document.getElementById('kb-modal').classList.contains('open');
+
+    // Always handle Escape
+    if (e.key === 'Escape') {
+      if (modalOpen) { hideKbModal(); return; }
+      const searchEl = document.getElementById('toc-search');
+      if (document.activeElement === searchEl && searchEl.value) {
+        searchEl.value = '';
+        filterToc('');
+        searchEl.blur();
+        return;
+      }
+      if (document.activeElement === searchEl) { searchEl.blur(); return; }
+      return;
+    }
+
+    if (inInput) return;  // Don't intercept when typing in search
+
+    switch (e.key) {
+      // ── Navigation ──
+      case 'j': case 'J':
+        e.preventDefault(); jumpSection(1); break;
+      case 'k': case 'K':
+        e.preventDefault(); jumpSection(-1); break;
+      case 'Home':
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        toastKey('Home', 'Back to top'); break;
+      case 'End':
+        e.preventDefault();
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        toastKey('End', 'Bottom of page'); break;
+
+      // ── Section number jump 1–9 ──
+      case '1': case '2': case '3': case '4': case '5':
+      case '6': case '7': case '8': case '9':
+        if (!e.ctrlKey && !e.metaKey && !e.altKey) {
+          e.preventDefault(); jumpToSection(parseInt(e.key));
+          toastKey(e.key, 'Section ' + e.key);
+        }
+        break;
+      case '0':
+        e.preventDefault(); jumpToSection(10); toastKey('0', 'Section 10'); break;
+      case '-':
+        e.preventDefault(); jumpToSection(11); toastKey('-', 'Section 11'); break;
+      case '=':
+        e.preventDefault(); jumpToSection(12); toastKey('=', 'Section 12'); break;
+
+      // ── Section expand/collapse ──
+      case 'e': case 'E':
+        e.preventDefault(); toggleAll(true); break;
+      case 'c': case 'C':
+        e.preventDefault(); toggleAll(false); break;
+      case ' ':
+        if (!modalOpen) {
+          e.preventDefault();
+          if (currentSec >= 1) {
+            const body = document.getElementById('b' + currentSec);
+            const btn  = document.getElementById('t' + currentSec);
+            if (body && btn) toggleSection('b' + currentSec, 't' + currentSec);
+            const isNowCollapsed = body && body.classList.contains('collapsed');
+            toastKey('Space', 'Section ' + currentSec + (isNowCollapsed ? ' collapsed' : ' expanded'));
+          }
+        }
+        break;
+      case 'm': case 'M':
+        e.preventDefault(); markCurrentRead(); break;
+
+      // ── Reading ──
+      case 'f': case 'F':
+        e.preventDefault(); toggleZen(); break;
+      case '[':
+        e.preventDefault(); changeFontSize(-1); break;
+      case ']':
+        e.preventDefault(); changeFontSize(1); break;
+      case 'r': case 'R':
+        e.preventDefault(); resetFontSize(); break;
+      case 'p': case 'P':
+        e.preventDefault(); printArticle(); break;
+
+      // ── Help / Search ──
+      case '?':
+        e.preventDefault();
+        modalOpen ? hideKbModal() : showKbModal(); break;
+      case '/':
+        e.preventDefault();
+        const searchEl = document.getElementById('toc-search');
+        if (searchEl) { searchEl.focus(); searchEl.select(); }
+        if (zenMode) applyZen(false);   // briefly show sidebar
+        break;
+    }
+  });
+
+  // ═══════════════════════════════════════════════
+  // INIT
+  // ═══════════════════════════════════════════════
+  window.addEventListener('DOMContentLoaded', () => {
+    // Restore persisted settings
+    applyFontSize(fontSize);
+    applyZen(zenMode);
+    restoreReadState();
+
+    // Compute word count + initial stats
+    calcWordCount();
+    updateStats();
+    setInterval(updateStats, 1000);
+
+    // First-visit hint
+    if (!localStorage.getItem('lambda_art_visited')) {
+      localStorage.setItem('lambda_art_visited', '1');
+      setTimeout(() => {
+        showToast('💡 Press <span class="toast-key">?</span> for keyboard shortcuts', 3500);
+      }, 1200);
+    }
+  });
+</script>
+</body>
+</html>
