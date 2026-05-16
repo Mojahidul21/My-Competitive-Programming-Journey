@@ -1,3 +1,5 @@
+//  Note that, this is my draft solution, still it has not been submitted.
+
 // Problem: https://codeforces.com/contest/2228/problem/C1
 
 // Solution: Below is my solution. Now it is just after contest.
