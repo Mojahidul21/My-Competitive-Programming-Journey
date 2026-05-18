@@ -345,10 +345,10 @@ int main() {
 ```cpp
 string s = "12345";
 
-s.erase(i, 1);               // delete digit at position i
+s.erase(i, 1);              // delete digit at position i
 s.insert(i, 1, '0' + d);    // insert digit d at position i
-s[i] = '0' + d;              // replace digit at position i
-s += ('0' + d);              // append digit d at the end
+s[i] = '0' + d;             // replace digit at position i
+s += ('0' + d);             // append digit d at the end
 s = string(1, '0'+d) + s;   // prepend digit d at the front
 ```
 
