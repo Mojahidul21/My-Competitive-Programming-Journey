@@ -142,14 +142,21 @@ Read two huge numbers, print them back, compute digit sum.
 using namespace std;
 
 int main() {
-   string a, b;
-   cin >> a >> b;
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-   int sum = 0;
-   for (char c : a) sum += c - '0';
-   cout << a << ' ' << b << ' ' << sum;
+    int t;
+    cin >> t;
+    while (t--) {
+        string a, b;
+        cin >> a >> b;
 
-   return 0;
+        int sum = 0;
+        for (char c : a) sum += c - '0';
+
+        cout << a << ' ' << b << ' ' << sum << '\n';
+    }
+    return 0;
 }
 ```
 
@@ -162,23 +169,29 @@ Count leading zeros; strip them safely.
 using namespace std;
 
 int main() {
-   string s;
-   cin >> s;
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-   int lz = 0;
-   for (char c : s) {
-      if (c == '0') lz++;
-      else break;
-   }
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
 
-   // strip leading zeros (keep at least "0")
-   int i = 0;
-   while (i < (int)s.size() - 1 && s[i] == '0') i++;
-   string stripped = s.substr(i);
+        int lz = 0;
+        for (char c : s) {
+            if (c == '0') lz++;
+            else break;
+        }
 
-   cout << lz << ' ' << stripped << '\n';
+        // strip leading zeros (keep at least "0")
+        int i = 0;
+        while (i < (int)s.size() - 1 && s[i] == '0') i++;
+        string stripped = s.substr(i);
 
-   return 0;
+        cout << lz << ' ' << stripped << '\n';
+    }
+    return 0;
 }
 ```
 
