@@ -64,7 +64,10 @@ Reading this as `long long` silently wraps around. Reading it as `string s` is t
 string s;
 cin >> s;
 int leading = 0;
-for(char c : s) if(c == '0') leading++; else break;
+for (char c : s) {
+    if (c == '0') leading++;
+    else break;
+}
 ```
 
 **2.3 The number itself is the sequence of digits**
@@ -106,7 +109,7 @@ long long val = stoll(s);
 string t = to_string(val);
 
 // Reverse the digit string  (useful for least-significant-first processing)
-reverse(all(s));
+reverse(s.begin(), s.end());
 
 // Lexicographic compare  ==  numeric compare  when lengths are equal and no leading zeros
 bool bigger = (s > t);  // true if s represents a larger number than t
@@ -130,33 +133,31 @@ bool bigger = (s > t);  // true if s represents a larger number than t
 
 ## 6. Patterns and Code Templates
 
-All code below uses the standard template.
-
 ### 6.1 Arbitrarily Large Numbers
 
 Read two huge numbers, print them back, compute digit sum.
 
 ```cpp
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-#define tourist int main(){ios::sync_with_stdio(0);cin.tie(0);
-#define Ace_Azimuth_Aviator return 0;}
-#define tcl int t;cin>>t;while(t--){
-#define tnl if(t)cout<<'\n';}
-#define cnl <<'\n'
 
-tourist
-tcl
-    string a, b;
-    cin >> a >> b;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-    // digit sum of a
-    int sum = 0;
-    for(char c : a) sum += c - '0';
+    int t;
+    cin >> t;
+    while (t--) {
+        string a, b;
+        cin >> a >> b;
 
-    cout << a css << b css << sum cnl;
-tnl
-Ace_Azimuth_Aviator
+        int sum = 0;
+        for (char c : a) sum += c - '0';
+
+        cout << a << ' ' << b << ' ' << sum << '\n';
+    }
+    return 0;
+}
 ```
 
 ### 6.2 Leading Zeros
@@ -164,22 +165,34 @@ Ace_Azimuth_Aviator
 Count leading zeros; strip them safely.
 
 ```cpp
-tourist
-tcl
-    string s;
-    cin >> s;
+#include <bits/stdc++.h>
+using namespace std;
 
-    int lz = 0;
-    for(char c : s) if(c == '0') lz++; else break;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-    // strip leading zeros (keep at least "0")
-    int i = 0;
-    while(i < (int)s.size() - 1 && s[i] == '0') i++;
-    string stripped = s.substr(i);
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
 
-    cout << lz css << stripped cnl;
-tnl
-Ace_Azimuth_Aviator
+        int lz = 0;
+        for (char c : s) {
+            if (c == '0') lz++;
+            else break;
+        }
+
+        // strip leading zeros (keep at least "0")
+        int i = 0;
+        while (i < (int)s.size() - 1 && s[i] == '0') i++;
+        string stripped = s.substr(i);
+
+        cout << lz << ' ' << stripped << '\n';
+    }
+    return 0;
+}
 ```
 
 ### 6.3 Digit-by-Digit Traversal
@@ -187,21 +200,29 @@ Ace_Azimuth_Aviator
 Process most-significant digit first — natural with a string, awkward with an integer.
 
 ```cpp
-tourist
-tcl
-    string s;
-    cin >> s;
+#include <bits/stdc++.h>
+using namespace std;
 
-    // Example: running numeric value modulo m as we read left to right
-    int m;
-    cin >> m;
-    long long cur = 0;
-    for(char c : s)
-        cur = (cur * 10 + (c - '0')) % m;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
 
-    cout << cur cnl;
-tnl
-Ace_Azimuth_Aviator
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        int m;
+        cin >> s >> m;
+
+        // running numeric value modulo m as we read left to right
+        long long cur = 0;
+        for (char c : s)
+            cur = (cur * 10 + (c - '0')) % m;
+
+        cout << cur << '\n';
+    }
+    return 0;
+}
 ```
 
 > This is the canonical way to compute `N mod m` when N doesn't fit in any integer type.
@@ -211,11 +232,14 @@ Ace_Azimuth_Aviator
 When both numbers may exceed `long long`, numeric comparison is impossible. String comparison works if we handle length first.
 
 ```cpp
-// returns 1 if a > b, -1 if a < b, 0 if equal
+// returns  1 if a > b
+// returns -1 if a < b
+// returns  0 if equal
 // assumes no leading zeros
-int cmpBig(const string& a, const string& b){
-    if(a.size() != b.size()) return a.size() > b.size() ? 1 : -1;
-    if(a == b) return 0;
+int cmpBig(const string& a, const string& b) {
+    if (a.size() != b.size())
+        return a.size() > b.size() ? 1 : -1;
+    if (a == b) return 0;
     return a > b ? 1 : -1;
 }
 ```
@@ -223,35 +247,52 @@ int cmpBig(const string& a, const string& b){
 ### 6.5 Palindrome Check on a Number
 
 ```cpp
-tourist
-tcl
-    string s;
-    cin >> s;
-    string r = s;
-    reverse(all(r));
-    (s == r) ? cout << "YES" : cout << "NO";
-    cout << '\n';
-tnl
-Ace_Azimuth_Aviator
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
+        string r = s;
+        reverse(r.begin(), r.end());
+        cout << (s == r ? "YES" : "NO") << '\n';
+    }
+    return 0;
+}
 ```
 
 ### 6.6 Digit Sum and Digit Product
 
 ```cpp
-tourist
-tcl
-    string s;
-    cin >> s;
+#include <bits/stdc++.h>
+using namespace std;
 
-    long long dsum = 0, dprod = 1;
-    for(char c : s){
-        int d = c - '0';
-        dsum += d;
-        dprod *= d;
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
+
+        long long dsum = 0, dprod = 1;
+        for (char c : s) {
+            int d = c - '0';
+            dsum += d;
+            dprod *= d;
+        }
+        cout << dsum << ' ' << dprod << '\n';
     }
-    cout << dsum css << dprod cnl;
-tnl
-Ace_Azimuth_Aviator
+    return 0;
+}
 ```
 
 ### 6.7 Inserting / Deleting / Replacing Digits
@@ -275,22 +316,33 @@ s += ('0' + d);
 **Classic problem pattern** — *"Remove exactly one digit to make the number as small as possible"*:
 
 ```cpp
-tourist
-tcl
-    string s;
-    cin >> s;
-    int n = s.size();
-    int pos = n - 1;                         // default: remove last digit
-    for(int i = 0; i < n - 1; i++){
-        if(s[i] > s[i+1]){ pos = i; break; } // first descent
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
+        int n = s.size();
+
+        int pos = n - 1;                               // default: remove last digit
+        for (int i = 0; i < n - 1; i++) {
+            if (s[i] > s[i + 1]) { pos = i; break; }  // first descent
+        }
+        s.erase(pos, 1);
+
+        // strip leading zeros
+        int i = 0;
+        while (i < (int)s.size() - 1 && s[i] == '0') i++;
+        cout << s.substr(i) << '\n';
     }
-    s.erase(pos, 1);
-    // strip leading zeros
-    int i = 0;
-    while(i < (int)s.size() - 1 && s[i] == '0') i++;
-    cout << s.substr(i) cnl;
-tnl
-Ace_Azimuth_Aviator
+    return 0;
+}
 ```
 
 ### 6.8 Next Permutation of Digits
@@ -298,16 +350,25 @@ Ace_Azimuth_Aviator
 Gives the next larger number using the same digits. STL works directly on strings.
 
 ```cpp
-tourist
-tcl
-    string s;
-    cin >> s;
-    if(next_permutation(all(s)))
-        cout << s cnl;
-    else
-        cout << -1 cnl;     // already the largest permutation
-tnl
-Ace_Azimuth_Aviator
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
+        if (next_permutation(s.begin(), s.end()))
+            cout << s << '\n';
+        else
+            cout << -1 << '\n';   // already the largest permutation
+    }
+    return 0;
+}
 ```
 
 ---
@@ -316,7 +377,7 @@ Ace_Azimuth_Aviator
 
 | Mistake | Problem | Fix |
 |---------|---------|-----|
-| `stoi` / `stoll` on a 50-digit string | runtime exception / overflow | Only convert if `s.size() <= 18` and no leading zeros |
+| `stoi` / `stoll` on a 50-digit string | Runtime exception / overflow | Only convert if `s.size() <= 18` and no leading zeros |
 | Comparing strings of different lengths directly | `"9" > "12"` is true lexicographically but false numerically | Compare lengths first, then lexicographically |
 | Forgetting `s[i] - '0'` | `s[i]` is a `char`, arithmetic on it gives ASCII values | Always subtract `'0'` to get the digit value |
 | Not handling the `"0"` edge case when stripping leading zeros | `"000"` becomes `""` | Stop stripping at `size - 1` |
@@ -332,7 +393,7 @@ Ace_Azimuth_Aviator
 | [Codeforces 768B — Code For 1](https://codeforces.com/problemset/problem/768/B) | Recursion on digit string of huge number |
 | [Codeforces 791B — Bear and Prime 100](https://codeforces.com/problemset/problem/791/B) | Digit-level number reasoning |
 | [Codeforces 1202C — You Are Given a WASD String...](https://codeforces.com/problemset/problem/1202/C) | String + logic, no numeric conversion needed |
-| [Codeforces noble big-number problems on SPOJ: VFMUL, VFCOMP](https://www.spoj.com/problems/VFMUL/) | Big integer arithmetic via strings |
+| [SPOJ VFMUL](https://www.spoj.com/problems/VFMUL/) | Big integer arithmetic via strings |
 
 ---
 
