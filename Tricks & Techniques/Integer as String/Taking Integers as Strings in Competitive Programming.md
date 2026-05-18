@@ -507,7 +507,6 @@ This would silently overflow any integer type but works perfectly here.
 | Problem | Concept practised |
 |---------|------------------|
 | [CF 281A — Word Capitalization](https://codeforces.com/problemset/problem/281/A) | Basic char manipulation |
-| [CF 768B — Code For 1](https://codeforces.com/problemset/problem/768/B) | Recursion on a digit string of a huge number |
 | [CF 1202C — WASD String](https://codeforces.com/problemset/problem/1202/C) | String logic, no numeric conversion needed |
 | [CF 1736C — Good Subarrays](https://codeforces.com/problemset/problem/1736/C) | Digit-level observation |
 | [SPOJ VFMUL](https://www.spoj.com/problems/VFMUL/) | Big integer multiplication via strings |
