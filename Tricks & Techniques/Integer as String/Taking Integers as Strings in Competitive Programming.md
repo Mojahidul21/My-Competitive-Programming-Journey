@@ -93,17 +93,17 @@ Even when `long long` would fit, a string is often the cleaner choice:
 string s;
 cin >> s;
 
-int n = s.size();              // total number of digits
+int n = s.size();                 // total number of digits
 
-char c  = s[i];                // digit i as a character  e.g. '7'
-int  d  = s[i] - '0';         // digit i as an integer   e.g.  7
+char c  = s[i];                   // digit i as a character  e.g. '7'
+int  d  = s[i] - '0';             // digit i as an integer   e.g.  7
 
-long long val = stoll(s);      // whole string → long long  (only if it fits!)
-string    t   = to_string(val);// long long → string
+long long val = stoll(s);         // whole string → long long  (only if it fits!)
+string    t   = to_string(val);   // long long → string
 
-reverse(s.begin(), s.end());   // reverse digit order (LSB-first processing)
+reverse(s.begin(), s.end());      // reverse digit order (LSB-first processing)
 
-bool bigger = (s > t);         // lexicographic == numeric when same length, no leading zeros
+bool bigger = (s > t);            // lexicographic == numeric when same length, no leading zeros
 ```
 
 ---
