@@ -424,17 +424,25 @@ int main() {
     cout << "Largest : " << sorted_s << "\n";
 
     // Smallest number → digits in ascending order
-    // (be careful: leading zeros may appear)
     sort(sorted_s.begin(), sorted_s.end());
+
+    // Fix leading zero: swap first non-zero digit to front
+    if (sorted_s[0] == '0') {
+        int i = 1;
+        while (i < (int)sorted_s.size() && sorted_s[i] == '0') i++;
+        if (i < (int)sorted_s.size())       // at least one non-zero digit exists
+            swap(sorted_s[0], sorted_s[i]);
+    }
+
     cout << "Smallest: " << sorted_s << "\n";
 
     return 0;
 }
 ```
 
-> **Leading zero warning:** Sorting ascending on `"302"` gives `"023"`. If leading zeros are invalid in the problem, move the first non-zero digit to the front manually.
-
----
+> **Note:** The leading-zero fix only triggers when the smallest arrangement
+> starts with `'0'` (e.g. `"302"` → sorted `"023"` → fixed `"203"`).
+> If all digits are zero (e.g. `"000"`), the fix is safely skipped.
 
 ### 6.11 Big Integer Addition
 
