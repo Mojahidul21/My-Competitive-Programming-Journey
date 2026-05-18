@@ -508,7 +508,6 @@ This would silently overflow any integer type but works perfectly here.
 |---------|------------------|
 | [CF 281A — Word Capitalization](https://codeforces.com/problemset/problem/281/A) | Basic char manipulation |
 | [CF 1202C — WASD String](https://codeforces.com/problemset/problem/1202/C) | String logic, no numeric conversion needed |
-| [CF 1736C — Good Subarrays](https://codeforces.com/problemset/problem/1736/C) | Digit-level observation |
 | [SPOJ VFMUL](https://www.spoj.com/problems/VFMUL/) | Big integer multiplication via strings |
 | [CF 102B — Sum of Digits](https://codeforces.com/problemset/problem/102/B) | §6.1 + §6.6 — Number exceeds `long long`; must read as string and repeatedly sum digits |
 | [CF 1811A — Insert Digit](https://codeforces.com/problemset/problem/1811/A) | §6.8 — Insert a digit at the best position to get the largest possible number |
