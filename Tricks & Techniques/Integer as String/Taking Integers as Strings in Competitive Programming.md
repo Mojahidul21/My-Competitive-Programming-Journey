@@ -1,4 +1,4 @@
-# Taking Integers as Strings in Competitive Programming
+# Numbers as Strings: Tricks, Patterns and Pitfalls
 
 > **Author:** Ace_Azimuth_Aviator  
 > **Tags:** `strings` `implementation` `digit-manipulation` `big-numbers` `tricks`  
