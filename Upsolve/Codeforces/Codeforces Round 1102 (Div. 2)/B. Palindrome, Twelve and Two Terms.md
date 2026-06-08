@@ -113,5 +113,6 @@ No palindrome-checking function. No loop. Three lines of logic based on Math.
 
 ---
 
-*[Problem link](https://codeforces.com/contest/2234/problem/B)  
+*Solved during upsolve after Codeforces Round 1102 (Div. 2)  
+[Problem link](https://codeforces.com/contest/2234/problem/B)  
 [Solution link](https://codeforces.com/contest/2234/submission/377713773)*
