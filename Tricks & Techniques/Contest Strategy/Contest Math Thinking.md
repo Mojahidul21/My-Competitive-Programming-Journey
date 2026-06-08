@@ -97,4 +97,4 @@ Writing the answer to question 2 down is especially valuable. Over time, you bui
 
 ---
 
-*Derived from experience with the Codeforces math problem: .*
+*Derived from experience with the Codeforces math problem: [Palindrome, Twelve and Two TermsPalindrome, Twelve and Two Terms](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201102%20(Div.%202)/B.%20Palindrome%2C%20Twelve%20and%20Two%20Terms.md)*
