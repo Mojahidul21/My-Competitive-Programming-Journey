@@ -113,6 +113,12 @@ No palindrome-checking function. No loop. Three lines of logic based on Math.
 
 ---
 
+## Related Article
+
+[From Search to Construction: Thinking Mathematically in Contests](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
+
+---
+
 *Solved during upsolve after Codeforces Round 1102 (Div. 2)  
 [Problem link](https://codeforces.com/contest/2234/problem/B)  
 [Solution link](https://codeforces.com/contest/2234/submission/377713773)*
