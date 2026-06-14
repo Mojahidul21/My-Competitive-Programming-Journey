@@ -181,7 +181,7 @@ Work through these in order. Each builds on the previous.
 - Same as Level 3, but a third party makes the very first move (choosing any element). The third party wants the second player (of the remaining two) to win. Does such a first move exist?
 - *(Hint: iterate over possible first-move groups greedily from largest value down. Check parity and transition at each step.)*
 - *Reference problem: [Codeforces Round 1103 | Div. 3 | Problem D](https://codeforces.com/contest/2236/problem/D)*
-- *Reference solution: [Ace_Azimuth_Aviator](https://codeforces.com/contest/2236/submission/378499978)*
+- *Reference solution: [Ace_Azimuth_Aviator](https://codeforces.com/contest/2236/submission/378613568)*
 
 **Level 5 — Harder Extensions**
 - Codeforces: search for problems tagged `[games] [greedy]` or `[games] [constructive algorithms]` at difficulty 1700–2100.
