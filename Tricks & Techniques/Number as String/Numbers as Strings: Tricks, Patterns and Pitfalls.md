@@ -510,10 +510,10 @@ This would silently overflow any integer type but works perfectly here.
 | [CF 1352A — Sum of Round Numbers](https://codeforces.com/problemset/problem/1352/A) | Complex computation converted to simple idea with string |
 | [CF 1202C — WASD String](https://codeforces.com/problemset/problem/1202/C) | String logic, no numeric conversion needed |
 | [SPOJ VFMUL](https://www.spoj.com/problems/VFMUL/) | Big integer multiplication via strings |
-| [CF 102B — Sum of Digits](https://codeforces.com/problemset/problem/102/B) | §6.1 + §6.6 — Number exceeds `long long`; must read as string and repeatedly sum digits |
-| [CF 1811A — Insert Digit](https://codeforces.com/problemset/problem/1811/A) | §6.8 — Insert a digit at the best position to get the largest possible number |
-| [CF 489C — Given Length and Sum of Digits](https://codeforces.com/problemset/problem/489/C) | §6.10 + §6.6 — Construct smallest and largest number of length `m` with digit sum `s` |
-| [CF 509C — Sums of Digits](https://codeforces.com/problemset/problem/509/C) | §6.1 + §6.8 — Output numbers exceed `long long`; must build digit-by-digit as strings |
+| [CF 102B — Sum of Digits](https://codeforces.com/problemset/problem/102/B) | Number exceeds `long long`; must read as string and repeatedly sum digits (6.1, 6.6) |
+| [CF 1811A — Insert Digit](https://codeforces.com/problemset/problem/1811/A) | Insert a digit at the best position to get the largest possible number (6.8) |
+| [CF 489C — Given Length and Sum of Digits](https://codeforces.com/problemset/problem/489/C) | Construct smallest and largest number of length `m` with digit sum `s` (6.10, 6.6) |
+| [CF 509C — Sums of Digits](https://codeforces.com/problemset/problem/509/C) | Output numbers exceed `long long`; must build digit-by-digit as strings  (6.1, 6.8) |
 
 ---
 
