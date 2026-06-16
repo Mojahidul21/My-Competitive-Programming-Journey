@@ -513,6 +513,7 @@ This would silently overflow any integer type but works perfectly here.
 | [CF 1811A — Insert Digit](https://codeforces.com/problemset/problem/1811/A) | §6.8 — Insert a digit at the best position to get the largest possible number |
 | [CF 489C — Given Length and Sum of Digits](https://codeforces.com/problemset/problem/489/C) | §6.10 + §6.6 — Construct smallest and largest number of length `m` with digit sum `s` |
 | [CF 509C — Sums of Digits](https://codeforces.com/problemset/problem/509/C) | §6.1 + §6.8 — Output numbers exceed `long long`; must build digit-by-digit as strings |
+| [CF 1352A — Sum of Round Numbers](https://codeforces.com/problemset/problem/1352/A) | §6.1 + §6.8 — Output numbers exceed `long long`; must build digit-by-digit as strings |
 
 ---
 
