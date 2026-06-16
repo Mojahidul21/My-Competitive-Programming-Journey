@@ -507,7 +507,7 @@ This would silently overflow any integer type but works perfectly here.
 | Problem | Concept practised |
 |---------|------------------|
 | [CF 281A — Word Capitalization](https://codeforces.com/problemset/problem/281/A) | Basic char manipulation |
-| [CF 1352A — Sum of Round Numbers](https://codeforces.com/problemset/problem/1352/A) | Heavy mathh converts to simple idea with string |
+| [CF 1352A — Sum of Round Numbers](https://codeforces.com/problemset/problem/1352/A) | Complex computation converted to simple idea with string |
 | [CF 1202C — WASD String](https://codeforces.com/problemset/problem/1202/C) | String logic, no numeric conversion needed |
 | [SPOJ VFMUL](https://www.spoj.com/problems/VFMUL/) | Big integer multiplication via strings |
 | [CF 102B — Sum of Digits](https://codeforces.com/problemset/problem/102/B) | §6.1 + §6.6 — Number exceeds `long long`; must read as string and repeatedly sum digits |
