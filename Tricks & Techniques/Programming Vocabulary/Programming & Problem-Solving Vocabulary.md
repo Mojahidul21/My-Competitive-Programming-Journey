@@ -1,6 +1,6 @@
 # Programming & Problem-Solving Vocabulary
 
-A living reference of terms used in competitive programming, debugging, and algorithmic thinking. Each entry includes a definition, real-world analogy (where helpful), and C++ code illustration. Add new entries as you encounter them.
+A living reference of terms used in competitive programming, debugging, and algorithmic thinking. Each entry includes a definition, real-world analogy (where helpful), and C++ code illustration. New entries will be added as those are encountered further.
 
 ---
 
