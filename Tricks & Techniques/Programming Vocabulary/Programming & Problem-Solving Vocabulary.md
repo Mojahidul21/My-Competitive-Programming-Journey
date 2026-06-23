@@ -300,7 +300,7 @@ cout << v.back(); // safe now
 v.size() && v.back() == target
 
 // Guard with early output (CP style)
-if (indices.empty()) { pye }
+if (indices.empty()) { cout<<"yes"; }
 else { /* safe to use front/back */ }
 ```
 
