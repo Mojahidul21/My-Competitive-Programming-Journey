@@ -202,7 +202,7 @@ Invariants are the backbone of correctness proofs. If you can state an invariant
 // because we insert left-to-right (i = 0, 1, 2, ...)
 for (int i{}; i < n; ++i)
     if (s[i] != ss[i])
-        emb(indices, i);
+        indices.emplace_back(i);
 
 // Because of this invariant, front() = min, back() = max — always.
 ```
