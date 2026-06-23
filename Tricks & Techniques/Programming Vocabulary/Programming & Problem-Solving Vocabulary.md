@@ -74,7 +74,7 @@ cout << v.back();
 
 ```cpp
 // Fragile: assumes sorted input, but sort wasn't called
-int mn = a[0]; // wrong if input isn't sorted
+int mn = a[0]; // wrong if the first element is not really the minimum
 ```
 
 **Contrast with robust code:** Fragile code passes; robust code passes *and* you can prove why.
