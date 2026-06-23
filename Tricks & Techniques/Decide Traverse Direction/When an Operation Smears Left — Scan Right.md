@@ -96,7 +96,7 @@ In each case, the cumulative effect on position $i$ is determined by one running
 
 ## Reference Problem
 
-**[We Be Flipping (Easy Version)](https://codeforces.com/contest/2229/problem/C2)**  
+**[We Be Flipping (Easy Version)](https://codeforces.com/contest/2229/problem/C1)**  
 *Spectral::Cup 2026 Round 2 (Codeforces Round 1100, Div. 1 + Div. 2) _ C2*
 
 Operation: pick $i$ where $a_i > 0$, then negate $a_1 \ldots a_i$. Minimise final sum.
