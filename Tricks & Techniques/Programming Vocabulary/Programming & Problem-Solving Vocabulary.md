@@ -208,9 +208,8 @@ for (int i{}; i < n; ++i)
 ```
 
 **Classic invariants in CP:**
-- Binary search: `lo <= ans <= hi` at every step
+- Binary search: the answer always lies within [lo, hi] at every step
 - Two pointers: left pointer never passes right pointer
-- Segment tree: each node stores the correct aggregate for its range
 
 ---
 
