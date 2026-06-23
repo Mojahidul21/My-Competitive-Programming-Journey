@@ -274,7 +274,7 @@ Reading one element past a heap-allocated vector's end:
 vector<int> v(n);
 cout << v[n]; // UB — may silently return garbage, 0, or crash depending on the environment
 ```
-This passes all valid test cases because the OS fills that memory region with zeros. The bug is latent — real, but invisible.
+This passes all valid test cases because the memory region happens to contain benign values in that environment — not guaranteed elsewhere. The bug is latent — real, but invisible.
 
 **How to find latent bugs:**
 - Stress testing against a brute force
