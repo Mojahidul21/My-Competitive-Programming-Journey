@@ -272,7 +272,7 @@ It gets AC on the judge, passes code review, and is committed — then fails sil
 Reading one element past a heap-allocated vector's end:
 ```cpp
 vector<int> v(n);
-cout << v[n]; // UB — but may silently return 0 due to OS page padding
+cout << v[n]; // // UB — may silently return garbage, 0, or crash depending on the environment
 ```
 This passes all valid test cases because the OS fills that memory region with zeros. The bug is latent — real, but invisible.
 
