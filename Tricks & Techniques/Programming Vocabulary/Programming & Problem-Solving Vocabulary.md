@@ -180,8 +180,8 @@ An input at the extreme boundary of the constraints where typical logic behaves 
 **Example from practice:**
 ```cpp
 // Edge case: indices is empty means s is already alternating
-if (indices.empty()) { pye }
-else { indices.back() - indices.front() - (int)indices.size() + 1 pny }
+if (indices.empty()) { cout<<"yes"; }
+else { indices.back() - indices.front() - (int)indices.size() + 1 ?cout<<"no" : cout<<"yes"; }
 ```
 
 **Habit to build:** Before submitting, mentally run through: what if `n = 1`? What if all elements are the same? What if the answer is 0?
