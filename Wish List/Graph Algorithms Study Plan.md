@@ -1,6 +1,6 @@
 # Graph Algorithms Study Plan
 
-**Format:** 4 weeks · 3 sessions/week · 1 hour/session · 12 sessions total
+**Format:** 4 weeks · 3 sessions/week · 1 hour/session · 12 sessions total  
 **Session structure (every day):** 15 min concept + trace by hand → 15 min implement from scratch (no old code/notes) → 30 min solve problems.
 
 ---
