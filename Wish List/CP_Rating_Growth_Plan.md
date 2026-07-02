@@ -36,7 +36,7 @@
 
 | Day | Focus | Why | Drill |
 |---|---|---|---|
-| **D7-W3** | Basic number theory: GCD/LCM, modular arithmetic (your `mod` macro), sieve of Eratosthenes | Shows up constantly as a 1-2 line sub-step inside otherwise-easy problems | 4-5 problems tagged `math, number theory`, rating 900-1200 |
+| **D7-W3** | Basic number theory: GCD/LCM, modular arithmetic, sieve of Eratosthenes | Shows up constantly as a 1-2 line sub-step inside otherwise-easy problems | 4-5 problems tagged `math, number theory`, rating 900-1200 |
 | **D8-W3** | Ad-hoc / simulation problems | These are pure careful-reading + careful-coding tests — directly targets your stated weak point | 4-5 problems tagged `implementation`, rating 800-1100, strict 8 min timer each |
 | **D9-W3** | String basics: frequency counting, palindrome checks, simple manipulation | Common in Div3/4 A-C slots | 4-5 problems tagged `strings, implementation`, rating 800-1200 |
 
