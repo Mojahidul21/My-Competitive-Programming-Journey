@@ -1,7 +1,6 @@
 # CP Rating Growth Plan — 4 Weeks (Speed & Implementation Focus)
 
 **Context:** Newbie/Pupil (<1200), main leak is speed/implementation mistakes under time pressure, goal is fastest realistic rating growth.
-**Why this plan differs from the graph plan:** At <1200, rating is driven almost entirely by solving 800-1300 rated problems *fast and correctly* — not by algorithm breadth. Graph/DP are real gaps but aren't what's costing you rating right now. That track stays valid and waits until Weeks 1-4 here move you toward Pupil→Specialist territory.
 
 **Format:** 4 weeks · 3 structured sessions/week · 1 hour/session, **plus** a non-negotiable daily habit (below) — the structured sessions alone won't get you the volume this needs.
 
