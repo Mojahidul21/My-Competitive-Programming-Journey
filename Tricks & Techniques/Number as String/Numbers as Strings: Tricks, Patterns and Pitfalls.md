@@ -514,7 +514,7 @@ This would silently overflow any integer type but works perfectly here.
 | [CF 1811A — Insert Digit](https://codeforces.com/problemset/problem/1811/A) | Insert a digit at the best position to get the largest possible number (6.8) |
 | [CF 489C — Given Length and Sum of Digits](https://codeforces.com/problemset/problem/489/C) | Construct smallest and largest number of length `m` with digit sum `s` (6.10, 6.6) |
 | [CF 509C — Sums of Digits](https://codeforces.com/problemset/problem/509/C) | Output numbers exceed `long long`; must build digit-by-digit as strings  (6.1, 6.8) |
-| [CF 1593B — Make it Divisible by 25](https://codeforces.com/problemset/problem/1593/B) | Find min deletions to reach a subsequence divisible by 25, by checking only 2-digit endings. (6,4, 6.8)|
+| [CF 1593B — Make it Divisible by 25](https://codeforces.com/problemset/problem/1593/B) | Find min deletions to reach a subsequence divisible by 25, by checking only 2 digits|
 
 ---
 
