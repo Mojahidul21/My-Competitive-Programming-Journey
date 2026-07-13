@@ -120,7 +120,7 @@ If most of these come back "yes" quickly, you likely have a correct construction
 
 Problems below all live in the same neighborhood — constructive, divisibility-flavored, "any valid answer accepted." Run the seven-step procedure on each before looking at any editorial.
 
-| Ser # | Problem | Short Description | Hint |
+| # | Problem | Short Description | Hint |
 |---|---|---|---|
 | 1 | [B. ezraft and Array](https://codeforces.com/contest/2246/problem/B) | Build `n` distinct positive integers whose total sum is divisible by every element, or say it's impossible. | The problem this whole procedure was built around. Ask what value you could append that stays a "clean multiple" of everything before it. |
 | 2 | [A. Divisible Array](https://codeforces.com/contest/1828/problem/A) | Build `n` positive integers (not necessarily distinct) whose total sum is divisible by `n` itself. | Here the self-reference target isn't "each element" — it's a single fixed number `n`. Notice you have a very generous tool available: one element you haven't committed to yet. |
