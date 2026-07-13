@@ -13,7 +13,6 @@ Before you can apply any procedure, you need to notice you're in this territory.
 - The condition involves a **property of the whole structure** (sum, product, GCD, LCM, XOR, etc.) applied back onto **each individual element**.
 - There is freedom in the values — usually a wide range like `1 ≤ ai ≤ 10^17`, meaning the problem wants a *constructive trick*, not an exact/unique answer.
 - "Any valid answer is accepted" appears in the statement. This is the biggest tell — it means the graders expect many different constructions to work, so there's a flexible, mechanical way to build one.
-- And so on ...
 
 If you catch yourself trying to reverse-engineer a formula or searching for a *specific* number-theoretic identity (primes, LCMs, exact factorizations) — stop. That's usually the wrong instinct for this family. The right instinct is closer to: *"What if I define each term in terms of what I've already built?"*
 
@@ -37,6 +36,7 @@ Try defining the next term as a function of what already exists:
 - Next term = running product so far
 - Next term = LCM of everything so far
 - Next term = max/min of everything so far, shifted by some offset
+- And so on ...
 
 The instinct to chase is: **"What if the new term is *made of* the old terms, instead of being independent of them?"** This is the single most reusable idea in this class of problems. It converts a number-theory search into an algebraic identity that verifies itself.
 
