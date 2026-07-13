@@ -128,7 +128,6 @@ Problems below all live in the same neighborhood — constructive, divisibility-
 | 4 | [A. K-divisible Sum](https://codeforces.com/contest/1476/problem/A) | Build `n` positive integers whose sum is divisible by `k`, while minimizing the largest element used. | Not every element needs a special role — sometimes only *one* term needs to absorb the "remainder" so the self-reference condition holds, and the rest can be as small/uniform as possible. |
 
 ---
+*Written, inspired by the problem [B. ezraft and Array](https://codeforces.com/contest/2246/problem/B).*
 
 ---
-
-*Written, inspired by the problem [B. ezraft and Array](https://codeforces.com/contest/2246/problem/B).*
