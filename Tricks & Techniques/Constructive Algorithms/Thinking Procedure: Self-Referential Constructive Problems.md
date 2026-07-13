@@ -1,6 +1,6 @@
 # Thinking Procedure: Self-Referential Constructive Problems
 
-**Category:** Contest Strategy — Constructive Algorithms
+**Category:** Contest Strategy — Constructive Algorithms  
 **Use case:** Problems where you must *build* a sequence/array/structure that satisfies a condition involving itself (its own sum, its own product, its own elements) — rather than problems where you search, count, or optimize over existing data.
 
 ---
@@ -13,6 +13,7 @@ Before you can apply any procedure, you need to notice you're in this territory.
 - The condition involves a **property of the whole structure** (sum, product, GCD, LCM, XOR, etc.) applied back onto **each individual element**.
 - There is freedom in the values — usually a wide range like `1 ≤ ai ≤ 10^17`, meaning the problem wants a *constructive trick*, not an exact/unique answer.
 - "Any valid answer is accepted" appears in the statement. This is the biggest tell — it means the graders expect many different constructions to work, so there's a flexible, mechanical way to build one.
+- And so on ...
 
 If you catch yourself trying to reverse-engineer a formula or searching for a *specific* number-theoretic identity (primes, LCMs, exact factorizations) — stop. That's usually the wrong instinct for this family. The right instinct is closer to: *"What if I define each term in terms of what I've already built?"*
 
