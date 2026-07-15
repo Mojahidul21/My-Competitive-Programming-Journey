@@ -1,6 +1,7 @@
 # Trust the Predicate: Stop Simulating What You've Already Proven
 
 **Category:** Contest Strategy — Thinking Methodology  
+
 **Use case:** Any problem where you've derived a closed-form, declarative condition for the answer (an invariant, a parity argument, a residue check, a reachability formula) but still feel the pull to verify it by simulating the underlying process.
 
 ---
