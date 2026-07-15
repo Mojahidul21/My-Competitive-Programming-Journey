@@ -1,0 +1,2 @@
+- extended Euclidean algorithm
+- linear Diophantine equation
