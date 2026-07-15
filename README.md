@@ -5,3 +5,4 @@
    - some roadmap to learn specific topic or algorithm
    - some course to enroll or analyze the syllabus and curriculum
    - etc.
+3. Other Folders - The other folders means not the above folders. These folders contain articles I have wrote sometimes when I got stuck or thought an idea should be written ans stored for future reference and drilling
