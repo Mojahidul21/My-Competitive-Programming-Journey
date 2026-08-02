@@ -621,39 +621,46 @@ A safety lock — you check the condition before pulling the trigger. The gun (c
 
 ---
 
-## Overhead
+## Deduplication (Dedup)
 
 **Definition:**
-Extra time, memory, or code complexity beyond the minimum required to solve the problem.
+The process of removing duplicate elements from a collection, leaving only unique values behind. "Dedup" is informal shorthand for "deduplication" — both refer to the same thing.
 
-**In CP:** Overhead matters when you're close to the time or memory limit.
+**Why it matters in CP:**
+Many problems require counting distinct values, compressing coordinates, or cleaning up a container that accumulated repeated entries (e.g., repeated sentinel/placeholder values, or values that satisfy multiple filter conditions and get flagged more than once).
 
-**Examples:**
-```cpp
-// O(log n) overhead per insertion — set maintains sorted order
-set<int> s;
-s.insert(x);
-
-// O(1) amortized — no overhead from sorting/balancing
-vector<int> v;
-v.push_back(x);
-```
+**Common ways to dedup in C++:**
 
 ```cpp
-// Overhead from unnecessary copy
-void f(vector<int> v) { ... }   // copies entire vector
+// 1. Pour into a set — dedups automatically via its no-duplicate invariant
+vector<int> a{4, 1, 4, 2, 1, 3};
+set<int> s(a.begin(), a.end());
+// s = {1, 2, 3, 4} — order changes to sorted, type changes to set
 
-// No overhead — pass by const reference
-void f(const vector<int>& v) { ... }
+// 2. sort + unique + erase — dedups while keeping it a vector
+vector<int> a{4, 1, 4, 2, 1, 3};
+sort(a.begin(), a.end());
+a.erase(unique(a.begin(), a.end()), a.end());
+// a = {1, 2, 3, 4} — stays a vector, but requires sorting first
+// (unique() only removes ADJACENT duplicates)
+
+// 3. C++20: erase_if with a set — dedup + filter in one step
+set<int> s{4, 1, 4, 2, 1, 3};
+erase_if(s, [](int x){ return x % 2 == 0; });
+// s = {1, 3}
 ```
 
-**Types of overhead:**
-- **Time overhead:** Extra operations that increase runtime (e.g., unnecessary sorting, repeated computation)
-- **Memory overhead:** Extra space used beyond what's needed (e.g., storing full strings when only lengths are needed)
-- **Code overhead:** Unnecessary complexity that makes code harder to read and debug
+**Choosing between them:**
+- Need the result as a `set` (sorted, no duplicates, `O(log n)` lookup) → pour into a `set` directly.
+- Need the result to stay a `vector` (contiguous memory, index access) → `sort` + `unique` + `erase`.
+- Already have a `set`/`map` and want to filter by condition → `erase_if`.
+
+**Analogy:**
+A guest list with repeated names — deduping is crossing out every repeat so each guest appears exactly once, regardless of how many times they were originally written down.
+
+**Related:** See [Invariant](#invariant) — a `set`'s "no two elements are equal" rule is itself an invariant, which is *why* pouring values into a `set` dedups them for free. See [Overhead](#overhead) — the three approaches above have different time/space tradeoffs worth being aware of under tight limits.
 
 ---
-
 ## Overhead
 
 **Definition:**
