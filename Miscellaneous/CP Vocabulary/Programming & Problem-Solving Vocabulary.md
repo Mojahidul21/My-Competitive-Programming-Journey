@@ -347,7 +347,9 @@ erase_if(s, [](int x){ return x % 2 == 0; });
 **Analogy:**
 A guest list with repeated names — deduping is crossing out every repeat so each guest appears exactly once, regardless of how many times they were originally written down.
 
-**Related:** See [Invariant](#invariant) — a `set`'s "no two elements are equal" rule is itself an invariant, which is *why* pouring values into a `set` dedups them for free. See [Overhead](#overhead) — the three approaches above have different time/space tradeoffs worth being aware of under tight limits.
+**Related:**  
+See [Invariant](#invariant) — a `set`'s "no two elements are equal" rule is itself an invariant, which is *why* pouring values into a `set` dedups them for free.  
+See [Overhead](#overhead) — the three approaches above have different time/space tradeoffs worth being aware of under tight limits.
 
 ---
 ## Overhead
