@@ -104,7 +104,7 @@ double shoelaceArea(vector<pair<int,int>>& pts) {
 }
 
 int main() {
-    vector<pair<int,int>> polygon = {{1,1}, {5,0}, {6,4}, {3,6}, {0,4}};
+    vector<pair<int,int>> polygon{{1,1}, {5,0}, {6,4}, {3,6}, {0,4}};
     cout << "Area = " << shoelaceArea(polygon) << '\n';
     return 0;
 }
