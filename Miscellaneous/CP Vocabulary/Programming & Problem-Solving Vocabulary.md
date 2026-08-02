@@ -17,8 +17,8 @@ A living reference of terms used in competitive programming, debugging, and algo
 - [Anchor](#anchor)
 - [Latent Bug](#latent-bug)
 - [Guard / Guard Clause](#guard--guard-clause)
-- [Overhead](#overhead)
 - [Deduplication (Dedup)](#deduplication-dedup)
+- [Overhead](#overhead)
 
 ---
 
