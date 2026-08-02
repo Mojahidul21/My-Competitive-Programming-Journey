@@ -236,7 +236,7 @@ Problems below all live in the same neighborhood — computational geometry prob
 |---|---|---|---|
 | 1 | [Polygon Area](https://cses.fi/problemset/task/2191) | Given a simple polygon's vertices, compute its area. | A direct application of Section 2 — implement the sum exactly as shown, but note the problem wants `2 × area` printed as an integer, not the halved value. |
 | 2 | [Polygon Lattice Points](https://cses.fi/problemset/task/2193) | Given a lattice polygon, find the number of interior and boundary lattice points. | This is Section 8 end-to-end: Shoelace Formula for Area, the gcd trick for B, then solve Pick's Theorem for I. |
-| 3 | [C. Diane and Boolean Matrix](https://codeforces.com/problemset/problem/1254/C) | Interactive: guess the counterclockwise vertex order of a hidden convex polygon using triangle-area and cross-product-sign queries. | Section 3's signed triangle area and Section 7's orientation sign are exactly the two query types this problem gives you — think about what a full traversal's signed areas must sum to. |
+| 3 | [C. Point Ordering](https://codeforces.com/problemset/problem/1254/C) | Interactive: guess the counterclockwise vertex order of a hidden convex polygon using triangle-area and cross-product-sign queries. | Section 3's signed triangle area and Section 7's orientation sign are exactly the two query types this problem gives you — think about what a full traversal's signed areas must sum to. |
 
 ---
 
