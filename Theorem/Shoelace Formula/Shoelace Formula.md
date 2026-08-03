@@ -95,8 +95,8 @@ using namespace std;
 double shoelaceArea(vector<pair<int,int>>& pts) {
     int n = pts.size();
     long long sum{};
-    for (int i{}; i < n; ++i) {
-        int j{(i + 1) % n}; // wraps to 0 when i = n-1
+    for (int i{},j; i < n; ++i) {
+        j = (i + 1) % n; // wraps to 0 when i = n-1
         sum += (long long)pts[i].first * pts[j].second;
         sum -= (long long)pts[j].first * pts[i].second;
     }
