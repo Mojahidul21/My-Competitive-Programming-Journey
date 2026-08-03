@@ -93,9 +93,9 @@ Plain C++ code ready to drop into a solution or adapt as needed.
 using namespace std;
 
 double shoelaceArea(vector<pair<int,int>>& pts) {
-    int n = pts.size();
-    long long sum{};
-    for (int i{},j; i < n; ++i) {
+    int n {(int)pts.size()};
+    long long sum {};
+    for (int i {}, j; i < n; ++i) {
         j = (i + 1) % n; // wraps to 0 when i = n-1
         sum += (long long)pts[i].first * pts[j].second;
         sum -= (long long)pts[j].first * pts[i].second;
@@ -104,7 +104,7 @@ double shoelaceArea(vector<pair<int,int>>& pts) {
 }
 
 int main() {
-    vector<pair<int,int>> polygon {{1,1}, {5,0}, {6,4}, {3,6}, {0,4}};
+    vector<pair<int,int>> polygon {{0,0}, {5,0}, {5,5}, {0,5}};
     cout << "Area = " << shoelaceArea(polygon) << '\n';
     return 0;
 }
