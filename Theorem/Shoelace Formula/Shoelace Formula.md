@@ -178,8 +178,6 @@ $$
 \text{Area} = I + \frac{B}{2} - 1
 $$
 
-![Pick's Theorem: A = I + B/2 -1](./images/strawberry_picks_theorem.png)
-
 ### 8.3 Worked Example
 
 Take a simple square with corners at $(1,1)$, $(4,1)$, $(4,4)$, $(1,4)$ — side length 3.
@@ -198,6 +196,9 @@ $$
 $$
 
 This matches the actual area of the square ($3 \times 3 = 9$) — confirming the theorem on a shape simple enough to verify by eye.
+
+Another example is shown below -
+![Pick's Theorem: A = I + B/2 -1](./images/strawberry_picks_theorem.png)
 
 ### 8.4 Why This Pairs With the Shoelace Formula
 
