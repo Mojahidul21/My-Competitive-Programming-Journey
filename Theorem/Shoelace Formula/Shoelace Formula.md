@@ -202,7 +202,8 @@ This matches the actual area of the square ($3 \times 3 = 9$) — confirming the
 Pick's Theorem relates three quantities: Area, I, and B. A typical CP problem hands you the polygon's vertices and asks for **I** or **B** — but not Area directly. So the usual workflow is:
 
 1. Compute **Area** from the vertices using the **Shoelace Formula**.
-2. Compute **B** directly: for each edge between two consecutive vertices, the number of lattice points lying on that edge (excluding one shared endpoint, to avoid double-counting corners) is $\gcd(|x_i - x_{i+1}|,\ |y_i - y_{i+1}|)$. This trick works because a straight lattice-to-lattice segment's interior lattice points are exactly the divisions marked by their step's greatest common divisor — each unit step of size $(\Delta x/\gcd,\ \Delta y/\gcd)$ lands on another lattice point, so trusting $\gcd(|x_i - x_{i+1}|,\ |y_i - y_{i+1}|)$ per edge is safe. Summing this over all edges gives the total B.
+2. Compute **B** directly: for each edge between two consecutive vertices, the number of lattice points lying on that edge (excluding one shared endpoint, to avoid double-counting corners) is $\gcd(|x_i - x_{i+1}|,\ |y_i - y_{i+1}|)$. This trick works because a straight lattice-to-lattice segment's interior lattice points are exactly the divisions marked by their step's greatest common divisor — each unit step of size $(\Delta x/\gcd,\ \Delta y/\gcd)$ lands on another lattice point, so trusting $\gcd(|x_i - x_{i+1}|,\ |y_i - y_{i+1}|)$ per edge is safe. Summing this over all edges gives the total B. <br>
+_Note: First, try to compute B by code at your own. If require follow the boundary() function coded in the solution of **Polygon Lattice Points** in section 10._ 
 3. Solve Pick's Theorem for the missing quantity, e.g.:
 
 $$
