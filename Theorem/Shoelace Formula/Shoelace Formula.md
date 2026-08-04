@@ -199,7 +199,6 @@ This matches the actual area of the square ($3 \times 3 = 9$) — confirming the
 
 Another example is shown below -
 ![Pick's Theorem: A = I + B/2 -1](./images/strawberry_picks_theorem.png)
-
 ### 8.4 Why This Pairs With the Shoelace Formula
 
 Pick's Theorem relates three quantities: Area, I, and B. A typical CP problem hands you the polygon's vertices and asks for **I** or **B** — but not Area directly. So the usual workflow is:
