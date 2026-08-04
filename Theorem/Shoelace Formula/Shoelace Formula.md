@@ -212,17 +212,7 @@ $$
 
 This is a strong pattern to recognize — whenever a CP problem mentions **both** a polygon and lattice/grid points, Shoelace Formula + Pick's Theorem used together is very often the intended approach.
 
-### 8.5 Pick's Theorem Generalized
-
-Consider the example shown in the section 8.3. This result isn't special to axis-aligned shapes. Pick's Theorem holds for any simple polygon whose vertices are lattice points — including polygons with diagonal, non-horizontal, non-vertical sides. The only difference is that counting boundary points along a diagonal edge takes a bit more care than a horizontal or vertical one (handled by the gcd trick above), but the theorem itself applies exactly the same way. See the image below for a few examples of differently-shaped lattice polygons, each still satisfying -
-
-$$
-I = \text{Area} - \frac{B}{2} + 1
-$$
-
-![Pick's Theorem holds regardless of side orientation](./images/picks_theorem_generalized.png)
-
-### 8.6 Pick's Theorem Without the Shoelace Formula
+### 8.5 Pick's Theorem Without the Shoelace Formula
 
 **Can B and I be found without Area?**  
 **B** — yes, easily (Section 8.4's gcd trick never needed Area to begin with).  
@@ -233,6 +223,17 @@ This costs roughly $\Delta x \times \Delta y \times n$ — the candidate count d
 
 **Why Pick's Theorem is convenient**  
 Shoelace gets Area in O(n), depending only on vertex count — never on coordinate size. Pick's Theorem then hands you I in O(1). So it trades a range-dependent, often-infeasible search for one cheap O(n) pass plus a constant-time formula — which is why computing Area first is the natural move whenever I is asked for.
+
+### 8.6 Pick's Theorem Generalized
+
+Consider the example shown in the section 8.3. This result isn't special to axis-aligned shapes. Pick's Theorem holds for any simple polygon whose vertices are lattice points — including polygons with diagonal, non-horizontal, non-vertical sides. The only difference is that counting boundary points along a diagonal edge takes a bit more care than a horizontal or vertical one (handled by the gcd trick above), but the theorem itself applies exactly the same way. See the image below for a few examples of differently-shaped lattice polygons, each still satisfying -
+
+$$
+I = \text{Area} - \frac{B}{2} + 1
+$$
+
+![Pick's Theorem holds regardless of side orientation](./images/picks_theorem_generalized.png)
+
 
 ---
 
