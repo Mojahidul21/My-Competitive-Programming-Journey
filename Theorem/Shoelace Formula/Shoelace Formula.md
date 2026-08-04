@@ -210,10 +210,10 @@ $$
 I = \text{Area} - \frac{B}{2} + 1
 $$
 
-_Note: As I is always integer, hence you have to tackle floating value because of
+_Note: As I is always integer, hence you have to tackle floating value because of _
 $$
 frac{B}{2}
-$$. Think first at your own - **how to tackle it**? If it requires, follow the functions coded in the solution of **Polygon Lattice Points** in section 10._
+$$ _. Think first at your own - **how to tackle it**? If it requires, follow the functions coded in the solution of **Polygon Lattice Points** in section 10._
 
 This is a strong pattern to recognize — whenever a CP problem mentions **both** a polygon and lattice/grid points, Shoelace Formula + Pick's Theorem used together is very often the intended approach.
 
