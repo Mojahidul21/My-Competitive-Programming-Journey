@@ -28,14 +28,14 @@ long long boundary(vector<int>&x,vector<int>&y){
 }
 
 long long interior(long long tA,long long B){
-    return (tA-B+2)/2;
+    return (tA-B)/2+1;
 }
 
 main(){
     int n;
     cin>>n;
     vector<int>x(n),y(n);
-    
+
     for(int i{};i<n;++i)
         cin>>x[i]>>y[i];
 
