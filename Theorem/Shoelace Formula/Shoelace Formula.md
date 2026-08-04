@@ -234,7 +234,7 @@ Problems below all live in the same neighborhood — computational geometry prob
 
 | # | Problem | Short Description | Guidance |
 |---|---|---|---|
-| 1 | [Polygon Area](https://cses.fi/problemset/task/2191) | Given a simple polygon's vertices, compute its area. | _Hint:_ A direct application of Section 2 — implement the sum exactly as shown, but note the problem wants `2 × area` printed as an integer, not the halved value. _Solution:_ [⏎](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Theorem/Shoelace%20Formula/Solution%20of%20Practice%20Problem%20Set/Polygon%20Area.cpp) |
+| 1 | [Polygon Area](https://cses.fi/problemset/task/2191) | Given a simple polygon's vertices, compute its area. | _Hint:_ A direct application of Section 2 — implement the sum exactly as shown, but note the problem wants `2 × area` printed as an integer, not the halved value. <br> _Solution:_ [⏎](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Theorem/Shoelace%20Formula/Solution%20of%20Practice%20Problem%20Set/Polygon%20Area.cpp) |
 | 2 | [Polygon Lattice Points](https://cses.fi/problemset/task/2193) | Given a lattice polygon, find the number of interior and boundary lattice points. | This is Section 8 end-to-end: Shoelace Formula for Area, the gcd trick for B, then solve Pick's Theorem for I. |
 
 ---
