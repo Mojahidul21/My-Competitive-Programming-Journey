@@ -210,7 +210,7 @@ $$
 I = \text{Area} - \frac{B}{2} + 1
 $$
 
-_Note: As I is always integer, hence you have to tackle floating value because of _
+_Note: As I is always integer, hence you have to tackle floating value because of_
 $$
 frac{B}{2}
 $$ _. Think first at your own - **how to tackle it**? If it requires, follow the functions coded in the solution of **Polygon Lattice Points** in section 10._
