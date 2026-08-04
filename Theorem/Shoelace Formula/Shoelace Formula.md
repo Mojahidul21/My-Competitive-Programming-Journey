@@ -209,6 +209,7 @@ _**Note**: First, try to compute **B** on your own. If needed, refer to the **bo
 $$
 I = \text{Area} - \frac{B}{2} + 1
 $$
+
 _**Note**: Since **I** is always an integer, you need to avoid floating-point arithmetic even though the formula contains B⁄2. First, think about how to handle this on your own. If needed, refer to the **relevant functions** in the solution to Polygon Lattice Points (Section 10)._
 
 This is a strong pattern to recognize — whenever a CP problem mentions **both** a polygon and lattice/grid points, Shoelace Formula + Pick's Theorem used together is very often the intended approach.
