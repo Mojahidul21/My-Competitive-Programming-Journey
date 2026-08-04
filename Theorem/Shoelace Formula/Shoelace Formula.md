@@ -161,6 +161,8 @@ This is a useful side effect to remember — some problems explicitly ask you to
 
 ## 8. Related Technique: Pick's Theorem
 
+![](./images/strawberry_picks_theorem.png)
+
 ### 8.1 What is a lattice point?
 
 A **lattice point** is simply a point where both coordinates are integers — imagine graph paper, and every intersection of the grid lines is a lattice point: $(0,0)$, $(1,0)$, $(2,3)$, and so on. A point like $(1.5, 2)$ is **not** a lattice point.
