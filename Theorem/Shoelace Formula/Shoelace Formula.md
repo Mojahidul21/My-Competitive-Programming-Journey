@@ -203,14 +203,14 @@ Pick's Theorem relates three quantities: Area, I, and B. A typical CP problem ha
 
 1. Compute **Area** from the vertices using the **Shoelace Formula**.<br>
 2. Compute **B** directly: for each edge between two consecutive vertices, the number of lattice points lying on that edge (excluding one shared endpoint, to avoid double-counting corners) is $\gcd(|x_i - x_{i+1}|,\ |y_i - y_{i+1}|)$. This trick works because a straight lattice-to-lattice segment's interior lattice points are exactly the divisions marked by their step's greatest common divisor — each unit step of size $(\Delta x/\gcd,\ \Delta y/\gcd)$ lands on another lattice point, so trusting $\gcd(|x_i - x_{i+1}|,\ |y_i - y_{i+1}|)$ per edge is safe. Summing this over all edges gives the total B. <br>
-_**Note**: First, try to compute B on your own. If needed, refer to the **boundary()** function in the solution to Polygon Lattice Points (Section 10)._<br> 
+_**Note**: First, try to compute **B** on your own. If needed, refer to the **boundary()** function in the solution to Polygon Lattice Points (Section 10)._<br> 
 3. Solve Pick's Theorem for the missing quantity, e.g.:
 
 $$
 I = \text{Area} - \frac{B}{2} + 1
 $$
 
-_Note: As I is always integer, hence you have to tackle floating value because of_ ${B}/{2}$. _Think first at your own - **how to tackle it**? If it requires, follow the functions coded in the solution of **Polygon Lattice Points** in section 10._
+_**Note**: Since **I** is always an integer, you need to avoid floating-point arithmetic even though the formula contains B⁄2. First, think about how to handle this on your own. If needed, refer to the **relevant functions** in the solution to Polygon Lattice Points (Section 10)._
 
 This is a strong pattern to recognize — whenever a CP problem mentions **both** a polygon and lattice/grid points, Shoelace Formula + Pick's Theorem used together is very often the intended approach.
 
