@@ -1,6 +1,6 @@
 // Problem Title     : Polygon Lattice Points
 // Problem Statement : https://cses.fi/problemset/result/18213112/
-// Solution          : 
+// Solution          : https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Theorem/Shoelace%20Formula/Polygon%20Lattice%20Points.cpp
 
 #include <bits/stdc++.h>
 using namespace std;
