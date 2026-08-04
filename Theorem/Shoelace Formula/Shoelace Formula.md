@@ -224,14 +224,14 @@ $$
 
 ### 8.6 Pick's Theorem Without the Shoelace Formula
 
-**Can B and I be found without Area?**
-**B** — yes, easily (Section 8.4's gcd trick never needed Area to begin with).
+**Can B and I be found without Area?**  
+**B** — yes, easily (Section 8.4's gcd trick never needed Area to begin with).  
 **I** — not really. Pick's Theorem is the only equation linking I, B, and Area; drop Area and there's no formula left to solve for I. The only fallback is direct counting: scan every lattice point in the bounding box (spanned by $\Delta x = x_{max}-x_{min}$ and $\Delta y = y_{max}-y_{min}$) and test each one for being strictly inside the polygon.
 
-**The problem:**
+**The problem**  
 This costs roughly $\Delta x \times \Delta y \times n$ — the candidate count depends on coordinate *range*, not vertex count, and each candidate needs its own O(n) test. With CP coordinate bounds routinely near $10^9$, $\Delta x \times \Delta y$ alone is astronomically large, making this approach infeasible regardless of the test's efficiency.
 
-**Why Pick's Theorem is convenient:**
+**Why Pick's Theorem is convenient**  
 Shoelace gets Area in O(n), depending only on vertex count — never on coordinate size. Pick's Theorem then hands you I in O(1). So it trades a range-dependent, often-infeasible search for one cheap O(n) pass plus a constant-time formula — which is why computing Area first is the natural move whenever I is asked for.
 
 ---
