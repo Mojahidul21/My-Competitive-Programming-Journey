@@ -219,7 +219,10 @@ This is a strong pattern to recognize — whenever a CP problem mentions **both*
 
 ### 8.5 Pick's Theorem Generalized
 
-Consider the example shown in the section 8.3. This result isn't special to axis-aligned shapes. Pick's Theorem holds for any simple polygon whose vertices are lattice points — including polygons with diagonal, non-horizontal, non-vertical sides. The only difference is that counting boundary points along a diagonal edge takes a bit more care than a horizontal or vertical one (handled by the gcd trick above), but the theorem itself applies exactly the same way. See the image below for a few examples of differently-shaped lattice polygons, each still satisfying Area = I + B/2 − 1.
+Consider the example shown in the section 8.3. This result isn't special to axis-aligned shapes. Pick's Theorem holds for any simple polygon whose vertices are lattice points — including polygons with diagonal, non-horizontal, non-vertical sides. The only difference is that counting boundary points along a diagonal edge takes a bit more care than a horizontal or vertical one (handled by the gcd trick above), but the theorem itself applies exactly the same way. See the image below for a few examples of differently-shaped lattice polygons, each still satisfying -
+$$
+I = \text{Area} - \frac{B}{2} + 1
+$$
 
 ![Pick's Theorem holds regardless of side orientation](./images/picks_theorem_generalized.png)
 
