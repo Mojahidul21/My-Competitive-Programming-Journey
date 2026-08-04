@@ -212,6 +212,15 @@ $$
 
 <br>  _**Note**: Since **I** is always an integer, you need to avoid floating-point arithmetic even though the formula contains B⁄2. First, think about how to handle this on your own. If needed, refer to the **relevant functions** in the solution to Polygon Lattice Points (Section 10)._
 
+\begin{enumerate}
+\item Solve Pick's Theorem for the missing quantity:
+\[
+I = Area - \frac{B}{2} + 1
+\]
+
+\textit{Note: Since \(I\) is always an integer, you need to avoid floating-point arithmetic...}
+\end{enumerate}
+
 This is a strong pattern to recognize — whenever a CP problem mentions **both** a polygon and lattice/grid points, Shoelace Formula + Pick's Theorem used together is very often the intended approach.
 
 ### 8.5 Pick's Theorem Generalized
