@@ -25,38 +25,42 @@ A living reference of terms used in competitive programming, debugging, and algo
 ## Lambda (Lambda Function)
 
 **Definition:**
-An anonymous, inline function — defined at the point of use, with no name and no separate declaration. Syntax: `[capture](parameters) { body }`.
+An anonymous, inline function — defined at the point of use, with no name and no separate declaration elsewhere. Syntax: `[capture](parameters) { body }`.
 
-**Why it matters in CP:**
-Lets you write short, one-off logic — a custom comparator, a small helper, a local computation — without polluting global scope or writing a full named function elsewhere. Especially useful inside `main()`, where a normal named function definition is not legal (see pitfall below).
+**Why prefer a lambda over a standard (named) function:**
 
-**Example from practice:**
-```cpp
-// Local helper lambda — counts '1's at positions of a given parity
-auto countOne = [](string &s, int m) {
-    int cnt{};
-    for (int i{m}; i < (int)s.size(); i += 2)
-        cnt += s[i] == '1';
-    return cnt;
-};
+A standard function is declared once, globally, and cannot see any local variables from the scope it's called in — every value it needs must be passed as a parameter. A lambda, by contrast, can **capture** local variables directly from its surrounding scope (`[x]` by value, `[&x]` by reference, `[&]`/`[=]` for "capture everything used"). This matters most when:
 
-countOne(a, 0) == countOne(b, 0) && countOne(a, 1) == countOne(b, 1) pyn
-```
+- You need a **comparator or predicate that depends on local data** (e.g. sorting indices by looking up values in a local array). A standard function can't see that array unless it's global or passed in some awkward way (e.g. via a second sort + manual reordering, or `bind`/function objects) — a lambda just captures it directly.
+- The logic is **only needed once, right here** — writing a full named function elsewhere breaks the flow of reading the solution and adds a name to remember and reason about.
+- The helper is needed **inside `main()`**, where nested *named* function definitions are not legal C++ syntax at all — a lambda is the only inline option available there.
+
+**Worked example:**
+Sorting an array of indices by the values they point to — a very common CP pattern (e.g. sort indices `0..n-1` by `a[i]` ascending, to answer queries in value order) — needs the comparator to see the local array `a`. A plain function can't do this without extra machinery; a lambda captures `a` by reference and reads it directly:
 
 ```cpp
-// Custom comparator passed inline — no named function needed
-sort(all(v), [](int x, int y){ return x > y; }); // descending
+vector<int> a = {40, 10, 30, 20};
+vector<int> idx(a.size());
+iota(idx.begin(), idx.end(), 0);
+
+sort(idx.begin(), idx.end(), [&a](int i, int j) {
+    return a[i] < a[j];
+});
+// idx is now {1, 3, 2, 0} — indices sorted by the value they point to
 ```
+
+Without capture, you'd need a global array (pollutes scope, breaks per-test-case reset in multi-test problems) or a functor class — both more code than the problem calls for.
+
+For a real contest example of this pattern in action, see submission [385818696](https://codeforces.com/contest/2254/submission/385818696).
 
 **Common pitfall:**
-Nested *named* function syntax is illegal inside another function body — `auto f(int x){ ... }` written inside `main()` will not compile. Only lambda syntax (`auto f = [](int x){ ... };`) is valid there. Mixing the two — e.g. tacking `[]` onto named-function syntax — produces a "function-definition is not allowed here" error, since the compiler expects a lambda expression, not a declaration.
+Nested *named* function syntax is illegal inside another function body — writing something like `int helper(int x){ ... }` inside `main()` will not compile. Only lambda syntax (`auto helper = [](int x){ ... };`) is valid there. Mixing named-function syntax with lambda capture brackets (e.g. tacking `[]` onto a named declaration) produces a "function-definition is not allowed here" error, since the compiler expects a lambda expression, not a function declaration.
 
 **Analogy:**
-A sticky note you write and use once at your desk, versus filing a form in a shared cabinet (a named global function). No need to name it or store it anywhere if you're only using it right here.
+A sticky note you write and use once at your desk, versus filing a form in a shared cabinet (a named global function). The sticky note can reference whatever's already on your desk (capture); the filed form can only see what you hand it (parameters).
 
 **Related:**
-See [Overhead](#overhead) — a capture-less lambda (`[]`) has effectively zero runtime cost, comparable to a plain function call, so defining one freely inside a loop or scope is not a performance concern.
-
+See [Overhead](#overhead) — a capture-less lambda (`[]`) costs about the same as a plain function call at runtime; capturing by reference (`[&]`) adds no real overhead either, since it just stores a reference internally.
 ## Short-Circuit Evaluation
 
 **Definition:**
