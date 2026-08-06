@@ -51,7 +51,7 @@ sort(idx.begin(), idx.end(), [&a](int i, int j) {
 
 Without capture, you'd need a global array (pollutes scope, breaks per-test-case reset in multi-test problems) or a functor class — both more code than the problem calls for.
 
-For a real contest example of this pattern in action, see submission [385818696](https://codeforces.com/contest/2254/submission/385818696).
+For a real example of this pattern in action, see [Lambda Function used in the solution of C1. Marenol (easy version) of Codeforces Round 1114 (Div. 3)](https://codeforces.com/contest/2254/submission/385821637).
 
 **Common pitfall:**
 Nested *named* function syntax is illegal inside another function body — writing something like `int helper(int x){ ... }` inside `main()` will not compile. Only lambda syntax (`auto helper = [](int x){ ... };`) is valid there. Mixing named-function syntax with lambda capture brackets (e.g. tacking `[]` onto a named declaration) produces a "function-definition is not allowed here" error, since the compiler expects a lambda expression, not a function declaration.
