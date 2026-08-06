@@ -213,6 +213,17 @@ $$
 I = \text{Area} - \frac{B}{2} + 1
 $$
 
+```mermaid
+flowchart TD
+    A["Polygon vertices given"] --> B["Shoelace Formula<br/>→ Area, O(n)"]
+    B --> C["gcd trick per edge<br/>→ B (boundary points), O(n)"]
+    C --> D["Pick's Theorem:<br/>I = Area − B/2 + 1"]
+    D --> E["I (interior points)"]
+
+    F["Brute-force scan<br/>bounding box"] -.->|"Δx × Δy × n<br/>infeasible for large coords"| E
+    style F stroke-dasharray: 5 5
+```
+
 This is a strong pattern to recognize — whenever a CP problem mentions **both** a polygon and lattice/grid points, Shoelace Formula + Pick's Theorem used together is very often the intended approach.
 
 ### 8.5 Pick's Theorem Without the Shoelace Formula
