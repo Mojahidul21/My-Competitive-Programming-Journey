@@ -52,6 +52,34 @@ A few things make this trap easy to fall into specifically under contest pressur
 
 ---
 
+## 5. Case Study: Marenol (Easy Version)
+
+**Problem:** [Codeforces 2254C1 — Marenol (easy version)](https://codeforces.com/contest/2254/problem/C1)
+
+Given two binary strings `a` and `b`, determine whether `a` can be turned into `b` using swaps of the form `001↔100` and `110↔011`.
+
+**The simulation instinct:** Both operations reduce to "swap `a[i]` and `a[i+2]` whenever they differ" — so it's tempting to just *do it*: scan through, greedily swap `a[i-1]` with `a[i+1]` whenever that disagrees with `b`, and check if the result equals `b`. This is exactly what a first pass at the problem looks like, and it produced two wrong answers before a version that looped the scan to a fixed point (`while(changed) { ... }`) finally got Accepted.
+
+**The predicate that was there all along:** The swap only ever exchanges elements at the *same parity* (both even index or both odd index), and "swap two unequal adjacent elements freely" is enough to reach *any* ordering within that parity class. So the only thing that can possibly differ between what's reachable and what isn't is: **does each parity class of `a` contain the same count of `1`s (or `0`s) as the corresponding parity class of `b`?** That's it — no swapping required, no fixed point to reach, just two counts per string, compared directly:
+
+```cpp
+auto countZeros = [&n](string &s, int start) {
+    int cnt{};
+    for (int i{start}; i < n; i += 2)
+        cnt += s[i] != '1';
+    return cnt;
+};
+
+countZeros(a,0) != countZeros(b,0) || countZeros(a,1) != countZeros(b,1)
+// true → NO, false → YES
+```
+
+**What changed between the two:** Nothing about the *reasoning* — the parity argument was true the whole time, whether or not the code simulated it. What changed is that the fixed-point simulation had an extra place to be wrong (how many sweeps are enough to guarantee convergence?) that the predicate simply doesn't have. The predicate reads each string once and answers; the simulation reads, mutates, re-reads, and only then answers — one more category of thing to get right, for a claim that a single counting pass already settles.
+
+**Takeaway:** The first WA wasn't evidence the *reasoning* about "swap = permute within parity class" was wrong — the reasoning was right from the start. The WA was evidence that turning a correct reasoning into a *simulation* introduces bugs the reasoning itself never had. Going straight from "same parity ⇒ freely permutable ⇒ compare counts" to code would have skipped two submissions entirely.
+
+---
+
 *This principle applies across problem types — parity arguments, invariants, reachability formulas, and constructive existence checks all tend to produce a predicate that's cleaner and more trustworthy than the process it's describing.*  
 
 *See the companion technique article, [GCD-Reachability Under Fixed-Step Moves](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Tricks%20%26%20Techniques/GCD/GCD-Reachability%20Under%20Fixed-Step%20Moves.md), for one concrete family of problems where this distinction matters.*
