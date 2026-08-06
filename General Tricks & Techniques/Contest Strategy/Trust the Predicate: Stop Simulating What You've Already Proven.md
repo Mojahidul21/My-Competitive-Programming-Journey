@@ -48,6 +48,7 @@ A few things make this trap easy to fall into specifically under contest pressur
 - [ ] If I don't trust the condition, have I checked it by hand on a sample, rather than reaching for simulation?
 - [ ] If a simulation is failing, have I asked whether a predicate would remove the need for it entirely?
 - [ ] Does every condition inside my code trace back to something in my original reasoning, or did one get added just because the previous version failed?
+- [ ] If I'm about to simulate a process, have I asked what property is *invariant* across every operation — and whether comparing that property directly replaces the simulation entirely?
 
 ---
 
