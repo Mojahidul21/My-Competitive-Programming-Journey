@@ -83,6 +83,22 @@ This is a small manual search you do in your head or on paper, not in code. Once
 | Finding main pattern | "Code it up" | "Is there an exception? Handle it the same way." |
 | Writing code | Verify in code | Construct in code — verification is unnecessary |
 
+
+```mermaid
+flowchart TD
+    A["Read the problem"] --> B["Instinct: iterate / check<br/>each candidate"]
+    B --> C{"Does this scale?<br/>(TLE risk)"}
+    C -- "Fits limits" --> Z["Fine — implement directly"]
+    C -- "Too slow" --> D["Don't optimize the loop —<br/>ask what each constraint forces"]
+    D --> E["e.g. k ∣ b  ⟹  a ≡ n (mod k)"]
+    E --> F{"Can I state the answer<br/>in one sentence of arithmetic,<br/>with no loop or check?"}
+    F -- "No — still searching" --> D
+    F -- "Yes" --> G{"Any exception case?<br/>(e.g. a forbidden remainder)"}
+    G -- "Yes" --> H["Apply the same constructive question<br/>to the exception alone —<br/>small manual search on paper, not in code"]
+    H --> I["Now every case is a direct formula"]
+    G -- "No" --> I
+    I --> J["Only now: write the code"]
+```
 ---
 
 ## Practice Method
