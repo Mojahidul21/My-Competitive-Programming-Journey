@@ -83,7 +83,7 @@ This is a small manual search you do in your head or on paper, not in code. Once
 | Finding main pattern | "Code it up" | "Is there an exception? Handle it the same way." |
 | Writing code | Verify in code | Construct in code — verification is unnecessary |
 
-The flow can be shown as below also - 
+The flow can be shown as below - 
 ```mermaid
 flowchart TD
     A["Read the problem"] --> B["Instinct: iterate / check<br/>each candidate"]
