@@ -115,7 +115,7 @@ No palindrome-checking function. No loop. Three lines of logic based on Math.
 
 ## Related Article
 
-[From Search to Construction: Thinking Mathematically in Contests](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
+[From Search to Construction: Thinking Mathematically in Contests](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
 
 ---
 
