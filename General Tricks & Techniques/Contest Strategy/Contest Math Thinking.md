@@ -88,7 +88,7 @@ The flow can be shown as below -
 flowchart TD
     A["Read the problem"] --> B["Instinct: iterate / check<br/>each candidate"]
     B --> C{"Does this scale?<br/>(TLE risk)"}
-    C -- "Fits limits" --> J
+    C -- "Fits limits" --> K
     C -- "Too slow" --> D["Don't optimize the loop —<br/>ask what each constraint forces"]
     D --> E["e.g. k ∣ b  ⟹  a ≡ n (mod k)"]
     E --> F{"Can I state the answer<br/>in one sentence of arithmetic,<br/>with no loop or check?"}
