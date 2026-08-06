@@ -29,38 +29,43 @@ An anonymous, inline function — defined at the point of use, with no name and 
 
 **Why prefer a lambda over a standard (named) function:**
 
-A standard function is declared once, globally, and cannot see any local variables from the scope it's called in — every value it needs must be passed as a parameter. A lambda, by contrast, can **capture** local variables directly from its surrounding scope (`[x]` by value, `[&x]` by reference, `[&]`/`[=]` for "capture everything used"). This matters most when:
+A standard function is declared once, globally, and cannot see any local variables from the scope it's called in — every value it needs must be passed explicitly as a parameter, even ones that never change and are a bit tedious to keep re-passing. A lambda, by contrast, can **capture** local variables directly from its surrounding scope (`[x]` by value, `[&x]` by reference, `[&]`/`[=]` for "capture everything used"). This is most useful when:
 
-- You need a **comparator or predicate that depends on local data** (e.g. sorting indices by looking up values in a local array). A standard function can't see that array unless it's global or passed in some awkward way (e.g. via a second sort + manual reordering, or `bind`/function objects) — a lambda just captures it directly.
-- The logic is **only needed once, right here** — writing a full named function elsewhere breaks the flow of reading the solution and adds a name to remember and reason about.
+- A helper needs a **local value that stays constant across all its calls** (e.g. an input size read once per test case) — capturing it once avoids repeating it as an argument at every call site.
+- The logic is **only needed within this one function/scope** — writing a separate named function elsewhere breaks the flow of reading the solution and adds a name to remember and reason about, for something that's essentially disposable.
 - The helper is needed **inside `main()`**, where nested *named* function definitions are not legal C++ syntax at all — a lambda is the only inline option available there.
 
 **Worked example:**
-Sorting an array of indices by the values they point to — a very common CP pattern (e.g. sort indices `0..n-1` by `a[i]` ascending, to answer queries in value order) — needs the comparator to see the local array `a`. A plain function can't do this without extra machinery; a lambda captures `a` by reference and reads it directly:
+Suppose you read `n` once per test case, then need a small helper called multiple times that depends on `n` — e.g. counting how many characters at a given starting offset (stepping by 2) satisfy some condition, up to length `n`. Written as a lambda, `n` is captured once and every call site stays clean:
 
 ```cpp
-vector<int> a = {40, 10, 30, 20};
-vector<int> idx(a.size());
-iota(idx.begin(), idx.end(), 0);
+int n;
+cin >> n;
 
-sort(idx.begin(), idx.end(), [&a](int i, int j) {
-    return a[i] < a[j];
-});
-// idx is now {1, 3, 2, 0} — indices sorted by the value they point to
+auto countMatch = [&n](string &s, int start) {
+    int cnt{};
+    for (int i{start}; i < n; i += 2)
+        cnt += s[i] == '0';
+    return cnt;
+};
+
+// n never appears again at the call site — it's already captured
+countMatch(a, 0);
+countMatch(b, 1);
 ```
 
-Without capture, you'd need a global array (pollutes scope, breaks per-test-case reset in multi-test problems) or a functor class — both more code than the problem calls for.
+A standalone named function would need a third parameter (`int n`) repeated at every call, or would have to rely on `n` being global — neither as clean as capturing it once where the helper is defined.
 
-For a real example of this pattern in action, see [Lambda Function used in the solution of C1. Marenol (easy version) of Codeforces Round 1114 (Div. 3)](https://codeforces.com/contest/2254/submission/385821637).
+For a real contest example of this pattern, see submission [385818696](https://codeforces.com/contest/2254/submission/385818696).
 
 **Common pitfall:**
-Nested *named* function syntax is illegal inside another function body — writing something like `int helper(int x){ ... }` inside `main()` will not compile. Only lambda syntax (`auto helper = [](int x){ ... };`) is valid there. Mixing named-function syntax with lambda capture brackets (e.g. tacking `[]` onto a named declaration) produces a "function-definition is not allowed here" error, since the compiler expects a lambda expression, not a function declaration.
+Nested *named* function syntax is illegal inside another function body — writing something like `int helper(int x){ ... }` inside `main()` will not compile. Only lambda syntax (`auto helper = [](int x){ ... };`) is valid there.
 
 **Analogy:**
 A sticky note you write and use once at your desk, versus filing a form in a shared cabinet (a named global function). The sticky note can reference whatever's already on your desk (capture); the filed form can only see what you hand it (parameters).
 
 **Related:**
-See [Overhead](#overhead) — a capture-less lambda (`[]`) costs about the same as a plain function call at runtime; capturing by reference (`[&]`) adds no real overhead either, since it just stores a reference internally.
+See [Overhead](#overhead) — a capture-less lambda (`[]`) costs about the same as a plain function call at runtime; capturing by value or reference adds no real overhead for simple types like `int`.
 
 ---
 
