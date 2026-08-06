@@ -51,6 +51,16 @@ It's easy to stop at the identity above and assume you're done. There are actual
 
 These coincide almost everywhere in the middle of a large array, but can fail near the edges. This is exactly what a constraint like `x + y ≤ n` is usually there to guarantee: enough room exists at *every* position to perform one outward move of size `x` (or `y`) and one inward move of the other size without leaving `[1, n]`, which is enough to realize a net step of `g` in either direction from anywhere.
 
+```mermaid
+flowchart LR
+    subgraph board["Array [1 .. n], token near the left edge"]
+        direction LR
+        p1["1"] --- p2["2"] --- p3["…"] --- pi["i (token)"] --- pj["…"] --- pn["n"]
+    end
+    pi -->|"+x (outward, stays in bounds)"| pj
+    pj -->|"−y (inward, back toward i)"| pi
+```
+
 **Do not skip checking this.** The clean residue formula from Step 2 is only valid because the problem's constraints license it. If the bound were tighter (say `x + y ≤ n / 2`), positions near the edges could be algebraically reachable but not physically reachable, and the simple `% g` check would overcount.
 
 ---
