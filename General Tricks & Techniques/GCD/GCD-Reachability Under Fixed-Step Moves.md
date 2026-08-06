@@ -33,6 +33,13 @@ a·x + b·y      (a, b any integers, positive, negative, or zero)
 
 So: **two positions are reachable from each other iff their difference is a multiple of `g = gcd(step sizes)`.** This single fact is what the rest of the technique is built on. Once you see it, "can I get from position `i` to position `j` using these moves" stops being a search problem and becomes a one-line residue check: `(i - j) % g == 0`.
 
+```mermaid
+flowchart LR
+    subgraph line["Positions reachable from 0, with x=4, y=6, g=gcd(4,6)=2"]
+        direction LR
+        p0["0 ✓"] --- p1["1 ✗"] --- p2["2 ✓"] --- p3["3 ✗"] --- p4["4 ✓"] --- p5["5 ✗"] --- p6["6 ✓"] --- p7["7 ✗"] --- p8["8 ✓"]
+    end
+```
 ---
 
 ## 3. Two Different Questions Hiding in One Problem
