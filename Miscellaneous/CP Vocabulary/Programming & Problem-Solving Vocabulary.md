@@ -61,6 +61,9 @@ A sticky note you write and use once at your desk, versus filing a form in a sha
 
 **Related:**
 See [Overhead](#overhead) — a capture-less lambda (`[]`) costs about the same as a plain function call at runtime; capturing by reference (`[&]`) adds no real overhead either, since it just stores a reference internally.
+
+---
+
 ## Short-Circuit Evaluation
 
 **Definition:**
