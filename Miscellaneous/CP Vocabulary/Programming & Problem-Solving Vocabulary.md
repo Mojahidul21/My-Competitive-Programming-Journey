@@ -56,7 +56,7 @@ countMatch(b, 1);
 
 A standalone named function would need a third parameter (`int n`) repeated at every call, or would have to rely on `n` being global — neither as clean as capturing it once where the helper is defined.
 
-For a real contest example of this pattern, see submission [385818696](https://codeforces.com/contest/2254/submission/385818696).
+For a real contest example of this pattern, see this [solution](https://codeforces.com/contest/2254/submission/385821637).
 
 **Common pitfall:**
 Nested *named* function syntax is illegal inside another function body — writing something like `int helper(int x){ ... }` inside `main()` will not compile. Only lambda syntax (`auto helper = [](int x){ ... };`) is valid there.
