@@ -22,19 +22,6 @@ The canonical signature:
 
 Left-to-right greedy fails here because choosing $i$ mutates the state of everything before $i$, making future operations at $j < i$ operate on a different array than you planned.
 
-```mermaid
-flowchart LR
-    subgraph arr["Array a₁ … aₙ"]
-        direction LR
-        a1["a₁"] --- a2["a₂"] --- a3["a₃"] --- ai["…aᵢ"] --- an["…aₙ"]
-    end
-    op["Operate at i"] -.->|"affects"| a1
-    op -.->|"affects"| a2
-    op -.->|"affects"| a3
-    op -.->|"affects"| ai
-    op -.-x|"does NOT affect"| an
-```
-
 Right-to-left greedy works because:
 
 - When you reach $i$, all future operations (those at positions $> i$) are already decided.
