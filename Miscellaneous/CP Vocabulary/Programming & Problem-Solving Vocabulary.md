@@ -6,6 +6,7 @@ A living reference of terms used in competitive programming, debugging, and algo
 
 ## Table of Contents
 
+- [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
 - [Fragile Code](#fragile-code)
 - [Robust Code](#robust-code)
@@ -21,6 +22,40 @@ A living reference of terms used in competitive programming, debugging, and algo
 - [Overhead](#overhead)
 
 ---
+## Lambda (Lambda Function)
+
+**Definition:**
+An anonymous, inline function — defined at the point of use, with no name and no separate declaration. Syntax: `[capture](parameters) { body }`.
+
+**Why it matters in CP:**
+Lets you write short, one-off logic — a custom comparator, a small helper, a local computation — without polluting global scope or writing a full named function elsewhere. Especially useful inside `main()`, where a normal named function definition is not legal (see pitfall below).
+
+**Example from practice:**
+```cpp
+// Local helper lambda — counts '1's at positions of a given parity
+auto countOne = [](string &s, int m) {
+    int cnt{};
+    for (int i{m}; i < (int)s.size(); i += 2)
+        cnt += s[i] == '1';
+    return cnt;
+};
+
+countOne(a, 0) == countOne(b, 0) && countOne(a, 1) == countOne(b, 1) pyn
+```
+
+```cpp
+// Custom comparator passed inline — no named function needed
+sort(all(v), [](int x, int y){ return x > y; }); // descending
+```
+
+**Common pitfall:**
+Nested *named* function syntax is illegal inside another function body — `auto f(int x){ ... }` written inside `main()` will not compile. Only lambda syntax (`auto f = [](int x){ ... };`) is valid there. Mixing the two — e.g. tacking `[]` onto named-function syntax — produces a "function-definition is not allowed here" error, since the compiler expects a lambda expression, not a declaration.
+
+**Analogy:**
+A sticky note you write and use once at your desk, versus filing a form in a shared cabinet (a named global function). No need to name it or store it anywhere if you're only using it right here.
+
+**Related:**
+See [Overhead](#overhead) — a capture-less lambda (`[]`) has effectively zero runtime cost, comparable to a plain function call, so defining one freely inside a loop or scope is not a performance concern.
 
 ## Short-Circuit Evaluation
 
