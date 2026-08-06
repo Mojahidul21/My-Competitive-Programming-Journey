@@ -101,4 +101,4 @@ This reads each string once, mutates nothing, and has no loop-count or convergen
 
 *This principle applies across problem types — parity arguments, invariants, reachability formulas, and constructive existence checks all tend to produce a predicate that's cleaner and more trustworthy than the process it's describing.*  
 
-*See the companion technique article, [GCD-Reachability Under Fixed-Step Moves](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Tricks%20%26%20Techniques/GCD/GCD-Reachability%20Under%20Fixed-Step%20Moves.md), for one concrete family of problems where this distinction matters.*
+*See the companion technique article, [GCD-Reachability Under Fixed-Step Moves](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/GCD/GCD-Reachability%20Under%20Fixed-Step%20Moves.md), for one concrete family of problems where this distinction matters.*
