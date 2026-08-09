@@ -365,8 +365,7 @@ flowchart TD
     F --> G
 ```
 - Example-2: Reds (even positions) and blues (odd positions) never need to be compared against their neighbor — each color's weight is summed on its own, then the two totals are compared. Same decomposition as the parity-chain pattern.
-
-![Red-cap and blue-cap people split into two independent weight chains](./pairity_weight_comparison.png)
+![Red-cap and blue-cap people split into two independent weight chains](./Supporting%20Images/pairity_weight_comparison.png)
 
 **Related:**
 See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
