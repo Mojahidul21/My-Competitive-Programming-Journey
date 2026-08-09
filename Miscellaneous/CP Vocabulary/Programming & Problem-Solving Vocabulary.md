@@ -352,7 +352,7 @@ My [AC submission](https://codeforces.com/contest/2256/submission/386402740) for
 Look for a constraint that, after simplification, only ever compares `i` to `i+2` (never to `i+1`). That's the signal the sequence has split into two non-interacting halves.
 
 **Analogy:**
-Two separate queues at a fair — people in the "even" queue never interact with people in the "odd" queue, so you can serve (or count) each queue on its own and just multiply the outcomes at the end.
+- Example-1: Two separate queues at a fair — people in the "even" queue never interact with people in the "odd" queue, so you can serve (or count) each queue on its own and just multiply the outcomes at the end.
 
 ```mermaid
 flowchart TD
@@ -364,6 +364,9 @@ flowchart TD
     E --> G["Multiply results"]
     F --> G
 ```
+- Example-2: Reds (even positions) and blues (odd positions) never need to be compared against their neighbor — each color's weight is summed on its own, then the two totals are compared. Same decomposition as the parity-chain pattern.
+
+![Red-cap and blue-cap people split into two independent weight chains](./pairity_weight_comparison.png)
 
 **Related:**
 See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
