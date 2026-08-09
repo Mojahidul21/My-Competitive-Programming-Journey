@@ -16,6 +16,7 @@ A living reference of terms used in competitive programming, debugging, and algo
 - [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Latent Bug](#latent-bug)
 - [Overhead](#overhead)
+- [Parity Chain](#parity-chain)
 - [Reduction](#reduction)
 - [Robust Code](#robust-code)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
@@ -323,6 +324,37 @@ void f(const vector<int>& v) { ... }
 - **Time overhead:** Extra operations that increase runtime (e.g., unnecessary sorting, repeated computation)
 - **Memory overhead:** Extra space used beyond what's needed (e.g., storing full strings when only lengths are needed)
 - **Code overhead:** Unnecessary complexity that makes code harder to read and debug
+
+---
+
+## Parity Chain
+
+**Definition:**
+A decomposition of a sequence into two independent subsequences — elements at even indices and elements at odd indices — used when a constraint only relates elements that are exactly 2 apart. Each chain can then be reasoned about (and counted) completely separately, because nothing links the two.
+
+**Why it arises:**
+Many constraints of the form "compare position `i` to position `i+1`" collapse, after algebraic simplification, into a constraint on `i` vs `i+2` instead. Once that happens, the even-indexed and odd-indexed positions stop interacting entirely — you're no longer solving one problem of size `n`, you're solving two smaller, unrelated problems.
+
+**Example from practice:**
+CF 2253B — the domino-weight condition `s_i + s_{i+1} ≠ s_{i+1} + s_{i+2}` simplifies to `s_i ≠ s_{i+2}`. This means even indices form one alternating chain, odd indices form another, and the two chains never constrain each other:
+
+```cpp
+// Each parity chain is independently either:
+// - all '?'      -> 2 ways
+// - fixed + valid -> 1 way
+// - fixed + invalid -> 0 ways
+// Total answer = (ways for even chain) * (ways for odd chain)
+```
+
+**How to recognize one:**
+Look for a constraint that, after simplification, only ever compares `i` to `i+2` (never to `i+1`). That's the signal the sequence has split into two non-interacting halves.
+
+**Analogy:**
+Two separate queues at a fair — people in the "even" queue never interact with people in the "odd" queue, so you can serve (or count) each queue on its own and just multiply the outcomes at the end.
+
+**Related:**
+See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
+See [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
 
 ---
 
