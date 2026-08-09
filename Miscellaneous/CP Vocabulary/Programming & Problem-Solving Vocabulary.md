@@ -336,7 +336,7 @@ A decomposition of a sequence into two independent subsequences — elements at 
 Many constraints of the form "compare position `i` to position `i+1`" collapse, after algebraic simplification, into a constraint on `i` vs `i+2` instead. Once that happens, the even-indexed and odd-indexed positions stop interacting entirely — you're no longer solving one problem of size `n`, you're solving two smaller, unrelated problems.
 
 **Example from practice:**
-CF 2253B — the domino-weight condition `s_i + s_{i+1} ≠ s_{i+1} + s_{i+2}` simplifies to `s_i ≠ s_{i+2}`. This means even indices form one alternating chain, odd indices form another, and the two chains never constrain each other:
+[CF 2256B — Domino Tiles](https://codeforces.com/contest/2256/problem/B) — the domino-weight condition `s_i + s_{i+1} ≠ s_{i+1} + s_{i+2}` simplifies to `s_i ≠ s_{i+2}`. This means even indices form one alternating chain, odd indices form another, and the two chains never constrain each other:
 
 ```cpp
 // Each parity chain is independently either:
@@ -345,6 +345,8 @@ CF 2253B — the domino-weight condition `s_i + s_{i+1} ≠ s_{i+1} + s_{i+2}` s
 // - fixed + invalid -> 0 ways
 // Total answer = (ways for even chain) * (ways for odd chain)
 ```
+
+My [AC submission](https://codeforces.com/contest/2256/submission/386402740) for this problem.
 
 **How to recognize one:**
 Look for a constraint that, after simplification, only ever compares `i` to `i+2` (never to `i+1`). That's the signal the sequence has split into two non-interacting halves.
