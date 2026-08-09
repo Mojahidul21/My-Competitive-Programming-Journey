@@ -5,7 +5,7 @@ A living reference of terms used in competitive programming, debugging, and algo
 ---
 
 ## Table of Contents
-
+Lexical ordered.
 - [Anchor](#anchor)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Deduplication (Dedup)](#deduplication-dedup)
