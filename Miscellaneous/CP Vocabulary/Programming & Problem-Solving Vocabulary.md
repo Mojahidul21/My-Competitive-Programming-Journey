@@ -354,6 +354,17 @@ Look for a constraint that, after simplification, only ever compares `i` to `i+2
 **Analogy:**
 Two separate queues at a fair — people in the "even" queue never interact with people in the "odd" queue, so you can serve (or count) each queue on its own and just multiply the outcomes at the end.
 
+```mermaid
+flowchart TD
+    A["Sequence s[0..n-1]"] --> B["Constraint simplifies to:<br/>s_i ≠ s_i+2"]
+    B --> C["Even indices<br/>s0, s2, s4, ..."]
+    B --> D["Odd indices<br/>s1, s3, s5, ..."]
+    C --> E["Solve independently"]
+    D --> F["Solve independently"]
+    E --> G["Multiply results"]
+    F --> G
+```
+
 **Related:**
 See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
 See [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
