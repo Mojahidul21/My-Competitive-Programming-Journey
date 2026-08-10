@@ -7,6 +7,7 @@ A living reference of terms used in competitive programming, debugging, and algo
 ## Table of Contents
 Lexical ordered.
 - [Anchor](#anchor)
+- [Boilerplate](#boilerplate)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Deduplication (Dedup)](#deduplication-dedup)
 - [Edge Case](#edge-case)
@@ -43,6 +44,42 @@ Because `sss[0] == s[0]` always, index 0 is never a mismatch — the anchor hold
 - Fix one endpoint of a range and binary search the other
 
 ---
+
+## Boilerplate
+
+**Definition:**
+A requirement, constraint, or code pattern present for uniformity or convention across a class of problems, rather than because the specific instance in front of you actually needs it. Recognizing boilerplate means computing the true range of what your solution can produce and checking whether the stated requirement — a modulus, an overflow guard, a defensive branch — ever gets exercised within that range.
+
+**Why it arises:**
+Problem setters standardize output format and constraints across many problems in a set — `% 998244353` gets attached to counting problems by default, `long long` gets used defensively by default. None of this is wrong to include, but treating every stated constraint as load-bearing can waste analysis time or hide the fact that a much simpler bound already holds.
+
+**Example from practice:**
+[CF 2256B — Domino Tiles](https://codeforces.com/contest/2256/problem/B) asks for the answer modulo `998244353`. But the answer is a product of two independent [Parity Chain](#parity-chain) counts, each at most `2` — so the maximum possible answer is `4`:
+
+```cpp
+// evenfree/oddfree each contribute a factor of at most 2
+// max possible answer = 2 * 2 = 4 — the modulo never actually triggers
+cout<<(!valid?0:efree&&ofree?4:efree||ofree?2:1)<<endl;
+```
+
+The modulo is inherited from the general shape of "count something" problems, not a signal that the answer can grow large here.
+
+```mermaid
+flowchart TD
+    A["Stated requirement appears<br/>(modulus, overflow guard, edge case)"] --> B["Derive the true range<br/>your logic can produce"]
+    B --> C{"Does that range ever<br/>reach the requirement's threshold?"}
+    C -- No --> D["Boilerplate —<br/>note it, don't design around it"]
+    C -- Yes --> E["Essential —<br/>must be handled correctly"]
+```
+
+**How to recognize one:**
+Before implementing a safeguard the statement seems to demand, derive the actual bound your logic produces. If that bound sits comfortably below what the safeguard exists to protect against, it's boilerplate — mention it if writing up the solution, but don't spend design effort defending against it.
+
+**Analogy:**
+A restaurant's fire-suppression system is required by code for every kitchen, even ones that only reheat pre-cooked food. Its presence doesn't mean that kitchen is at high risk of fire — the requirement was written for kitchens in general, not for this one specifically.
+
+**Related:**
+See [Parity Chain](#parity-chain) — the Domino Tiles reduction that first surfaced this: once the ≤2-per-chain bound was found, the stated modulo turned out to be boilerplate.
 
 ## Contiguous / Contiguous Block
 
