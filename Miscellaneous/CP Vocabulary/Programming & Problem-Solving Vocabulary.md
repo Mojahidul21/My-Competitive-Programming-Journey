@@ -346,7 +346,7 @@ Many constraints of the form "compare position `i` to position `i+1`" collapse, 
 // Total answer = (ways for even chain) * (ways for odd chain)
 ```
 
-My [AC submission](https://codeforces.com/contest/2256/submission/386402740) for this problem.
+My [AC submission](https://codeforces.com/contest/2256/submission/386425561) for this problem.
 
 **How to recognize one:**
 Look for a constraint that, after simplification, only ever compares `i` to `i+2` (never to `i+1`). That's the signal the sequence has split into two non-interacting halves.
