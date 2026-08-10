@@ -51,6 +51,12 @@ Inside a single chain, `s_i ≠ s_{i+2}` for every consecutive pair forces the c
 - **At least one fixed character, no conflicts** — the alternation is pinned by that character and propagates outward in both directions → **1** way.
 - **Fixed characters that break the alternation somewhere** → **0** ways for the whole answer.
 
+## A note on the modulo
+
+<img src="modulo-expectation-vs-reality.svg" width="700" alt="Expectation: bracing for modular exponentiation. Reality: the answer is always 0, 1, 2, or 4."/>
+
+The moment `998244353` appears in a statement, it's natural to expect the answer could get astronomically large. Here it can't: each chain contributes at most a factor of `2`, so the final answer is always one of `0, 1, 2, 4`. The modulo is boilerplate carried over from the problem's general shape — it never actually triggers.
+
 ## Deciding the answer
 
 The even and odd chains are checked the same way, independently, and the results are combined at the end:
