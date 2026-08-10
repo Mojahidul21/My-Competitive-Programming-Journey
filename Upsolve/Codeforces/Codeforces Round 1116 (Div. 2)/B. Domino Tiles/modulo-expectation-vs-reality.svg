@@ -1,0 +1,60 @@
+<svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="panelBgLeft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3a1f1f"/>
+      <stop offset="100%" stop-color="#5c2a2a"/>
+    </linearGradient>
+    <linearGradient id="panelBgRight" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1f3a26"/>
+      <stop offset="100%" stop-color="#2a5c3d"/>
+    </linearGradient>
+  </defs>
+
+  <!-- left panel -->
+  <rect x="10" y="10" width="430" height="440" rx="16" fill="url(#panelBgLeft)" stroke="#000" stroke-width="3"/>
+  <text x="225" y="46" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="22" fill="#ffe0b2">Expectation</text>
+
+  <!-- stressed blob character -->
+  <g transform="translate(225,150)">
+    <circle cx="0" cy="0" r="55" fill="#f4c98b"/>
+    <!-- worried eyes -->
+    <path d="M-22,-8 Q-15,-18 -8,-8" stroke="#3a1f1f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M8,-8 Q15,-18 22,-8" stroke="#3a1f1f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- wavy worried mouth -->
+    <path d="M-18,20 Q-9,10 0,20 T18,20" stroke="#3a1f1f" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- sweat drops -->
+    <path d="M40,-30 q6,10 0,18 q-6,-8 0,-18" fill="#bfe9ff"/>
+    <path d="M52,-10 q5,8 0,15 q-5,-7 0,-15" fill="#bfe9ff"/>
+  </g>
+
+  <!-- chalkboard with scary formula -->
+  <g transform="translate(225,300)">
+    <rect x="-140" y="-60" width="280" height="120" rx="8" fill="#20351f" stroke="#0d1b0d" stroke-width="4"/>
+    <text x="0" y="-24" text-anchor="middle" font-family="monospace" font-size="18" fill="#eafbe6">ans = ans * base</text>
+    <text x="0" y="0" text-anchor="middle" font-family="monospace" font-size="18" fill="#eafbe6">  % 998244353</text>
+    <text x="0" y="24" text-anchor="middle" font-family="monospace" font-size="18" fill="#eafbe6">fast-exponentiate...</text>
+    <text x="0" y="48" text-anchor="middle" font-family="monospace" font-size="16" fill="#ffb3b3">"this is going to overflow"</text>
+  </g>
+
+  <!-- right panel -->
+  <rect x="460" y="10" width="430" height="440" rx="16" fill="url(#panelBgRight)" stroke="#000" stroke-width="3"/>
+  <text x="675" y="46" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="22" fill="#c8f7d6">Reality</text>
+
+  <!-- relaxed blob character -->
+  <g transform="translate(675,150)">
+    <circle cx="0" cy="0" r="55" fill="#f4c98b"/>
+    <!-- calm closed eyes -->
+    <path d="M-22,-6 Q-15,-2 -8,-6" stroke="#1f3a26" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <path d="M8,-6 Q15,-2 22,-6" stroke="#1f3a26" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- content smile -->
+    <path d="M-16,16 Q0,30 16,16" stroke="#1f3a26" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- little sunglasses vibe optional: skip, keep simple -->
+  </g>
+
+  <!-- big relaxed answer card -->
+  <g transform="translate(675,300)">
+    <rect x="-140" y="-60" width="280" height="120" rx="8" fill="#0d2b17" stroke="#0a1f10" stroke-width="4"/>
+    <text x="0" y="-14" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#eafbe6">the answer is always</text>
+    <text x="0" y="34" text-anchor="middle" font-family="Georgia, serif" font-weight="bold" font-size="40" fill="#c8f7d6">0, 1, 2, or 4</text>
+  </g>
+</svg>
