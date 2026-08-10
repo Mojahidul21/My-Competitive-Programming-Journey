@@ -81,6 +81,8 @@ A restaurant's fire-suppression system is required by code for every kitchen, ev
 **Related:**
 See [Parity Chain](#parity-chain) — the Domino Tiles reduction that first surfaced this: once the ≤2-per-chain bound was found, the stated modulo turned out to be boilerplate.
 
+---
+
 ## Contiguous / Contiguous Block
 
 **Definition:**
