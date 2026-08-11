@@ -46,14 +46,38 @@ Since the state entering round `k` is just `s` itself, the final state is obtain
 
 ```mermaid
 flowchart TD
-    A["Seat i holds a potato in s"] --> B{"Was seat j = i+1 empty in s?"}
-    B -- "Yes" --> C["Potato ends up at seat j"]
-    B -- "No (j also held a potato)" --> D["Both seats are permanently blocked —<br/>the potato stays at seat i"]
+    Loop["Rounds 1 through k−1:<br/>everyone holds — state stays equal to s"] --> RK["Round k arrives — the decisive round"]
+    RK --> PerSeat["Take seat i (1..2n)"]
 
+    PerSeat --> HasPotato{"Does seat i hold<br/>a potato in s?"}
+    HasPotato -- "No" --> Nothing["Nothing to do —<br/>no potato to pass or receive"]
+    HasPotato -- "Yes" --> NextSeat{"Does seat j = i+1<br/>hold a potato in s?"}
+
+    NextSeat -- "Yes (blocked)" --> Stay["Final state: potato stays at seat i"]
+    NextSeat -- "No (empty)" --> Move["Final state: potato moves to seat j"]
+
+    Nothing --> More{"Seats left?"}
+    Stay --> More
+    Move --> More
+    More -- "Yes" --> PerSeat
+    More -- "No" --> Tally["Final configuration ss is complete"]
+
+    Tally --> RedCount["Red score =<br/>count of 1s in ss at even positions<br/>(Blue seats eliminated)"]
+    Tally --> BlueCount["Blue score =<br/>count of 1s in ss at odd positions<br/>(Red seats eliminated)"]
+
+    RedCount --> Output["Print Red score, Blue score"]
+    BlueCount --> Output
+
+    classDef quiet fill:#f5f5f5,stroke:#c6cbd3,color:#4a5568
+    classDef decisive fill:#fff3c4,stroke:#a16800,color:#3a2c00
     classDef move fill:#bbdefb,stroke:#0d47a1,color:#0d1b2a
     classDef stay fill:#ffe0b2,stroke:#e65100,color:#3a2415
-    class C move
-    class D stay
+    classDef score fill:#e8f5e9,stroke:#2e7d32,color:#1b3a1e
+    class Loop quiet
+    class RK decisive
+    class Move move
+    class Stay stay
+    class RedCount,BlueCount,Output score
 ```
 
 Why is a blocked pair *permanently* stuck, not just stuck for one round? If `i` and `j = i+1` both start with a potato, neither can ever move: `i` can't pass because `j` is occupied, and `j` can't pass because *its* next seat is a different question entirely, unrelated to `i`. As long as `i` holds, `j` can never receive from `i` — and since nothing changes before round `k` anyway, this deadlock (or whatever `j` independently resolves to) is exactly what's still true at the decisive round.
