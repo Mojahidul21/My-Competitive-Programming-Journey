@@ -1,6 +1,6 @@
 # C. Hot Potatoes at the Fairy Warehouse
 
-**Problem:** [Codeforces 2256C](https://codeforces.com/contest/2256/problem/C) | **AC submissions:** [386561465](https://codeforces.com/contest/2256/submission/386561465), [386578511](https://codeforces.com/contest/2256/submission/386578511)
+**Problem:** [Codeforces 2256C](https://codeforces.com/contest/2256/problem/C) | **AC Submission:** [386578511](https://codeforces.com/contest/2256/submission/386578511)
 
 <img src="hot-potato-story.svg" width="800" alt="Eight leprechauns seated in a circle at night, alternating red and blue teams, with a single dashed arrow showing the one pass that actually matters"/>
 
@@ -76,7 +76,7 @@ Both examples hold regardless of what `k` happens to be, exactly as the theory p
 ## Solution
 
 ```cpp
-#include<bits/stdc++.h>
+#include<bits/stdc++.h> 
 using namespace std;
 main(){
     int t;
@@ -85,7 +85,7 @@ main(){
     while(t--){
         int n,rscore{},bscore{};;
         string s;
-        cin>>n>>s>>s;               // the first >>s deliberately swallows k
+        cin>>n>>s>>s;
 
         string ss(n*=2,'0');
 
