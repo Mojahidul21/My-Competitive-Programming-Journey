@@ -20,6 +20,7 @@ Lexical ordered.
 - [Parity Chain](#parity-chain)
 - [Reduction](#reduction)
 - [Robust Code](#robust-code)
+- [Round Collapse](#round-collapse)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
 
@@ -80,6 +81,7 @@ A restaurant's fire-suppression system is required by code for every kitchen, ev
 
 **Related:**
 See [Parity Chain](#parity-chain) — the Domino Tiles reduction that first surfaced this: once the ≤2-per-chain bound was found, the stated modulo turned out to be boilerplate.
+See [Round Collapse](#round-collapse) — same instinct, applied to a round count instead of a numeric constraint.
 
 ---
 
@@ -407,8 +409,9 @@ flowchart TD
 ![Red-cap and blue-cap people split into two independent weight chains](./Supporting%20Images/pairity_weight_comparison.png)
 
 **Related:**
-See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
 See [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
+See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
+See [Round Collapse](#round-collapse) — a sibling pattern: there a `k`-round process collapses into one step; here an `n`-length sequence collapses into two halves.
 
 ---
 
@@ -456,6 +459,35 @@ else {
 ```
 
 **Goal in CP:** Even under contest time pressure, prefer robust over fragile whenever the proof of correctness is simple.
+
+---
+## Round Collapse
+
+**Definition:**
+A multi-round process where the final answer doesn't depend on the round count `k`, because every agent's dominant strategy is to defer any risky action until the last possible round. Once that holds, the whole process collapses into a single decisive round applied to the initial state.
+
+**Why it arises:**
+A statement advertises a large `k` (often up to `10^9`) to look like it needs step-by-step simulation. That's only true if some agent gains by acting early. If delaying costs nothing and acting early risks a worse outcome later, nobody commits early — the round count stops mattering.
+
+**How to recognize one:**
+`k` is large relative to the input, each agent's state is small (act / don't act), and whatever an agent would act on only changes through that agent's own move. Ask: "do I lose anything by waiting one more round?" If no, for every agent, the process is really one round in disguise.
+
+```mermaid
+flowchart TD
+    A["k rounds advertised"] --> B{"Does waiting ever cost anything?"}
+    B -- Yes --> C["k is real — simulate it"]
+    B -- No --> D["Round Collapse — answer = f(initial state)"]
+```
+
+**Analogy:**
+Poker: folding is free at any point, but a placed bet can't be undone — so every player plays each round as though it's already the last, and the outcome depends only on the cards dealt, never on how many betting rounds the table allows.
+
+**Example from practice:**
+[CF 2256C — Hot Potatoes at the Fairy Warehouse](https://codeforces.com/contest/2256/problem/C) is a clean instance: holding a potato is free, passing early risks receiving one back with no time left to pass it on, so everyone waits for the last round and the `k`-round game collapses into one pass over the input. [AC submission](https://codeforces.com/contest/2256/submission/386578511) reads `k` and discards it immediately, since it never affects the answer.
+
+**Related:**
+See [Parity Chain](#parity-chain) — same surprise, different mechanism: a many-step process collapses to one check per element.
+See [Boilerplate](#boilerplate) — both are about an advertised dimension turning out not to be load-bearing.
 
 ---
 
