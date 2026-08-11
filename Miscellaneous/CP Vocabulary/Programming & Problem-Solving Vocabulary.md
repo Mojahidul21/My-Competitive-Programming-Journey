@@ -80,8 +80,8 @@ Before implementing a safeguard the statement seems to demand, derive the actual
 A restaurant's fire-suppression system is required by code for every kitchen, even ones that only reheat pre-cooked food. Its presence doesn't mean that kitchen is at high risk of fire — the requirement was written for kitchens in general, not for this one specifically.
 
 **Related:**
-See [Parity Chain](#parity-chain) — the Domino Tiles reduction that first surfaced this: once the ≤2-per-chain bound was found, the stated modulo turned out to be boilerplate.
-See [Round Collapse](#round-collapse) — same instinct, applied to a round count instead of a numeric constraint.
+8 [Parity Chain](#parity-chain) — the Domino Tiles reduction that first surfaced this: once the ≤2-per-chain bound was found, the stated modulo turned out to be boilerplate.
+* [Round Collapse](#round-collapse) — same instinct, applied to a round count instead of a numeric constraint.
 
 ---
 
@@ -409,9 +409,9 @@ flowchart TD
 ![Red-cap and blue-cap people split into two independent weight chains](./Supporting%20Images/pairity_weight_comparison.png)
 
 **Related:**
-See [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
-See [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
-See [Round Collapse](#round-collapse) — a sibling pattern: there a `k`-round process collapses into one step; here an `n`-length sequence collapses into two halves.
+* [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
+* [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
+* [Round Collapse](#round-collapse) — a sibling pattern: there a `k`-round process collapses into one step; here an `n`-length sequence collapses into two halves.
 
 ---
 
