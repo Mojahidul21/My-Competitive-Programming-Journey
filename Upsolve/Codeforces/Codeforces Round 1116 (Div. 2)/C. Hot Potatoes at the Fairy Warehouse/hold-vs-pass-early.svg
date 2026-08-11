@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="potato2" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#c98a4b"/>
+      <stop offset="100%" stop-color="#7a4c24"/>
+    </radialGradient>
+    <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#4a5568"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#2e7d32"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#c62828"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="420" fill="#faf7f2"/>
+
+  <!-- column headers -->
+  <g font-family="Verdana, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+    <text x="150" y="30">right now</text>
+    <text x="400" y="30">a few rounds later</text>
+    <text x="620" y="30">just before the bell</text>
+  </g>
+
+  <!-- ================= TOP ROW: hold until last round ================= -->
+  <text x="20" y="70" font-family="Georgia, serif" font-weight="bold" font-size="15" fill="#1b4332">Hold until the last round</text>
+
+  <!-- your seat, unchanged across all three stages -->
+  <circle cx="150" cy="110" r="24" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+  <ellipse cx="150" cy="102" rx="10" ry="7" fill="url(#potato2)"/>
+
+  <line x1="150" y1="140" x2="400" y2="140" stroke="#c6cbd3" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <circle cx="400" cy="110" r="24" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+  <ellipse cx="400" cy="102" rx="10" ry="7" fill="url(#potato2)"/>
+
+  <line x1="400" y1="140" x2="620" y2="140" stroke="#c6cbd3" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text x="510" y="132" text-anchor="middle" font-family="Verdana, sans-serif" font-size="10" fill="#8a8f98">still safe — no one could pass into you</text>
+  <circle cx="620" cy="110" r="24" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+  <ellipse cx="620" cy="102" rx="10" ry="7" fill="url(#potato2)"/>
+
+  <!-- final round pass to opponent -->
+  <path d="M 644,110 Q 690,90 726,110" fill="none" stroke="#2e7d32" stroke-width="2.4" marker-end="url(#arrowGreen)"/>
+  <text x="686" y="80" text-anchor="middle" font-family="Verdana, sans-serif" font-size="10" fill="#2e7d32">Rk: you choose to pass</text>
+  <circle cx="750" cy="110" r="20" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
+  <text x="750" y="150" text-anchor="middle" font-family="Verdana, sans-serif" font-size="20" fill="#2e7d32">&#10003;</text>
+
+  <!-- ================= BOTTOM ROW: pass early ================= -->
+  <text x="20" y="240" font-family="Georgia, serif" font-weight="bold" font-size="15" fill="#7a1f1f">Pass on an early round</text>
+
+  <!-- your seat empties out immediately -->
+  <circle cx="150" cy="280" r="24" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+  <ellipse cx="150" cy="272" rx="10" ry="7" fill="url(#potato2)"/>
+  <path d="M 174,280 Q 210,260 246,280" fill="none" stroke="#4a5568" stroke-width="2" marker-end="url(#arrow2)"/>
+  <text x="210" y="255" text-anchor="middle" font-family="Verdana, sans-serif" font-size="10" fill="#4a5568">R1: pass away</text>
+  <circle cx="270" cy="280" r="18" fill="#bbdefb" stroke="#0d47a1" stroke-width="2" opacity="0.6"/>
+
+  <!-- your seat sits empty -->
+  <circle cx="400" cy="280" r="24" fill="#fff" stroke="#c6cbd3" stroke-width="2" stroke-dasharray="3 3"/>
+  <text x="400" y="284" text-anchor="middle" font-family="Verdana, sans-serif" font-size="10" fill="#9aa1ab">empty</text>
+
+  <!-- but predecessor can now dump one on you before the bell -->
+  <circle cx="230" cy="340" r="16" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+  <ellipse cx="230" cy="334" rx="8" ry="6" fill="url(#potato2)"/>
+  <path d="M 246,338 Q 320,360 388,296" fill="none" stroke="#c62828" stroke-width="2.2" marker-end="url(#arrowRed)"/>
+  <text x="330" y="378" text-anchor="middle" font-family="Verdana, sans-serif" font-size="10" fill="#c62828">predecessor passes into you — no time left to pass it on</text>
+
+  <circle cx="620" cy="280" r="24" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+  <ellipse cx="620" cy="272" rx="10" ry="7" fill="url(#potato2)"/>
+  <circle cx="750" cy="280" r="20" fill="#f8d7da" stroke="#c62828" stroke-width="2"/>
+  <text x="750" y="320" text-anchor="middle" font-family="Verdana, sans-serif" font-size="20" fill="#c62828">&#10007;</text>
+  <text x="750" y="336" text-anchor="middle" font-family="Verdana, sans-serif" font-size="9" fill="#c62828">caught at the bell</text>
+</svg>

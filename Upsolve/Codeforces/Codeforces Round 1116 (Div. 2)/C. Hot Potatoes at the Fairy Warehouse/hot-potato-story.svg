@@ -1,0 +1,99 @@
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="35%" r="75%">
+      <stop offset="0%" stop-color="#1b2a4a"/>
+      <stop offset="100%" stop-color="#0d1b2a"/>
+    </radialGradient>
+    <radialGradient id="moonGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fff8e1" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#fff8e1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="potato" cx="35%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#c98a4b"/>
+      <stop offset="100%" stop-color="#7a4c24"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="url(#sky)"/>
+
+  <!-- moon -->
+  <circle cx="660" cy="95" r="70" fill="url(#moonGlow)"/>
+  <circle cx="660" cy="95" r="34" fill="#fdf6e3"/>
+
+  <!-- stars -->
+  <g fill="#fdf6e3">
+    <circle cx="80" cy="70" r="2"/>
+    <circle cx="140" cy="130" r="1.6"/>
+    <circle cx="60" cy="200" r="1.6"/>
+    <circle cx="240" cy="60" r="1.8"/>
+    <circle cx="500" cy="70" r="1.6"/>
+    <circle cx="430" cy="40" r="1.4"/>
+    <circle cx="740" cy="220" r="1.6"/>
+    <circle cx="30" cy="330" r="1.4"/>
+  </g>
+
+  <text x="400" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="26" fill="#fdf6e3">Hot Potatoes at the Fairy Warehouse</text>
+  <text x="400" y="70" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="14" fill="#b9c4d8">Eight leprechauns, one circle, and a bell that only rings once</text>
+
+  <!-- table -->
+  <ellipse cx="400" cy="300" rx="230" ry="230" fill="none" stroke="#3a4a6b" stroke-width="2" stroke-dasharray="4 6"/>
+
+  <!-- connecting ring path -->
+  <polygon points="400,120 527,173 580,300 527,427 400,480 273,427 220,300 273,173"
+           fill="none" stroke="#3a4a6b" stroke-width="2"/>
+
+  <!-- seats: alternating Red / Blue -->
+  <g font-family="Verdana, sans-serif" font-size="13" font-weight="bold">
+    <!-- Red seats -->
+    <circle cx="400" cy="120" r="26" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+    <text x="400" y="125" text-anchor="middle" fill="#7a3b00">1</text>
+
+    <circle cx="580" cy="300" r="26" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+    <text x="580" y="305" text-anchor="middle" fill="#7a3b00">3</text>
+
+    <circle cx="400" cy="480" r="26" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+    <text x="400" y="485" text-anchor="middle" fill="#7a3b00">5</text>
+
+    <circle cx="220" cy="300" r="26" fill="#ffe0b2" stroke="#e65100" stroke-width="3"/>
+    <text x="220" y="305" text-anchor="middle" fill="#7a3b00">7</text>
+
+    <!-- Blue seats -->
+    <circle cx="527" cy="173" r="26" fill="#bbdefb" stroke="#0d47a1" stroke-width="3"/>
+    <text x="527" y="178" text-anchor="middle" fill="#0d1b2a">2</text>
+
+    <circle cx="527" cy="427" r="26" fill="#bbdefb" stroke="#0d47a1" stroke-width="3"/>
+    <text x="527" y="432" text-anchor="middle" fill="#0d1b2a">4</text>
+
+    <circle cx="273" cy="427" r="26" fill="#bbdefb" stroke="#0d47a1" stroke-width="3"/>
+    <text x="273" y="432" text-anchor="middle" fill="#0d1b2a">6</text>
+
+    <circle cx="273" cy="173" r="26" fill="#bbdefb" stroke="#0d47a1" stroke-width="3"/>
+    <text x="273" y="178" text-anchor="middle" fill="#0d1b2a">8</text>
+  </g>
+
+  <!-- a potato sitting on seat 1 -->
+  <ellipse cx="400" cy="107" rx="12" ry="9" fill="url(#potato)" stroke="#5a370f" stroke-width="1"/>
+
+  <!-- decisive pass arrow, seat 1 -> seat 2 -->
+  <path d="M 415,132 Q 470,115 512,160" fill="none" stroke="#fdf6e3" stroke-width="2.4" stroke-dasharray="6 5" marker-end="url(#arrowhead)"/>
+  <text x="475" y="105" text-anchor="middle" font-family="Georgia, serif" font-style="italic" font-size="13" fill="#fdf6e3">the decisive pass</text>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#fdf6e3"/>
+    </marker>
+  </defs>
+
+  <!-- fairy sparkle -->
+  <g fill="#fff3c4">
+    <path d="M 505,145 l 4,-10 l 4,10 l 10,4 l -10,4 l -4,10 l -4,-10 l -10,-4 z" opacity="0.9"/>
+  </g>
+
+  <!-- legend -->
+  <g font-family="Verdana, sans-serif" font-size="12" fill="#dfe6f2">
+    <circle cx="255" cy="555" r="8" fill="#ffe0b2" stroke="#e65100" stroke-width="2"/>
+    <text x="270" y="559">Red Team (odd seats)</text>
+    <circle cx="470" cy="555" r="8" fill="#bbdefb" stroke="#0d47a1" stroke-width="2"/>
+    <text x="485" y="559">Blue Team (even seats)</text>
+  </g>
+</svg>
