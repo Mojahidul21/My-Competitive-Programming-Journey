@@ -51,7 +51,7 @@ flowchart TD
 
     PerSeat --> HasPotato{"Does seat i hold<br/> a potato in s?"}
     HasPotato -- "No" --> Nothing["Nothing to do —<br/>no potato to pass or receive"]
-    HasPotato -- "Yes" --> NextSeat{"Does seat j = i+1<br/>hold a potato in s?"}
+    HasPotato -- "Yes" --> NextSeat{"Does seat j = i+1<br/> hold a potato in s?"}
 
     NextSeat -- "Yes (blocked)" --> Stay["Final state: potato stays at seat i"]
     NextSeat -- "No (empty)" --> Move["Final state: potato moves to seat j"]
