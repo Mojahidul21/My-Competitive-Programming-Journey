@@ -486,8 +486,8 @@ Poker: folding is free at any point, but a placed bet can't be undone — so eve
 [CF 2256C — Hot Potatoes at the Fairy Warehouse](https://codeforces.com/contest/2256/problem/C) is a clean instance: holding a potato is free, passing early risks receiving one back with no time left to pass it on, so everyone waits for the last round and the `k`-round game collapses into one pass over the input. [AC submission](https://codeforces.com/contest/2256/submission/386578511) reads `k` and discards it immediately, since it never affects the answer.
 
 **Related:**
-See [Parity Chain](#parity-chain) — same surprise, different mechanism: a many-step process collapses to one check per element.
-See [Boilerplate](#boilerplate) — both are about an advertised dimension turning out not to be load-bearing.
+* [Parity Chain](#parity-chain) — same surprise, different mechanism: a many-step process collapses to one check per element.
+* [Boilerplate](#boilerplate) — both are about an advertised dimension turning out not to be load-bearing.
 
 ---
 
