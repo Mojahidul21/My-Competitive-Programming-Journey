@@ -49,7 +49,7 @@ flowchart TD
     Loop["Rounds 1 through k−1:<br/>everyone holds — state stays equal to s"] --> RK["Round k arrives — the decisive round"]
     RK --> PerSeat["Take seat i (1..2n)"]
 
-    PerSeat --> HasPotato{"Does seat i hold<br/>a potato in s?"}
+    PerSeat --> HasPotato{"Does seat i hold<br/> a potato in s?"}
     HasPotato -- "No" --> Nothing["Nothing to do —<br/>no potato to pass or receive"]
     HasPotato -- "Yes" --> NextSeat{"Does seat j = i+1<br/>hold a potato in s?"}
 
