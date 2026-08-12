@@ -91,7 +91,7 @@ flowchart TD
     C -- "Fits limits" --> J["Only now: write the code"]
     C -- "Too slow" --> D["Don't optimize the loop —<br/>ask what each constraint forces"]
     D --> E["e.g. k ∣ b  ⟹  a ≡ n (mod k)"]
-    E --> F{"Can I state the answer<br/>in one sentence of arithmetic,<br/>with no loop or check?"}
+    E --> F{"Can I state the answer<br/>in one sentence of arithmetic,<br/> with no loop or check?"}
     F -- "No — still searching" --> D
     F -- "Yes" --> G{"Any exception case?<br/>(e.g. a forbidden remainder)"}
     G -- "Yes" --> H["Apply the same constructive question<br/>to the exception alone —<br/>small manual search on paper, not in code"]
