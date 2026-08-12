@@ -86,7 +86,7 @@ This is a small manual search you do in your head or on paper, not in code. Once
 The flow can be shown as below - 
 ```mermaid
 flowchart TD
-    A["Read the problem"] --> B["Instinct: iterate / check<br/>each candidate"]
+    A["Read the problem"] --> B["Instinct: iterate / check<br/> each candidate"]
     B --> C{"Does this scale?<br/>(TLE risk)"}
     C -- "Fits limits" --> J["Only now: write the code"]
     C -- "Too slow" --> D["Don't optimize the loop —<br/>ask what each constraint forces"]
