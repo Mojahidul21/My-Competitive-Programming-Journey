@@ -21,7 +21,7 @@ When both axes genuinely vary, you still choose which one is outer:
 | Row | Column | Input is read row by row; you process a row fully before moving to the next (row-major, matches C++ storage order — cache-friendly) |
 | Column | Row | The problem groups data by column (e.g., column sums, column-wise queries), or the recursion/DP state is column-indexed |
 
-![](./image/LoopMapping.png)
+![](./image/LoopMapping.png)  
 *Loop-Row/Col Mapping*
 
 Neither is "more correct" — pick whichever axis the problem's structure already treats as the outer grouping. What matters more is the next section.
