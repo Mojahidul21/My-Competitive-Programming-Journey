@@ -4,6 +4,9 @@
 
 From zero to competitive programming — a complete guide to lambda functions, capture lists, and STL `count_if`, with real examples, patterns, and practice problems.
 
+![](./image/LambdaFunction.png)  
+*Power of Lambda Function*
+
 ---
 
 ## 1. What Problem Does This Solve?
