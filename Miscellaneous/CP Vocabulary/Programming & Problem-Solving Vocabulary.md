@@ -515,7 +515,7 @@ Whenever a matrix property depends on distance from the border — concentric la
 **Example from practice:**
 [Target Practice (CF 1873C)](https://codeforces.com/problemset/problem/1873/C) is a 10×10 board decomposes into 5 rings, each ring split into four fixed-axis segments:
 
-![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Decide%20Traverse%20Direction/image/TargetPracticeBigSize.png)  
+![](https://./image/TargetPractice.png)  
 _Ring Peeling_
 
 ```cpp
