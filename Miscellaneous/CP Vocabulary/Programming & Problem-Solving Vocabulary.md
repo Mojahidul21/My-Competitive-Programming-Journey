@@ -10,15 +10,18 @@ Lexical ordered.
 - [Boilerplate](#boilerplate)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Deduplication (Dedup)](#deduplication-dedup)
+- [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
 - [Fragile Code](#fragile-code)
 - [Guard / Guard Clause](#guard--guard-clause)
 - [Invariant](#invariant)
 - [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Latent Bug](#latent-bug)
+- [Off-by-one](#off-by-one)
 - [Overhead](#overhead)
 - [Parity Chain](#parity-chain)
 - [Reduction](#reduction)
+- [Ring Peeling](#ring-peeling)
 - [Robust Code](#robust-code)
 - [Round Collapse](#round-collapse)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
@@ -152,6 +155,33 @@ A guest list with repeated names — deduping is crossing out every repeat so ea
 **Related:**  
 See [Invariant](#invariant) — a `set`'s "no two elements are equal" rule is itself an invariant, which is *why* pouring values into a `set` dedups them for free.  
 See [Overhead](#overhead) — the three approaches above have different time/space tradeoffs worth being aware of under tight limits.
+
+---
+
+## Double Counting
+
+**Definition:**
+Counting the same element, case, or contribution more than once while accumulating a total, which inflates the result unless corrected.
+
+**Why it arises:**
+Most often at a shared boundary between two ranges, loops, or cases that overlap — two segments of a shape sharing an edge cell, or two conditions in a counting formula that aren't actually mutually exclusive.
+
+**Example from practice:**
+Peeling a matrix ring into four full-length segments (top, bottom, left, right) revisits all 4 corner cells twice — once from the row pass, once from the column pass:
+```cpp
+for (row = ring,   col = ring; col < 10-ring; ++col) ans += ...;   // top row, full width
+for (row = 9-ring, col = ring; col < 10-ring; ++col) ans += ...;   // bottom row, full width
+for (col = ring,   row = ring; row < 10-ring; ++row) ans += ...;   // left col, full height — recounts 2 corners
+for (col = 9-ring, row = ring; row < 10-ring; ++row) ans += ...;   // right col, full height — recounts 2 corners
+```
+Two ways to fix it: trim the row range on the left/right passes to `ring+1` so they never touch a corner already owned by the top/bottom passes, or leave every pass full and subtract each of the 4 corners once at the end.
+
+**Analogy:**
+Counting party guests as "people wearing hats" plus "people wearing glasses" — anyone wearing both gets counted twice unless you subtract the overlap.
+
+**Related:**
+* [Ring Peeling](#ring-peeling) — the corner cells are exactly where this shows up when peeling a matrix.
+* [Off-by-one](#off-by-one) — double counting is frequently the downstream symptom of a range boundary that's off by one.
 
 ---
 
@@ -335,6 +365,35 @@ This passes all valid test cases because the memory region happens to contain be
 
 ---
 
+## Off-by-one
+
+**Definition:**
+An error where a loop bound, range, or index is exactly one position too far or too short — the boundary is wrong by precisely 1, not by some arbitrary amount.
+
+**Why it arises:**
+At the seams: where a range starts, ends, wraps around, or hands off to an adjacent range. `<` vs `<=`, `n` vs `n-1`, a missing `+1` on a wrap-around, starting a loop at `ring` instead of `ring + 1`.
+
+**Example from practice:**
+In ring-peeling a matrix, the left/right column passes deliberately start at `row = ring + 1`, not `row = ring` — a one-off adjustment made on purpose to skip a corner the row passes already counted:
+```cpp
+// deliberate: skips the corner cell the top-row pass already counted
+for (row = ring + 1, col = ring; row < 9 - ring; ++row)
+    ans += (target[row][col] != '.') * (ring + 1);
+
+// the bug version: starting at `ring` instead of `ring + 1`
+// silently re-visits that corner — an accidental off-by-one
+```
+The [Contiguous / Contiguous Block](#contiguous--contiguous-block) check (`back - front - size + 1 == 0`) is built with the `+1` specifically to avoid an off-by-one in that comparison.
+
+**Analogy:**
+Fence posts vs fence sections — a straight fence of length `n` needs `n + 1` posts, not `n`. Forgetting the `+1` is the textbook off-by-one.
+
+**Related:**
+* [Double Counting](#double-counting) — a range that runs one cell too far is one of the most common causes.
+* [Contiguous / Contiguous Block](#contiguous--contiguous-block) — its defining formula exists specifically to get this right.
+
+---
+
 ## Overhead
 
 **Definition:**
@@ -435,6 +494,42 @@ string sss{s[0] != 'a' ? "ba" : "ab"};
 - "Can we make all elements equal?" → prefix sum / parity check
 - "Minimum swaps to sort" → cycle detection in permutation graph
 - "Longest common substring" → suffix array / LCP array
+
+---
+
+## Ring Peeling
+
+**Definition:**
+A matrix traversal technique that processes the outer boundary ("ring") of the remaining unvisited cells, then shrinks the boundary inward and repeats until nothing is left. Each ring is visited as several 1D fixed-axis segments, not as one 2D region.
+
+**Why it arises:**
+Whenever a matrix property depends on distance from the border — concentric layers that share a value, a weight, or a transformation (target-scoring boards, spiral output, layer-dependent point values).
+
+**Example from practice:**
+[CF 1873C — Target Practice](https://codeforces.com/problemset/problem/1873/C): a 10×10 board decomposes into 5 rings, each ring split into four fixed-axis segments:
+```cpp
+for (row = ring,   col = ring; col < 10-ring; ++col) ans += (target[row][col]!='.')*(ring+1); // top
+for (row = 9-ring, col = ring; col < 10-ring; ++col) ans += (target[row][col]!='.')*(ring+1); // bottom
+for (row = ring+1, col = ring; row < 9-ring; ++row)  ans += (target[row][col]!='.')*(ring+1); // left
+for (row = ring+1, col = 9-ring; row < 9-ring; ++row) ans += (target[row][col]!='.')*(ring+1); // right
+```
+
+```mermaid
+flowchart TD
+    A["ring = 0"] --> B["peel top, bottom, left, right<br/>segments of the current ring"]
+    B --> C["ring += 1<br/>(boundary shrinks by 1 on each side)"]
+    C --> D{"ring reached the center?"}
+    D -- No --> B
+    D -- Yes --> E["done — every cell visited exactly once"]
+```
+
+**Analogy:**
+Peeling an onion — you remove the outermost skin entirely before you can see or touch the layer beneath it.
+
+**Related:**
+* [Double Counting](#double-counting) — the corner cells of each ring are exactly where this bites if the four segments aren't handled carefully.
+* [Off-by-one](#off-by-one) — the `ring + 1` trim on the side segments is a deliberate instance of this.
+* Full technique write-up: [Comfortable with Your Matrices — Fix an Axis, Drop a Loop](../../General%20Tricks%20&%20Techniques/Decide%20Traverse%20Direction/Comfortable%20with%20Your%20Matrices%20%E2%80%94%20Fix%20an%20Axis,%20Drop%20a%20Loop.md)
 
 ---
 
