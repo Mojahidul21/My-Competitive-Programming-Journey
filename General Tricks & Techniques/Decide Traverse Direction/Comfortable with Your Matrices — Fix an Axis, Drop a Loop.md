@@ -50,11 +50,11 @@ Same logic mirrored for a fixed column: loop only over `row`, keep `col` constan
 Here is a simple idea *Peeling Matrix* - the outer ring anti-clockwise starting from `(0,0)`, shrink the boundary once that ring is removed, then peel whatever's left at the center:
 
 ![](./image/PeelingMatrix.png)
-
+  
 Now the *Target Practice* problem - which is exactly the shape of [1873C - Target Practice](https://codeforces.com/problemset/problem/1873/C). A 10×10 grid decomposes into 5 concentric rings. Each ring is **not** one 2D region — it's four 1D segments, each with one axis fixed. Here's the [AC submission](https://codeforces.com/contest/1873/submission/386979138):
 
 ![](./image/TargetPracticeBigSize.png)  
-*Target Practice*
+*Target Practice*  
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
