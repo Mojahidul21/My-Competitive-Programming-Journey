@@ -390,12 +390,10 @@ The full picture can be observed here in [_Practice Problem_](https://github.com
   The [Contiguous / Contiguous Block](#contiguous--contiguous-block) check (`back - front - size + 1 == 0`) is built with the `+1` specifically to avoid an off-by-one in that comparison.
 
 **Analogy:**
-Fence posts vs fence sections — a straight fence of length `n` needs `n + 1` posts, not `n`.  
+Fence posts vs fence sections — a straight fence of length `n` needs `n + 1` posts, not `n`. Forgetting the `+1` is the textbook off-by-one.  
 
 ![](./image/Fencing.png)  
 *Off-by-one Concept in Fence*  
-
-Forgetting the `+1` is the textbook off-by-one.
 
 **Related:**
 * [Double Counting](#double-counting) — a range that runs one cell too far is one of the most common causes.
