@@ -466,7 +466,7 @@ flowchart TD
     F --> G
 ```
 - Example-2: Reds (even positions) and blues (odd positions) never need to be compared against their neighbor — each color's weight is summed on its own, then the two totals are compared. Same decomposition as the parity-chain pattern.
-![Red-cap and blue-cap people split into two independent weight chains](./Supporting%20Images/pairity_weight_comparison.png)
+![RedBlue](./image/pairity_weight_comparison.png)
 
 **Related:**
 * [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
