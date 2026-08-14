@@ -513,13 +513,20 @@ A matrix traversal technique that processes the outer boundary ("ring") of the r
 Whenever a matrix property depends on distance from the border — concentric layers that share a value, a weight, or a transformation (target-scoring boards, spiral output, layer-dependent point values).
 
 **Example from practice:**
-[CF 1873C — Target Practice](https://codeforces.com/problemset/problem/1873/C): a 10×10 board decomposes into 5 rings, each ring split into four fixed-axis segments:
+[Target Practice (CF 1873C)](https://codeforces.com/problemset/problem/1873/C) is a 10×10 board decomposes into 5 rings, each ring split into four fixed-axis segments:
+
+![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Decide%20Traverse%20Direction/image/TargetPracticeBigSize.png)  
+_Ring Peeling_
+
 ```cpp
 for (row = ring,   col = ring; col < 10-ring; ++col) ans += (target[row][col]!='.')*(ring+1); // top
 for (row = 9-ring, col = ring; col < 10-ring; ++col) ans += (target[row][col]!='.')*(ring+1); // bottom
 for (row = ring+1, col = ring; row < 9-ring; ++row)  ans += (target[row][col]!='.')*(ring+1); // left
 for (row = ring+1, col = 9-ring; row < 9-ring; ++row) ans += (target[row][col]!='.')*(ring+1); // right
 ```
+We can see the process once again as below:
+![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Decide%20Traverse%20Direction/image/PeelingMatrix.png)  
+_Ring Peeling_
 
 ```mermaid
 flowchart TD
@@ -532,6 +539,8 @@ flowchart TD
 
 **Analogy:**
 Peeling an onion — you remove the outermost skin entirely before you can see or touch the layer beneath it.
+![](https://./image/OnionPeeling.png)  
+_Peeling and Onion_
 
 **Related:**
 * [Double Counting](#double-counting) — the corner cells of each ring are exactly where this bites if the four segments aren't handled carefully.
