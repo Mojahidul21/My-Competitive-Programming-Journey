@@ -168,16 +168,17 @@ Most often at a shared boundary between two ranges, loops, or cases that overlap
 
 **Example from practice:**
 Peeling a matrix ring into four full-length segments (top, bottom, left, right) revisits all 4 corner cells twice — once from the row pass, once from the column pass:
-```cpp
-for (row = ring,   col = ring; col < 10-ring; ++col) ans += ...;   // top row, full width
-for (row = 9-ring, col = ring; col < 10-ring; ++col) ans += ...;   // bottom row, full width
-for (col = ring,   row = ring; row < 10-ring; ++row) ans += ...;   // left col, full height — recounts 2 corners
-for (col = 9-ring, row = ring; row < 10-ring; ++row) ans += ...;   // right col, full height — recounts 2 corners
-```
+
+![](./image/PeelingMatix.png)  
+*Peeling Matrix*
+
 Two ways to fix it: trim the row range on the left/right passes to `ring+1` so they never touch a corner already owned by the top/bottom passes, or leave every pass full and subtract each of the 4 corners once at the end.
 
 **Analogy:**
 Counting party guests as "people wearing hats" plus "people wearing glasses" — anyone wearing both gets counted twice unless you subtract the overlap.
+
+![](./image/HatGlass.png)  
+*Hat & Glass Double Counting*
 
 **Related:**
 * [Ring Peeling](#ring-peeling) — the corner cells are exactly where this shows up when peeling a matrix.
