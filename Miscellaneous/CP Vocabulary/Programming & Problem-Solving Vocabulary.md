@@ -178,7 +178,7 @@ Two ways to fix it: trim the row range on the left/right passes to `ring+1` so t
 Counting party guests as "people wearing hats" plus "people wearing glasses" — anyone wearing both gets counted twice unless you subtract the overlap.
 
 ![](./image/HatGlass.png)  
-*Hat & Glass Double Counting*
+*Hat & Glass - Double Counting*
 
 **Related:**
 * [Ring Peeling](#ring-peeling) — the corner cells are exactly where this shows up when peeling a matrix.
