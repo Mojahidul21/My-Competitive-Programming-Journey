@@ -1,6 +1,6 @@
 # Comfortable with Your Matrices — Fix an Axis, Drop a Loop
 
-![](./image/FruitMatrix.png)
+![](./image/FruitMatrix.png)  
 *Never traverse blindly!*
 
 ## The Core Idea
