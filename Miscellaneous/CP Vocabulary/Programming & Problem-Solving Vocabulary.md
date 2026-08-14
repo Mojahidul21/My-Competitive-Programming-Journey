@@ -538,7 +538,8 @@ flowchart TD
 ```
 
 **Analogy:**
-Peeling an onion — you remove the outermost skin entirely before you can see or touch the layer beneath it.
+Peeling an onion — you remove the outermost skin entirely before you can see or touch the layer beneath it.  
+
 ![](./image/OnionPeeling.png)  
 _Peeling an Onion_
 
