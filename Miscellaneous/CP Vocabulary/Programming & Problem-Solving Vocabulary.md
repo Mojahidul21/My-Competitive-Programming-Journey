@@ -539,8 +539,8 @@ flowchart TD
 
 **Analogy:**
 Peeling an onion — you remove the outermost skin entirely before you can see or touch the layer beneath it.
-![](https://./image/OnionPeeling.png)  
-_Peeling and Onion_
+![](./image/OnionPeeling.png)  
+_Peeling an Onion_
 
 **Related:**
 * [Double Counting](#double-counting) — the corner cells of each ring are exactly where this bites if the four segments aren't handled carefully.
