@@ -384,7 +384,10 @@ for (row = ring + 1, col = ring; row < 9 - ring; ++row)
 // the bug version: starting at `ring` instead of `ring + 1`
 // silently re-visits that corner — an accidental off-by-one
 ```
-The [Contiguous / Contiguous Block](#contiguous--contiguous-block) check (`back - front - size + 1 == 0`) is built with the `+1` specifically to avoid an off-by-one in that comparison.
+The full picture can be observed here in [_Practice Problem_](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Decide%20Traverse%20Direction/Comfortable%20with%20Your%20Matrices%20%E2%80%94%20Fix%20an%20Axis%2C%20Drop%20a%20Loop.md#practice-problem)
+
+  
+  The [Contiguous / Contiguous Block](#contiguous--contiguous-block) check (`back - front - size + 1 == 0`) is built with the `+1` specifically to avoid an off-by-one in that comparison.
 
 **Analogy:**
 Fence posts vs fence sections — a straight fence of length `n` needs `n + 1` posts, not `n`. Forgetting the `+1` is the textbook off-by-one.
