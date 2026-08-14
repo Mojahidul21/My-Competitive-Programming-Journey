@@ -157,4 +157,4 @@ Keep the same variable vocabulary every time so row/column intent is legible at 
 
 | # | Problem | Short Description | Guidance |
 |---|---|---|---|
-| 1 | [1873C - Target Practice](https://codeforces.com/problemset/problem/1873/C) | Score a 10×10 target by point value per concentric ring.  ![](./image/TargetMatrix.png) | _Hint:_ Peel the grid into 5 rings; each ring is 4 fixed-axis segments — either trim two of them or run all four full and subtract the corners (sections above). <br><br> _Solution:_ [⏎](https://codeforces.com/contest/1873/submission/386979138) |
+| 1 | [Target Practice (CF 1873C)](https://codeforces.com/problemset/problem/1873/C) | Score a 10×10 target by point value per concentric ring.  ![](./image/TargetMatrix.png) | _Hint:_ Peel the grid into 5 rings; each ring is 4 fixed-axis segments — either trim two of them or run all four full and subtract the corners (sections above). <br><br> _Solution:_ [⏎](https://codeforces.com/contest/1873/submission/386979138) |
