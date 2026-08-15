@@ -2,6 +2,9 @@
 
 ## 📚 Table of Contents
 
+### 📕 Books
+- [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
+
 ### 🧮 Algorithm
 - [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
 
