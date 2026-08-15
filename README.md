@@ -2,14 +2,18 @@
 
 ## 📚 Table of Contents
 
-### 🧮 Algorithm
-- [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
-
 ### 📕 Books
 - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
-### 💻 C++ Syntax Strategies
-- [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
+
+### 🧮 Algorithm
+- [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
+
+
+### 📐 Theorem
+- [Shoelace Formula — Computing Polygon Area from Vertex Coordinates](Theorem/Shoelace%20Formula/Shoelace%20Formula.md)
+- [Bezout's Identity](Theorem/Bezout's%20Identity.md)
+
 
 ### 🧠 General Tricks & Techniques
 
@@ -31,8 +35,6 @@
 **Number as String**
 - [Numbers as Strings: Tricks, Patterns and Pitfalls](General%20Tricks%20&%20Techniques/Number%20as%20String/Numbers%20as%20Strings%3A%20Tricks%2C%20Patterns%20and%20Pitfalls.md)
 
-### 📖 Miscellaneous / CP Vocabulary
-- [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
 
 ### 🎯 Specific Problem Strategy
 
@@ -42,9 +44,6 @@
 **Game Theory**
 - [Thinking Like a Champion: Frequency Analysis and Greedy Reasoning in Competitive Programming Game Theory](Specific%20Problem%20Strategy/Game%20Theory/Thinking%20Like%20a%20Champion%3A%20Frequency%20Analysis%20and%20Greedy%20Reasoning%20in%20Competitive%20Programming%20Game%20Theory.md)
 
-### 📐 Theorem
-- [Shoelace Formula — Computing Polygon Area from Vertex Coordinates](Theorem/Shoelace%20Formula/Shoelace%20Formula.md)
-- [Bezout's Identity](Theorem/Bezout's%20Identity.md)
 
 ### 🔼 Upsolve
 
@@ -55,8 +54,17 @@
 - [C. Mental Monumental (Easy Version)](Upsolve/Codeforces/C.%20Mental%20Monumental%20(Easy%20Version).md)
 - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
+
 ### 📝 Wish List
 - [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
 - [Course To Grab](Wish%20List/Course%20To%20Grab.md)
 - [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
 - [Mixed](Wish%20List/Mixed.md)
+
+
+### 💻 C++ Syntax Strategies
+- [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
+
+
+### 📖 Miscellaneous / CP Vocabulary
+- [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
