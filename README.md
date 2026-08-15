@@ -39,7 +39,7 @@
 - [Thinking Like a Champion: Frequency Analysis and Greedy Reasoning in Competitive Programming Game Theory](Specific%20Problem%20Strategy/Game%20Theory/Thinking%20Like%20a%20Champion%3A%20Frequency%20Analysis%20and%20Greedy%20Reasoning%20in%20Competitive%20Programming%20Game%20Theory.md)
 
 ### 📐 Theorem
-- [Shoelace Formula](Theorem/Shoelace%20Formula/Shoelace%20Formula.md)
+- [Shoelace Formula — Computing Polygon Area from Vertex Coordinates](Theorem/Shoelace%20Formula/Shoelace%20Formula.md)
 - [Bezout's Identity](Theorem/Bezout's%20Identity.md)
 
 ### 🔼 Upsolve
