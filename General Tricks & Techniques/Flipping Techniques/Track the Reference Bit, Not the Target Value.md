@@ -92,7 +92,7 @@ bool state = (s[anchor] == '1');
 
 for (int i = anchor + 1; i < n; ++i, state = !state) {
     if (s[i] == flip[state]) { valid = false; break; }  // conflicts with a fixed bulb
-    if (s[i] == '?') s[i] = flip[!state];                // the only allowed value
+    if (s[i] == '?') s[i] = flip[!state];               // the only allowed value
 }
 
 state = (s[anchor] == '1');
