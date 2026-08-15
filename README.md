@@ -2,11 +2,11 @@
 
 ## 📚 Table of Contents
 
-### 📕 Books
-- [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
-
 ### 🧮 Algorithm
 - [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
+
+### 📕 Books
+- [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
 ### 💻 C++ Syntax Strategies
 - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
