@@ -55,16 +55,16 @@
 - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
 
-### 📝 Wish List
-- [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
-- [Course To Grab](Wish%20List/Course%20To%20Grab.md)
-- [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
-- [Mixed](Wish%20List/Mixed.md)
-
-
 ### 💻 C++ Syntax Strategies
 - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
 
 
 ### 📖 Miscellaneous / CP Vocabulary
 - [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
+
+
+### 📝 Wish List
+- [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
+- [Course To Grab](Wish%20List/Course%20To%20Grab.md)
+- [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
+- [Mixed](Wish%20List/Mixed.md)
