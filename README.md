@@ -11,7 +11,7 @@
 ### 🧠 General Tricks & Techniques
 
 **Contest Strategy**
-- [Contest Math Thinking](General%20Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
+- [From Search to Construction: Thinking Mathematically in ContestsFrom Search to Construction: Thinking Mathematically in Contests](General%20Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
 - [Trust the Predicate: Stop Simulating What You've Already Proven](General%20Tricks%20&%20Techniques/Contest%20Strategy/Trust%20the%20Predicate%3A%20Stop%20Simulating%20What%20You've%20Already%20Proven.md)
 
 **Decide Traverse Direction**
