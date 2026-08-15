@@ -546,7 +546,14 @@ Because the compiler knows the exact type of the closure, it can **inline the la
 
 ---
 
-## 10. Quick Reference Cheat Sheet
+## 10. Practice Problem List
+| # | Problem | Short Description | Guidance |
+|---|---|---|---|
+| 1 | [Love Story (CF 1829A)](https://codeforces.com/problemset/problem/1829/A) | Count of character difference. | _Hint:_ Iterate over the given string and compare with same positioned character of codeforces. <br><br> _Solution:_ [⏎](https://codeforces.com/contest/1829/submission/387093913) |
+
+---
+
+## 11. Quick Reference Cheat Sheet
 
 ### 📦 Capture List
 ```cpp
