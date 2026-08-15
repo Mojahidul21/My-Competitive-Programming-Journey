@@ -1,6 +1,6 @@
 # My-Competitive-Programming-Journey  
 
-## 📚 Table of Contents
+> ## 📚 Table of Contents
 
 ### 📕 Books
 - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
