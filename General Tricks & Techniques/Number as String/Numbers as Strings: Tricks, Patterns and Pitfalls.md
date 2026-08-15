@@ -1,6 +1,5 @@
 # Numbers as Strings: Tricks, Patterns and Pitfalls
 
-> **Author:** Ace_Azimuth_Aviator  
 > **Tags:** `strings` `implementation` `digit-manipulation` `big-numbers` `tricks`  
 > **Difficulty scope:** Beginner → Intermediate
 
