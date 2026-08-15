@@ -46,6 +46,12 @@
 **Game Theory**
 - [Thinking Like a Champion: Frequency Analysis and Greedy Reasoning in Competitive Programming Game Theory](Specific%20Problem%20Strategy/Game%20Theory/Thinking%20Like%20a%20Champion%3A%20Frequency%20Analysis%20and%20Greedy%20Reasoning%20in%20Competitive%20Programming%20Game%20Theory.md)
 
+**Math Problem**
+- [Ask Yourself: A Pre-Attempt Checklist for Math & Number Theory Problems](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/Math%20Problem/Ask%20Yourself%3A%20A%20Pre-Attempt%20Checklist%20for%20Math%20%26%20Number%20Theory%20Problems.md)
+
+**Number Theory**
+- [Ask Yourself: A Pre-Attempt Checklist for Math & Number Theory Problems](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/Number%20Theory/Ask%20Yourself%3A%20A%20Pre-Attempt%20Checklist%20for%20Math%20%26%20Number%20Theory%20Problems.md)
+
 
 > ### 🔼 Upsolve
 
