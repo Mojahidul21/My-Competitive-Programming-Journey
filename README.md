@@ -1,12 +1,12 @@
 # My-Competitive-Programming-Journey  
 
-> ## 📚 Table of Contents
+## 📚 Table of Contents
 
-### 📕 Books
+> ### 📕 Books
 - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
 
-### 🧮 Algorithm
+>> ### 🧮 Algorithm
 - [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
 
 
