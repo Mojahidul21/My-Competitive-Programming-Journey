@@ -71,6 +71,11 @@
 - [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
 
 
+> ### 🧩 Code Templates
+**Codeforces**
+- [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp) 
+
+
 > ### 📝 Wish List
 - [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
 - [Course To Grab](Wish%20List/Course%20To%20Grab.md)
