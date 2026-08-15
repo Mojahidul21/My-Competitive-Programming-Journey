@@ -6,16 +6,16 @@
 - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
 
->> ### 🧮 Algorithm
+> ### 🧮 Algorithm
 - [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
 
 
-### 📐 Theorem
+> ### 📐 Theorem
 - [Shoelace Formula — Computing Polygon Area from Vertex Coordinates](Theorem/Shoelace%20Formula/Shoelace%20Formula.md)
 - [Bezout's Identity](Theorem/Bezout's%20Identity.md)
 
 
-### 🧠 General Tricks & Techniques
+> ### 🧠 General Tricks & Techniques
 
 **Contest Strategy**
 - [From Search to Construction: Thinking Mathematically in Contests](General%20Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
@@ -36,7 +36,7 @@
 - [Numbers as Strings: Tricks, Patterns and Pitfalls](General%20Tricks%20&%20Techniques/Number%20as%20String/Numbers%20as%20Strings%3A%20Tricks%2C%20Patterns%20and%20Pitfalls.md)
 
 
-### 🎯 Specific Problem Strategy
+> ### 🎯 Specific Problem Strategy
 
 **Constructive Algorithms**
 - [Thinking Procedure: Self-Referential Constructive Problems](Specific%20Problem%20Strategy/Constructive%20Algorithms/Thinking%20Procedure%3A%20Self-Referential%20Constructive%20Problems.md)
@@ -45,7 +45,7 @@
 - [Thinking Like a Champion: Frequency Analysis and Greedy Reasoning in Competitive Programming Game Theory](Specific%20Problem%20Strategy/Game%20Theory/Thinking%20Like%20a%20Champion%3A%20Frequency%20Analysis%20and%20Greedy%20Reasoning%20in%20Competitive%20Programming%20Game%20Theory.md)
 
 
-### 🔼 Upsolve
+> ### 🔼 Upsolve
 
 **Codeforces**
 - [Codeforces Round 1102 (Div. 2) — B. Palindrome, Twelve and Two Terms](Upsolve/Codeforces/Codeforces%20Round%201102%20(Div.%202)/B.%20Palindrome%2C%20Twelve%20and%20Two%20Terms.md)
@@ -55,15 +55,15 @@
 - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
 
-### 💻 C++ Syntax Strategies
+> ### 💻 C++ Syntax Strategies
 - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
 
 
-### 📖 Miscellaneous / CP Vocabulary
+> ### 📖 Miscellaneous / CP Vocabulary
 - [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
 
 
-### 📝 Wish List
+> ### 📝 Wish List
 - [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
 - [Course To Grab](Wish%20List/Course%20To%20Grab.md)
 - [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
