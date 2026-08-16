@@ -75,7 +75,7 @@ flowchart TD
     C -- No --> D["Boilerplate —<br/>note it, don't design around it"]
     C -- Yes --> E["Essential —<br/>must be handled correctly"]
 ```
-- [Die Roll (CF 9A)](https://codeforces.com/problemset/problem/9/A) statement says, "If the required probability equals to zero, output 0/1." But look at the math (in the [Solution](https://codeforces.com/contest/9/submission/387213290)): n = 7 - max(y,w), and since max(y,w) is always in [1,6], n is always in [1,6] — it can never be zero. The 0/1 case the statement warns about is structurally unreachable given the constraints.
+- [Die Roll (CF 9A)](https://codeforces.com/problemset/problem/9/A) statement says, "If the required probability equals to zero, output 0/1." But look at the math (in the [Solution](https://codeforces.com/contest/9/submission/387213488)): n = 7 - max(y,w), and since max(y,w) is always in [1,6], n is always in [1,6] — it can never be zero. The 0/1 case the statement warns about is structurally unreachable given the constraints.
 
 **How to recognize one:**
 Before implementing a safeguard the statement seems to demand, derive the actual bound your logic produces. If that bound sits comfortably below what the safeguard exists to protect against, it's boilerplate — mention it if writing up the solution, but don't spend design effort defending against it.
