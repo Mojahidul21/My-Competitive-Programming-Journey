@@ -73,7 +73,10 @@
 
 > ### 🧩 Code Templates
 **Number Theory**
-- [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp) 
+- [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp)
+
+ **Arrays, Prefix Sum, Suffix Sum, etc.**
+- [Prefix Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Arrays%2C%20Prefix%20Sum%2C%20Suffix%20Sum%2C%20etc./Prefix%20Sum.cpp)
 
 
 > ### 📝 Wish List
