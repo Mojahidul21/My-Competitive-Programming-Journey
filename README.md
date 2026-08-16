@@ -76,14 +76,14 @@
  **Arrays, Prefix Sum, Suffix Sum, etc.**
 - [Prefix Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Arrays%2C%20Prefix%20Sum%2C%20Suffix%20Sum%2C%20etc./Prefix%20Sum.cpp)
 
+**Data Structures**
+- [DSU (Union-Find)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Data%20Structures/DSU%20(Union-Find).cpp)
+
 **Input-Output & Debug Utilities**
 - [Print a Vector](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Input-Output%20%26%20Debug%20Utilities/Print%20a%20Vector.cpp)
 
 **Number Theory**
 - [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp)
-
-**Data Structures**
-- [DSU (Union-Find)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Data%20Structures/DSU%20(Union-Find).cpp)
 
 
 > ### 📝 Wish List
