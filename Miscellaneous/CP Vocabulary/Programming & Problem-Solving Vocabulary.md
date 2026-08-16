@@ -328,6 +328,7 @@ cout<<n/g<<'/'<<d/g;
 
 **Analogy:**
 A recipe written as "2 cups per 4 servings" versus "1 cup per 2 servings" — both are correct, but only the second is in its simplest, unambiguous form. A checker expecting the simplest form will reject the first even though the ratio is identical.
+![5. Irreducible Fraction](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/5.%20Irreducible%20Fraction.jpg)
 
 **Related:**
 * [Boilerplate](#boilerplate) — in Die Roll, the problem statement's explicit `0/1` instruction for a zero probability is boilerplate-adjacent: it falls out naturally from `gcd(0,d)=d`, it doesn't need special-casing in code.
