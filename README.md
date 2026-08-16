@@ -72,7 +72,7 @@
 
 
 > ### 🧩 Code Templates
-**Codeforces**
+**Number Theory**
 - [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp) 
 
 
