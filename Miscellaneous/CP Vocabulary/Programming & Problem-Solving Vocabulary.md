@@ -15,6 +15,7 @@ Lexical ordered.
 - [Fragile Code](#fragile-code)
 - [Guard / Guard Clause](#guard--guard-clause)
 - [Invariant](#invariant)
+- [Irreducible Fraction](#irreducible-fraction)
 - [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Latent Bug](#latent-bug)
 - [Off-by-one](#off-by-one)
@@ -294,6 +295,44 @@ for (int i{}; i < n; ++i)
 **Classic invariants in CP:**
 - Binary search: the answer always lies within [lo, hi] at every step
 - Two pointers: left pointer never passes right pointer
+
+---
+## Irreducible Fraction
+
+**Definition:**
+A fraction `a/b` where `gcd(a, b) = 1` — numerator and denominator share no common factor greater than 1, so the fraction cannot be simplified further.
+
+**Why it arises:**
+Many CP problems ask for an answer as a ratio or probability formatted as `a/b`, and require the fraction be in lowest terms specifically — an unreduced but numerically correct fraction (e.g. `2/4` instead of `1/2`) is judged **wrong**, not just unsimplified.
+
+**How to produce one:**
+```cpp
+int g{gcd(n, d)};
+n /= g;
+d /= g;
+// n/d is now irreducible
+```
+`std::gcd` (from `<numeric>`) handles this directly — no manual Euclidean algorithm needed.
+
+**Example from practice:**
+[Codeforces Beta Round 9 — A. Die Roll](https://codeforces.com/problemset/problem/9/A) asks for a win-probability as an irreducible `A/B`. The raw fraction is `n/6` where `n` is a count of favorable outcomes — reducing it requires dividing both by `gcd(n, 6)`:
+```cpp
+int g{gcd(n, d)};
+cout<<n/g<<'/'<<d/g;
+```
+
+**Edge cases to watch:**
+- `gcd(0, d) = d`, so `0/d` reduces correctly to `0/1` — matches the common convention of representing "zero probability" as `0/1` rather than `0/anything`.
+- `gcd(n, n) = n`, so `n/n` reduces correctly to `1/1`.
+- If `d = 0` is possible in your problem's domain, guard before calling `gcd` — dividing by a `gcd` derived from `d = 0` is not meaningful and needs separate handling.
+
+**Analogy:**
+A recipe written as "2 cups per 4 servings" versus "1 cup per 2 servings" — both are correct, but only the second is in its simplest, unambiguous form. A checker expecting the simplest form will reject the first even though the ratio is identical.
+
+**Related:**
+* [Boilerplate](#boilerplate) — in Die Roll, the problem statement's explicit `0/1` instruction for a zero probability is boilerplate-adjacent: it falls out naturally from `gcd(0,d)=d`, it doesn't need special-casing in code.
+
+**Related code:** [Reduce a Fraction to Lowest Terms (GCD)](../../Code%20Templates/Math%20&%20Number%20Theory/Reduce%20a%20Fraction%20to%20Lowest%20Terms%20(GCD).md) — the reusable template for this.
 
 ---
 
