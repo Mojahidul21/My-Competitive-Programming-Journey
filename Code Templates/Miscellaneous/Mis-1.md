@@ -1,5 +1,5 @@
 1. Inquire a substring is present in a sting
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 
