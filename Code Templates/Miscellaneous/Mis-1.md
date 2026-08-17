@@ -1,4 +1,4 @@
-1. Inquire a substring is present in a sting
+1. Inquire a substring is present in a sting or not
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
