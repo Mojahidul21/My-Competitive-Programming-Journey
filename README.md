@@ -8,7 +8,7 @@
 - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
 
-> ### 🧮 Algorithm
+> ### 🧮 Algorithm ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/6.%20Hammer-Nail%20Chemistry.png)
 - [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
 
 
