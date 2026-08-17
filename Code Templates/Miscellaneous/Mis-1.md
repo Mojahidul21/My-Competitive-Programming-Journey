@@ -1,3 +1,5 @@
+1. Inquire a substring is present in a sting
+   ```
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -16,3 +18,4 @@ int main(){
 
     return 0;
 }
+```
