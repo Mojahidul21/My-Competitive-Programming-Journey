@@ -85,6 +85,9 @@
 **Number Theory**
 - [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp)
 
+**Miscellaneous**
+- [Mis-1](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Miscellaneous/Mis-1.md)
+
 
 > ### 📝 Wish List
 - [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
