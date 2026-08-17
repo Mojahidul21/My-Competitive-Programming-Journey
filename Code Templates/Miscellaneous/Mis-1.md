@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-bool contains(const string&s, const string&pattern){
+bool contains(const string&s,const string&pattern){
     return s.find(pattern)!=string::npos;
 }
 
