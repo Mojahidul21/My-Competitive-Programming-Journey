@@ -1,4 +1,5 @@
-# C. Spying on the Beaver[8. beaver_running_to_dam_banner.svg](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/8.%20beaver_running_to_dam_banner.svg)
+# C. Spying on the Beaver
+[8. beaver_running_to_dam_banner.svg](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/8.%20beaver_running_to_dam_banner.svg)
 
 ## Problem brief
 
