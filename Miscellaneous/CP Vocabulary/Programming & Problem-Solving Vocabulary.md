@@ -191,6 +191,7 @@ See [Overhead](#overhead) — the three approaches above have different time/spa
 ---
 
 ## Descendant
+
 **Definition:** Any node you can reach by moving DOWN from a node to its leaves (`Children → Grandchildren → Leaves`).
 
 **Rule:** Move with the edge direction.
