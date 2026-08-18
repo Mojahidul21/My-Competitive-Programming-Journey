@@ -46,6 +46,8 @@ The node itself.
 > Text: Ancestors = Upward path.
 
 **Related:** [Descendant]()
+
+**Example:**
 ```
          [Root]  <-- Ancestor of everyone
          /    \
