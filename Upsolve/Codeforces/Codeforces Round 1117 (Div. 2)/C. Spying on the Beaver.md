@@ -61,6 +61,7 @@ main(){
         
         while(n--)
             cin>>m;
+
         vector<int>a(m);
         
         for(auto&i:a)
