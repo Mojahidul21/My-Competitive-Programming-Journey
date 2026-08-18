@@ -42,7 +42,7 @@ Move against the edge direction.
 The node itself.
 
 > Short Visual: A ladder. You are on the bottom rung. Ancestors are all the rungs above you.  
-> Animation Flash: Golden line travels upward from Target → Parent → Root. All flash yellow.  
+> Animation Flash: Golden line travels upward from `Target → Parent → Root`. All flash yellow.  
 > Text: Ancestors = Upward path.
 
 **Related:** [Descendant]()
