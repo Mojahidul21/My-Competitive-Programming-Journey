@@ -45,6 +45,16 @@ The node itself.
 > Animation Flash: Golden line travels upward from Target → Parent → Root. All flash yellow.  
 > Text: Ancestors = Upward path.
 
+**Related:** [Descendant]()
+```
+         [Root]  <-- Ancestor of everyone
+         /    \
+     [Parent]  [Uncle] <-- Uncle is NOT an ancestor of Child
+      /   \
+  [Child]  [Sibling] <-- Sibling is NOT an ancestor of Child
+   /    \
+[Leaf1] [Leaf2]  <-- Leaf1 & Leaf2 are Descendants of Child
+```
 ---
 
 ## Anchor
