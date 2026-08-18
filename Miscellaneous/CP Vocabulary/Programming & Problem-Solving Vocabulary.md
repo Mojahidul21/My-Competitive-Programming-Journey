@@ -10,7 +10,7 @@ Lexical ordered.
 - [Boilerplate](#boilerplate)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Deduplication (Dedup)](#deduplication-dedup)
-- [Directed Acyclic Graph (DAG)](#directed-acyclic-graph-(dag))
+- [Directed Acyclic Graph (DAG)](#directed-acyclic-graph)
 - [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
 - [Fragile Code](#fragile-code)
