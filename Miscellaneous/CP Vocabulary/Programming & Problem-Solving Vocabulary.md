@@ -160,6 +160,7 @@ See [Invariant](#invariant) — a `set`'s "no two elements are equal" rule is it
 See [Overhead](#overhead) — the three approaches above have different time/space tradeoffs worth being aware of under tight limits.
 
 ---
+
 ## Directed Acyclic Graph (DAG)
 
 A graph where every edge points in one direction, and no matter which edges you follow, you can never make your way back to a vertex you already visited. "Acyclic" is the key word: there are no cycles anywhere in the graph, directed or otherwise. A rooted tree is one common example of a DAG — every edge points from parent to child (or child to parent, depending on convention), and you can never loop back to an ancestor. DAGs show up constantly outside trees too: dependency graphs (task B needs task A done first), version histories, scheduling problems — anywhere "this must come before that" is the whole point, and a cycle would mean a contradiction (X depends on Y depends on X). Came up while writing the 2257C upsolve, where a rooted tree's DAG-ness — specifically that parent numbers are always smaller than child numbers — was the whole solution.
