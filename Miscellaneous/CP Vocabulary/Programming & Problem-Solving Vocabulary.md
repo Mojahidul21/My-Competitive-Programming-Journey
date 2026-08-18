@@ -11,6 +11,7 @@ Lexical ordered.
 - [Boilerplate](#boilerplate)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Deduplication (Dedup)](#deduplication-dedup)
+- [Descendant](#descendant)
 - [Directed Acyclic Graph (DAG)](#directed-acyclic-graph-dag)
 - [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
@@ -43,7 +44,7 @@ The node itself.
 
 > Short Visual: A ladder. You are on the bottom rung. Ancestors are all the rungs above you.  
 > Animation Flash: Golden line travels upward from `Target → Parent → Root`. All flash yellow.  
-> Text: Ancestors = Upward path.
+> Text: `Ancestors = Upward path`.
 
 **Example:**
 ```
@@ -55,7 +56,7 @@ The node itself.
    /    \
 [Leaf1] [Leaf2]  <-- Leaf1 & Leaf2 are Descendants of Child
 ```
-**Related:** [Descendant]()
+**Related:** [Descendant](#descendatnt)
 
 ---
 
@@ -186,6 +187,31 @@ A guest list with repeated names — deduping is crossing out every repeat so ea
 **Related:**  
 See [Invariant](#invariant) — a `set`'s "no two elements are equal" rule is itself an invariant, which is *why* pouring values into a `set` dedups them for free.  
 See [Overhead](#overhead) — the three approaches above have different time/space tradeoffs worth being aware of under tight limits.
+
+---
+
+## Descendant
+**Definition:** Any node you can reach by moving DOWN from a node to its leaves (`Children → Grandchildren → Leaves`).
+
+**Rule:** Move with the edge direction.
+
+**Excludes:** The node itself.
+
+> Short Visual: A waterfall. You are at the top. Descendants are all the water drops that flow down below you.
+> Animation Flash: Green pulse spreads downward from `Root → Children → Leaves`. All flash green.
+> Text: `Descendants = Entire sub-tree below`.
+
+**Example:**
+```
+         [Root]  <-- Ancestor of everyone
+         /    \
+     [Parent]  [Uncle] <-- Uncle is NOT an ancestor of Child
+      /   \
+  [Child]  [Sibling] <-- Sibling is NOT an ancestor of Child
+   /    \
+[Leaf1] [Leaf2]  <-- Leaf1 & Leaf2 are Descendants of Child
+```
+**Related:** [Ancestor](#ancestor)
 
 ---
 
