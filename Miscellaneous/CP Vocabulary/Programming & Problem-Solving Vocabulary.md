@@ -56,7 +56,7 @@ The node itself.
    /    \
 [Leaf1] [Leaf2]  <-- Leaf1 & Leaf2 are Descendants of Child
 ```
-**Related:** [Descendant](#descendatnt)
+**Related:** [Descendant](#descendant)
 
 ---
 
