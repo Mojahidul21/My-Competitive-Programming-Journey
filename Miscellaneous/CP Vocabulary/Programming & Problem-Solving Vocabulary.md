@@ -29,7 +29,6 @@ Lexical ordered.
 - [Round Collapse](#round-collapse)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
-
 ---
 
 ## Ancestor
