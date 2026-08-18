@@ -106,7 +106,7 @@
     <ellipse cx="368" cy="103" rx="6" ry="4" fill="#8a5a2e"/>
   </g>
 
-  <text x="290" y="400" font-size="13" fill="#a9b0d6">
+  <text x="290" y="350" font-size="13" fill="#a9b0d6">
     <tspan x="290" dy="0">Loop (9s):</tspan>
     <tspan x="330" dy="18">root to dam 1 (no camera lights)</tspan>
     <tspan x="330" dy="18">to dam 3 (camera above 3 lights)</tspan>
@@ -114,7 +114,7 @@
     <tspan x="330" dy="18">repeat.</tspan>
   </text>
 
-  <text x="180" y="510" font-size="12" fill="#7d84ab" font-style="italic">
+  <text x="180" y="460" font-size="12" fill="#7d84ab" font-style="italic">
     If your viewer doesn't animate SVGs, try to visualize the loop in your mind.
   </text>
 
