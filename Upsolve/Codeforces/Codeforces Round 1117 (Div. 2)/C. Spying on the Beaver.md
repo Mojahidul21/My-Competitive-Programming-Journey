@@ -129,7 +129,7 @@ For `n = 6`, parents `[1,2,2,1,1]`, dams `{1, 3, 5}`: sorted dams are
 triggers nothing, reaching `3` triggers only the camera above `3`, reaching
 `5` triggers only the camera above `5` — three different outcomes, `k = 2`.
 
-## Figure
+## Animation
 
 ![10. CF 2257C _ Camera Installation Animated.svg](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/10.%20CF%202257C%20_%20Camera%20Installation%20Animated.svg)
 
