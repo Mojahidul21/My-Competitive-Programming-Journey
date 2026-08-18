@@ -198,8 +198,8 @@ See [Overhead](#overhead) — the three approaches above have different time/spa
 
 **Excludes:** The node itself.
 
-> Short Visual: A waterfall. You are at the top. Descendants are all the water drops that flow down below you.
-> Animation Flash: Green pulse spreads downward from `Root → Children → Leaves`. All flash green.
+> Short Visual: A waterfall. You are at the top. Descendants are all the water drops that flow down below you.  
+> Animation Flash: Green pulse spreads downward from `Root → Children → Leaves`. All flash green.  
 > Text: `Descendants = Entire sub-tree below`.
 
 **Example:**
