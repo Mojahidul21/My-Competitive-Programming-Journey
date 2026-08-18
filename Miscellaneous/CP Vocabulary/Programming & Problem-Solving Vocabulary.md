@@ -34,7 +34,7 @@ Lexical ordered.
 
 ## Ancestor
 **Definition:**
-Any node you pass through when moving UP from a node to the Root. (Parent → Grandparent → Root).
+Any node you pass through when moving UP from a node to the Root. (`Parent → Grandparent → Root`).
 
 **Rule:**
 Move against the edge direction.
@@ -42,8 +42,8 @@ Move against the edge direction.
 **Excludes:**
 The node itself.
 
-> Short Visual: A ladder. You are on the bottom rung. Ancestors are all the rungs above you.
-> Animation Flash: Golden line travels upward from Target → Parent → Root. All flash yellow.
+> Short Visual: A ladder. You are on the bottom rung. Ancestors are all the rungs above you.  
+> Animation Flash: Golden line travels upward from Target → Parent → Root. All flash yellow.  
 > Text: Ancestors = Upward path.
 
 ---
