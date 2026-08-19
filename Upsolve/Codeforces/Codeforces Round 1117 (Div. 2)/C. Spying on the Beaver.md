@@ -68,6 +68,7 @@ main(){
             cin>>i;
         
         sort(a.begin(),a.end());
+
         cout<<m-1;
         
         for(int i{1};i<m;++i)
