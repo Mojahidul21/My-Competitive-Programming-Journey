@@ -9,6 +9,8 @@ Lexical ordered.
 - [Ancestor](#ancestor)
 - [Anchor](#anchor)
 - [Boilerplate](#boilerplate)
+- [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
+- [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Deduplication (Dedup)](#deduplication-dedup)
 - [Descendant](#descendant)
@@ -16,6 +18,8 @@ Lexical ordered.
 - [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
 - [Fragile Code](#fragile-code)
+- [Freeze Flag (Fixed-Point Iteration)](#freeze-flag-fixed-point-iteration)
+- [Greedy Peel](#greedy-peel)
 - [Guard / Guard Clause](#guard--guard-clause)
 - [Invariant](#invariant)
 - [Irreducible Fraction](#irreducible-fraction)
@@ -28,7 +32,9 @@ Lexical ordered.
 - [Ring Peeling](#ring-peeling)
 - [Robust Code](#robust-code)
 - [Round Collapse](#round-collapse)
+- [Sentinel](#sentinel)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
+- [Uncapped](#uncapped)
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
 ---
 
@@ -117,6 +123,46 @@ A restaurant's fire-suppression system is required by code for every kitchen, ev
 **Related:**
 * [Parity Chain](#parity-chain) — the Domino Tiles reduction that first surfaced this: once the ≤2-per-chain bound was found, the stated modulo turned out to be boilerplate.
 * [Round Collapse](#round-collapse) — same instinct, applied to a round count instead of a numeric constraint.
+
+---
+## Canonical Sequence (Special Judge)
+
+**Definition:**
+In problems with a *special judge* (checker), the jury's sample answer is just **one valid output**, not the required one. Any output satisfying the problem's constraints is accepted — matching the jury's exact sequence is not the goal.
+
+**Why it arises:**
+Construction/greedy problems ("output *a* valid sequence of operations") almost always have many correct answers. Comparing your output line-by-line against the sample and treating a mismatch as a bug is a common false alarm.
+
+**How to recognize one:**
+Statement says "print *any* valid..." or the judge explicitly runs a checker rather than exact-match. A different-but-same-length output that still gets Accepted confirms it.
+
+**Related:** [Boilerplate](#boilerplate) — same instinct: don't over-trust a specific reference detail (a modulus, a sample answer) as more binding than it actually is.
+
+---
+
+## Cascading (Wave Propagation)
+
+**Definition:**
+Solving a problem by repeated full passes over all units, each pass pushing every eligible unit forward by one step, until a pass makes no changes. Progress spreads outward in waves rather than finishing one unit at a time.
+
+**Why it arises:**
+Natural when a unit's eligibility to move depends on *other* units' current state (e.g. capacity freed up elsewhere), so you can't safely fully resolve one unit before checking the others.
+
+**Contrast:** [Greedy Peel](#greedy-peel) — the sequential alternative.
+
+```mermaid
+flowchart LR
+    subgraph Cascading["Cascading (waves)"]
+        direction TB
+        P1["Pass 1: every unit<br/>advances 1 step"] --> P2["Pass 2: every unit<br/>advances 1 step"] --> P3["... until no unit moves"]
+    end
+    subgraph Draining["Greedy Peel (sequential)"]
+        direction TB
+        U1["Unit 1: advance<br/>fully to done"] --> U2["Unit 2: advance<br/>fully to done"] --> U3["... one unit at a time"]
+    end
+```
+
+**Related:** [Freeze Flag](#freeze-flag-fixed-point-iteration) — the termination mechanism cascading relies on.
 
 ---
 
@@ -307,6 +353,42 @@ int mn = a[0]; // wrong if the first element is not really the minimum
 
 **In contest context:**
 A solution is fragile if it passes the given examples and even the judge, but you cannot explain *why* it's correct. It may fail on a future problem with similar structure but slightly different constraints.
+
+---
+
+## Freeze Flag (Fixed-Point Iteration)
+
+**Definition:**
+A boolean set to `true` at the start of each pass and flipped to `false` the moment *any* change happens. If it's still `true` after a full pass, nothing moved — the state has stabilized ("frozen") and the loop can stop.
+
+**Why it arises:**
+Any algorithm that repeats passes until no more progress can be made (worklist algorithms, dataflow analysis, cascading propagation) needs a way to detect "we've reached a fixed point" without knowing in advance how many passes that takes.
+
+```cpp
+bool freeze{false};
+while (!freeze) {
+    freeze = true;
+    for (auto &unit : units)
+        if (tryAdvance(unit))
+            freeze = false;   // something moved -> not stable yet
+}
+```
+
+**Related:** [Cascading](#cascading-wave-propagation) — the pattern this flag typically terminates. [Invariant](#invariant) — "no more valid moves exist" is the invariant being tested each pass.
+
+---
+
+## Greedy Peel
+
+**Definition:**
+Fully resolving one unit — pushing it through every step to its final state in one uninterrupted sequence — before touching the next unit. Simpler to prove correct than [Cascading](#cascading-wave-propagation) because only one unit's state changes at a time.
+
+**Why it arises:**
+Safe whenever a unit's eligibility to advance doesn't depend on *other* units also being mid-advance — e.g. clearing capacity top-down so nothing downstream is ever blocked.
+
+**Analogy:** Emptying one bucket completely before starting the next, vs. topping all buckets up by an inch each round.
+
+**Related:** [Ring Peeling](#ring-peeling) — same "peel" idea applied geometrically rather than sequentially. [Cascading](#cascading-wave-propagation) — the interleaved alternative.
 
 ---
 
@@ -704,6 +786,24 @@ Poker: folding is free at any point, but a placed bet can't be undone — so eve
 
 ---
 
+## Sentinel
+
+**Definition:**
+A fake or placeholder value inserted into a data structure specifically to represent a boundary condition, so normal logic can run unmodified instead of needing a special-case branch.
+
+**Example from practice:**
+An "unlimited" capacity slot represented as an ordinary array cell set to a value that can never be exceeded (e.g. `n`), so the same capacity-check code works for both capped and [uncapped](#uncapped) slots without an `if`:
+```cpp
+vector<int> capacity(k + 2);
+capacity[k + 1] = n;   // sentinel: "no real limit" encoded as n
+```
+
+**Analogy:** A "closed" sign in an empty parking spot — you don't need a separate rule for "this spot doesn't exist," the sign just makes the normal rule ("don't park here") apply automatically.
+
+**Related:** [Uncapped](#uncapped) — the condition a sentinel often exists to encode. [Guard / Guard Clause](#guard--guard-clause) — sentinels frequently *remove* the need for a guard clause elsewhere.
+
+---
+
 ## Short-Circuit Evaluation
 
 **Definition:**
@@ -737,6 +837,18 @@ A security check at a gate — if the first guard says "no entry", the second gu
 
 ---
 
+## Uncapped
+
+**Definition:**
+A resource, level, or bucket with no upper limit — distinct from every other tiered/capped counterpart in the same problem. Worth flagging explicitly, since forgetting it's unlimited leads to writing (or debugging) a capacity check that should never trigger.
+
+**Why it arises:**
+Problems with tiered capacities (levels, bins, priority classes) often make the *last* tier unlimited by design, since everything has to end up somewhere.
+
+**Related:** [Sentinel](#sentinel) — the usual implementation trick for representing this in code.
+
+---
+
 ## Undefined Behavior (UB)
 
 **Definition:**
@@ -764,4 +876,3 @@ UB may not crash or give wrong answers on your machine or on valid test cases �
 **Rule of thumb:** If you're not 100% sure an access is in bounds, guard it.
 
 ---
-
