@@ -25,6 +25,7 @@ Lexical ordered.
 - [Irreducible Fraction](#irreducible-fraction)
 - [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Latent Bug](#latent-bug)
+- [Markov Chain](#markov-chain)
 - [Off-by-one](#off-by-one)
 - [Overhead](#overhead)
 - [Parity Chain](#parity-chain)
@@ -546,6 +547,17 @@ This passes all valid test cases because the memory region happens to contain be
 - Stress testing against a brute force
 - Running with sanitizers: `-fsanitize=address,undefined`
 - Manually testing edge cases
+
+---
+## Markov Chain
+
+**Definition:** A sequence of states where the probability of moving to the next state depends only on the *current* state — not on how you got there (the "memoryless" / Markov property).
+
+**Usage in CP:** Underlies "expected value / probability" DP. If a problem's future outcome depends only on the current state (position, remaining tries, current score) and not on history, you can write `E[state] = Σ P(transition) · (cost + E[next state])`. Self-referential equations (state can transition back to itself) require algebraic isolation of `E`, not naive forward simulation.
+
+**Example:** "Expected number of coin flips until you get heads" — state = {not yet flipped heads}, transition probability 1/2 to terminal state, 1/2 back to itself. `E = 1 + 0.5·E` → `E = 2`.
+
+**Related:** [[probabilities]], [[dp]]
 
 ---
 
