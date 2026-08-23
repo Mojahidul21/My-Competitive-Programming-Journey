@@ -557,7 +557,7 @@ This passes all valid test cases because the memory region happens to contain be
 
 **Example:** "Expected number of coin flips until you get heads" — state = {not yet flipped heads}, transition probability 1/2 to terminal state, 1/2 back to itself. `E = 1 + 0.5·E` → `E = 2`.
 
-**Related:** [[probabilities]], [[dp]]
+**Related:** Probabilities, Dynamic Programming
 
 ---
 
