@@ -12,6 +12,7 @@ Lexical ordered.
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
+- [Coprime](#coprime)
 - [Deduplication (Dedup)](#deduplication-dedup)
 - [Descendant](#descendant)
 - [Directed Acyclic Graph (DAG)](#directed-acyclic-graph-dag)
@@ -191,6 +192,26 @@ indices.back() - indices.front() - (int)indices.size() + 1
 
 **Analogy:**
 A row of broken tiles on a floor — if all broken tiles are side by side, one repair strip covers them all. If they're scattered, you need multiple strips.
+
+---
+### Coprime (Relatively Prime)
+
+**Definition:** Two integers `a` and `b` are coprime if `gcd(a, b) = 1` — they share no common prime factor. Coprimality is pairwise unless stated otherwise; "a set is coprime" usually means every pair in it is coprime, which is stronger than the gcd of the whole set being 1.
+
+**Why it arises:** Coprimality shows up whenever a problem cares about *independence* between quantities — modular inverses only exist when the number is coprime to the modulus, fractions are in lowest terms exactly when numerator and denominator are coprime, and counting problems (Euler's totient, Stern-Brocot tree, cycle lengths under modular arithmetic) all hinge on it. It's the boundary condition that decides whether an operation (division mod m, reduction, step-skipping) behaves cleanly or breaks.
+
+**Quick check:**
+```cpp
+bool isCoprime(long long a, long long b) {
+    return __gcd(a, b) == 1;
+}
+```
+
+**Common trap:** `gcd(a, b, c) == 1` does NOT mean `a`, `b`, `c` are pairwise coprime — e.g. `gcd(6, 10, 15) = 1` but no two of them are coprime. Don't conflate "coprime as a set" with "pairwise coprime."
+
+**Related:**
+- [Irreducible Fraction](../Miscellaneous/CP%20Vocabulary.md) — direct application: a fraction is irreducible iff numerator and denominator are coprime
+- GCD Code Template (Code Templates folder)
 
 ---
 
