@@ -12,7 +12,7 @@ Lexical ordered.
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
-- [Coprime Coprime (Relatively Prime)](#coprime-relatice-coprime)
+- [Coprime (Relatively Prime)](#coprime-relatice-coprime)
 - [Deduplication (Dedup)](#deduplication-dedup)
 - [Descendant](#descendant)
 - [Directed Acyclic Graph (DAG)](#directed-acyclic-graph-dag)
