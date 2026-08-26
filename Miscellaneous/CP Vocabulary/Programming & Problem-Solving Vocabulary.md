@@ -194,7 +194,7 @@ indices.back() - indices.front() - (int)indices.size() + 1
 A row of broken tiles on a floor — if all broken tiles are side by side, one repair strip covers them all. If they're scattered, you need multiple strips.
 
 ---
-### Coprime (Relatively Prime)
+## Coprime (Relatively Prime)
 
 **Definition:** Two integers `a` and `b` are coprime if `gcd(a, b) = 1` — they share no common prime factor. Coprimality is pairwise unless stated otherwise; "a set is coprime" usually means every pair in it is coprime, which is stronger than the gcd of the whole set being 1.
 
@@ -210,8 +210,8 @@ bool isCoprime(long long a, long long b) {
 **Common trap:** `gcd(a, b, c) == 1` does NOT mean `a`, `b`, `c` are pairwise coprime — e.g. `gcd(6, 10, 15) = 1` but no two of them are coprime. Don't conflate "coprime as a set" with "pairwise coprime."
 
 **Related:**
-- [Irreducible Fraction](../Miscellaneous/CP%20Vocabulary.md) — direct application: a fraction is irreducible iff numerator and denominator are coprime
-- GCD Code Template (Code Templates folder)
+- [Irreducible Fraction](#irreducible-fraction) — direct application: a fraction is irreducible iff numerator and denominator are coprime
+- GCD
 
 ---
 
