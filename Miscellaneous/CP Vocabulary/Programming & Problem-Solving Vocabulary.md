@@ -380,7 +380,7 @@ flowchart TD
 
 A statement accepted as true without proof — the starting bricks of a mathematical system. Everything else (theorems, lemmas, corollaries) is built by proving things *from* axioms, never the other way around.
 > Example 1: Euclid's Fifth Postulate (parallel lines never meet).  
-> Example 2: The Well-Ordering Principle (every non-empty set of positive integers has a least element) — the base of most induction proofs used in CP correctness arguments.
+> Example 2: The Well-Ordering Principle (every non-empty set of positive integers has a least element) — the base of most induction proofs used in CP correctness arguments.  
 > Example 3: Peano Axioms — the accepted rules that define what natural numbers even *are*.
 
 </details>
@@ -389,9 +389,9 @@ A statement accepted as true without proof — the starting bricks of a mathemat
 <summary><b>Hypothesis</b></summary>
 
 A proposed explanation or claim made *before* it's tested — the starting guess of an investigation. It's expected to be checked against evidence, not assumed true.
-> Example 1: "My hypothesis is that a greedy pick-the-largest strategy solves this problem" — before you've proven or disproven it.
-> Example 2: In a null-hypothesis-testing sense (stats-flavored CP problems): "H₀: the coin is fair" — tested against sample data.
-> Example 3: "I hypothesize the answer is always `n - k` based on the first three test cases" — a hunch to be stress-tested next.
+> Example 1: "My hypothesis is that a greedy pick-the-largest strategy solves this problem" — before you've proven or disproven it.  
+> Example 2: In a null-hypothesis-testing sense (stats-flavored CP problems): "H₀: the coin is fair" — tested against sample data.  
+> Example 3: "I hypothesize the answer is always `n - k` based on the first three test cases" — a hunch to be stress-tested next.  
 > **Distinct from Conjecture:** a hypothesis is usually a local, working guess for the problem at hand; a conjecture is a more formal, often long-standing claim in the wider mathematical community.
 
 </details>
@@ -400,8 +400,8 @@ A proposed explanation or claim made *before* it's tested — the starting guess
 <summary><b>Conjecture</b></summary>
 
 A mathematical statement that is believed to be true based on strong evidence (many verified cases, pattern-matching, partial proofs) but has **not** been formally proven.
-> Example 1: Goldbach's Conjecture — every even integer > 2 is the sum of two primes. Verified for enormous ranges, never proven.
-> Example 2: The Collatz Conjecture — repeatedly applying `n/2` (even) or `3n+1` (odd) always reaches 1. True for every tested number, still unproven in general.
+> Example 1: Goldbach's Conjecture — every even integer > 2 is the sum of two primes. Verified for enormous ranges, never proven.  
+> Example 2: The Collatz Conjecture — repeatedly applying `n/2` (even) or `3n+1` (odd) always reaches 1. True for every tested number, still unproven in general.  
 > Example 3: In CP: noticing that `f(n) = f(n-1) + f(n-2)` for the first 10 terms and conjecturing it holds for all `n` — dangerous until proven or exhaustively verified for the given constraints.
 
 </details>
@@ -410,9 +410,9 @@ A mathematical statement that is believed to be true based on strong evidence (m
 <summary><b>Theorem</b></summary>
 
 A statement that **has** been rigorously proven true, using logic, from axioms and/or previously established theorems. The highest tier of mathematical certainty.
-> Example 1: Fermat's Little Theorem — used constantly in CP for modular inverse under a prime modulus.
-> Example 2: The Pigeonhole Principle — if you place `n+1` items into `n` boxes, some box has ≥2 items; underlies many existence-proof CP problems.
-> Example 3: The Master Theorem — gives closed-form time complexity for divide-and-conquer recurrences.
+> Example 1: Fermat's Little Theorem — used constantly in CP for modular inverse under a prime modulus.  
+> Example 2: The Pigeonhole Principle — if you place `n+1` items into `n` boxes, some box has ≥2 items; underlies many existence-proof CP problems.  
+> Example 3: The Master Theorem — gives closed-form time complexity for divide-and-conquer recurrences.  
 > **Distinct from Conjecture:** the moment a conjecture is proven, it graduates into a theorem (e.g., Fermat's Last *Theorem* was a *conjecture* for ~358 years before Andrew Wiles proved it in 1994).
 
 </details>
@@ -421,8 +421,8 @@ A statement that **has** been rigorously proven true, using logic, from axioms a
 <summary><b>Lemma</b></summary>
 
 A "helper theorem" — a proven statement whose main purpose is to support the proof of a larger, more important theorem. Not significant on its own, but a necessary stepping stone.
-> Example 1: Bézout's Lemma — supports the proof of correctness for the Extended Euclidean Algorithm.
-> Example 2: In CP editorials: "Lemma: the array can always be split into two non-decreasing halves" — proven briefly, then used to justify the main greedy strategy.
+> Example 1: Bézout's Lemma — supports the proof of correctness for the Extended Euclidean Algorithm.  
+> Example 2: In CP editorials: "Lemma: the array can always be split into two non-decreasing halves" — proven briefly, then used to justify the main greedy strategy.  
 > Example 3: Euclid's Lemma (if a prime `p` divides `ab`, it divides `a` or `b`) — a stepping stone toward the Fundamental Theorem of Arithmetic.
 
 </details>
@@ -431,9 +431,9 @@ A "helper theorem" — a proven statement whose main purpose is to support the p
 <summary><b>Corollary</b></summary>
 
 A statement that follows *almost immediately* from a theorem (or lemma) already proven — little to no extra work needed.
-> Example 1: If a triangle's angles sum to 180° (theorem), a corollary is that a triangle can have at most one right angle.
-> Example 2: From Fermat's Little Theorem: a corollary is the formula for modular inverse `a⁻¹ ≡ a^(p-2) (mod p)` when `p` is prime — used directly in CP modular arithmetic.
-> Example 3: From the Pigeonhole Principle: a corollary is that any sequence of `n²+1` distinct real numbers has an increasing or decreasing subsequence of length `n+1` (Erdős–Szekeres).
+> Example 1: If a triangle's angles sum to 180° (theorem), a corollary is that a triangle can have at most one right angle.  
+> Example 2: From Fermat's Little Theorem: a corollary is the formula for modular inverse `a⁻¹ ≡ a^(p-2) (mod p)` when `p` is prime — used directly in CP modular arithmetic.  
+> Example 3: From the Pigeonhole Principle: a corollary is that any sequence of `n²+1` distinct real numbers has an increasing or decreasing subsequence of length `n+1` (Erdős–Szekeres).  
 > **Chain:** Axiom → (proof) → Theorem → (near-free consequence) → Corollary.
 
 </details>
@@ -442,8 +442,8 @@ A statement that follows *almost immediately* from a theorem (or lemma) already 
 <summary><b>Proposition</b></summary>
 
 A statement being put forward as true, generally proven, but considered less central or "important" than a theorem — often a smaller or more routine result.
-> Example 1: "Proposition: the sum of two even numbers is even" — true, proven, but too minor to be called a "theorem."
-> Example 2: Many textbook results are labeled "Proposition 3.2" — solid and used later, but not landmark results.
+> Example 1: "Proposition: the sum of two even numbers is even" — true, proven, but too minor to be called a "theorem."  
+> Example 2: Many textbook results are labeled "Proposition 3.2" — solid and used later, but not landmark results.  
 > Rough hierarchy of importance: Theorem > Proposition > Lemma/Corollary (though usage varies by source and is somewhat informal).
 
 </details>
@@ -452,9 +452,9 @@ A statement being put forward as true, generally proven, but considered less cen
 <summary><b>Proof</b></summary>
 
 A logical, step-by-step argument that establishes a statement's truth beyond doubt, built strictly from axioms, definitions, and previously proven results.
-> Example 1: Proof by induction — prove the base case, then prove `P(k) ⟹ P(k+1)`.
-> Example 2: Proof by contradiction — assume the claim is false, derive a logical impossibility.
-> Example 3: Exchange argument — the standard CP proof technique for greedy correctness: show swapping any two elements out of greedy order never improves the result.
+> Example 1: Proof by induction — prove the base case, then prove `P(k) ⟹ P(k+1)`.  
+> Example 2: Proof by contradiction — assume the claim is false, derive a logical impossibility.  
+> Example 3: Exchange argument — the standard CP proof technique for greedy correctness: show swapping any two elements out of greedy order never improves the result.  
 > In CP, "prove your greedy/DP transition" means constructing one of these — not just testing it on samples.
 
 </details>
@@ -465,10 +465,10 @@ A logical, step-by-step argument that establishes a statement's truth beyond dou
 <summary><b>Formula</b></summary>
 
 A concise symbolic expression that computes a value directly from given inputs — no iteration or search required, just substitution.
-> Example 1: $n(n+1)/2$ for the sum of the first $n$ natural numbers.
-> Example 2: $nCr = n! / (r!(n-r)!)$ for combinations.
-> Example 3: The quadratic formula $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$.
-> A closed-form formula is effectively the fastest possible "algorithm": $O(1)$.
+> Example 1: $n(n+1)/2$ for the sum of the first $n$ natural numbers.  
+> Example 2: $nCr = n! / (r!(n-r)!)$ for combinations.  
+> Example 3: The quadratic formula $x = \frac{-b \pm \sqrt{b^2-4ac}}{2a}$.  
+> A closed-form formula is effectively the fastest possible "algorithm": $O(1)$.  
 
 </details>
 
@@ -476,8 +476,8 @@ A concise symbolic expression that computes a value directly from given inputs �
 <summary><b>Identity</b></summary>
 
 An equation that holds true for **all** values of its variables (not just specific cases) — a formula-level truth rather than a solved instance.
-> Example 1: $a^2 - b^2 = (a-b)(a+b)$ — difference of squares, used to avoid overflow-prone squaring in CP.
-> Example 2: $\sum_{i=1}^{n} i^3 = \left(\frac{n(n+1)}{2}\right)^2$ — sum of cubes equals the square of the sum.
+> Example 1: $a^2 - b^2 = (a-b)(a+b)$ — difference of squares, used to avoid overflow-prone squaring in CP.  
+> Example 2: $\sum_{i=1}^{n} i^3 = \left(\frac{n(n+1)}{2}\right)^2$ — sum of cubes equals the square of the sum.  
 > Example 3: Pascal's Identity: $\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}$ — the recurrence underlying Pascal's Triangle / combinatorics DP.
 
 </details>
@@ -486,9 +486,9 @@ An equation that holds true for **all** values of its variables (not just specif
 <summary><b>Algorithm</b></summary>
 
 A finite, well-defined, step-by-step procedure that transforms an input into an output — guaranteed to terminate and produce a correct result (unlike a heuristic).
-> Example 1: Merge Sort — deterministic, provably $O(n \log n)$, always correct.
-> Example 2: Dijkstra's Algorithm — provably finds shortest paths given non-negative weights.
-> Example 3: Binary Search — provably $O(\log n)$ given a sorted/monotonic search space.
+> Example 1: Merge Sort — deterministic, provably $O(n \log n)$, always correct.  
+> Example 2: Dijkstra's Algorithm — provably finds shortest paths given non-negative weights.  
+> Example 3: Binary Search — provably $O(\log n)$ given a sorted/monotonic search space.  
 > **Distinct from Formula:** a formula is a single evaluable expression; an algorithm may involve loops, branching, and state — a formula is really just an $O(1)$-time algorithm.
 
 </details>
@@ -497,9 +497,9 @@ A finite, well-defined, step-by-step procedure that transforms an input into an 
 <summary><b>Heuristic</b></summary>
 
 A practical, rule-of-thumb approach that tends to give good (often near-optimal) results quickly, but offers **no guarantee** of correctness or optimality.
-> Example 1: Nearest-neighbor heuristic for TSP — fast, usually decent, but can be arbitrarily wrong on adversarial input.
-> Example 2: A* search's heuristic function — speeds up pathfinding but must be "admissible" to keep correctness; a bad heuristic just gives a bad (though fast) answer.
-> Example 3: Greedy "always pick the largest coin" for coin change — works for standard currency systems, silently fails for arbitrary denominations.
+> Example 1: Nearest-neighbor heuristic for TSP — fast, usually decent, but can be arbitrarily wrong on adversarial input.  
+> Example 2: A* search's heuristic function — speeds up pathfinding but must be "admissible" to keep correctness; a bad heuristic just gives a bad (though fast) answer.  
+> Example 3: Greedy "always pick the largest coin" for coin change — works for standard currency systems, silently fails for arbitrary denominations.  
 > **Distinct from Algorithm:** an algorithm is provably correct; a heuristic is empirically useful. Never submit a heuristic where the problem demands an exact answer, unless it's explicitly an approximation/optimization task.
 
 </details>
