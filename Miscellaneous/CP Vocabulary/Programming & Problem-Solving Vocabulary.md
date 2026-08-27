@@ -505,7 +505,7 @@ A practical, rule-of-thumb approach that tends to give good (often near-optimal)
 </details>
 
 <details>
-<summary><b>Invariant</b> (see full entry below)</summary>
+<summary><b>Invariant</b></summary>
 
 Already covered as a standalone entry in this vault — see **[Invariant](#invariant)** further down. Included here only to complete the Axiom → Algorithm hierarchy: an invariant is the property that lets an *algorithm* be proven correct, the same way a *proof* lets a *theorem* be trusted.
 
