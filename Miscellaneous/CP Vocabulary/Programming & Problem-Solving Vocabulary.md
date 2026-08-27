@@ -379,7 +379,7 @@ flowchart TD
 <summary><b>Axiom / Postulate</b></summary>
 
 A statement accepted as true without proof — the starting bricks of a mathematical system. Everything else (theorems, lemmas, corollaries) is built by proving things *from* axioms, never the other way around.
-> Example 1: Euclid's Fifth Postulate (parallel lines never meet).
+> Example 1: Euclid's Fifth Postulate (parallel lines never meet).  
 > Example 2: The Well-Ordering Principle (every non-empty set of positive integers has a least element) — the base of most induction proofs used in CP correctness arguments.
 > Example 3: Peano Axioms — the accepted rules that define what natural numbers even *are*.
 
