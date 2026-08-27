@@ -664,6 +664,7 @@ A recipe written as "2 cups per 4 servings" versus "1 cup per 2 servings" — bo
 
 **Related:**
 * [Boilerplate](#boilerplate) — in Die Roll, the problem statement's explicit `0/1` instruction for a zero probability is boilerplate-adjacent: it falls out naturally from `gcd(0,d)=d`, it doesn't need special-casing in code.
+* [Coprime (Relatively Prime)](#coprime-relatively-prime) — two integers are coprime if hey share no common prime factor.
 ---
 
 ## Lambda (Lambda Function)
