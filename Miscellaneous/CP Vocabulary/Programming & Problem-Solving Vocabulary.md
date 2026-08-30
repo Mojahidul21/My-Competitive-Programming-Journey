@@ -1034,6 +1034,7 @@ flowchart TD
 * [Invariant](#invariant) — within a single chain, the alternation (`s_i ≠ s_{i+2}` propagated outward) is the invariant you're checking.
 * [Reduction](#reduction) — recognizing a parity chain is itself a reduction: a size-`n` problem becomes two independent smaller problems.
 * [Round Collapse](#round-collapse) — a sibling pattern: there a `k`-round process collapses into one step; here an `n`-length sequence collapses into two halves.
+* [Chain Decomposition (Independent Component Grouping)](#chain-decomposition-independent-component-grouping) — the general strategy Parity Chain is a specific (distance-2, additive) instance of.
 
 ---
 
