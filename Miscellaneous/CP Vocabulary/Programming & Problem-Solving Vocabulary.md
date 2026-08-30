@@ -12,6 +12,7 @@ Lexical ordered.
 - [Boilerplate](#boilerplate)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
+- [Chain Decomposition (Independent Component Grouping)](#chain-decomposition-independent-component-grouping)
 - [Closed-Form Formula](#closed-form-formula)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Coprime (Relatively Prime)](#coprime-relatively-prime)
@@ -46,7 +47,6 @@ Lexical ordered.
 - [TSP (Traveling Salesman Problem)](#tsp-traveling-salesman-problem)
 - [Uncapped](#uncapped)
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
-
 ---
 
 ## Admissible
@@ -200,6 +200,53 @@ flowchart LR
 ```
 
 **Related:** [Freeze Flag](#freeze-flag-fixed-point-iteration) — the termination mechanism cascading relies on.
+
+---
+
+## Chain Decomposition (Independent Component Grouping)
+
+**Definition:**
+The general strategy of grouping indices (or elements) into independent components based on *which ones can actually interact*, then solving/counting each component separately and combining results at the end (usually by multiplying counts or checking each independently). [Parity Chain](#parity-chain) is one specific instance of this — chains formed by a fixed distance-2 relation. Chains can also form from other relations entirely: multiplicative structure, graph connectivity, union-find components, etc. What makes something a "chain decomposition" isn't the shape of the grouping rule — it's that once grouped, the components are provably non-interacting.
+
+**Why it arises:**
+Whenever an operation or constraint only ever links certain indices together — never all pairs — the full problem of size `n` is actually several smaller, unrelated problems in disguise. Solving the whole thing directly (treating all `n` elements as jointly constrained) is often harder or slower than first identifying the grouping rule and then solving each group on its own.
+
+**How to recognize one:**
+Ask: "does this operation/constraint ever connect two elements that aren't in some fixed relation to each other?" If the answer is no — only pairs satisfying a specific relation (distance 2, power of 2, shared factor, graph edge) are ever linked — the index set splits into independent components. Two subtle instances of the same underlying idea:
+
+1. **Parity Chain** — constraint links `i` and `i+2` (additive, fixed distance). Splits into exactly 2 components: even indices, odd indices.
+2. **Multiplicative chains** — operation links `i` and `2i` (multiplicative). Splits into `O(n)` components, one per odd root `m`, each containing `{m, 2m, 4m, 8m, ...}`.
+
+**Example from practice:**
+[CF 2195B — Heapify 1](https://codeforces.com/contest/2195/problem/B) allows swapping `a_i` and `a_{2i}`. This links every index to its power-of-2 multiples and divisors, so grouping by "divide by 2 until odd" produces the independent components. Within a component, adjacent transpositions along the chain can realize any permutation of that component — so the array is sortable iff, for every component, the value that belongs at each position already lives somewhere in that same component:
+
+```cpp
+// For each index i, walk its multiplicative chain (i, 2i, 4i, ...)
+// looking for the target value i — this checks reachability within
+// i's own independent component, never crossing into another one.
+bool found;
+for (int i = 1; i <= n; ++i) {
+    found = false;
+    for (int j = i; j <= n; j *= 2) {
+        if (a[j] == i) {
+            swap(a[i], a[j]);
+            found = true;
+            break;
+        }
+    }
+    if (!found) break;
+}
+```
+
+Contrast with [CF 2256B — Domino Tiles](https://codeforces.com/contest/2256/problem/B) (see [Parity Chain](#parity-chain)), where the linking relation is additive (`i` and `i+2`) instead of multiplicative, producing exactly 2 components instead of `O(n)` of them. Different relation, same underlying strategy.
+
+**Analogy:**
+Sorting mail into delivery routes before a single postal worker touches any of it. Once you know which addresses share a route, each route can be planned independently — nothing on Route A ever needs to coordinate with Route B. The routing rule (geographic proximity, zip code, etc.) determines the grouping; the independence is what lets you solve each group alone.
+
+**Related:**
+* [Parity Chain](#parity-chain) — the fixed-distance-2 special case of this general strategy.
+* [Reduction](#reduction) — chain decomposition is itself a reduction: an `n`-sized problem becomes several smaller, independent ones.
+* [Invariant](#invariant) — within a single component, the property being checked (parity alternation, value reachability) is often expressed as an invariant.
 
 ---
 
