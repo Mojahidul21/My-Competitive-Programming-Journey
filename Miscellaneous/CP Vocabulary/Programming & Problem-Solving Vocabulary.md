@@ -214,15 +214,20 @@ Recognizing a closed form is what turns an O(n) or O(n²) simulation into O(1) o
 **Example from practice:**
 ```cpp
 // Sum of first n natural numbers: no loop needed
+
+// closed-form, O(1)
 long long sumN(long long n) {
-    return n * (n + 1) / 2; // closed-form, O(1)
+    return n * (n + 1) / 2;
 }
-// vs. the iterative version this replaces:
-// long long sumN(long long n) {
-//     long long s = 0;
-//     for (long long i = 1; i <= n; i++) s += i;
-//     return s; // O(n)
-// }
+
+// iterative version, O(n)
+/*
+long long sumN(long long n) {
+     long long s{};
+     for (long long i{1}; i <= n; ++i) s += i;
+     return s;
+}
+*/
 ```
 
 **How to recognize one:**
