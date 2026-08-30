@@ -6,11 +6,13 @@ A living reference of terms used in competitive programming, debugging, and algo
 
 ## Table of Contents
 Lexical ordered.
+- [Admissible](#admissible)
 - [Ancestor](#ancestor)
 - [Anchor](#anchor)
 - [Boilerplate](#boilerplate)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
+- [Closed-Form Formula](#closed-form-formula)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Coprime (Relatively Prime)](#coprime-relatively-prime)
 - [Deduplication (Dedup)](#deduplication-dedup)
@@ -18,6 +20,7 @@ Lexical ordered.
 - [Directed Acyclic Graph (DAG)](#directed-acyclic-graph-dag)
 - [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
+- [Empirical](#empirical)
 - [Foundational Terms & Algorithmic Cousins](#foundational-terms--algorithmic-cousins)
 - [Fragile Code](#fragile-code)
 - [Freeze Flag (Fixed-Point Iteration)](#freeze-flag-fixed-point-iteration)
@@ -28,17 +31,48 @@ Lexical ordered.
 - [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Latent Bug](#latent-bug)
 - [Markov Chain](#markov-chain)
+- [Monotonic](#monotonic)
 - [Off-by-one](#off-by-one)
 - [Overhead](#overhead)
 - [Parity Chain](#parity-chain)
+- [Probably](#probably)
+- [Provably](#provably)
 - [Reduction](#reduction)
 - [Ring Peeling](#ring-peeling)
 - [Robust Code](#robust-code)
 - [Round Collapse](#round-collapse)
 - [Sentinel](#sentinel)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
+- [TSP (Traveling Salesman Problem)](#tsp-traveling-salesman-problem)
 - [Uncapped](#uncapped)
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
+
+---
+
+## Admissible
+
+**Definition:**
+A heuristic `h(n)` is *admissible* if it never overestimates the true cost from node `n` to the goal — `h(n) ≤ actual_cost(n, goal)` always holds.
+
+**Why it arises:**
+Admissibility is the correctness condition for A* search. If `h` is admissible, A* is guaranteed to find the optimal path. If `h` overestimates even once on the search space, A* can close off a node too early and settle on a suboptimal answer without ever detecting the mistake.
+
+**Example from practice:**
+```cpp
+// Grid pathfinding: Manhattan distance is admissible when movement is
+// restricted to 4 directions, because it never exceeds the true step count.
+int heuristic(int x1, int y1, int x2, int y2) {
+    return abs(x1 - x2) + abs(y1 - y2); // never overestimates
+}
+```
+If diagonal movement were allowed instead, Manhattan distance would *overestimate* some paths and stop being admissible — Chebyshev or Euclidean distance would be needed there.
+
+**Analogy:**
+A GPS estimate that always says "at least this far to go," never "less than this far." An optimistic-but-never-wrong lower bound.
+
+**Related:**
+* [Monotonic](#monotonic) — a stronger property (consistency) some admissible heuristics also satisfy.
+
 ---
 
 ## Ancestor
@@ -166,6 +200,36 @@ flowchart LR
 ```
 
 **Related:** [Freeze Flag](#freeze-flag-fixed-point-iteration) — the termination mechanism cascading relies on.
+
+---
+
+## Closed-Form Formula
+
+**Definition:**
+An expression that computes a result directly from its inputs in a fixed number of operations — no loops, recursion, or iterative approximation involved.
+
+**Why it arises:**
+Recognizing a closed form is what turns an O(n) or O(n²) simulation into O(1) or O(log n). It's the difference between *computing* an answer and *deriving* it — often the entire point of the math layer in a CP problem sits in finding this formula before writing any code.
+
+**Example from practice:**
+```cpp
+// Sum of first n natural numbers: no loop needed
+long long sumN(long long n) {
+    return n * (n + 1) / 2; // closed-form, O(1)
+}
+// vs. the iterative version this replaces:
+// long long sumN(long long n) {
+//     long long s = 0;
+//     for (long long i = 1; i <= n; i++) s += i;
+//     return s; // O(n)
+// }
+```
+
+**How to recognize one:**
+Ask whether the quantity you're accumulating follows a known pattern (arithmetic series, geometric series, combinatorial count) rather than depending on runtime branching. If the recurrence has no data-dependent conditionals, a closed form usually exists.
+
+**Related:**
+* [Reduction](#reduction) — closed forms are often *found* by reducing a problem to a known sequence or identity.
 
 ---
 
@@ -347,6 +411,30 @@ else { indices.back() - indices.front() - (int)indices.size() + 1 ? cout<<"no" :
 ```
 
 **Habit to build:** Before submitting, mentally run through: what if `n = 1`? What if all elements are the same? What if the answer is 0?
+
+---
+
+## Empirical
+
+**Definition:**
+Based on observation or testing rather than proof. An empirical claim about a solution ("this runs fast enough," "this greedy seems to work") comes from running it, not from analyzing it.
+
+**Why it arises:**
+Stress testing, sample-case checking, and submitting-to-see are all empirical processes — they build confidence but never constitute a correctness guarantee. The gap between "empirically correct" and "provably correct" is exactly where solutions that pass samples but fail on hack/adversarial tests come from.
+
+**Example from practice:**
+```cpp
+// Stress test: empirical evidence a greedy matches brute force
+// on random small inputs — NOT a proof the greedy is correct.
+for (int t = 0; t < 100000; t++) {
+    auto inp = genRandomInput();
+    assert(greedySolve(inp) == bruteForce(inp)); // builds confidence, doesn't prove
+}
+```
+
+**Related:**
+* [Provably](#provably) — the standard empirical testing falls short of.
+* [Boilerplate](#boilerplate) — another case where surface-level confidence (a stated constraint, a passing sample) can mislead without deeper analysis.
 
 ---
 
@@ -748,6 +836,40 @@ This passes all valid test cases because the memory region happens to contain be
 
 ---
 
+## Monotonic
+
+**Definition:**
+A sequence or function that moves in only one direction — non-decreasing or non-increasing, never both.
+
+**Why it arises:**
+Monotonicity is the enabling condition for two of the most common CP techniques: the monotonic stack/queue (maintaining an always-increasing or always-decreasing sequence to answer next-greater/next-smaller queries in O(n)), and binary search, which is only valid over a predicate that is monotonic (all false, then all true, or vice versa).
+
+**Example from practice:**
+```cpp
+// Monotonic stack: next greater element in O(n)
+vector<int> nextGreater(vector<int>& a) {
+    int n = a.size();
+    vector<int> res(n, -1);
+    stack<int> st; // holds indices, values strictly decreasing bottom-to-top
+    for (int i = 0; i < n; i++) {
+        while (!st.empty() && a[st.top()] < a[i]) {
+            res[st.top()] = a[i];
+            st.pop();
+        }
+        st.push(i);
+    }
+    return res;
+}
+```
+
+**Common trap:**
+Binary search on an unsorted or non-monotonic predicate silently returns a wrong answer rather than erroring — always verify monotonicity before reaching for `lower_bound` logic on a custom condition.
+
+**Related:**
+* [Admissible](#admissible) — consistency (a form of monotonicity) is a stronger companion property in heuristic search.
+
+---
+
 ## Off-by-one
 
 **Definition:**
@@ -863,6 +985,51 @@ flowchart TD
 
 ---
 
+## Probably
+
+**Definition:**
+Expresses likelihood without certainty — a claim believed true but not yet backed by a rigorous argument.
+
+**Why it arises:**
+Editorial and discussion language often hedges this way: "this greedy is probably optimal." It's a flag that the claim still needs a proof (exchange argument, induction, contradiction) before it can be trusted on adversarial or hacked test cases, not just on the samples.
+
+**Example from practice:**
+```cpp
+// "This local swap probably doesn't hurt the answer" —
+// an unproven assumption is exactly where a greedy silently breaks:
+if (a[i] > a[i+1]) swap(a[i], a[i+1]); // correct only if swapping adjacent
+                                        // inversions is provably safe here
+```
+
+**Related:**
+* [Provably](#provably) — the resolution this hedge is waiting on.
+* [Empirical](#empirical) — testing can raise confidence in a "probably" claim without ever closing the gap to proof.
+
+---
+
+## Provably
+
+**Definition:**
+Backed by a rigorous proof — not just observed to work, but formally shown to be correct (via exchange argument, induction, contradiction, invariant, etc.).
+
+**Why it arises:**
+"Provably optimal" is the bar a correct CP solution needs to clear, distinct from "empirically fast" or "probably right." The gap between an unproven greedy and a provably correct one is exactly where wrong-answer submissions on hidden or adversarial tests come from — a solution that passes every sample can still fail if its correctness was never proven, only assumed.
+
+**Example from practice:**
+```cpp
+// Provably correct via exchange argument: sorting by finish time
+// is optimal for interval scheduling — any other order can be
+// transformed into this one without decreasing the count selected.
+sort(intervals.begin(), intervals.end(),
+     [](auto& a, auto& b) { return a.second < b.second; });
+```
+
+**Related:**
+* [Probably](#probably) — the unproven state this term resolves.
+* [Invariant](#invariant) — a common tool used to construct these proofs.
+
+---
+
 ## Reduction
 
 **Definition:**
@@ -955,6 +1122,7 @@ else {
 **Goal in CP:** Even under contest time pressure, prefer robust over fragile whenever the proof of correctness is simple.
 
 ---
+
 ## Round Collapse
 
 **Definition:**
@@ -1033,6 +1201,48 @@ if (n == 0 || arr[0] == -1) return;
 
 **Analogy:**
 A security check at a gate — if the first guard says "no entry", the second guard is never even consulted.
+
+---
+
+## TSP (Traveling Salesman Problem)
+
+**Definition:**
+The problem of finding the shortest possible route that visits every node in a graph exactly once and returns to the starting node.
+
+**Why it arises:**
+TSP is the canonical NP-hard problem in CP — it shows up whenever a problem asks for an optimal visiting order over a small set of points (delivery routes, circuit board drilling, tour planning). Because brute-force permutation checking is O(n!), and even NP-hardness doesn't rule out a smarter exponential algorithm, TSP is the standard motivating example for bitmask DP.
+
+**Example from practice:**
+```cpp
+// Bitmask DP TSP: O(2^n * n^2), dp[mask][i] = min cost to have visited
+// the set `mask` of cities, ending at city i
+const int INF = 1e9;
+int dp[1 << 20][20];
+int tsp(vector<vector<int>>& dist, int n) {
+    for (auto& row : dp) fill(row, row + n, INF);
+    dp[1][0] = 0; // start at city 0, only city 0 visited
+    for (int mask = 1; mask < (1 << n); mask++) {
+        for (int i = 0; i < n; i++) {
+            if (!(mask & (1 << i)) || dp[mask][i] == INF) continue;
+            for (int j = 0; j < n; j++) {
+                if (mask & (1 << j)) continue;
+                int nmask = mask | (1 << j);
+                dp[nmask][j] = min(dp[nmask][j], dp[mask][i] + dist[i][j]);
+            }
+        }
+    }
+    int ans = INF;
+    for (int i = 0; i < n; i++)
+        ans = min(ans, dp[(1 << n) - 1][i] + dist[i][0]); // return to start
+    return ans;
+}
+```
+
+**Why the O(2ⁿ · n²) bound matters:**
+It's exponential but far better than O(n!) — this caps brute-force-viable TSP at roughly n ≤ 20 in a competitive time limit, which is why TSP-flavored problems almost always constrain n to that range.
+
+**Related:**
+* [Closed-Form Formula](#closed-form-formula) — the opposite end of the spectrum: no closed form exists for TSP, forcing the exponential DP fallback.
 
 ---
 
