@@ -43,6 +43,7 @@ Lexical ordered.
 - [Robust Code](#robust-code)
 - [Round Collapse](#round-collapse)
 - [Sentinel](#sentinel)
+- [Sentinel Padding](#sentinel-padding)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
 - [TSP (Traveling Salesman Problem)](#tsp-traveling-salesman-problem)
 - [Uncapped](#uncapped)
@@ -1221,6 +1222,34 @@ capacity[k + 1] = n;   // sentinel: "no real limit" encoded as n
 **Analogy:** A "closed" sign in an empty parking spot — you don't need a separate rule for "this spot doesn't exist," the sign just makes the normal rule ("don't park here") apply automatically.
 
 **Related:** [Uncapped](#uncapped) — the condition a sentinel often exists to encode. [Guard / Guard Clause](#guard--guard-clause) — sentinels frequently *remove* the need for a guard clause elsewhere.
+
+---
+
+## Sentinel Padding
+
+**Definition**
+A technique where you physically append an artificial, out-of-range element to a container *before* scanning it, so that the loop body doesn't need a special case to handle what happens at the last (or first) real index.
+
+**Why it arises**
+Scans that track "did the current group/run just end" often need to check, after processing the last real element, whether that last group should be recorded. Writing this as a post-loop flush duplicates the recording logic in two places (inside the loop, and again after it) and is easy to get wrong when the last element belongs to an unfinished group. Physically pushing one extra element onto the end of the container — chosen so it can never belong to the same group as anything real — makes the loop body itself detect the end of the last group as an ordinary "gap," with no separate flush step.
+
+**Example from practice**
+CF 2185C "Shifted MEX" — after deduplicating and sorting, the answer is the longest run of consecutive values. Before scanning, the solution does:
+```cpp
+vector<int>b(all(a)),c;
+emb(b,b.back()+2);
+```
+`b.back()+2` is appended directly into the container `b`. Because it's 2 more than the true last element, it can never be adjacent (difference of 1) to anything real, so the scan naturally records the end of the final run without any post-loop special case.
+
+**How to recognize**
+You're scanning a container and find you need a step *after* the loop to "flush" or "finalize" whatever was being tracked when the loop ended. Ask: can I append one extra element to the container itself, chosen to guarantee it breaks the condition being tested, so the loop's normal logic closes things out on its own?
+
+**Analogy**
+Like a "STOP" sign physically placed one block past the last real intersection, so a driver following turn-by-turn instructions doesn't need a separate rule for "what if there's no next intersection" — they just obey the sign like any other.
+
+**Related**
+- Boundary Ghost Values — same goal, but the sentinel is never inserted into the container; it exists only as an initial variable value
+- Anchor-and-Derive — also removes special-case machinery, but by choosing a structural starting point rather than padding a scan
 
 ---
 
