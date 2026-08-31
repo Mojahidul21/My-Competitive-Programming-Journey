@@ -25,8 +25,14 @@ Terminates the program immediately with an error message if `condition` evaluate
 **Example:**
 ```cpp
 int x = 5;
-assert(x > 0);  // passes silently, program continues
-assert(x < 0);  // fails: prints file/line/condition, calls abort()
+assert(x > 0);
+cout << "Passed the check, x = " << x << endl;
+// Output: Passed the check, x = 5
+
+assert(x < 0);
+// Program aborts here — no further output is printed.
+// Terminal shows something like:
+// Assertion failed: x < 0, file main.cpp, line 4
 ```
 
 **Use cases:**
@@ -60,7 +66,9 @@ Sets every element in a range to a given value in one call, replacing manual loo
 ```cpp
 int arr[5] = {1, 2, 3, 4, 5};
 fill(arr, arr + 5, 0);
-// arr is now {0, 0, 0, 0, 0}
+
+for (int i = 0; i < 5; i++) cout << arr[i] << " ";
+// Output: 0 0 0 0 0
 ```
 
 **Use cases:**
