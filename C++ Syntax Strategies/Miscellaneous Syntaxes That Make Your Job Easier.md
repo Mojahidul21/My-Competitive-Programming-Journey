@@ -93,18 +93,17 @@ for (int x : v) cout << x << " ";
 int grid[2][3] = {{1, 2, 3}, {4, 5, 6}};
 fill(grid[0], grid[0] + 2 * 3, 9);
 
-for (int i = 0; i < 2; i++) {
-    for (int j = 0; j < 3; j++) cout << grid[i][j] << " ";
+for (int i = 0; i < 2; ++i) {
+    for (int j = 0; j < 3; ++j)
+        cout << grid[i][j] << " ";
 
     cout<<endl;
 }
 
 /*
-
 Output:
 9 9 9
 9 9 9
-
 */
 ```
 
