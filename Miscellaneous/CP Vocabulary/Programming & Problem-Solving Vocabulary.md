@@ -10,7 +10,7 @@ Lexical ordered.
 - [Ancestor](#ancestor)
 - [Anchor](#anchor)
 - [Boilerplate](#boilerplate)
-- [Boundary Ghost Values](boundary-ghost-values)
+- [Boundary Ghost Values](#boundary-ghost-values)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Chain Decomposition (Independent Component Grouping)](#chain-decomposition-independent-component-grouping)
