@@ -1271,6 +1271,8 @@ Scans that track "did the current group/run just end" often need to check, after
 **Example from practice:**
 CF 2185C "Shifted MEX" — after deduplicating and sorting, the answer is the longest run of consecutive values. Before scanning, the solution does:
 ```cpp
+https://codeforces.com/contest/2185/submission/388972520
+
 vector<int>b(all(a)),c;
 emb(b,b.back()+2);
 ```
