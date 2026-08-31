@@ -176,6 +176,8 @@ A scan comparing each element to its predecessor (`a[i]` vs `a[i-1]`) is undefin
 **Example from practice:**
 CF 2185C "Shifted MEX" — the run-length scan initializes its tracking variable like this:
 ```cpp
+// https://codeforces.com/contest/2185/submission/388972520
+
 for(int pre{b.front()-2},cur,i{};i<(int)b.size();++i,pre=cur){
     cur=b[i];
     if(cur-pre>1)
