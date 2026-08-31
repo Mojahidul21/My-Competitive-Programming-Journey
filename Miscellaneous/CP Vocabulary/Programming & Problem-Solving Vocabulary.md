@@ -10,6 +10,7 @@ Lexical ordered.
 - [Ancestor](#ancestor)
 - [Anchor](#anchor)
 - [Boilerplate](#boilerplate)
+- [Boundary Ghost Values](boundary-ghost-values)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Chain Decomposition (Independent Component Grouping)](#chain-decomposition-independent-component-grouping)
@@ -163,6 +164,38 @@ A restaurant's fire-suppression system is required by code for every kitchen, ev
 * [Round Collapse](#round-collapse) — same instinct, applied to a round count instead of a numeric constraint.
 
 ---
+
+## Boundary Ghost Values
+
+**Definition**
+A technique where a missing neighbor at the *start* of a scan (there's no `a[-1]`) is given a virtual, out-of-range value held only in a loop variable — never physically inserted into the container — so the comparison logic that runs for every other index also works correctly on the very first one.
+
+**Why it arises**
+A scan comparing each element to its predecessor (`a[i]` vs `a[i-1]`) is undefined at `i = 0`. The usual fix is an `if (i == 0)` guard that skips or special-cases the first iteration, which adds a branch that only ever fires once but has to be read and reasoned about every time. If you instead seed the "previous value" variable, before the loop starts, with a value guaranteed to violate the comparison — an out-of-range "ghost" that was never really in the data — the first real element is compared against something, and the comparison naturally comes out the way you want, with no branch needed.
+
+**Example from practice**
+CF 2185C "Shifted MEX" — the run-length scan initializes its tracking variable like this:
+```cpp
+for(int pre{b.front()-2},cur,i{};i<(int)b.size();++i,pre=cur){
+    cur=b[i];
+    if(cur-pre>1)
+        emb(c,i);
+}
+```
+`b.front()-2` is never pushed into `b` — it only ever exists as the starting value of `pre`. It's 2 less than the true first element, so `cur - pre > 1` is guaranteed true on the first iteration, correctly marking index 0 as the start of a run — without an `if (i == 0)` check anywhere in the loop.
+
+**How to recognize**
+You're about to write `if (i == 0) { ... } else { compare a[i] to a[i-1] }`. Ask: instead of branching, can I just initialize the "previous" tracking variable, before the loop, to a value that's guaranteed to make the comparison come out the way index 0 needs it to?
+
+**Analogy**
+Like telling a runner "pretend the race started one meter behind the actual line" — you don't need to paint anything on the track; the runner just carries that mental starting point in their head, and the first real stride behaves exactly like every other stride.
+
+**Related**
+- Sentinel Padding — same goal, but the sentinel is physically appended to the container rather than held only in a variable
+- Anchor-and-Derive — also removes special-case machinery, but by choosing a structural starting point rather than padding a scan
+
+---
+
 ## Canonical Sequence (Special Judge)
 
 **Definition:**
