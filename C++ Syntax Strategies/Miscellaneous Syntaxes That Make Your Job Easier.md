@@ -97,7 +97,7 @@ for (int i = 0; i < 2; ++i) {
     for (int j = 0; j < 3; ++j)
         cout << grid[i][j] << " ";
 
-    cout<<endl;
+    cout << endl;
 }
 
 /*
@@ -105,6 +105,17 @@ Output:
 9 9 9
 9 9 9
 */
+```
+
+**Variant 4 — `fill_n` (count instead of an end iterator):**
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+fill_n(arr, 3, 0); // fill the first 3 elements only
+
+for (int i = 0; i < 5; i++) cout << arr[i] << " ";
+// Output: 0 0 0 4 5
+// Only the first 3 positions were overwritten — fill_n stops
+// after `count` elements rather than needing an end iterator.
 ```
 
 **Use case — Resetting a visited array between test cases:**
@@ -126,7 +137,7 @@ cout << dp[3] << endl;
 **Notes:**
 - Header: `<algorithm>`
 - For 2D arrays, `memset` is often faster but only safe for `0`, `-1`, or byte-repeatable values; `fill` works correctly for any value type.
-- `fill_n(arr, count, value)` is the variant when you know a count rather than an end iterator.
+- See Variant 4 above for `fill_n`, useful when you know a count rather than an end iterator.
 
 **Related:** Memset, Vector Initialization
 
