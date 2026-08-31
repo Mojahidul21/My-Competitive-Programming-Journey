@@ -1,4 +1,4 @@
-### assert(condition)
+# assert
 <details>
 <summary><code>assert</code></summary>
 
