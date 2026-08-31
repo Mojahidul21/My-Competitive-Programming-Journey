@@ -95,8 +95,17 @@ fill(grid[0], grid[0] + 2 * 3, 9);
 
 for (int i = 0; i < 2; i++) {
     for (int j = 0; j < 3; j++) cout << grid[i][j] << " ";
+
+    cout<<endl;
 }
-// Output: 9 9 9 9 9 9
+
+/*
+
+Output:
+9 9 9
+9 9 9
+
+*/
 ```
 
 **Use case — Resetting a visited array between test cases:**
