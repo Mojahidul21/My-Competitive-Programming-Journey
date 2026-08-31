@@ -5,14 +5,14 @@ utilities that are too minor to warrant their own file, but useful
 enough to be worth remembering. For deep dives on a single feature
 (e.g. lambdas), see standalone articles in this folder instead.
 
-Each entry follows the usual format: Syntax, What it does, Use cases,
-Notes, and Related.
+Each entry follows the usual format: Syntax, What it does, Example,
+Use cases, Notes, and Related.
 
 ---
 
 <details>
 <summary><code>assert</code></summary>
-  
+
 **Syntax:**
 ```cpp
 #include <cassert>
@@ -21,6 +21,13 @@ assert(condition);
 
 **What it does:**
 Terminates the program immediately with an error message if `condition` evaluates to false. Used to enforce invariants during development and stress testing — not left in for correctness of the final logic itself.
+
+**Example:**
+```cpp
+int x = 5;
+assert(x > 0);  // passes silently, program continues
+assert(x < 0);  // fails: prints file/line/condition, calls abort()
+```
 
 **Use cases:**
 - Sanity-checking assumptions while stress-testing brute force vs. optimized solutions
@@ -48,6 +55,13 @@ fill(grid[0], grid[0] + rows * cols, value); // flattened 2D array
 
 **What it does:**
 Sets every element in a range to a given value in one call, replacing manual loops like `for (int i = 0; i < n; i++) arr[i] = value;`.
+
+**Example:**
+```cpp
+int arr[5] = {1, 2, 3, 4, 5};
+fill(arr, arr + 5, 0);
+// arr is now {0, 0, 0, 0, 0}
+```
 
 **Use cases:**
 - Resetting a visited/marked array between test cases
