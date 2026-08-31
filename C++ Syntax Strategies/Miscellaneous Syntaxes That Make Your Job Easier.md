@@ -11,8 +11,8 @@ Notes, and Related.
 ---
 
 <details>
-<summary>▶ <code>assert</code></summary>
-
+<summary><code>assert</code></summary>
+  
 **Syntax:**
 ```cpp
 #include <cassert>
@@ -37,7 +37,7 @@ Terminates the program immediately with an error message if `condition` evaluate
 </details>
 
 <details>
-<summary>▶ <code>fill</code></summary>
+<summary><code>fill</code></summary>
 
 **Syntax:**
 ```cpp
