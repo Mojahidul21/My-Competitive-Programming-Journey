@@ -5,8 +5,8 @@ utilities that are too minor to warrant their own file, but useful
 enough to be worth remembering. For deep dives on a single feature
 (e.g. lambdas), see standalone articles in this folder instead.
 
-Each entry follows the usual format: Syntax, What it does, Example,
-Use cases, Notes, and Related.
+Each entry follows the usual format: Syntax, What it does, Use cases
+(each with a worked example), and Notes.
 
 ---
 
@@ -22,23 +22,38 @@ assert(condition);
 **What it does:**
 Terminates the program immediately with an error message if `condition` evaluates to false. Used to enforce invariants during development and stress testing — not left in for correctness of the final logic itself.
 
-**Example:**
+**Use case 1 — Sanity-checking stress-test comparisons:**
 ```cpp
-int x = 5;
-assert(x > 0);
-cout << "Passed the check, x = " << x << endl;
-// Output: Passed the check, x = 5
-
-assert(x < 0);
-// Program aborts here — no further output is printed.
-// Terminal shows something like:
-// Assertion failed: x < 0, file main.cpp, line 4
+int bruteForceAns = solveBrute(n);
+int fastAns = solveFast(n);
+assert(bruteForceAns == fastAns);
+cout << "Match for n = " << n << ": " << fastAns << endl;
+// Output (if they match): Match for n = 7: 42
+// If they don't match, program aborts before this line prints —
+// telling you immediately which n breaks your fast solution.
 ```
 
-**Use cases:**
-- Sanity-checking assumptions while stress-testing brute force vs. optimized solutions
-- Catching invalid states early (e.g., `assert(index >= 0 && index < n);` before an array access)
-- Verifying loop invariants or preconditions while debugging a tricky implementation
+**Use case 2 — Catching invalid array access early:**
+```cpp
+int arr[5] = {10, 20, 30, 40, 50};
+int index = 7;
+assert(index >= 0 && index < 5);
+cout << arr[index] << endl;
+// Program aborts on the assert line, since index = 7 is out of bounds.
+// Terminal shows something like:
+// Assertion failed: index >= 0 && index < 5, file main.cpp, line 3
+```
+
+**Use case 3 — Verifying a loop invariant while debugging:**
+```cpp
+int sum = 0;
+for (int i = 1; i <= 5; i++) {
+    sum += i;
+    assert(sum > 0); // invariant: running sum should never go negative here
+}
+cout << "Final sum: " << sum << endl;
+// Output: Final sum: 15
+```
 
 **Notes:**
 - Disabled entirely if `NDEBUG` is defined (some judges compile with optimizations that strip asserts — don't rely on it as runtime validation for submitted logic)
@@ -52,17 +67,10 @@ assert(x < 0);
 <details>
 <summary><code>fill</code></summary>
 
-**Syntax:**
-```cpp
-fill(arr, arr + n, value);
-fill(v.begin(), v.end(), value);
-fill(grid[0], grid[0] + rows * cols, value); // flattened 2D array
-```
-
 **What it does:**
 Sets every element in a range to a given value in one call, replacing manual loops like `for (int i = 0; i < n; i++) arr[i] = value;`.
 
-**Example:**
+**Variant 1 — Plain array:**
 ```cpp
 int arr[5] = {1, 2, 3, 4, 5};
 fill(arr, arr + 5, 0);
@@ -71,10 +79,41 @@ for (int i = 0; i < 5; i++) cout << arr[i] << " ";
 // Output: 0 0 0 0 0
 ```
 
-**Use cases:**
-- Resetting a visited/marked array between test cases
-- Initializing a DP array to a sentinel value (e.g., `fill(dp, dp + n, -1);` before memoization)
-- Clearing adjacency/frequency arrays without reallocating
+**Variant 2 — `vector`:**
+```cpp
+vector<int> v = {1, 2, 3, 4, 5};
+fill(v.begin(), v.end(), -1);
+
+for (int x : v) cout << x << " ";
+// Output: -1 -1 -1 -1 -1
+```
+
+**Variant 3 — Flattened 2D array:**
+```cpp
+int grid[2][3] = {{1, 2, 3}, {4, 5, 6}};
+fill(grid[0], grid[0] + 2 * 3, 9);
+
+for (int i = 0; i < 2; i++) {
+    for (int j = 0; j < 3; j++) cout << grid[i][j] << " ";
+}
+// Output: 9 9 9 9 9 9
+```
+
+**Use case — Resetting a visited array between test cases:**
+```cpp
+bool visited[5];
+fill(visited, visited + 5, false);
+// visited is now {false, false, false, false, false},
+// ready to reuse in the next test case without re-declaring the array.
+```
+
+**Use case — Initializing a DP array to a sentinel value:**
+```cpp
+int dp[6];
+fill(dp, dp + 6, -1); // -1 marks "not computed yet"
+cout << dp[3] << endl;
+// Output: -1  (signals memoization should compute this state)
+```
 
 **Notes:**
 - Header: `<algorithm>`
