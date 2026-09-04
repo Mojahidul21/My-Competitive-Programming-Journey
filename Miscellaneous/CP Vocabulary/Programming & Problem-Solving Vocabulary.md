@@ -13,6 +13,7 @@ Lexical ordered.
 - [Boundary Ghost Values](#boundary-ghost-values)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
+- [Case-Bashing](#case-bashing)
 - [Chain Decomposition (Independent Component Grouping)](#chain-decomposition-independent-component-grouping)
 - [Closed-Form Formula](#closed-form-formula)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
