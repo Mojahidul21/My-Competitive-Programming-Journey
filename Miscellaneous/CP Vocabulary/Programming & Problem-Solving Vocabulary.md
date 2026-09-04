@@ -46,6 +46,7 @@ Lexical ordered.
 - [Sentinel](#sentinel)
 - [Sentinel Padding](#sentinel-padding)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
+- [Telescoping Sum](#telescoping-sum)
 - [TSP (Traveling Salesman Problem)](#tsp-traveling-salesman-problem)
 - [Uncapped](#uncapped)
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
@@ -1320,6 +1321,22 @@ if (n == 0 || arr[0] == -1) return;
 
 **Analogy:**
 A security check at a gate — if the first guard says "no entry", the second guard is never even consulted.
+
+---
+
+## Telescoping Sum
+
+**Definition:** A sum whose terms cancel in pairs when expanded, so the total collapses to just the first and/or last term — most of the sum's "middle" never has to be computed.
+
+**Why it arises:** Any time you're summing consecutive *differences* (`a[i+1]-a[i]`), consecutive *ratios* (as logs), or similarly structured consecutive terms, expanding the sum reveals every interior value appears once with a `+` and once with a `−`. Recognizing this early can turn an O(n) computation — or an O(n) case analysis — into an O(1) lookup.
+
+**Example from practice:** In [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B), `b[i] = a[i+1]-a[i]` summed over the whole array telescopes to `a[n] - a[1]`, meaning every interior element — blank or given — is irrelevant to the answer. Full writeup: [The Corner-Anchor Pattern](../Techniques/The%20Corner-Anchor%20Pattern.md).
+
+**How to recognize:** You're summing a sequence of `f(a[i+1]) - f(a[i])` (or similarly shaped consecutive terms) over a whole range, and your first instinct is to loop through and add them all up.
+
+**Analogy:** Like a stack of dominoes where each one knocks over the next — only the first and last domino's positions matter for "how far did the fall travel," not which dominoes were in between.
+
+**Related:** [The Corner-Anchor Pattern](../Techniques/The%20Corner-Anchor%20Pattern.md)
 
 ---
 
