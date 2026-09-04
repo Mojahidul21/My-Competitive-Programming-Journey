@@ -59,7 +59,7 @@
 > ### 🔼 Upsolve
 
 **Codeforces**
-- [Codeforces Round 1065 (Div. 3)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
+- [Codeforces Round 1065 (Div. 3) - B. Yuu Koito and Minimum Absolute Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 - [Codeforces Round 1102 (Div. 2) — B. Palindrome, Twelve and Two Terms](Upsolve/Codeforces/Codeforces%20Round%201102%20(Div.%202)/B.%20Palindrome%2C%20Twelve%20and%20Two%20Terms.md)
 - [Codeforces Round 1116 (Div. 2) — B. Domino Tiles: Approach](Upsolve/Codeforces/Codeforces%20Round%201116%20(Div.%202)/B.%20Domino%20Tiles/Approach.md)
 - [Codeforces Round 1116 (Div. 2) — C. Hot Potatoes at the Fairy Warehouse: Approach](Upsolve/Codeforces/Codeforces%20Round%201116%20(Div.%202)/C.%20Hot%20Potatoes%20at%20the%20Fairy%20Warehouse/Approach.md)
