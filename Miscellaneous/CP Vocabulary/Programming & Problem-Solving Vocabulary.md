@@ -247,7 +247,7 @@ flowchart LR
 
 **Why it arises:** Under contest pressure, case-bashing is often the *fastest path to a correct submission* — you don't need to see the elegant underlying structure, just enough cases to cover every input shape. It's a legitimate and common strategy, not just a fallback; some problems genuinely have no cleaner form. The risk is missing a case, or — as with the Corner-Anchor pattern — case-bashing on a variable that turns out to be irrelevant, producing a correct but needlessly complex solution.
 
-**Example from practice:** The first working solution to [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B) case-bashed on the position of the nearest given value (`L`/`R`) across eight sub-cases, before the telescoping-sum insight revealed only two positions (`a[1]`, `a[n]`) actually mattered. Full writeup: [The Corner-Anchor Pattern](../Techniques/The%20Corner-Anchor%20Pattern.md).
+**Example from practice:** The first working solution to [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B) case-bashed on the position of the nearest given value (`L`/`R`) across eight sub-cases, before the telescoping-sum insight revealed only two positions (`a[1]`, `a[n]`) actually mattered. Full writeup: [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md).
 
 **How to recognize:** Your solution is a long chain of `if`/`else if` conditions checking combinations of properties (parity, boundary position, sign, etc.), each with its own hardcoded handling, and you arrived at it by testing examples rather than deriving a formula.
 
