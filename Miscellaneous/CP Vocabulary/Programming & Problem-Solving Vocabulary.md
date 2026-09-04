@@ -251,7 +251,7 @@ flowchart LR
 
 **How to recognize:** Your solution is a long chain of `if`/`else if` conditions checking combinations of properties (parity, boundary position, sign, etc.), each with its own hardcoded handling, and you arrived at it by testing examples rather than deriving a formula.
 
-**Related:** [Telescoping Sum](#telescoping-sum), [The Corner-Anchor Pattern](../Techniques/The%20Corner-Anchor%20Pattern.md)
+**Related:** [Telescoping Sum](#telescoping-sum), [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 
 ---
 
