@@ -151,7 +151,7 @@ No scanning for `L`/`R` at all — `a[0]` and `a[n-1]` *are* the only inputs tha
 - You're asked to **fill blanks** or **choose free values** under that objective, often with a secondary lexicographic tie-break.
 - Your first instinct is to track "the nearest known value" — a sentinel-scanning approach. That instinct is usually a sign the interior doesn't actually matter and you can jump straight to the corners.
 
-> 💡 Related idea in the vault: this is a cousin of [Sentinel](Programming%20%26%20Problem-Solving%20Vocabulary.md) usage (`-1` as a not-given marker) crossed with a telescoping-sum simplification — worth cross-referencing both when this pattern shows up again.
+> 💡 Related idea in the vault: this is a cousin of [Sentinel](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20%26%20Problem-Solving%20Vocabulary.md#sentinel) usage (`-1` as a not-given marker) crossed with a telescoping-sum simplification — worth cross-referencing both when this pattern shows up again.
 
 ---
 
