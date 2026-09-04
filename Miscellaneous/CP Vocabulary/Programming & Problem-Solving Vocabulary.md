@@ -240,7 +240,7 @@ flowchart LR
 
 ---
 
-### Case-Bashing
+## Case-Bashing
 
 **Definition:** Solving a problem by splitting it into an explicit enumeration of cases (often by hand, via if/else or switch branches) and handling each one separately, rather than finding a single unified formula or algorithm that covers all of them at once.
 
