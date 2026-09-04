@@ -169,5 +169,5 @@ No scanning for `L`/`R` at all — `a[0]` and `a[n-1]` *are* the only inputs tha
 
 ## Related
 
-- `Related code:` — a `corner-anchor-fill` snippet in [Code Templates](../Code%20Templates/) would generalize the ✅ block above; not yet created, cross-link pending.
+- `Related code:` — a `corner-anchor-fill` snippet in [Code Templates](../Code%20Templates/) would generalize the 🐇 block above; not yet created, cross-link pending.
 - [Programming & Problem-Solving Vocabulary.md](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20%26%20Problem-Solving%20Vocabulary.md) — see **Sentinel**, **Off-by-one**.
