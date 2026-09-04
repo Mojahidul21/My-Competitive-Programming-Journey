@@ -1330,7 +1330,7 @@ A security check at a gate — if the first guard says "no entry", the second gu
 
 **Why it arises:** Any time you're summing consecutive *differences* (`a[i+1]-a[i]`), consecutive *ratios* (as logs), or similarly structured consecutive terms, expanding the sum reveals every interior value appears once with a `+` and once with a `−`. Recognizing this early can turn an O(n) computation — or an O(n) case analysis — into an O(1) lookup.
 
-**Example from practice:** In [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B), `b[i] = a[i+1]-a[i]` summed over the whole array telescopes to `a[n] - a[1]`, meaning every interior element — blank or given — is irrelevant to the answer. Full writeup: [The Corner-Anchor Pattern](../Techniques/The%20Corner-Anchor%20Pattern.md).
+**Example from practice:** In [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B), `b[i] = a[i+1]-a[i]` summed over the whole array telescopes to `a[n] - a[1]`, meaning every interior element — blank or given — is irrelevant to the answer. Full writeup: [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md).
 
 **How to recognize:** You're summing a sequence of `f(a[i+1]) - f(a[i])` (or similarly shaped consecutive terms) over a whole range, and your first instinct is to loop through and add them all up.
 
