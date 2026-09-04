@@ -3,7 +3,7 @@
 
 ---
 
-> **🖋️ Dedicated** to [Mir Md. Kawsur](https://www.linkedin.com/in/mir-md-kawsur-a036b068/), sir — who always finds time to check my work and give feedback, even during his busiest days, and even when what I've made is just a childish game.
+> **🖋️ Dedicated** to [Mir Md. Kawsur](https://www.linkedin.com/in/mir-md-kawsur-a036b068/), sir — who always finds time to check my work and give feedback, even during his busiest days, and even when what I've made is just a childish game!
 
 
 > 📖 Before reading on, it helps to read the problem statement first — **not the solution** — for [2171B: Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B). The rest of this article assumes you've seen the setup.
