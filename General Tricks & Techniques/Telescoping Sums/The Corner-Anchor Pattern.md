@@ -127,7 +127,7 @@ for (auto &x : a) cout << (x < 0 ? 0 : x) << ' ';
 
 It's correct — it passes every test — but it does real work (a full left-to-right and right-to-left scan) to answer a question that only needed two array lookups.
 
-### ✅ Corner-anchored
+### 🐇 Corner-anchored
 
 ```cpp
 int n; cin >> n;
