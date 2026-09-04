@@ -37,7 +37,7 @@
 **Number as String**
 - [Numbers as Strings: Tricks, Patterns and Pitfalls](General%20Tricks%20&%20Techniques/Number%20as%20String/Numbers%20as%20Strings%3A%20Tricks%2C%20Patterns%20and%20Pitfalls.md)
 
-**Telescoping Sums**
+**🔭 Telescoping Sums**
 - [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 
 
