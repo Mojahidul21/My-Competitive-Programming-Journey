@@ -1,9 +1,7 @@
 # The Corner-Anchor Pattern
 
-*Why a telescoping sum only ever cares about two positions — no matter how big the array is.*
-
-> Part of the *Competitive Programming Field Notes* series, dedicated to Dr. Mohammad Mamunur Rashid.
-
+🔭 *Why a telescoping sum only ever cares about two positions — no matter how big the array is.*
+> 📖 Before reading on, it helps to read the problem statement first — **not the solution** — for [2171B: Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B). The rest of this article assumes you've seen the setup.
 ---
 
 ## Definition
@@ -99,7 +97,7 @@ flowchart TD
 
 Worked example: **[2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B)**. Fill blanks (`-1`) in `a[1..n]` to minimize `|b1 + ... + b(n-1)|` where `b[i] = a[i+1]-a[i]`, tie-broken lexicographically smallest.
 
-### ❌ Case-bashing on the nearest given value
+### 🐢 Case-bashing on the nearest given value
 
 This is the shape a first working solution tends to take: track `L`/`R` = first/last non-blank index anywhere in the array, then branch on how they sit relative to `0` and `n-1`.
 
@@ -159,11 +157,9 @@ No scanning for `L`/`R` at all — `a[0]` and `a[n-1]` *are* the only inputs tha
 
 ## Practice problems
 
-| Problem | Rating | Note |
+| Problem | Tag/Rating | Note |
 |---|---|---|
-| [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B) | 900 | The motivating example above |
-| _(add here)_ | | |
-| _(add here)_ | | |
+| [2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B) | math/900 | The motivating example above |
 
 ---
 
