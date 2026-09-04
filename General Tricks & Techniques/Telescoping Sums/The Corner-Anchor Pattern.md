@@ -93,7 +93,7 @@ flowchart TD
 
 ---
 
-## Case-bashed vs. Corner-anchored: the same problem, two solutions
+## Case-bashed vs. corner-anchored: the same problem, two solutions
 
 Worked example: **[2171B — Yuu Koito and Minimum Absolute Sum](https://codeforces.com/contest/2171/problem/B)**. Fill blanks (`-1`) in `a[1..n]` to minimize `|b1 + ... + b(n-1)|` where `b[i] = a[i+1]-a[i]`, tie-broken lexicographically smallest.
 
