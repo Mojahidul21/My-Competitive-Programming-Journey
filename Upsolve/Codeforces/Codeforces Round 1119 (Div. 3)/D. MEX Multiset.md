@@ -183,7 +183,7 @@ for (int v : sorted_a) {
 ## 7. A Detour That Cost Real Time: `unordered_map` and Anti-Hash Attacks
 
 > [!WARNING]
-> **Lesson learned:** `unordered_map<int, vector<int>>` was tried in Phase 2 for speed, but it later failed with TLE. Reverted to `map<int, vector<int>>`: `O(log n)` regardless of input, and cheap enough for `n ≤ 2·10^5`.
+> **Lesson learned:** `unordered_map<int, vector<int>>` was tried in Phase 2 for speed, but it later failed with TLE due to an anti-hash attack on GCC's default integer hash. Reverted to `map<int, vector<int>>`: `O(log n)` regardless of input, and cheap enough for `n ≤ 2·10^5`.
 
 ---
 
