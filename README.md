@@ -64,7 +64,7 @@
 - [Codeforces Round 1116 (Div. 2) — B. Domino Tiles: Approach](Upsolve/Codeforces/Codeforces%20Round%201116%20(Div.%202)/B.%20Domino%20Tiles/Approach.md)
 - [Codeforces Round 1116 (Div. 2) — C. Hot Potatoes at the Fairy Warehouse: Approach](Upsolve/Codeforces/Codeforces%20Round%201116%20(Div.%202)/C.%20Hot%20Potatoes%20at%20the%20Fairy%20Warehouse/Approach.md)
 - [Codeforces Round 1117 (Div. 2) — C. Spying on the Beaver](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201117%20(Div.%202)/C.%20Spying%20on%20the%20Beaver.md)
-- [Codeforces Round 1119 (Div. 3) — D. MEX Multiset](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201117%20(Div.%202)/C.%20Spying%20on%20the%20Beaver.md)
+- [Codeforces Round 1119 (Div. 3) — D. MEX Multiset](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/D.%20MEX%20Multiset.md)
 - [C. Mental Monumental (Easy Version)](Upsolve/Codeforces/C.%20Mental%20Monumental%20(Easy%20Version).md)
 - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
