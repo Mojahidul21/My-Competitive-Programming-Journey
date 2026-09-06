@@ -1,131 +1,124 @@
-<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5N2NiMWU4Ni1hMjEwLTRiN2UtOTIzNC0yZTk3YTRiYzYzZjIAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaMhVPTLZrXMCWym9Vk7gwUoAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDphN2Q4NGIwZC03NjA4LTRhYjEtYWRkNC1kZmM2NTI0NGI2ZTRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNo1Fim8JrWoWPt5hufh74LFQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggsxUNA7zOnFZhB0hyN1wsFjgZL6F72+JNiZW5RgeigAOkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaPWpJxhxz0LbNXABw1Mu2/8AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAlwvlq7HSoDAmWV37oWL5Y3Kzl6i2kd4GvUCzDH1LEZmRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiyZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjk3Y2IxZTg2LWEyMTAtNGI3ZS05MjM0LTJlOTdhNGJjNjNmMi9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjA3NzM3NjgwLTQ3YzgtNGI1ZS05ZjYyLTY1OGI1OWQzMTdmZnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCCzFQ0DvM6cVmEHSHI3XCwWOBkvoXvb4k2JlblGB6KAA6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFgg5C5Y9MQ6B+P4s0kEYGHUGj+Legh1jtOSqoghsvtOI4CiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggdYIwtAbduVNo8osvK4qPqYzb79vc8r0EeThNM/maMnV0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQGn0DELT1CH2EnZDr+Mxh+3CT7DwYQ4+ypjMqZCbU1Kdgw4uWZqiXBXlXkaWPe8CHx3JP9DTiCDOfzq4m5f1SsM=</c2pa:manifest></metadata>
-  <rect x="0" y="0" width="900" height="620" fill="#ffffff"/>
-  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2937">
-    Phase 1 &#8212; Greedy Walkthrough &#8212; sorted array [0, 0, 1, 1, 1, 2]
-  </text>
-  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#6b7280">
-    Rule: feed the next value to whichever bucket currently has the smallest MEX (ties: A before B before C)
-  </text>
-
+<svg viewBox="0 0 900 620" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+  <rect x="0" y="0" width="900" height="620" fill="#ffffff" />
+  <text x="450" y="34" text-anchor="middle" font-size="20" font-weight="700" fill="#1f2937"> Phase 1 &#8212; Greedy Walkthrough &#8212; sorted array [0, 0, 1, 1, 1, 2] </text>
+  <text x="450" y="56" text-anchor="middle" font-size="13" fill="#6b7280"> Rule: feed the next value to whichever bucket currently has the smallest MEX (ties: A before B before C) </text>
   <!-- ============ FRAME 1 : after the two 0s ============ -->
   <g transform="translate(20,90)">
-    <rect x="0" y="0" width="270" height="480" rx="10" fill="#FAFAFA" stroke="#e5e7eb"/>
+    <rect x="0" y="0" width="270" height="480" rx="10" fill="#FAFAFA" stroke="#e5e7eb" />
     <text x="135" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">Frame 1 &#8212; process 0, 0</text>
-
     <!-- sorted array strip -->
     <g transform="translate(20,44)">
-      <rect x="0"  y="0" width="34" height="30" fill="#4A90D9"/><text x="17" y="20" text-anchor="middle" fill="#fff" font-size="14">0</text>
-      <rect x="36" y="0" width="34" height="30" fill="#50C878"/><text x="53" y="20" text-anchor="middle" fill="#fff" font-size="14">0</text>
-      <rect x="72" y="0" width="34" height="30" fill="#e5e7eb"/><text x="89" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
-      <rect x="108" y="0" width="34" height="30" fill="#e5e7eb"/><text x="125" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
-      <rect x="144" y="0" width="34" height="30" fill="#e5e7eb"/><text x="161" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
-      <rect x="180" y="0" width="34" height="30" fill="#e5e7eb"/><text x="197" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">2</text>
+      <rect x="0" y="0" width="34" height="30" fill="#4A90D9" />
+      <text x="17" y="20" text-anchor="middle" fill="#fff" font-size="14">0</text>
+      <rect x="36" y="0" width="34" height="30" fill="#50C878" />
+      <text x="53" y="20" text-anchor="middle" fill="#fff" font-size="14">0</text>
+      <rect x="72" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="89" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
+      <rect x="108" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="125" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
+      <rect x="144" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="161" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
+      <rect x="180" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="197" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">2</text>
     </g>
-
     <!-- buckets -->
     <text x="20" y="120" font-size="13" fill="#374151" font-weight="600">Buckets:</text>
     <g transform="translate(20,132)">
-      <rect x="0" y="0" width="60" height="60" rx="6" fill="#4A90D9"/>
+      <rect x="0" y="0" width="60" height="60" rx="6" fill="#4A90D9" />
       <text x="30" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">A</text>
       <text x="30" y="46" text-anchor="middle" fill="#fff" font-size="13">{0}</text>
-
-      <rect x="80" y="0" width="60" height="60" rx="6" fill="#50C878"/>
+      <rect x="80" y="0" width="60" height="60" rx="6" fill="#50C878" />
       <text x="110" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">B</text>
       <text x="110" y="46" text-anchor="middle" fill="#fff" font-size="13">{0}</text>
-
-      <rect x="160" y="0" width="60" height="60" rx="6" fill="#F5A623"/>
+      <rect x="160" y="0" width="60" height="60" rx="6" fill="#F5A623" />
       <text x="190" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">C</text>
       <text x="190" y="46" text-anchor="middle" fill="#fff" font-size="13">{ }</text>
     </g>
-
     <!-- mex counters -->
     <text x="20" y="230" font-size="13" fill="#374151" font-weight="600">MEX so far:</text>
     <text x="20" y="252" font-size="13" fill="#4A90D9">mex(A) = 1</text>
     <text x="20" y="272" font-size="13" fill="#2f9e5e">mex(B) = 1</text>
     <text x="20" y="292" font-size="13" fill="#c67c0b">mex(C) = 0</text>
-
-    <rect x="16" y="320" width="238" height="60" rx="6" fill="#EFF6FF"/>
+    <rect x="16" y="320" width="238" height="60" rx="6" fill="#EFF6FF" />
     <text x="135" y="342" text-anchor="middle" font-size="11.5" fill="#1e3a8a">Both 0s were "needed":</text>
     <text x="135" y="360" text-anchor="middle" font-size="11.5" fill="#1e3a8a">each matched its bucket's</text>
     <text x="135" y="376" text-anchor="middle" font-size="11.5" fill="#1e3a8a">current MEX, so MEX grew.</text>
   </g>
-
   <!-- ============ FRAME 2 : after the three 1s ============ -->
   <g transform="translate(315,90)">
-    <rect x="0" y="0" width="270" height="480" rx="10" fill="#FAFAFA" stroke="#e5e7eb"/>
+    <rect x="0" y="0" width="270" height="480" rx="10" fill="#FAFAFA" stroke="#e5e7eb" />
     <text x="135" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">Frame 2 &#8212; process 1, 1, 1</text>
-
     <g transform="translate(20,44)">
-      <rect x="0"  y="0" width="34" height="30" fill="#e5e7eb"/><text x="17" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
-      <rect x="36" y="0" width="34" height="30" fill="#e5e7eb"/><text x="53" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
-      <rect x="72" y="0" width="34" height="30" fill="#F5A623"/><text x="89" y="20" text-anchor="middle" fill="#fff" font-size="14">1</text>
-      <rect x="108" y="0" width="34" height="30" fill="#F5A623"/><text x="125" y="20" text-anchor="middle" fill="#fff" font-size="14">1</text>
-      <rect x="144" y="0" width="34" height="30" fill="#F5A623"/><text x="161" y="20" text-anchor="middle" fill="#fff" font-size="14">1</text>
-      <rect x="180" y="0" width="34" height="30" fill="#e5e7eb"/><text x="197" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">2</text>
+      <rect x="0" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="17" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
+      <rect x="36" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="53" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
+      <rect x="72" y="0" width="34" height="30" fill="#F5A623" />
+      <text x="89" y="20" text-anchor="middle" fill="#fff" font-size="14">1</text>
+      <rect x="108" y="0" width="34" height="30" fill="#F5A623" />
+      <text x="125" y="20" text-anchor="middle" fill="#fff" font-size="14">1</text>
+      <rect x="144" y="0" width="34" height="30" fill="#F5A623" />
+      <text x="161" y="20" text-anchor="middle" fill="#fff" font-size="14">1</text>
+      <rect x="180" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="197" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">2</text>
     </g>
-
     <text x="20" y="120" font-size="13" fill="#374151" font-weight="600">Buckets:</text>
     <g transform="translate(20,132)">
-      <rect x="0" y="0" width="60" height="60" rx="6" fill="#4A90D9"/>
+      <rect x="0" y="0" width="60" height="60" rx="6" fill="#4A90D9" />
       <text x="30" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">A</text>
       <text x="30" y="46" text-anchor="middle" fill="#fff" font-size="13">{0}</text>
-
-      <rect x="80" y="0" width="60" height="60" rx="6" fill="#50C878"/>
+      <rect x="80" y="0" width="60" height="60" rx="6" fill="#50C878" />
       <text x="110" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">B</text>
       <text x="110" y="46" text-anchor="middle" fill="#fff" font-size="13">{0}</text>
-
-      <rect x="160" y="0" width="60" height="60" rx="6" fill="#F5A623"/>
+      <rect x="160" y="0" width="60" height="60" rx="6" fill="#F5A623" />
       <text x="190" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">C</text>
       <text x="190" y="46" text-anchor="middle" fill="#fff" font-size="12">{1,1,1}</text>
     </g>
-
     <text x="20" y="230" font-size="13" fill="#374151" font-weight="600">MEX so far:</text>
     <text x="20" y="252" font-size="13" fill="#4A90D9">mex(A) = 1</text>
     <text x="20" y="272" font-size="13" fill="#2f9e5e">mex(B) = 1</text>
     <text x="20" y="292" font-size="13" fill="#c67c0b">mex(C) = 0</text>
-
-    <rect x="16" y="320" width="238" height="76" rx="6" fill="#FFF7ED"/>
+    <rect x="16" y="320" width="238" height="76" rx="6" fill="#FFF7ED" />
     <text x="135" y="340" text-anchor="middle" font-size="11.5" fill="#9a3412">A and B both need a "1"</text>
     <text x="135" y="356" text-anchor="middle" font-size="11.5" fill="#9a3412">next, but C has the smallest</text>
     <text x="135" y="372" text-anchor="middle" font-size="11.5" fill="#9a3412">MEX (0) and gets fed first &#8212;</text>
     <text x="135" y="388" text-anchor="middle" font-size="11.5" fill="#9a3412">value 1 &#8800; 0, so C's MEX stays put.</text>
   </g>
-
   <!-- ============ FRAME 3 : after the final 2 ============ -->
   <g transform="translate(610,90)">
-    <rect x="0" y="0" width="270" height="480" rx="10" fill="#FAFAFA" stroke="#e5e7eb"/>
+    <rect x="0" y="0" width="270" height="480" rx="10" fill="#FAFAFA" stroke="#e5e7eb" />
     <text x="135" y="26" text-anchor="middle" font-size="14" font-weight="700" fill="#374151">Frame 3 &#8212; process 2 (final)</text>
-
     <g transform="translate(20,44)">
-      <rect x="0"  y="0" width="34" height="30" fill="#e5e7eb"/><text x="17" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
-      <rect x="36" y="0" width="34" height="30" fill="#e5e7eb"/><text x="53" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
-      <rect x="72" y="0" width="34" height="30" fill="#e5e7eb"/><text x="89" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
-      <rect x="108" y="0" width="34" height="30" fill="#e5e7eb"/><text x="125" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
-      <rect x="144" y="0" width="34" height="30" fill="#e5e7eb"/><text x="161" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
-      <rect x="180" y="0" width="34" height="30" fill="#F5A623"/><text x="197" y="20" text-anchor="middle" fill="#fff" font-size="14">2</text>
+      <rect x="0" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="17" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
+      <rect x="36" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="53" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">0</text>
+      <rect x="72" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="89" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
+      <rect x="108" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="125" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
+      <rect x="144" y="0" width="34" height="30" fill="#e5e7eb" />
+      <text x="161" y="20" text-anchor="middle" fill="#9ca3af" font-size="14">1</text>
+      <rect x="180" y="0" width="34" height="30" fill="#F5A623" />
+      <text x="197" y="20" text-anchor="middle" fill="#fff" font-size="14">2</text>
     </g>
-
     <text x="20" y="120" font-size="13" fill="#374151" font-weight="600">Final buckets:</text>
     <g transform="translate(20,132)">
-      <rect x="0" y="0" width="60" height="60" rx="6" fill="#4A90D9"/>
+      <rect x="0" y="0" width="60" height="60" rx="6" fill="#4A90D9" />
       <text x="30" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">A</text>
       <text x="30" y="46" text-anchor="middle" fill="#fff" font-size="13">{0}</text>
-
-      <rect x="80" y="0" width="60" height="60" rx="6" fill="#50C878"/>
+      <rect x="80" y="0" width="60" height="60" rx="6" fill="#50C878" />
       <text x="110" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">B</text>
       <text x="110" y="46" text-anchor="middle" fill="#fff" font-size="13">{0}</text>
-
-      <rect x="160" y="0" width="60" height="60" rx="6" fill="#F5A623"/>
+      <rect x="160" y="0" width="60" height="60" rx="6" fill="#F5A623" />
       <text x="190" y="24" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">C</text>
       <text x="190" y="46" text-anchor="middle" fill="#fff" font-size="11">{1,1,1,2}</text>
     </g>
-
     <text x="20" y="230" font-size="13" fill="#374151" font-weight="600">Final MEX:</text>
     <text x="20" y="252" font-size="13" fill="#4A90D9">mex(A) = 1</text>
     <text x="20" y="272" font-size="13" fill="#2f9e5e">mex(B) = 1</text>
     <text x="20" y="292" font-size="13" fill="#c67c0b">mex(C) = 0</text>
-
-    <rect x="16" y="320" width="238" height="94" rx="6" fill="#F0FDF4"/>
+    <rect x="16" y="320" width="238" height="94" rx="6" fill="#F0FDF4" />
     <text x="135" y="340" text-anchor="middle" font-size="12" fill="#14532d" font-weight="700">Check: 1+1+0 &#8805; 2&#215;1</text>
     <text x="135" y="358" text-anchor="middle" font-size="12" fill="#14532d" font-weight="700">2 &#8805; 2 &#10003; &#8594; YES</text>
     <text x="135" y="378" text-anchor="middle" font-size="11" fill="#166534">A different split from the</text>

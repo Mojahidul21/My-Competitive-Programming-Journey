@@ -1,183 +1,160 @@
-<svg viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest"><metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTozYjJlY2JmMS1lYjkzLTQ5NjctYWY4Yi00NjkxYmRjNjNiNzMAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaCHJ2aF0sICinC52Czq1r0sAAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDoyMDc3N2I4Yy03MWU5LTRlZTgtOTMxYS0wMjRlYTc0NDExNDRscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoU8kskEVcvRHz+Pfo0tt23wAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggz/RJsqJWaWwj30aE9Tp0OPkAQsaGxfA6nyW9rnqLswOkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaAMetl+fJFYGoc6GjhqUKT0AAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRNAAAAAAAAAAAAAAAAAGRoYXNoWCAksTIFEhAeaHuJcE5slzTmQjReIEd/WNQObhzscgzX8WRuYW1lbmp1bWJmIG1hbmlmZXN0amV4Y2x1c2lvbnOBomVzdGFydBiyZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjNiMmVjYmYxLWViOTMtNDk2Ny1hZjhiLTQ2OTFiZGM2M2I3My9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjdkYzA5MmE5LWUzYmYtNDNiOS1iZDhmLTJlY2QxOGE5MzVkYXJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCDP9EmyolZpbCPfRoT1OnQ4+QBCxobF8DqfJb2ueouzA6JjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggUkJ5X+VtLnftNSmp21USt+nC394wjyYAwUm68ovOj1qiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggZueOxvkiJhufUjbpdO459pwjUjcoG6ipaLRWQ/dtDwh0Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQKgey0GfVqo/JA8avLK2qa4kK9CU6VQSwcw2jOWmumiMb9pIOWcp9Xurj7/lr61vsXr/8onuE4df5ids+ita9q8=</c2pa:manifest></metadata>
+<svg viewBox="0 0 960 580" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
   <defs>
     <radialGradient id="bgGrad" cx="50%" cy="30%" r="80%">
-      <stop offset="0%" stop-color="#F5F5F4"/>
-      <stop offset="100%" stop-color="#C8C9CB"/>
+      <stop offset="0%" stop-color="#F5F5F4" />
+      <stop offset="100%" stop-color="#C8C9CB" />
     </radialGradient>
     <linearGradient id="furGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#FFFFFF"/>
-      <stop offset="100%" stop-color="#D6D6D6"/>
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#D6D6D6" />
     </linearGradient>
     <linearGradient id="earGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#EDEDED"/>
-      <stop offset="100%" stop-color="#B8B8B8"/>
+      <stop offset="0%" stop-color="#EDEDED" />
+      <stop offset="100%" stop-color="#B8B8B8" />
     </linearGradient>
     <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F2D57E"/>
-      <stop offset="100%" stop-color="#B8901F"/>
+      <stop offset="0%" stop-color="#F2D57E" />
+      <stop offset="100%" stop-color="#B8901F" />
     </linearGradient>
     <linearGradient id="copper" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#D89A63"/>
-      <stop offset="100%" stop-color="#8C4A24"/>
+      <stop offset="0%" stop-color="#D89A63" />
+      <stop offset="100%" stop-color="#8C4A24" />
     </linearGradient>
     <linearGradient id="platinum" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F1F1EF"/>
-      <stop offset="100%" stop-color="#9C9C98"/>
+      <stop offset="0%" stop-color="#F1F1EF" />
+      <stop offset="100%" stop-color="#9C9C98" />
     </linearGradient>
     <linearGradient id="carrotGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#C98A4B"/>
-      <stop offset="100%" stop-color="#8C4A24"/>
+      <stop offset="0%" stop-color="#C98A4B" />
+      <stop offset="100%" stop-color="#8C4A24" />
     </linearGradient>
   </defs>
-
-  <rect x="0" y="0" width="960" height="580" fill="url(#bgGrad)"/>
-
+  <rect x="0" y="0" width="960" height="580" fill="url(#bgGrad)" />
   <!-- ================= Title ================= -->
-  <text x="480" y="30" text-anchor="middle" font-size="26" font-weight="800" fill="#1A1A1A" letter-spacing="0.5">
-    THE MEX MULTISET PUZZLE
-  </text>
-  <text x="480" y="52" text-anchor="middle" font-size="13" fill="#4B4B4B">
-    One bucket at a time is fine. All three at once? That's another story ...!
-  </text>
-
+  <text x="480" y="30" text-anchor="middle" font-size="26" font-weight="800" fill="#1A1A1A" letter-spacing="0.5"> THE MEX MULTISET PUZZLE </text>
+  <text x="480" y="43" text-anchor="middle" font-size="13" fill="#4B4B4B"> One bucket at a time is fine. All three at once? That's another story for my lovely carrots ...! </text>
   <!-- ================= Falling carrots (the array), sized 0..5 ================= -->
   <!-- leaves: ash. bodies: copper/gold gradient. sizes strictly increasing left to right. -->
   <g>
     <!-- value 0: barely a stub -->
     <g transform="translate(150,95)">
-      <line x1="0" y1="-4" x2="0" y2="2" stroke="#8A8F87" stroke-width="2"/>
-      <path d="M -3 2 L 3 2 L 0 8 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.6"/>
+      <line x1="0" y1="-4" x2="0" y2="2" stroke="#8A8F87" stroke-width="2" />
+      <path d="M -3 2 L 3 2 L 0 8 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.6" />
       <text x="0" y="26" text-anchor="middle" font-size="11" fill="#4B4B4B">0</text>
     </g>
     <!-- value 1: small -->
     <g transform="translate(260,88)">
-      <line x1="-3" y1="-8" x2="0" y2="0" stroke="#8A8F87" stroke-width="2"/>
-      <line x1="3" y1="-8" x2="0" y2="0" stroke="#8A8F87" stroke-width="2"/>
-      <path d="M -6 0 L 6 0 L 0 20 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.6"/>
+      <line x1="-3" y1="-8" x2="0" y2="0" stroke="#8A8F87" stroke-width="2" />
+      <line x1="3" y1="-8" x2="0" y2="0" stroke="#8A8F87" stroke-width="2" />
+      <path d="M -6 0 L 6 0 L 0 20 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.6" />
       <text x="0" y="38" text-anchor="middle" font-size="11" fill="#4B4B4B">1</text>
     </g>
     <!-- value 2: medium -->
     <g transform="translate(390,80)">
-      <line x1="-4" y1="-10" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.4"/>
-      <line x1="0" y1="-13" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.4"/>
-      <line x1="4" y1="-10" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.4"/>
-      <path d="M -9 0 L 9 0 L 0 34 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.7"/>
+      <line x1="-4" y1="-10" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.4" />
+      <line x1="0" y1="-13" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.4" />
+      <line x1="4" y1="-10" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.4" />
+      <path d="M -9 0 L 9 0 L 0 34 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.7" />
       <text x="0" y="52" text-anchor="middle" font-size="11" fill="#4B4B4B">2</text>
     </g>
     <!-- value 3: larger -->
     <g transform="translate(560,72)">
-      <line x1="-6" y1="-13" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.8"/>
-      <line x1="0" y1="-17" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.8"/>
-      <line x1="6" y1="-13" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.8"/>
-      <path d="M -12 0 L 12 0 L 0 46 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.8"/>
+      <line x1="-6" y1="-13" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.8" />
+      <line x1="0" y1="-17" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.8" />
+      <line x1="6" y1="-13" x2="0" y2="0" stroke="#8A8F87" stroke-width="2.8" />
+      <path d="M -12 0 L 12 0 L 0 46 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.8" />
       <text x="0" y="66" text-anchor="middle" font-size="11" fill="#4B4B4B">3</text>
     </g>
     <!-- value 4: bigger still -->
     <g transform="translate(710,66)">
-      <line x1="-7" y1="-16" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.2"/>
-      <line x1="0" y1="-21" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.2"/>
-      <line x1="7" y1="-16" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.2"/>
-      <path d="M -15 0 L 15 0 L 0 58 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.9"/>
+      <line x1="-7" y1="-16" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.2" />
+      <line x1="0" y1="-21" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.2" />
+      <line x1="7" y1="-16" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.2" />
+      <path d="M -15 0 L 15 0 L 0 58 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="0.9" />
       <text x="0" y="78" text-anchor="middle" font-size="11" fill="#4B4B4B">4</text>
     </g>
     <!-- value 5: biggest -->
     <g transform="translate(840,58)">
-      <line x1="-9" y1="-19" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.6"/>
-      <line x1="0" y1="-25" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.6"/>
-      <line x1="9" y1="-19" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.6"/>
-      <path d="M -18 0 L 18 0 L 0 70 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="1"/>
+      <line x1="-9" y1="-19" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.6" />
+      <line x1="0" y1="-25" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.6" />
+      <line x1="9" y1="-19" x2="0" y2="0" stroke="#8A8F87" stroke-width="3.6" />
+      <path d="M -18 0 L 18 0 L 0 70 Z" fill="url(#carrotGrad)" stroke="#5C3013" stroke-width="1" />
       <text x="0" y="90" text-anchor="middle" font-size="11" fill="#4B4B4B">5</text>
     </g>
   </g>
-
   <!-- ================= The rabbit ================= -->
   <g transform="translate(480,300)">
     <!-- ears -->
-    <ellipse cx="-38" cy="-155" rx="16" ry="70" fill="url(#earGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(-8 -38 -155)"/>
-    <ellipse cx="34" cy="-155" rx="16" ry="70" fill="url(#earGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(8 34 -155)"/>
-    <ellipse cx="-38" cy="-150" rx="7" ry="52" fill="#8C8C8C" opacity="0.5" transform="rotate(-8 -38 -150)"/>
-    <ellipse cx="34" cy="-150" rx="7" ry="52" fill="#8C8C8C" opacity="0.5" transform="rotate(8 34 -150)"/>
-
+    <ellipse cx="-38" cy="-155" rx="16" ry="70" fill="url(#earGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(-8 -38 -155)" />
+    <ellipse cx="34" cy="-155" rx="16" ry="70" fill="url(#earGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(8 34 -155)" />
+    <ellipse cx="-38" cy="-150" rx="7" ry="52" fill="#8C8C8C" opacity="0.5" transform="rotate(-8 -38 -150)" />
+    <ellipse cx="34" cy="-150" rx="7" ry="52" fill="#8C8C8C" opacity="0.5" transform="rotate(8 34 -150)" />
     <!-- body -->
-    <ellipse cx="0" cy="60" rx="82" ry="98" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2.5"/>
-
+    <ellipse cx="0" cy="60" rx="82" ry="98" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2.5" />
     <!-- arms (straining outward toward the buckets) -->
-    <ellipse cx="-95" cy="15" rx="16" ry="42" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(-35 -95 15)"/>
-    <ellipse cx="98" cy="10" rx="16" ry="42" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(28 98 10)"/>
-
+    <ellipse cx="-95" cy="15" rx="16" ry="42" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(-35 -95 15)" />
+    <ellipse cx="98" cy="10" rx="16" ry="42" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2" transform="rotate(28 98 10)" />
     <!-- head -->
-    <circle cx="0" cy="-70" r="64" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2.5"/>
-
+    <circle cx="0" cy="-70" r="64" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2.5" />
     <!-- eyes: wide, strained -->
-    <ellipse cx="-22" cy="-75" rx="9" ry="11" fill="#1A1A1A"/>
-    <ellipse cx="22" cy="-75" rx="9" ry="11" fill="#1A1A1A"/>
-    <circle cx="-19" cy="-79" r="2.4" fill="#FFFFFF"/>
-    <circle cx="25" cy="-79" r="2.4" fill="#FFFFFF"/>
-
+    <ellipse cx="-22" cy="-75" rx="9" ry="11" fill="#1A1A1A" />
+    <ellipse cx="22" cy="-75" rx="9" ry="11" fill="#1A1A1A" />
+    <circle cx="-19" cy="-79" r="2.4" fill="#FFFFFF" />
+    <circle cx="25" cy="-79" r="2.4" fill="#FFFFFF" />
     <!-- eyebrows: worried -->
-    <path d="M -34 -92 Q -22 -100 -10 -90" stroke="#1A1A1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-    <path d="M 10 -90 Q 22 -100 34 -92" stroke="#1A1A1A" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-
+    <path d="M -34 -92 Q -22 -100 -10 -90" stroke="#1A1A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    <path d="M 10 -90 Q 22 -100 34 -92" stroke="#1A1A1A" stroke-width="2.5" fill="none" stroke-linecap="round" />
     <!-- nose + mouth (copper accent) -->
-    <path d="M -6 -55 L 6 -55 L 0 -47 Z" fill="url(#copper)" stroke="#5C3013" stroke-width="0.8"/>
-    <path d="M 0 -47 L 0 -40" stroke="#1A1A1A" stroke-width="1.6"/>
-    <path d="M -10 -36 Q 0 -30 10 -36" stroke="#1A1A1A" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-
+    <path d="M -6 -55 L 6 -55 L 0 -47 Z" fill="url(#copper)" stroke="#5C3013" stroke-width="0.8" />
+    <path d="M 0 -47 L 0 -40" stroke="#1A1A1A" stroke-width="1.6" />
+    <path d="M -10 -36 Q 0 -30 10 -36" stroke="#1A1A1A" stroke-width="1.8" fill="none" stroke-linecap="round" />
     <!-- whiskers -->
     <g stroke="#4B4B4B" stroke-width="1.2">
-      <line x1="-28" y1="-52" x2="-58" y2="-58"/>
-      <line x1="-28" y1="-46" x2="-58" y2="-46"/>
-      <line x1="28" y1="-52" x2="58" y2="-58"/>
-      <line x1="28" y1="-46" x2="58" y2="-46"/>
+      <line x1="-28" y1="-52" x2="-58" y2="-58" />
+      <line x1="-28" y1="-46" x2="-58" y2="-46" />
+      <line x1="28" y1="-52" x2="58" y2="-58" />
+      <line x1="28" y1="-46" x2="58" y2="-46" />
     </g>
-
     <!-- sweat drops -->
-    <path d="M 44 -118 q 7 12 0 20 q -7 -8 0 -20 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8"/>
-    <path d="M -50 -108 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8"/>
-    <path d="M 58 -70 q 8 13 0 22 q -8 -9 0 -22 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8"/>
-    <path d="M 12 -132 q 6 9 0 16 q -6 -7 0 -16 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8"/>
-
+    <path d="M 44 -118 q 7 12 0 20 q -7 -8 0 -20 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8" />
+    <path d="M -50 -108 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8" />
+    <path d="M 58 -70 q 8 13 0 22 q -8 -9 0 -22 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8" />
+    <path d="M 12 -132 q 6 9 0 16 q -6 -7 0 -16 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8" />
     <!-- feet -->
-    <ellipse cx="-34" cy="150" rx="26" ry="14" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2"/>
-    <ellipse cx="34" cy="150" rx="26" ry="14" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2"/>
+    <ellipse cx="-34" cy="150" rx="26" ry="14" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2" />
+    <ellipse cx="34" cy="150" rx="26" ry="14" fill="url(#furGrad)" stroke="#1A1A1A" stroke-width="2" />
   </g>
-
   <!-- ================= Bucket 1: MEX (small, calm-ish) ================= -->
   <g transform="translate(230,410)">
-    <path d="M -34 0 L 34 0 L 26 76 L -26 76 Z" fill="url(#gold)" stroke="#1A1A1A" stroke-width="2.5"/>
-    <ellipse cx="0" cy="0" rx="34" ry="10" fill="#F2D57E" stroke="#1A1A1A" stroke-width="2"/>
+    <path d="M -34 0 L 34 0 L 26 76 L -26 76 Z" fill="url(#gold)" stroke="#1A1A1A" stroke-width="2.5" />
+    <ellipse cx="0" cy="0" rx="34" ry="10" fill="#F2D57E" stroke="#1A1A1A" stroke-width="2" />
     <text x="0" y="42" text-anchor="middle" font-size="15" font-weight="800" fill="#1A1A1A">MEX</text>
     <text x="0" y="-16" text-anchor="middle" font-size="12" font-weight="700" fill="#6B5518">A</text>
-    <path d="M 20 -34 q 5 9 0 15 q -5 -6 0 -15 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.7"/>
+    <path d="M 20 -34 q 5 9 0 15 q -5 -6 0 -15 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.7" />
   </g>
-
   <!-- ================= Bucket 2: MEXX (medium, sweatier) ================= -->
   <g transform="translate(480,428)">
-    <path d="M -44 0 L 44 0 L 33 92 L -33 92 Z" fill="url(#copper)" stroke="#1A1A1A" stroke-width="2.5"/>
-    <ellipse cx="0" cy="0" rx="44" ry="12" fill="#D89A63" stroke="#1A1A1A" stroke-width="2"/>
+    <path d="M -44 0 L 44 0 L 33 92 L -33 92 Z" fill="url(#copper)" stroke="#1A1A1A" stroke-width="2.5" />
+    <ellipse cx="0" cy="0" rx="44" ry="12" fill="#D89A63" stroke="#1A1A1A" stroke-width="2" />
     <text x="0" y="50" text-anchor="middle" font-size="17" font-weight="800" fill="#FFFFFF">MEXX</text>
     <text x="0" y="-18" text-anchor="middle" font-size="13" font-weight="700" fill="#5C3013">B</text>
-    <path d="M -28 -40 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8"/>
-    <path d="M 30 -36 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8"/>
+    <path d="M -28 -40 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8" />
+    <path d="M 30 -36 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.8" />
   </g>
-
   <!-- ================= Bucket 3: MEXXX (large, maximum sweat) ================= -->
   <g transform="translate(740,405)">
-    <path d="M -52 0 L 52 0 L 39 108 L -39 108 Z" fill="url(#platinum)" stroke="#1A1A1A" stroke-width="2.5"/>
-    <path d="M -46 20 L 46 20" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5"/>
-    <path d="M -44 45 L 44 45" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5"/>
-    <path d="M -42 70 L 42 70" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5"/>
-    <ellipse cx="0" cy="0" rx="52" ry="13" fill="#F1F1EF" stroke="#1A1A1A" stroke-width="2"/>
+    <path d="M -52 0 L 52 0 L 39 108 L -39 108 Z" fill="url(#platinum)" stroke="#1A1A1A" stroke-width="2.5" />
+    <path d="M -46 20 L 46 20" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5" />
+    <path d="M -44 45 L 44 45" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5" />
+    <path d="M -42 70 L 42 70" stroke="#1A1A1A" stroke-width="1.5" opacity="0.5" />
+    <ellipse cx="0" cy="0" rx="52" ry="13" fill="#F1F1EF" stroke="#1A1A1A" stroke-width="2" />
     <text x="0" y="60" text-anchor="middle" font-size="18" font-weight="800" fill="#1A1A1A">MEXXX</text>
     <text x="0" y="-20" text-anchor="middle" font-size="14" font-weight="800" fill="#1A1A1A">C</text>
-    <path d="M -34 -46 q 7 12 0 20 q -7 -8 0 -20 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.9"/>
-    <path d="M 36 -42 q 7 12 0 20 q -7 -8 0 -20 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.9"/>
-    <path d="M 4 -58 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.9"/>
+    <path d="M -34 -46 q 7 12 0 20 q -7 -8 0 -20 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.9" />
+    <path d="M 36 -42 q 7 12 0 20 q -7 -8 0 -20 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.9" />
+    <path d="M 4 -58 q 6 10 0 17 q -6 -7 0 -17 Z" fill="url(#platinum)" stroke="#8C8C8C" stroke-width="0.9" />
   </g>
-
   <!-- ================= Bottom tagline ================= -->
-  <rect x="220" y="540" width="520" height="32" rx="8" fill="#2B2B2B"/>
-  <text x="480" y="561" text-anchor="middle" font-size="13" fill="#F1F1EF" font-weight="600">
-    mex(A) + mex(B) + mex(C)  &#8805;  2 &#215; max(mex)
-  </text>
+  <rect x="220" y="540" width="520" height="32" rx="8" fill="#2B2B2B" />
+  <text x="480" y="561" text-anchor="middle" font-size="13" fill="#F1F1EF" font-weight="600"> mex(A) + mex(B) + mex(C) &#8805; 2 &#215; max(mex) </text>
 </svg>
