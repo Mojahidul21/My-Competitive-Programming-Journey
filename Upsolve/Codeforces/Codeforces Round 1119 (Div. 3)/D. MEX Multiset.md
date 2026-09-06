@@ -189,6 +189,10 @@ for (int v : sorted_a) {
 >
 > **The fix used here: go back to `std::map`.** It's `O(log n)` per operation regardless of the input, and for `n ≤ 2·10^5` that log factor is cheap. (A coordinate-compression approach avoiding hashing entirely, or a runtime-randomized hash, would also work — but `map` is the simplest, safest default when the container isn't a hot-path bottleneck.)
 
+//
+> [!WARNING]
+> **Lesson learned:** `unordered_map<int, vector<int>>` was tried in Phase 2 for speed, but GCC's default integer hash is vulnerable to anti-hash inputs — it later failed with TLE after rejudging. Reverted to `map<int, vector<int>>`: `O(log n)` regardless of input, and cheap enough for `n ≤ 2·10^5`.
+
 ---
 
 ## 8. Complexity
