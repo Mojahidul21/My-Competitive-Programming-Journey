@@ -183,15 +183,7 @@ for (int v : sorted_a) {
 ## 7. A Detour That Cost Real Time: `unordered_map` and Anti-Hash Attacks
 
 > [!WARNING]
-> **Lesson learned, kept here for the record.** An earlier revision swapped `map<int, vector<int>>` for `unordered_map<int, vector<int>>` in Phase 2, reasoning that the ordering guarantee was never used. It passed comfortably at first.
->
-> It later failed with **"Time limit exceeded"** on the exact same submission. GCC libstdc++'s default `unordered_map` hash for integer keys is a well-known, publicly documented weakness — close to the identity function — so an adversarial input can force many keys into the same bucket and degrade every operation toward `O(n)`. Once such an input entered the test set, the submission was rejudged and failed.
->
-> **The fix used here: go back to `std::map`.** It's `O(log n)` per operation regardless of the input, and for `n ≤ 2·10^5` that log factor is cheap. (A coordinate-compression approach avoiding hashing entirely, or a runtime-randomized hash, would also work — but `map` is the simplest, safest default when the container isn't a hot-path bottleneck.)
-
-//
-> [!WARNING]
-> **Lesson learned:** `unordered_map<int, vector<int>>` was tried in Phase 2 for speed, but GCC's default integer hash is vulnerable to anti-hash inputs — it later failed with TLE after rejudging. Reverted to `map<int, vector<int>>`: `O(log n)` regardless of input, and cheap enough for `n ≤ 2·10^5`.
+> **Lesson learned:** `unordered_map<int, vector<int>>` was tried in Phase 2 for speed, but it later failed with TLE. Reverted to `map<int, vector<int>>`: `O(log n)` regardless of input, and cheap enough for `n ≤ 2·10^5`.
 
 ---
 
