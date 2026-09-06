@@ -225,7 +225,7 @@ main(){
         if(mexa+mexb+mexc<2*max({mexa,mexb,mexc}))cout<<"no";
         else{
             cout<<"yes\n";
-            map<int,vector<int>>mp;      // value -> list of original indices holding it
+            map<int,vector<int>>mp;                                   // value -> list of original indices holding it
             for(int i{};i<n;++i)mp[a[i]].emplace_back(i);
             for(const auto&i:aa)a[mp[i].back()]=-1,mp[i].pop_back();  // stamp an A-position (tie-break: LIFO pop, any leftover index works)
             for(const auto&i:bb)a[mp[i].back()]=-2,mp[i].pop_back();  // stamp a B-position (same tie-break)
