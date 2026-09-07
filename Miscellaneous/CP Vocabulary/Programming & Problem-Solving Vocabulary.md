@@ -231,7 +231,7 @@ Like telling a runner "pretend the race started one meter behind the actual line
 **Related:**
 - Sentinel Padding — same goal, but the sentinel is physically appended to the container rather than held only in a variable
 - Anchor-and-Derive — also removes special-case machinery, but by choosing a structural starting point rather than padding a scan
-- [CF 2259C — 101](- [CF 2259C — 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md) — 3 contest WAs from resolving only a discovered window and leaving cells outside it untouched.) — Nicely handled the base cases with Boundary Ghost Values — `l{200000},r{-1}`.
+- [CF 2259C — 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md#code) — Nicely handled the base cases with Boundary Ghost Values — `l{200000},r{-1}`.
 
 ---
 
