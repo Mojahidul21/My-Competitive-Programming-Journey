@@ -127,8 +127,8 @@
     <animate attributeName="opacity" values="0.35;0.35;0" keyTimes="0;0.7;1" begin="clock.begin+4.1s" dur="0.5s" fill="freeze" />
   </rect>
   <!-- ===================== THE RAT ===================== -->
-  <g id="ratPos" transform="translate(-40,55)">
-    <animateTransform attributeName="transform" type="translate" values="-40,55; -40,55; 115,55; 115,55; 765,55; 765,55; 440,35; 440,35; 440,25; 440,35" keyTimes="0;0.03;0.14;0.20;0.30;0.36;0.44;0.51;0.75;1" begin="clock.begin" dur="9s" fill="freeze" />
+  <g id="ratPos" transform="translate(-40,77)">
+    <animateTransform attributeName="transform" type="translate" values="-40,77; -40,77; 115,77; 115,77; 765,77; 765,77; 440,35; 440,35; 440,25; 440,35" keyTimes="0;0.03;0.14;0.20;0.30;0.36;0.44;0.51;0.75;1" begin="clock.begin" dur="9s" fill="freeze" />
     <!-- tail -->
     <path d="M -18 10 Q -35 0 -30 -12" stroke="#8a8a8a" stroke-width="4" fill="none" stroke-linecap="round" />
     <!-- body -->
