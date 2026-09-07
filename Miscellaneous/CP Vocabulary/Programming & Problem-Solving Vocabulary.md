@@ -6,6 +6,7 @@ A living reference of terms used in competitive programming, debugging, and algo
 
 ## Table of Contents
 Lexical ordered.
+- [Ad-hoc](#ad-hoc)
 - [Admissible](#admissible)
 - [Ancestor](#ancestor)
 - [Anchor](#anchor)
@@ -18,6 +19,7 @@ Lexical ordered.
 - [Closed-Form Formula](#closed-form-formula)
 - [Contiguous / Contiguous Block](#contiguous--contiguous-block)
 - [Coprime (Relatively Prime)](#coprime-relatively-prime)
+- [Daisy Chain](#daisy-chain)
 - [Deduplication (Dedup)](#deduplication-dedup)
 - [Descendant](#descendant)
 - [Directed Acyclic Graph (DAG)](#directed-acyclic-graph-dag)
@@ -33,6 +35,7 @@ Lexical ordered.
 - [Irreducible Fraction](#irreducible-fraction)
 - [Lambda (Lambda Function)](#lambda-lambda-function)
 - [Latent Bug](#latent-bug)
+- [Lone Counter](#lone-counter)
 - [Markov Chain](#markov-chain)
 - [Monotonic](#monotonic)
 - [Off-by-one](#off-by-one)
@@ -53,6 +56,35 @@ Lexical ordered.
 - [Undefined Behavior (UB)](#undefined-behavior-ub)
 ---
 
+## Ad-hoc
+**Definition:**
+A problem or technique that doesn't fall under any standard named algorithm or data structure. Ad-hoc problems are solved through direct, situation-specific reasoning built around the exact constraints and quirks of that problem, rather than by applying a known template.
+
+**Why it arises:**
+Contest setters deliberately design some problems to resist categorization — testing raw observation and logical construction rather than knowledge of a specific algorithm. These problems often hinge on one clever insight rather than a body of theory.
+
+**Example from practice:**
+```cpp
+// Example placeholder — fill in with a solved ad-hoc problem, e.g.
+// "construct any valid array satisfying constraints X, Y, Z"
+// No standard algorithm applies; solution comes from directly
+// reasoning about the constraints and constructing an answer.
+```
+
+**How to recognize:**
+- No obvious algorithm or data structure fits after initial analysis
+- Small or unusual constraints that don't match typical DP/graph/greedy bounds
+- The statement emphasizes a specific, oddly-shaped property or rule
+- Often tagged simply "implementation" or "constructive" on Codeforces
+
+**Analogy:**
+A puzzle with its own unique rule set — no formula from a textbook solves it directly; you have to look at *this* puzzle's quirks and reason your way through fresh each time.
+
+**Related:**
+- [Case-Bashing](#case-bashing)
+- [Constructive Algorithms](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/Constructive%20Algorithms/Thinking%20Procedure%3A%20Self-Referential%20Constructive%20Problems.md#1-how-to-recognize-this-family-of-problems)
+
+---
 ## Admissible
 
 **Definition:**
@@ -382,6 +414,38 @@ bool isCoprime(long long a, long long b) {
 **Related:**
 - [Irreducible Fraction](#irreducible-fraction) — direct application: a fraction is irreducible iff numerator and denominator are coprime
 - GCD
+
+---
+
+## Daisy Chain
+
+**Definition:**
+A pattern where elements or operations are linked one after another so that each one depends on or points to the next, forming a single linear sequence of dependencies — for example, following parent pointers, chained transformations, or sequential updates that propagate down a line.
+
+**Why it arises:**
+Many problems implicitly build linked structures: DSU parent arrays, `next[i]` style pointer arrays, chained string/array transformations, or sequences of updates where each step only makes sense after the previous one completes.
+
+**Example from practice:**
+```cpp
+// Example placeholder — fill in with a solved problem, e.g. following
+// parent pointers to a root, or chained index-hopping:
+int cur = start;
+while (next[cur] != -1) {
+    cur = next[cur]; // walking the chain link by link
+}
+```
+
+**How to recognize:**
+- Repeated patterns like `next[i] = j` or `parent[i] = j`
+- A loop that "follows" an index/pointer until reaching a root or terminal value
+- Problems describing sequences, queues, or dependencies that link one-to-one
+
+**Analogy:**
+Like a literal daisy chain of flowers — each one tied to the next in a single unbroken line, or a row of dominoes where each only falls because the one before it did.
+
+**Related:**
+- [Chain Decomposition](#chain-decomposition-independent-component-grouping)
+- Union-Find / DSU
 
 ---
 
@@ -928,6 +992,39 @@ This passes all valid test cases because the memory region happens to contain be
 - Manually testing edge cases
 
 ---
+
+### Lone Counter
+
+**Definition:**
+A technique for tracking a running "winner" or majority state using a single counter variable instead of full frequency data — most famously the **Boyer–Moore Majority Vote Algorithm**, which finds a majority element in O(n) time and O(1) space using one candidate variable and one counter.
+
+**Why it arises:**
+When a problem asks for an element that dominates (appears more than n/2 times) but forbids extra space like a hash map, you need a way to "vote" candidates in and out without storing full counts.
+
+**Example from practice:**
+```cpp
+int candidate = -1, count = 0;
+for (int x : arr) {
+    if (count == 0) candidate = x;
+    count += (x == candidate) ? 1 : -1;
+}
+// candidate now holds the majority element (if one exists)
+```
+
+**How to recognize:**
+- Problem asks for an element appearing more than n/2 (or some strict majority) times
+- Explicit O(1) extra space constraint
+- No need to know *all* frequencies — only whether one element dominates
+
+**Analogy:**
+A tug-of-war between the current leader and every challenger — the counter rises when the crowd agrees with the leader and falls when it doesn't; if it ever hits zero, a new leader steps up.
+
+**Related:**
+- Majority Element problems *(add link once you have a template/upsolve)*
+- [Case-Bashing](#) *(if voting logic overlaps with a case-bash solution)*
+
+---
+
 ## Markov Chain
 
 **Definition:** A sequence of states where the probability of moving to the next state depends only on the *current* state — not on how you got there (the "memoryless" / Markov property).
