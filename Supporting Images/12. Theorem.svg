@@ -1,0 +1,137 @@
+<svg viewBox="0 0 1400 140" xmlns="http://www.w3.org/2000/svg" font-family="Verdana, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f3ecd9" />
+      <stop offset="100%" stop-color="#e6dcc0" />
+    </linearGradient>
+  </defs>
+  <!-- room background -->
+  <rect x="0" y="0" width="1400" height="140" fill="url(#room)" />
+  <!-- floor -->
+  <rect x="0" y="118" width="1400" height="22" fill="#c9a877" />
+  <line x1="0" y1="118" x2="1400" y2="118" stroke="#a9895a" stroke-width="1.5" />
+  <!-- ===================== FLOATING SYMBOLS ===================== -->
+  <g fill="#6a5a9e" opacity="0.75" font-weight="bold">
+    <text x="55" y="24" font-size="20" transform="rotate(-12 55 24)">Σ</text>
+    <text x="150" y="16" font-size="16" transform="rotate(10 150 16)" fill="#3a7a8a">π</text>
+    <text x="235" y="30" font-size="18" transform="rotate(-8 235 30)" fill="#a06a3a">∫</text>
+    <text x="311" y="104" font-size="17" transform="rotate(14 480 18)" fill="#6a5a9e">√n</text>
+    <text x="388" y="11" font-size="15" transform="rotate(-16 560 34)" fill="#3a7a8a">{ }</text>
+    <text x="640" y="16" font-size="16" transform="rotate(9 640 16)" fill="#a06a3a">∞</text>
+    <text x="720" y="30" font-size="15" fill="#6a5a9e" transform="rotate(-10 720 30)">O(n log n)</text>
+    <text x="860" y="18" font-size="18" fill="#3a7a8a" transform="rotate(12 860 18)">Δ</text>
+    <text x="930" y="34" font-size="16" fill="#a06a3a" transform="rotate(-14 930 34)">01101</text>
+    <text x="470" y="55" font-size="14" fill="#3a7a8a" transform="rotate(8 470 55)">&lt;/&gt;</text>
+    <text x="620" y="52" font-size="13" fill="#6a5a9e" transform="rotate(-10 620 52)">λx.</text>
+    <text x="230" y="55" font-size="14" fill="#a06a3a" transform="rotate(-6 230 55)">n²+1</text>
+    <text x="100" y="55" font-size="14" fill="#6a5a9e" transform="rotate(10 100 55)">∀x∃y</text>
+    <text x="1000" y="24" font-size="17" fill="#a06a3a" transform="rotate(-11 1000 24)">gcd</text>
+    <text x="1060" y="45" font-size="14" fill="#3a7a8a" transform="rotate(7 1060 45)">=&gt;</text>
+    <text x="1140" y="20" font-size="18" fill="#6a5a9e" transform="rotate(13 1140 20)">Σⁿ</text>
+    <text x="1210" y="34" font-size="15" fill="#a06a3a" transform="rotate(-9 1210 34)">±√</text>
+    <text x="1270" y="18" font-size="16" fill="#3a7a8a" transform="rotate(10 1270 18)">π²/6</text>
+    <text x="1330" y="40" font-size="14" fill="#6a5a9e" transform="rotate(-8 1330 40)">%2</text>
+    <text x="800" y="50" font-size="13" fill="#a06a3a" transform="rotate(6 800 50)">;;</text>
+    <text x="388" y="20" font-size="30" fill="#6a5a9e" transform="rotate(-1 1330 40)">T h e o r e m</text>
+  </g>
+  <!-- ===================== ABACUS (left) ===================== -->
+  <g transform="translate(40,60)">
+    <rect x="0" y="0" width="70" height="55" rx="4" fill="#8a5a2a" stroke="#5c3a1e" stroke-width="2" />
+    <line x1="8" y1="12" x2="62" y2="12" stroke="#3a2412" stroke-width="2" />
+    <line x1="8" y1="27" x2="62" y2="27" stroke="#3a2412" stroke-width="2" />
+    <line x1="8" y1="42" x2="62" y2="42" stroke="#3a2412" stroke-width="2" />
+    <circle cx="18" cy="12" r="4" fill="#c0392b" />
+    <circle cx="30" cy="12" r="4" fill="#e0a030" />
+    <circle cx="48" cy="12" r="4" fill="#2e8b57" />
+    <circle cx="22" cy="27" r="4" fill="#2e8b57" />
+    <circle cx="40" cy="27" r="4" fill="#c0392b" />
+    <circle cx="55" cy="27" r="4" fill="#3a6ea5" />
+    <circle cx="16" cy="42" r="4" fill="#e0a030" />
+    <circle cx="34" cy="42" r="4" fill="#3a6ea5" />
+    <circle cx="52" cy="42" r="4" fill="#c0392b" />
+  </g>
+  <!-- ===================== FADED CALCULATOR (left, near abacus) ===================== -->
+  <g transform="translate(125,72) rotate(-6)" opacity="0.55">
+    <rect x="0" y="0" width="46" height="40" rx="4" fill="#9a9a9a" stroke="#777" stroke-width="1.5" />
+    <rect x="5" y="5" width="36" height="9" rx="1.5" fill="#c7cfae" />
+    <g fill="#7a7a7a">
+      <rect x="5" y="18" width="7" height="6" rx="1" />
+      <rect x="14" y="18" width="7" height="6" rx="1" />
+      <rect x="23" y="18" width="7" height="6" rx="1" />
+      <rect x="32" y="18" width="7" height="6" rx="1" />
+      <rect x="5" y="27" width="7" height="6" rx="1" />
+      <rect x="14" y="27" width="7" height="6" rx="1" />
+      <rect x="23" y="27" width="7" height="6" rx="1" />
+      <rect x="32" y="27" width="7" height="6" rx="1" />
+    </g>
+  </g>
+  <!-- ===================== DESK + BOY (center) ===================== -->
+  <g transform="translate(560,0)">
+    <!-- desk -->
+    <rect x="-40" y="95" width="260" height="12" rx="2" fill="#a9723f" stroke="#7a4e26" stroke-width="1.5" />
+    <line x1="-30" y1="107" x2="-30" y2="130" stroke="#7a4e26" stroke-width="5" />
+    <line x1="210" y1="107" x2="210" y2="130" stroke="#7a4e26" stroke-width="5" />
+    <!-- notepad -->
+    <g transform="translate(55,78) rotate(-4)">
+      <rect x="0" y="0" width="70" height="46" rx="3" fill="#fbf8ef" stroke="#c9c0a0" stroke-width="1.5" />
+      <path d="M8 12 Q 25 6 40 14 Q 52 20 62 10" stroke="#8a8a8a" stroke-width="1.3" fill="none" />
+      <path d="M8 22 Q 22 30 36 22 Q 50 15 62 24" stroke="#8a8a8a" stroke-width="1.3" fill="none" />
+      <path d="M8 33 Q 24 27 42 34" stroke="#8a8a8a" stroke-width="1.3" fill="none" />
+    </g>
+    <!-- pencil -->
+    <line x1="150" y1="70" x2="100" y2="100" stroke="#e0a030" stroke-width="6" stroke-linecap="round" />
+    <polygon points="150,70 158,63 152,76" fill="#3a2412" />
+    <rect x="95" y="97" width="8" height="6" fill="#c0392b" transform="rotate(-33 99 100)" />
+    <!-- boy: legs at desk (cross-legged suggestion) -->
+    <path d="M40 108 Q60 118 30 122" stroke="#4a5a7a" stroke-width="10" fill="none" stroke-linecap="round" />
+    <path d="M80 108 Q60 120 92 124" stroke="#c9a04a" stroke-width="10" fill="none" stroke-linecap="round" />
+    <!-- torso: mismatched clothing, left striped right plain -->
+    <path d="M25 60 Q20 95 45 100 L95 100 Q118 92 108 58 Q85 44 60 46 Q38 46 25 60 Z" fill="#5c8fa3" />
+    <path d="M25 60 Q20 95 45 100 L60 100 L58 46 Q38 46 25 60 Z" fill="#d9702f" />
+    <line x1="30" y1="55" x2="55" y2="98" stroke="#f2a35c" stroke-width="2" opacity="0.6" />
+    <line x1="38" y1="52" x2="60" y2="96" stroke="#f2a35c" stroke-width="2" opacity="0.6" />
+    <line x1="46" y1="49" x2="65" y2="98" stroke="#f2a35c" stroke-width="2" opacity="0.6" />
+    <!-- far arm to notepad -->
+    <path d="M90 62 Q 118 66 108 88" stroke="#5c8fa3" stroke-width="12" fill="none" stroke-linecap="round" />
+    <circle cx="105" cy="90" r="7" fill="#e9b98a" />
+    <!-- near arm holding pencil -->
+    <path d="M55 58 Q 90 68 100 96" stroke="#d9702f" stroke-width="12" fill="none" stroke-linecap="round" />
+    <circle cx="100" cy="97" r="7" fill="#e9b98a" />
+    <!-- neck + head -->
+    <rect x="55" y="35" width="14" height="14" fill="#e9b98a" />
+    <circle cx="62" cy="26" r="20" fill="#e9b98a" />
+    <!-- messy hair -->
+    <path d="M40 22 Q34 -2 62 4 Q90 -4 84 22 Q80 6 70 12 Q64 2 56 12 Q48 4 44 14 Q42 8 40 22 Z" fill="#4a3320" />
+    <path d="M38 20 l-6 -10 M46 12 l-4 -12 M60 8 l2 -12 M76 12 l6 -11 M84 20 l8 -8" stroke="#4a3320" stroke-width="3" stroke-linecap="round" fill="none" />
+    <!-- focused eyebrows + eyes -->
+    <path d="M50 22 l8 -3" stroke="#3a2412" stroke-width="2" stroke-linecap="round" />
+    <path d="M68 19 l8 3" stroke="#3a2412" stroke-width="2" stroke-linecap="round" />
+    <circle cx="54" cy="27" r="2" fill="#2a1c10" />
+    <circle cx="72" cy="27" r="2" fill="#2a1c10" />
+    <path d="M58 37 Q62 40 66 37" stroke="#8a5a3a" stroke-width="2" fill="none" stroke-linecap="round" />
+    <!-- mismatched socks -->
+    <ellipse cx="30" cy="123" rx="10" ry="5" fill="#d9702f" />
+    <ellipse cx="92" cy="125" rx="10" ry="5" fill="#5c8fa3" />
+  </g>
+  <!-- ===================== SLIGHTLY BROKEN RUBIK'S CUBE (right) ===================== -->
+  <g transform="translate(1180,68) rotate(9)">
+    <g stroke="#333" stroke-width="1">
+      <rect x="0" y="0" width="16" height="16" fill="#e0392b" />
+      <rect x="17" y="0" width="16" height="16" fill="#2e8b57" />
+      <rect x="34" y="1" width="15" height="15" fill="#e0a030" />
+      <rect x="0" y="17" width="16" height="16" fill="#f4e04d" />
+      <rect x="17" y="17" width="16" height="16" fill="#3a6ea5" />
+      <rect x="0" y="34" width="16" height="15" fill="#2e8b57" />
+      <rect x="17" y="34" width="16" height="15" fill="#e0392b" />
+      <rect x="34" y="35" width="15" height="14" fill="#f4e04d" />
+    </g>
+    <!-- missing / cracked corner piece -->
+    <path d="M34 17 L49 17 L49 32 Z" fill="none" stroke="#333" stroke-width="1" stroke-dasharray="2 2" />
+    <path d="M36 20 L44 26 M44 20 L36 28" stroke="#7a1c10" stroke-width="1.5" />
+  </g>
+  <!-- extra scattered small symbols near the cube -->
+  <g fill="#6a5a9e" opacity="0.7" font-weight="bold">
+    <text x="1250" y="70" font-size="15" transform="rotate(-9 1250 70)">Θ(n)</text>
+    <text x="1300" y="95" font-size="14" fill="#a06a3a" transform="rotate(8 1300 95)">DP[i][j]</text>
+  </g>
+</svg>
