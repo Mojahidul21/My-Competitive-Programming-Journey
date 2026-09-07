@@ -79,9 +79,11 @@ simulate the very metric you're trying to optimize.
 
 ---
 
-## Code
+## AC Code
 
 ```cpp
+// https://codeforces.com/contest/2259/submission/389712227
+
 #include<bits/stdc++.h>
 using namespace std;
 main(){
@@ -89,7 +91,7 @@ main(){
     cin>>t;
     
     while(t--){
-        int n,l{200000},r{-1};;
+        int n,l{200000},r{-1};
         cin>>n;
         vector<int>a(n);
 
