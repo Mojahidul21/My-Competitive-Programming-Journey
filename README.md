@@ -3,7 +3,7 @@
 ## 📚 Table of Contents
 
 > ### 📕 Books
-- [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
+> - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
 
 > ### 🧮 Algorithm ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/6.%20Hammer-Nail%20Chemistry.png)
