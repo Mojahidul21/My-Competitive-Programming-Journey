@@ -97,6 +97,8 @@ This reads each string once, mutates nothing, and has no loop-count or convergen
 
 **Takeaway.** The first WA wasn't evidence that the reasoning about "swap = permute within parity class" was wrong — the reasoning was right from the start. The WA was evidence that turning correct reasoning into a *simulation* opens up bugs the reasoning itself never had. Going straight from "same parity ⇒ freely permutable ⇒ compare counts" to code — skipping the simulation attempts entirely — would have reached the same answer with less code and no convergence question to worry about.
 
+**Further Reading:** [CF 2259C — 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md) — once the two-anchor construction is proven optimal, act on it directly instead of tracking/comparing candidate windows.
+
 ---
 
 *This principle applies across problem types — parity arguments, invariants, reachability formulas, and constructive existence checks all tend to produce a predicate that's cleaner and more trustworthy than the process it's describing.*  
