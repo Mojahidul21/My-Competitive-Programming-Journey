@@ -428,14 +428,15 @@ A pattern where elements or operations are linked one after another so that each
 Many problems implicitly build linked structures: DSU parent arrays, `next[i]` style pointer arrays, chained string/array transformations, or sequences of updates where each step only makes sense after the previous one completes.
 
 **Example from practice:**
-```cpp
-// Example placeholder — fill in with a solved problem, e.g. following
-// parent pointers to a root, or chained index-hopping:
-int cur = start;
-while (next[cur] != -1) {
-    cur = next[cur]; // walking the chain link by link
-}
-```
+
+> **Problem:** You are given `n` employees, where employee `i` reports
+> directly to manager `boss[i]` (or `-1` if they are the top-level boss).
+> For a given employee, find the top-level boss by following the chain
+> of managers one link at a time.
+>
+> Each employee points to exactly one next link in the chain (their boss),
+> forming a daisy chain of dependencies that must be walked step by step
+> until reaching the end (`-1`).
 
 **How to recognize:**
 - Repeated patterns like `next[i] = j` or `parent[i] = j`
