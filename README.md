@@ -12,7 +12,7 @@
 - [Sieve of Eratosthenes](Algorithm/Sieve%20of%20Eratosthenes.md)
 
 
-> ### 📐 Theorem
+> ### 📐 Theorem ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/12.%20Theorem.svg)
 - [Shoelace Formula — Computing Polygon Area from Vertex Coordinates](Theorem/Shoelace%20Formula/Shoelace%20Formula.md)
 - [Bezout's Identity](Theorem/Bezout's%20Identity.md)
 
