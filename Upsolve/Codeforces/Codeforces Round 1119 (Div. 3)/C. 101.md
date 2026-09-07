@@ -2,7 +2,7 @@
 # CF 2259C — "101" (Codeforces Round 1119, Div. 3)
 
 **Problem:** [URL](https://codeforces.com/contest/2259/problem/C)  
-**Accepted submission:** [URL](https://codeforces.com/contest/2259/submission/389707668)  
+**Accepted submission:** [URL](https://codeforces.com/contest/2259/submission/389712227)  
 **Tags:** `constructive algorithms`, `greedy`  
 
 ---
