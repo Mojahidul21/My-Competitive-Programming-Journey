@@ -993,7 +993,7 @@ This passes all valid test cases because the memory region happens to contain be
 
 ---
 
-### Lone Counter
+## Lone Counter
 
 **Definition:**
 A technique for tracking a running "winner" or majority state using a single counter variable instead of full frequency data — most famously the **Boyer–Moore Majority Vote Algorithm**, which finds a majority element in O(n) time and O(1) space using one candidate variable and one counter.
@@ -1020,8 +1020,8 @@ for (int x : arr) {
 A tug-of-war between the current leader and every challenger — the counter rises when the crowd agrees with the leader and falls when it doesn't; if it ever hits zero, a new leader steps up.
 
 **Related:**
-- Majority Element problems *(add link once you have a template/upsolve)*
-- [Case-Bashing](#) *(if voting logic overlaps with a case-bash solution)*
+- Majority Element problems
+- [Case-Bashing](#case-bashing)
 
 ---
 
