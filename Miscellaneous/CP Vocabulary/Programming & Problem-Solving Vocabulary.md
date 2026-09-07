@@ -64,12 +64,14 @@ A problem or technique that doesn't fall under any standard named algorithm or d
 Contest setters deliberately design some problems to resist categorization — testing raw observation and logical construction rather than knowledge of a specific algorithm. These problems often hinge on one clever insight rather than a body of theory.
 
 **Example from practice:**
-```cpp
-// Example placeholder — fill in with a solved ad-hoc problem, e.g.
-// "construct any valid array satisfying constraints X, Y, Z"
-// No standard algorithm applies; solution comes from directly
-// reasoning about the constraints and constructing an answer.
-```
+
+> **Problem:** Given an integer `n`, construct any permutation of `1` to `n`
+> such that no two *adjacent* elements in the array differ by exactly `1`.
+> If no such permutation exists, output `-1`.
+>
+> No standard algorithm (DP, graph theory, greedy template) applies directly —
+> the solution comes from reasoning about the structure of the numbers
+> themselves and constructing an answer by hand.
 
 **How to recognize:**
 - No obvious algorithm or data structure fits after initial analysis
