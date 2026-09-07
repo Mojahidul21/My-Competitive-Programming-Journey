@@ -1,6 +1,4 @@
-# My-Competitive-Programming-Journey  
-
-![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/3.%20Cover%20Photo%20(My%20Competitive%20Programming%20Journey).png)
+# My-Competitive-Programming-Journey ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/3.%20Cover%20Photo%20(My%20Competitive%20Programming%20Journey).png)  
 
 ## 📚 Table of Contents
 
