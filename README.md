@@ -66,33 +66,32 @@
 
 
 > ### 💻 C++ Syntax Strategies
-- [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
+> - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
 
 
 > ### 📖 Miscellaneous / CP Vocabulary
-- [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
+> - [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
 
 
 > ### 🧩 Code Templates
-
- **Arrays, Prefix Sum, Suffix Sum, etc.**
-- [Prefix Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Arrays%2C%20Prefix%20Sum%2C%20Suffix%20Sum%2C%20etc./Prefix%20Sum.cpp)
-
-**Data Structures**
-- [DSU (Union-Find)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Data%20Structures/DSU%20(Union-Find).cpp)
-
-**Input-Output & Debug Utilities**
-- [Print a Vector](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Input-Output%20%26%20Debug%20Utilities/Print%20a%20Vector.cpp)
-
-**Number Theory**
-- [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp)
-
-**Miscellaneous**
-- [Mis-1](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Miscellaneous/Mis-1.md)
+> **Arrays, Prefix Sum, Suffix Sum, etc.**
+> - [Prefix Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Arrays%2C%20Prefix%20Sum%2C%20Suffix%20Sum%2C%20etc./Prefix%20Sum.cpp)
+>
+> **Data Structures**
+> - [DSU (Union-Find)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Data%20Structures/DSU%20(Union-Find).cpp)
+> 
+> **Input-Output & Debug Utilities**
+> - [Print a Vector](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Input-Output%20%26%20Debug%20Utilities/Print%20a%20Vector.cpp)
+>
+> **Number Theory**
+> - [Sieve of Eratosthenes (Primes up to n)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Number%20Theory/Sieve%20of%20Eratosthenes%20(Primes%20up%20to%20n).cpp)
+>
+> **Miscellaneous**
+> - [Mis-1](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Miscellaneous/Mis-1.md)
 
 
 > ### 📝 Wish List
-- [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
-- [Course To Grab](Wish%20List/Course%20To%20Grab.md)
-- [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
-- [Mixed](Wish%20List/Mixed.md)
+> - [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
+> - [Course To Grab](Wish%20List/Course%20To%20Grab.md)
+> - [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
+> - [Mixed](Wish%20List/Mixed.md)
