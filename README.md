@@ -21,21 +21,21 @@
 > - [Trust the Predicate: Stop Simulating What You've Already Proven](General%20Tricks%20&%20Techniques/Contest%20Strategy/Trust%20the%20Predicate%3A%20Stop%20Simulating%20What%20You've%20Already%20Proven.md)
 > - [Anchor-and-Derive](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Contest%20Strategy/Anchor%20and%20Derive.md)
 
-**Decide Traverse Direction**
-- [Comfortable with Your Matrices — Fix an Axis, Drop a Loop](General%20Tricks%20&%20Techniques/Decide%20Traverse%20Direction/Comfortable%20with%20Your%20Matrices%20—%20Fix%20an%20Axis%2C%20Drop%20a%20Loop.md)
-- [When an Operation Smears Left — Scan Right](General%20Tricks%20&%20Techniques/Decide%20Traverse%20Direction/When%20an%20Operation%20Smears%20Left%20—%20Scan%20Right.md)
+> **Decide Traverse Direction**
+> - [Comfortable with Your Matrices — Fix an Axis, Drop a Loop](General%20Tricks%20&%20Techniques/Decide%20Traverse%20Direction/Comfortable%20with%20Your%20Matrices%20—%20Fix%20an%20Axis%2C%20Drop%20a%20Loop.md)
+> - [When an Operation Smears Left — Scan Right](General%20Tricks%20&%20Techniques/Decide%20Traverse%20Direction/When%20an%20Operation%20Smears%20Left%20—%20Scan%20Right.md)
 
-**Flipping Techniques**
-- [Track the Reference Bit, Not the Target Value](General%20Tricks%20&%20Techniques/Flipping%20Techniques/Track%20the%20Reference%20Bit%2C%20Not%20the%20Target%20Value.md)
+> **Flipping Techniques**
+> - [Track the Reference Bit, Not the Target Value](General%20Tricks%20&%20Techniques/Flipping%20Techniques/Track%20the%20Reference%20Bit%2C%20Not%20the%20Target%20Value.md)
 
-**GCD**
-- [GCD-Reachability Under Fixed-Step Moves](General%20Tricks%20&%20Techniques/GCD/GCD-Reachability%20Under%20Fixed-Step%20Moves.md)
+> **GCD**
+> - [GCD-Reachability Under Fixed-Step Moves](General%20Tricks%20&%20Techniques/GCD/GCD-Reachability%20Under%20Fixed-Step%20Moves.md)
 
-**Number as String**
-- [Numbers as Strings: Tricks, Patterns and Pitfalls](General%20Tricks%20&%20Techniques/Number%20as%20String/Numbers%20as%20Strings%3A%20Tricks%2C%20Patterns%20and%20Pitfalls.md)
+> **Number as String**
+> - [Numbers as Strings: Tricks, Patterns and Pitfalls](General%20Tricks%20&%20Techniques/Number%20as%20String/Numbers%20as%20Strings%3A%20Tricks%2C%20Patterns%20and%20Pitfalls.md)
 
-**Telescoping Sums 🔭**
-- [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
+> **Telescoping Sums 🔭**
+> - [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 
 
 > ### 🎯 Specific Problem Strategy
