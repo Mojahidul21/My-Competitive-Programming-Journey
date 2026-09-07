@@ -1005,14 +1005,14 @@ A technique for tracking a running "winner" or majority state using a single cou
 When a problem asks for an element that dominates (appears more than n/2 times) but forbids extra space like a hash map, you need a way to "vote" candidates in and out without storing full counts.
 
 **Example from practice:**
-```cpp
-int candidate = -1, count = 0;
-for (int x : arr) {
-    if (count == 0) candidate = x;
-    count += (x == candidate) ? 1 : -1;
-}
-// candidate now holds the majority element (if one exists)
-```
+
+> **Problem:** Given an array of `n` integers, determine if there exists
+> an element that appears **more than `n/2` times** (a strict majority
+> element). If one exists, output it; otherwise, output `-1`.
+>
+> Constraint: solve it in `O(n)` time using only `O(1)` extra space —
+> no frequency map allowed. A single running "candidate" and counter
+> must be enough to find the answer.
 
 **How to recognize:**
 - Problem asks for an element appearing more than n/2 (or some strict majority) times
