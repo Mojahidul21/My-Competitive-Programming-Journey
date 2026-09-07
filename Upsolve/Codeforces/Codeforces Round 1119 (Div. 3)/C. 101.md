@@ -79,7 +79,7 @@ simulate the very metric you're trying to optimize.
 
 ---
 
-## Code (final AC, cleaned of personal macros)
+## Code
 
 ```cpp
 #include<bits/stdc++.h>
