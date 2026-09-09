@@ -1,2 +1,8 @@
-- extended Euclidean algorithm
-- linear Diophantine equation
+- Chinese Remainder Theorem (CRT)
+- Extended Euclidean Algorithm
+- Linear Diophantine Equation
+- Modular Inverse
+
+
+- __int128
+- modmul
