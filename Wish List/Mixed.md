@@ -5,7 +5,7 @@
 - Arithmetic Progression Sum
 ___
 
-template<typename T>
+- template<typename T>
 
 ___
 
