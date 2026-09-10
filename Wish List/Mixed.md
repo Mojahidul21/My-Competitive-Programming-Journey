@@ -5,6 +5,10 @@
 - Arithmetic Progression Sum
 ___
 
+template<typename T>
+
+___
+
 - Adversary argument
 - Balanced BST
 - BFS-adjacent Technique
