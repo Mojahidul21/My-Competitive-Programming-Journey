@@ -2,6 +2,7 @@
 - Extended Euclidean Algorithm
 - Linear Diophantine Equation
 - Modular Inverse
+- Arithmetic Progression Sum
 ___
 
 - Adversary argument
