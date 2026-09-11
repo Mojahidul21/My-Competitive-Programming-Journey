@@ -1,53 +1,85 @@
-- Chinese Remainder Theorem (CRT)
-- Extended Euclidean Algorithm
-- Linear Diophantine Equation
-- Modular Inverse
 - Arithmetic Progression Sum
+- CDQ divide-and-conquer
+- Chinese Remainder Theorem (CRT)
+- D&C optimization for DP transitions
+- Evaluate Postfix with a Value Stack
+- Extended Euclidean Algorithm
+- Fast Fourier Transform
+- Knapsack
+- Kruskal's MST
+- Linear Diophantine Equation
+- Merge Sort
+- Modular Inverse
+- Shunting-yard algorithm
 ___
 
 - template<typename T>
 
 ___
 
+- Adversarial Input
 - Adversary argument
+- Aliasing Error
 - Balanced BST
 - BFS-adjacent Technique
+- Bipartite-checking DSU
 - Bug-prone
 - Connected Component
 - Connectivity Queries
+- Convolution Counting
+- Convolution of Two Sequences
 - Cycle Detection
 - Directed Cycle
 - Disproportionately
 - Deep Graph
 - Divide by Symmetry Factor
-- DSU
+- DP Array
+- DSU (Union-Find)
 - Explicit Stack
 - Exponential Blowup on Graphs
 - Fenwick Tree
+- Greedy Exchange Argument
 - Implicit State Space
 - Indegree Queue
+- Infix
 - __int128
+- Inverse-transform Back to Coefficient
 - Iterative
 - Kahn's BFS
 - Lazy Propagation
+- Link-cut Tree
 - Modmul
+- Modulo by Zero
 - Monotonic Deque
 - Monotonic Stack
+- NTT
 - Offline Sorting
 - Online Queries
 - Over-engineering
+- Pad to a Power of Two
 - Parity
 - Pigeonhole
 - Point Update
+- Polynomial Coefficient Arrays
+- Polynomial Multiplication
+- Postfix
 - Range Aggregates
 - Range Query
 - Range-sum
+- Recursive-descent Parser
 - Recursive DFS
+- Rolling Array
+- RPN
 - Segment Tree
 - Shifting Window
 - SlidingWindow Aggregate
 - Sparse Table
 - Stack Overflow
 - Stars-and-Bars
+- Subtle Wrong Answer
+- Tokenize input
 - Topological Sort
+- Unary Minus
 - Undirected Cycle
+- Union by Rank/Size
+- Wraparound Error
