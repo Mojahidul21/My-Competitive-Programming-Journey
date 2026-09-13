@@ -158,3 +158,6 @@ Keep the same variable vocabulary every time so row/column intent is legible at 
 | # | Problem | Short Description | Guidance |
 |---|---|---|---|
 | 1 | [Target Practice (CF 1873C)](https://codeforces.com/problemset/problem/1873/C) | Score a 10×10 target by point value per concentric ring.  ![](./image/TargetMatrix.png) | _Hint:_ Peel the grid into 5 rings; each ring is 4 fixed-axis segments — either trim two of them or run all four full and subtract the corners (sections above). <br><br> _Solution:_ [⏎](https://codeforces.com/contest/1873/submission/386979138) |
+
+## Related Reading
+- [Declare Boundaries Before the Loop: Turning Index Arithmetic into Transcription](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Contest%20Strategy/Declare%20Boundaries%20Before%20the%20Loop%20_%20Turning%20Index%20Arithmetic%20into%20Transcription.md) — Name the boundaries first; once fixed, the loops become transcription instead of re-derivation.
