@@ -1,3 +1,5 @@
+![Hook](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/15.%20Hook.jpg)
+
 # Declare Boundaries Before the Loop: Turning Index Arithmetic into Transcription
 
 I noticed this comparing two of my own submissions to the same problem — [Codeforces Round 1120 (Div. 2) B. Min Matrices](https://codeforces.com/contest/2263/problem/B). Same algorithm, same construction, both Accepted. One took me too long in-contest. The other, written during upsolve with no new insight, took a fraction of the time. Nothing about the *idea* changed between the two. Only the way I wrote it did.
