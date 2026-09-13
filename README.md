@@ -17,9 +17,10 @@
 
 > ### 🧠 General Tricks & Techniques
 > **Contest Strategy**
+> - [Anchor-and-Derive](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Contest%20Strategy/Anchor%20and%20Derive.md)
+> - [Declare Boundaries Before the Loop: Turning Index Arithmetic into Transcription](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Contest%20Strategy/Declare%20Boundaries%20Before%20the%20Loop%20_%20Turning%20Index%20Arithmetic%20into%20Transcription.md)
 > - [From Search to Construction: Thinking Mathematically in Contests](General%20Tricks%20&%20Techniques/Contest%20Strategy/Contest%20Math%20Thinking.md)
 > - [Trust the Predicate: Stop Simulating What You've Already Proven](General%20Tricks%20&%20Techniques/Contest%20Strategy/Trust%20the%20Predicate%3A%20Stop%20Simulating%20What%20You've%20Already%20Proven.md)
-> - [Anchor-and-Derive](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Contest%20Strategy/Anchor%20and%20Derive.md)
 >
 > **Decide Traverse Direction**
 > - [Comfortable with Your Matrices — Fix an Axis, Drop a Loop](General%20Tricks%20&%20Techniques/Decide%20Traverse%20Direction/Comfortable%20with%20Your%20Matrices%20—%20Fix%20an%20Axis%2C%20Drop%20a%20Loop.md)
