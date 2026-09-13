@@ -11,7 +11,7 @@ Given `n` and `k`, build an `n×n` grid with `1..n²` placed so the row/column m
 ## The Algorithmic Flow
 ![Algorithm flow: input, range check, boundary computation, three chain updates, remaining fill, print](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/14.%20Algorithm%20Flow.svg)
 
-## What Actually Differed ([Contet](https://codeforces.com/contest/2263/submission/390467102) vs [Upsolve](https://codeforces.com/contest/2263/submission/390508008))
+## What Actually Differed ([Contet](https://codeforces.com/contest/2263/submission/390467102) vs [Upsolve](https://codeforces.com/contest/2263/submission/390513566))
 
 **1. Boundaries computed once, named, and chained.**
 
