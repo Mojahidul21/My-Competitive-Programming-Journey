@@ -8,6 +8,7 @@ Given `n` and `k`, build an `n×n` grid with `1..n²` placed so the row/column m
 
 ![Boundary chain diagram: diagonal, vertical, and horizontal segments for n=5, k=7](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/13.%20Boundary%20Chains.svg)
 
+## The construction, briefly
 ![Algorithm flow: input, range check, boundary computation, three chain updates, remaining fill, print](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/14.%20Algorithm%20Flow.svg)
 
 ## What actually differed
