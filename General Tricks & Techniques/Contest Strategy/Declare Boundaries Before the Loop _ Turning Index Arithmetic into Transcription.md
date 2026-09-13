@@ -1,12 +1,14 @@
 # Declare Boundaries Before the Loop: Turning Index Arithmetic into Transcription
 
-![Boundary chain diagram: diagonal, vertical, and horizontal segments for n=5, k=7](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/13.%20Boundary%20Chains.svg)
+![Algorithm flow: input, range check, boundary computation, three chain updates, remaining fill, print](Algorithm%20Flow.svg)
 
-I noticed this comparing two of my own submissions to the same problem — [Codeforces Round 1120 (Div. 2) B. Min Matrices](https://codeforces.com/contest/2263/problem/B). Same algorithm, same construction, both Accepted. One took me too long in-contest. The other, written during upsolve with no new insight, took a fraction of the time. Nothing about the *idea* changed between the two. Only the way I wrote it did.
+I noticed this comparing two of my own submissions to the same problem — [Codeforces Round 1120 (Div. 2) B, "Min Matrices"](https://codeforces.com/contest/2260/problem/B). Same algorithm, same construction, both Accepted. One took me too long in-contest. The other, written during upsolve with no new insight, took a fraction of the time. Nothing about the *idea* changed between the two. Only the way I wrote it did.
 
 ## The construction, briefly
 
-Given `n` and `k`, build an `n×n` grid with `1..n²` placed so the row/column minimums have exactly `k` distinct values. The idea: build a chain of `k` cells holding `1..k` — a diagonal segment, then a vertical segment continuing down one column, then a horizontal segment continuing along one row — and fill the rest of the grid with the remaining values. The figure above shows this chain for `n=5, k=7`: the six boundary variables (`diaStart`, `diaEnd`, `verStart`, `verEnd`, `horStart`, `horEnd`) are exactly the numbers labeling where each colored segment begins and ends. Both submissions build this same shape.
+Given `n` and `k`, build an `n×n` grid with `1..n²` placed so the row/column minimums have exactly `k` distinct values. The idea: build a chain of `k` cells holding `1..k` — a diagonal segment, then a vertical segment continuing down one column, then a horizontal segment continuing along one row — and fill the rest of the grid with the remaining values. The flowchart above traces the control flow end to end; the figure below shows the same chain concretely for `n=5, k=7` — the six boundary variables (`diaStart`, `diaEnd`, `verStart`, `verEnd`, `horStart`, `horEnd`) are exactly the numbers labeling where each colored segment begins and ends. Both submissions build this same shape.
+
+![Boundary chain diagram: diagonal, vertical, and horizontal segments for n=5, k=7](Declare%20Boundaries%20Before%20the%20Loop.svg)
 
 ## What actually differed
 
