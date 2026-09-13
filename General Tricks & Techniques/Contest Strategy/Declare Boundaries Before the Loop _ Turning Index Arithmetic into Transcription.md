@@ -2,16 +2,16 @@
 
 I noticed this comparing two of my own submissions to the same problem — [Codeforces Round 1120 (Div. 2) B. Min Matrices](https://codeforces.com/contest/2263/problem/B). Same algorithm, same construction, both Accepted. One took me too long in-contest. The other, written during upsolve with no new insight, took a fraction of the time. Nothing about the *idea* changed between the two. Only the way I wrote it did.
 
-## The construction, briefly
+## The Construction Procedure
 
 Given `n` and `k`, build an `n×n` grid with `1..n²` placed so the row/column minimums have exactly `k` distinct values. The idea: build a chain of `k` cells holding `1..k` — a diagonal segment, then a vertical segment continuing down one column, then a horizontal segment continuing along one row — and fill the rest of the grid with the remaining values. The flowchart above traces the control flow end to end; the figure below shows the same chain concretely for `n=5, k=7` — the six boundary variables (`diaStart`, `diaEnd`, `verStart`, `verEnd`, `horStart`, `horEnd`) are exactly the numbers labeling where each colored segment begins and ends. Both submissions build this same shape.
 
 ![Boundary chain diagram: diagonal, vertical, and horizontal segments for n=5, k=7](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/13.%20Boundary%20Chains.svg)
 
-## The construction, briefly
+## The Algorithmic Flow
 ![Algorithm flow: input, range check, boundary computation, three chain updates, remaining fill, print](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/14.%20Algorithm%20Flow.svg)
 
-## What actually differed
+## What Actually Differed
 
 **1. Boundaries computed once, named, and chained.**
 
@@ -42,7 +42,7 @@ Read top to bottom, this is the whole construction as a paragraph. Writing the l
 
 The contest version was 0-indexed out of reflex, so a diagonal that's conceptually "positions `1` to `2n-k`" turned into `i < stop` with `i` starting at `0` while the *value* written there started at `1` — two different starting points for the same diagonal position, tracked separately in my head on every iteration. The upsolve version sized the grid `(n+1)×(n+1)` and indexed from `1`, so position and value lined up directly: `a[i][i] = runner` where `runner` starts at `1`. The problem is already 1-indexed — rows, columns, and values all run `1..n` or `1..n²`. Indexing the array the same way removed a constant stream of `+1`/`-1` translation that wasn't free; it was where the actual time went.
 
-## The general rule
+## The General Rule
 
 Before writing a single loop for a constructive problem:
 
