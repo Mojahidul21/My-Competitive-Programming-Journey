@@ -65,6 +65,44 @@ cout << "Final sum: " << sum << endl;
 </details>
 
 <details>
+<summary><strong>Comma Operator as Conditional</strong></summary>
+
+**What it does:** Chains two expressions with `,`, evaluating left-to-right and discarding the left result. Combined with short-circuit `&&`, it fakes an `if` statement inside a single expression.
+
+```cpp
+cin >> j, i != j && (a.emplace_back(j), true);
+```
+
+Equivalent to:
+
+```cpp
+cin >> j;
+if (i != j) {
+    a.emplace_back(j);
+}
+```
+
+**How it works:** `i != j && (a.emplace_back(j), true)` short-circuits — if `i != j` is false, the right side never evaluates, so `emplace_back` never runs. The trailing `, true` exists only so the parenthesized expression has a `bool`-compatible result for `&&` to operate on; `emplace_back`'s own return value (a reference) isn't usable there directly.
+
+**Output demonstration:**
+
+```cpp
+int i = 3, j = 5;
+vector<int> a;
+cin >> j, i != j && (a.emplace_back(j), true);
+// a now contains {5}, since i != j
+
+i = 5, j = 5;
+cin >> j, i != j && (a.emplace_back(j), true);
+// a unchanged — i == j, right side short-circuits away
+```
+
+> [!WARNING]
+> This is a **code-golf idiom**, not a house-style recommendation. It buries a side effect (`emplace_back`) inside what looks like a boolean expression, which trades readability for terseness. Useful to recognize when reading `tourist`-style code; not something to write by default.
+
+</details>
+
+<details>
 <summary><code>fill</code></summary>
 
 **What it does:**
