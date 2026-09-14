@@ -1,7 +1,7 @@
 # Codeforces Round 1121 (Div. 2) — B. Knife's Pill Farm
-> **Problem:** [B. Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B)
-> **Tags:** data structures, greedy
-> **Difficulty:** Div. 2 B
+> **Problem:** [B. Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B)  
+> **Tags:** data structures, greedy  
+> **Difficulty:** Div. 2 B  
 > **Submissions:** 2 WA (pretest 2), 1 AC in-contest, 2 further AC on upsolve (alternate container)
 
 ## 📌 Problem Summary
