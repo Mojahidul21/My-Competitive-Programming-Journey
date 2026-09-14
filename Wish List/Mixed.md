@@ -38,9 +38,8 @@ ___
 - DSU (Union-Find)
 - Explicit Stack
 - Exponential Blowup on Graphs
-- False Floor
 - Fenwick Tree
-- eviction Pattern
+- Eviction Pattern
 - Greedy Exchange Argument
 - Implicit State Space
 - Indegree Queue
@@ -87,7 +86,6 @@ ___
 - Topological Sort
 - Unary Minus
 - Undirected Cycle
-- Unearned Zero
 - Union by Rank/Size
 - Wraparound Error
 
