@@ -261,7 +261,7 @@ for (long long i{m - 1}; i < n; ++i)
     b.pop();
 ```
 
-`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container ([See full solution](https://codeforces.com/contest/2264/submission/390668217)).
+`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container ([see full solution](https://codeforces.com/contest/2264/submission/390668217)).
 
 **How to recognize one:** "Smallest `k` values among elements seen so far, updated incrementally" — especially inside a sliding scan where re-sorting each step would be too slow.
 
@@ -270,6 +270,9 @@ for (long long i{m - 1}; i < n; ++i)
 **Related:**
 * [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum) — the algebraic step that often produces the "minimize a fixed-size subset sum" subproblem this pattern solves.
 * [Greedy Peel](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#greedy-peel) — a different greedy shape (resolve one unit fully before the next); this pattern instead maintains a running *set*, not a per-unit sequence.
+
+---
+
 
 ## Canonical Sequence (Special Judge)
 
