@@ -81,7 +81,7 @@ long long mx{m * a[m - 1] - sum};
 
 | Problem | Link | Status |
 |---|---|---|
-| CF 2264B — Knife's Pill Farm | [`Problem`](https://codeforces.com/contest/2264/problem/B) [`Solution`](https://codeforces.com/contest/2264/submission/390669108) | ✅ Solved |
+| CF 2264B — Knife's Pill Farm | [`Problem`](https://codeforces.com/contest/2264/problem/B) <br> [`Solution`](https://codeforces.com/contest/2264/submission/390669108) | ✅ Solved |
 | TBD | TBD | TBD |
 
 ---
