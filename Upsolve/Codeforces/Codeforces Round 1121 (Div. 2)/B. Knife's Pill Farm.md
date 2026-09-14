@@ -25,6 +25,32 @@ Since summation doesn't care about order, minimizing that sum is just: **pick th
 
 ---
 
+## 💡 Core Insight — Telescoping via Summation by Parts
+
+Write out the sum term by term and regroup:
+
+```
+1·(b1 − b0) + 2·(b2 − b1) + 3·(b3 − b2) + ... + m·(bm − bm−1)
+
+= (1·b1 − 1·b0) + (2·b2 − 2·b1) + (3·b3 − 3·b2) + ... + (m·bm − m·bm−1)
+
+= m·bm + (1−2)·b1 + (2−3)·b2 + ... + ((m−1)−m)·bm−1 − 1·b0
+
+= m·bm − b1 − b2 − ... − bm−1        [since b0 = 0]
+```
+
+Each `b_i` (for `i = 1` to `m−1`) appears exactly twice with opposite signs — once from term `i` as `+i·bi`, once from term `i+1` as `−(i+1)·bi` — collapsing to a single `−bi`. Only `b_m` (no term `m+1` to cancel it) and `b_0` (defined as `0`, so it vanishes) survive uncancelled. That collapse is the telescoping.
+
+In standard mathematical form:
+
+$$\sum_{i=1}^{m} i\cdot(b_i - b_{i-1}) \;=\; m\cdot b_m \;-\; \sum_{i=1}^{m-1} b_i$$
+
+This is the same family as [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum) / [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md) — a coefficient-weighted sum collapses to "last term, scaled" minus "sum of everything before it." Once collapsed, the problem splits cleanly: fix `b_m = a[i]` for each candidate position `i`, then minimize `Σ b_1..b_{m−1}` — the sum of the other `m−1` chosen elements, all required to sit before index `i`.
+
+Since summation doesn't care about order, minimizing that sum is just: **pick the `m−1` smallest values from `a[0..i−1]`.**
+
+---
+
 ## 🔀 Approach
 
 Scan `i` left to right. Maintain a [Bounded Max-Heap (Keep-k-Smallest)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#bounded-max-heap-keep-k-smallest) of size `m−1` holding the smallest `m−1` values seen so far, plus their running sum. At each `i ≥ m−1`, compute the candidate score `m*a[i] - sum`, take the max across all `i`, then push `a[i]` into the heap and evict the new maximum to keep the window at size `m−1`.
