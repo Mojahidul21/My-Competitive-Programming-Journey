@@ -12,6 +12,7 @@ Lexical ordered.
 - [Anchor](#anchor)
 - [Boilerplate](#boilerplate)
 - [Boundary Ghost Values](#boundary-ghost-values)
+- [Bounded Max-Heap (Keep-k-Smallest)](#bounde-max-heap-keep-k-Smallest)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Case-Bashing](#case-bashing)
@@ -234,6 +235,38 @@ Like telling a runner "pretend the race started one meter behind the actual line
 - [CF 2259C — 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md#code) — Nicely handled the base cases with Boundary Ghost Values — `l{200000},r{-1}`.
 
 ---
+
+## Bounded Max-Heap (Keep-k-Smallest)
+
+**Definition:** Maintaining a running set of exactly `k` elements with the smallest total sum, by holding a max-heap capped at size `k`. Each new candidate is inserted, and if the heap exceeds `k`, the current largest element is evicted — since removing the largest is always the correct move to keep the sum minimal.
+
+**Why it arises:** Whenever a problem asks for "the `k` smallest values among elements seen so far" while scanning left to right, re-sorting the whole prefix each time is wasteful. A max-heap capped at size `k` gives O(log k) insert/evict, and always exposes exactly the element you'd want to remove next (the current max) at the top.
+
+**Example from practice:** [CF 2264B — Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B) reduces (via telescoping — see [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum)) to: for each candidate last-element `a[i]`, the score is `m*a[i] - sum(m-1 smallest values before i)`. Sliding `i` left to right, a size-`(m-1)` max-heap tracks that running smallest-sum:
+
+```cpp
+long long sum{};
+priority_queue<long long> b;
+for (long long i{}; i < m - 1; ++i)
+    sum += a[i], b.push(a[i]);
+
+long long mx{m * a[m - 1] - sum};
+for (long long i{m - 1}; i < n; ++i)
+    b.push(a[i]),
+    mx = max(mx, m * a[i] - sum),
+    sum += a[i] - b.top(),
+    b.pop();
+```
+
+`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container.
+
+**How to recognize one:** "Smallest `k` values among elements seen so far, updated incrementally" — especially inside a sliding scan where re-sorting each step would be too slow.
+
+**Analogy:** A basket that only holds `k` fruits, always the lightest ones. Add a new fruit; if the basket's over capacity, throw out whichever fruit in the basket is currently heaviest.
+
+**Related:**
+* [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum) — the algebraic step that often produces the "minimize a fixed-size subset sum" subproblem this pattern solves.
+* [Greedy Peel](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#greedy-peel) — a different greedy shape (resolve one unit fully before the next); this pattern instead maintains a running *set*, not a per-unit sequence.
 
 ## Canonical Sequence (Special Judge)
 
