@@ -12,7 +12,7 @@ Lexical ordered.
 - [Anchor](#anchor)
 - [Boilerplate](#boilerplate)
 - [Boundary Ghost Values](#boundary-ghost-values)
-- [Bounded Max-Heap (Keep-k-Smallest)](#bounde-max-heap-keep-k-Smallest)
+- [Bounded Max-Heap (Keep-k-Smallest)](#bounded-max-heap-keep-k-smallest)
 - [Canonical Sequence (Special Judge)](#canonical-sequence-special-judge)
 - [Cascading (Wave Propagation)](#cascading-wave-propagation)
 - [Case-Bashing](#case-bashing)
