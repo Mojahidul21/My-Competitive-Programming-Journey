@@ -659,6 +659,8 @@ for (int t = 0; t < 100000; t++) {
 **Example from practice:** [CF 2264B — Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B) — ratings `a_i` can be negative, so the maximum achievable score can be negative too.
 
 ```cpp
+// https://codeforces.com/contest/2264/submission/390669108
+
 // ❌ WA — mx{} defaults to 0, an unearned floor
 long long mx{};
 for (...) mx = max(mx, m * a[i] - sum);
@@ -679,6 +681,8 @@ When every candidate is negative, the `❌` version returns `0` — a score that
 **Related:**
 * [Sentinel](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#sentinel) — a related but distinct idea: Sentinel is a deliberate placeholder *encoding a boundary condition*; False Floor is an *accidental*, unjustified default masquerading as a real value.
 * [Off-by-one](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#off-by-one) — a sibling initialization pitfall; this one is about the *value* chosen rather than the *index*.
+
+---
 
 ## Foundational Terms & Algorithmic Cousins
 
