@@ -21,7 +21,7 @@ Since summation doesn't care about order, minimizing that sum is just: **pick th
 
 ## 🔀 Approach
 
-Scan `i` left to right. Maintain a [Bounded Max-Heap (Keep-k-Smallest)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#bounded-max-heap-keep-k-smallest)** of size `m−1` holding the smallest `m−1` values seen so far, plus their running sum. At each `i ≥ m−1`, compute the candidate score `m*a[i] - sum`, take the max across all `i`, then push `a[i]` into the heap and evict the new maximum to keep the window at size `m−1`.
+Scan `i` left to right. Maintain a [Bounded Max-Heap (Keep-k-Smallest)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#bounded-max-heap-keep-k-smallest) of size `m−1` holding the smallest `m−1` values seen so far, plus their running sum. At each `i ≥ m−1`, compute the candidate score `m*a[i] - sum`, take the max across all `i`, then push `a[i]` into the heap and evict the new maximum to keep the window at size `m−1`.
 
 ```cpp
 long long sum{};
