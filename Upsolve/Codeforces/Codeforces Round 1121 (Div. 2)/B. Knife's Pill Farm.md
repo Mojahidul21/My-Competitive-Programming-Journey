@@ -1,6 +1,6 @@
 # Codeforces Round 1121 (Div. 2) — B. Knife's Pill Farm
 > **Problem:** [B. Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B)  
-> **Tags:** data structures, greedy  
+> **Tags:** `data structures` `greedy`  
 > **Difficulty:** Div. 2 B  
 > **AC Submissions:** [`Priority Queue`](https://codeforces.com/contest/2264/submission/390669108) [`Multi Set`](https://codeforces.com/contest/2264/submission/390668217) 
 
