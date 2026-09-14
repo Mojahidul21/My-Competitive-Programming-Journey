@@ -5,10 +5,13 @@
 > **AC Submissions:** [`Priority Queue`](https://codeforces.com/contest/2264/submission/390669108) [`Multi Set`](https://codeforces.com/contest/2264/submission/390668217) 
 
 ---
+
 ## 📌 Problem Summary
 
 Choose a length-`m` subsequence `b` of `a` (order preserved) to maximize
 `Σ i·(b_i − b_{i−1})` for `i = 1..m`, with `b_0 = 0`. Values in `a` can be negative.
+
+---
 
 ## 💡 Core Insight — Telescoping via Summation by Parts
 
@@ -19,6 +22,8 @@ Expand and re-group the sum:
 This is the same family as [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum) / [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md) — a coefficient-weighted sum collapses to "last term, scaled" minus "sum of everything before it." Once collapsed, the problem splits cleanly: fix `b_m = a[i]` for each candidate position `i`, then minimize `Σ b_1..b_{m−1}` — the sum of the other `m−1` chosen elements, all required to sit before index `i`.
 
 Since summation doesn't care about order, minimizing that sum is just: **pick the `m−1` smallest values from `a[0..i−1]`.**
+
+---
 
 ## 🔀 Approach
 
@@ -43,6 +48,8 @@ cout << mx << '\n';
 
 `O(n log n)` per test case — one heap insert/evict per index.
 
+---
+
 ## ❌ / ✅ The Bug That Cost Two Submissions
 
 Both early attempts ([`390638302`](https://codeforces.com/contest/2264/submission/390638302) [`390642913`](https://codeforces.com/contest/2264/submission/390642913)) initialized `mx{}` → `0`. Since `a_i` can be negative, `0` is not a value any real candidate is guaranteed to reach — it's an **unearned floor** (see [False Floor (Unearned Zero-Init)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#false-floor-unearned-zero-init)). Fix: seed `mx` with the first legitimate candidate (`m*a[m-1] - sum`, computed before the loop) rather than a placeholder.
@@ -54,6 +61,7 @@ long long mx{};
 // ✅ AC — starts inside the real candidate space
 long long mx{m * a[m - 1] - sum};
 ```
+---
 
 ## 🧪 Practice Problems
 
@@ -61,6 +69,8 @@ long long mx{m * a[m - 1] - sum};
 |---|---|---|
 | CF 2264B — Knife's Pill Farm | [Link](https://codeforces.com/contest/2264/problem/B) | ✅ Solved |
 | TBD | TBD | TBD |
+
+---
 
 ## 🔗 Related
 
