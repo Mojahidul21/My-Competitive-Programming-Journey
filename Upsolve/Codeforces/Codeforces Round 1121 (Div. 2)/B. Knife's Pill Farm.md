@@ -2,7 +2,7 @@
 > **Problem:** [B. Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B)  
 > **Tags:** data structures, greedy  
 > **Difficulty:** Div. 2 B  
-> **Submissions:** [`Priority Queue`](https://codeforces.com/contest/2264/submission/390669108) [`Multi Set`](https://codeforces.com/contest/2264/submission/390668217) 
+> **AC Submissions:** [`Priority Queue`](https://codeforces.com/contest/2264/submission/390669108) [`Multi Set`](https://codeforces.com/contest/2264/submission/390668217) 
 
 ## 📌 Problem Summary
 
@@ -27,7 +27,8 @@ Scan `i` left to right. Maintain a [Bounded Max-Heap (Keep-k-Smallest)](https://
 long long sum{};
 priority_queue<long long> b;
 for (long long i{}; i < m - 1; ++i)
-    sum += a[i], b.push(a[i]);
+    sum += a[i],
+    b.push(a[i]);
 
 long long mx{m * a[m - 1] - sum};
 for (long long i{m - 1}; i < n; ++i)
@@ -43,7 +44,7 @@ cout << mx << '\n';
 
 ## ❌ / ✅ The Bug That Cost Two Submissions
 
-Both early attempts initialized `mx{}` → `0`. Since `a_i` can be negative, `0` is not a value any real candidate is guaranteed to reach — it's an **unearned floor** (see [False Floor (Unearned Zero-Init)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#false-floor-unearned-zero-init)). Fix: seed `mx` with the first legitimate candidate (`m*a[m-1] - sum`, computed before the loop) rather than a placeholder.
+Both early attempts ([`390638302`](https://codeforces.com/contest/2264/submission/390638302) [`390642913`](https://codeforces.com/contest/2264/submission/390642913)) initialized `mx{}` → `0`. Since `a_i` can be negative, `0` is not a value any real candidate is guaranteed to reach — it's an **unearned floor** (see [False Floor (Unearned Zero-Init)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#false-floor-unearned-zero-init)). Fix: seed `mx` with the first legitimate candidate (`m*a[m-1] - sum`, computed before the loop) rather than a placeholder.
 
 ```cpp
 // ❌ WA — silently returns 0 if every real candidate is negative
