@@ -1253,9 +1253,10 @@ string sss{s[0] != 'a' ? "ba" : "ab"};
 `s[0]` is guaranteed to match `sss[0]`, so no mismatch at index 0 — and only one pattern needs checking.
 
 **Classic CP reductions:**
-- "Can we make all elements equal?" → prefix sum / parity check
-- "Minimum swaps to sort" → cycle detection in permutation graph
-- "Longest common substring" → suffix array / LCP array
+* "Can we make all elements equal?" → prefix sum / parity check
+* "Minimum swaps to sort" → cycle detection in permutation graph
+* "Longest common substring" → suffix array / LCP array
+* "Sort via one full-array custom reversal" → filter fixed points, check reverse(misplaced) is sorted ([CF 2264A — Rumb Needs a Hand](https://codeforces.com/contest/2264/problem/A), [AC submission](https://codeforces.com/contest/2264/submission/390663340))
 
 ---
 
