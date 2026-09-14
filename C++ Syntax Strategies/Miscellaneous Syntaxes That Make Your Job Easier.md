@@ -65,7 +65,7 @@ cout << "Final sum: " << sum << endl;
 </details>
 
 <details>
-<summary><strong>Comma Operator as Conditional</strong></summary>
+<summary><code>Comma Operator as Conditional</code></summary>
 
 **What it does:** Chains two expressions with `,`, evaluating left-to-right and discarding the left result. Combined with short-circuit `&&`, it fakes an `if` statement inside a single expression.
 
