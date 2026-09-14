@@ -22,8 +22,8 @@ The operation itself is an **involution**: it maps `i_j → i_{m-j+1}`, a mirror
 ```mermaid
 flowchart TD
     A[Read n, permutation p] --> B{For each index i}
-    B -->|p[i] == i| C[Skip — fixed point]
-    B -->|p[i] != i| D[Append p[i] to misplaced list]
+    B -->|"p_i equals i"| C[Skip — fixed point]
+    B -->|"p_i not equal to i"| D[Append p_i to misplaced list]
     C --> B
     D --> B
     B -->|done| E[Reverse misplaced list]
