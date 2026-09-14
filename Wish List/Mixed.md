@@ -44,10 +44,12 @@ ___
 - Infix
 - __int128
 - Inverse-transform Back to Coefficient
+- Involution
 - Iterative
 - Kahn's BFS
 - Lazy Propagation
 - Link-cut Tree
+- Mirror Involution
 - Modmul
 - Modulo by Zero
 - Monotonic Deque
