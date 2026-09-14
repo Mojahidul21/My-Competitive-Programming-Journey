@@ -245,6 +245,9 @@ Like telling a runner "pretend the race started one meter behind the actual line
 **Example from practice:** [CF 2264B — Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B) reduces (via telescoping — see [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum)) to: for each candidate last-element `a[i]`, the score is `m*a[i] - sum(m-1 smallest values before i)`. Sliding `i` left to right, a size-`(m-1)` max-heap tracks that running smallest-sum:
 
 ```cpp
+// Problem: https://codeforces.com/contest/2264/problem/B
+// Solution: https://codeforces.com/contest/2264/submission/390669108
+
 long long sum{};
 priority_queue<long long> b;
 for (long long i{}; i < m - 1; ++i)
@@ -258,7 +261,7 @@ for (long long i{m - 1}; i < n; ++i)
     b.pop();
 ```
 
-`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container.
+`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container ([See full solution](https://codeforces.com/contest/2264/submission/390668217).
 
 **How to recognize one:** "Smallest `k` values among elements seen so far, updated incrementally" — especially inside a sliding scan where re-sorting each step would be too slow.
 
