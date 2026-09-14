@@ -84,6 +84,8 @@ if (i != j) {
 
 **How it works:** `i != j && (a.emplace_back(j), true)` short-circuits — if `i != j` is false, the right side never evaluates, so `emplace_back` never runs. The trailing `, true` exists only so the parenthesized expression has a `bool`-compatible result for `&&` to operate on; `emplace_back`'s own return value (a reference) isn't usable there directly.
 
+**`true` vs `false`:** the trailing value is cosmetic when the whole statement is discarded (as above) — `(a.emplace_back(j), false)` runs `emplace_back` identically, since the comma operator always evaluates the left side regardless of what the right side is. `true` is just the conventional choice, signaling "this branch succeeded" for anyone skimming; it only matters functionally if the outer expression's *value* is itself used somewhere (e.g. nested in a larger condition).
+
 **Output demonstration:**
 
 ```cpp
@@ -98,9 +100,10 @@ cin >> j, i != j && (a.emplace_back(j), true);
 ```
 
 > [!WARNING]
-> This is a **code-golf idiom**, not a house-style recommendation. It buries a side effect (`emplace_back`) inside what looks like a boolean expression, which trades readability for terseness. Useful to recognize when reading `tourist`-style code; not something to write by default.
+> This is a **code-golf idiom**, not a house-style recommendation. It buries a side effect (`emplace_back`) inside what looks like a boolean expression, which trades readability for terseness.
 
 </details>
+
 
 <details>
 <summary>Fill</summary>
