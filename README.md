@@ -62,6 +62,7 @@
 > - [Codeforces Round 1117 (Div. 2) — C. Spying on the Beaver](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201117%20(Div.%202)/C.%20Spying%20on%20the%20Beaver.md)
 > - [Codeforces Round 1119 (Div. 3) — C. 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md)
 > - [Codeforces Round 1119 (Div. 3) — D. MEX Multiset](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/D.%20MEX%20Multiset.md)
+> - [Codeforces Round 1121 (Div. 2) — A. Rumb Needs a Hand](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/A.%20Rumb%20Needs%20a%20Hand.md)
 > - [C. Mental Monumental (Easy Version)](Upsolve/Codeforces/C.%20Mental%20Monumental%20(Easy%20Version).md)
 > - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
