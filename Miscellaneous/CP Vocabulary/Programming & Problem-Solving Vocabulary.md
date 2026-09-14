@@ -27,7 +27,7 @@ Lexical ordered.
 - [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
 - [Empirical](#empirical)
-- [False Floor (Unearned Zero-Init)](#false-floor-unearn-zeroinit)
+- [False Floor (Unearned Zero-Init)](#false-floor-unearned-zero-init)
 - [Foundational Terms & Algorithmic Cousins](#foundational-terms--algorithmic-cousins)
 - [Fragile Code](#fragile-code)
 - [Freeze Flag (Fixed-Point Iteration)](#freeze-flag-fixed-point-iteration)
