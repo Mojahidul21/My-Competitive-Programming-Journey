@@ -2,7 +2,7 @@
 > **Problem:** [B. Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B)  
 > **Tags:** data structures, greedy  
 > **Difficulty:** Div. 2 B  
-> **Submissions:** 2 WA (pretest 2), 1 AC in-contest, 2 further AC on upsolve (alternate container)
+> **Submissions:** [Priority Queue](https://codeforces.com/contest/2264/submission/390669108) [Multi Set](https://codeforces.com/contest/2264/submission/390668217) 
 
 ## 📌 Problem Summary
 
