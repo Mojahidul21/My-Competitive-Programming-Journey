@@ -1256,7 +1256,7 @@ string sss{s[0] != 'a' ? "ba" : "ab"};
 * "Can we make all elements equal?" → prefix sum / parity check
 * "Minimum swaps to sort" → cycle detection in permutation graph
 * "Longest common substring" → suffix array / LCP array
-* "Sort via one full-array custom reversal" → filter fixed points, check reverse(misplaced) is sorted ([CF 2264A — Rumb Needs a Hand](https://codeforces.com/contest/2264/problem/A), [AC submission](https://codeforces.com/contest/2264/submission/390663340))
+* "Sort via one full-array custom reversal" → filter fixed points, check reverse(misplaced) is sorted ([CF Round 1121 (Div. 2) _ A. Rumb Needs a Hand](https://codeforces.com/contest/2264/problem/A), [AC submission](https://codeforces.com/contest/2264/submission/390663340))
 
 ---
 
