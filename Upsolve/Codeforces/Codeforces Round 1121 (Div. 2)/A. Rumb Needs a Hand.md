@@ -1,9 +1,8 @@
 # Codeforces Round 1121 (Div. 2) — A. Rumb Needs a Hand
-
-**Problem:** [A. Rumb Needs a Hand](https://codeforces.com/contest/2264/problem/A)
-**Submission:** [AC solution](https://codeforces.com/contest/2264/submission/390663340)
-**Tags:** implementation, sorting, two pointers
-**Difficulty:** Div. 2 A
+> **Problem:** [A. Rumb Needs a Hand](https://codeforces.com/contest/2264/problem/A)
+> **Submission:** [AC solution](https://codeforces.com/contest/2264/submission/390663340)
+> **Tags:** implementation, sorting, two pointers
+> **Difficulty:** Div. 2 A
 
 ## 📌 Problem Summary
 
