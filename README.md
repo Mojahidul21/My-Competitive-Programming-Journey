@@ -63,6 +63,7 @@
 > - [Codeforces Round 1119 (Div. 3) — C. 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md)
 > - [Codeforces Round 1119 (Div. 3) — D. MEX Multiset](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/D.%20MEX%20Multiset.md)
 > - [Codeforces Round 1121 (Div. 2) — A. Rumb Needs a Hand](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/A.%20Rumb%20Needs%20a%20Hand.md)
+> - [Codeforces Round 1121 (Div. 2) — B. Knife's Pill Farm](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/B.%20Knife's%20Pill%20Farm.md#-core-insight--telescoping-via-summation-by-parts-1)
 > - [C. Mental Monumental (Easy Version)](Upsolve/Codeforces/C.%20Mental%20Monumental%20(Easy%20Version).md)
 > - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
