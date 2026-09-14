@@ -27,6 +27,7 @@ Lexical ordered.
 - [Double Counting](#double-counting)
 - [Edge Case](#edge-case)
 - [Empirical](#empirical)
+- [False Floor (Unearned Zero-Init)](#false-floor-unearn-zeroinit)
 - [Foundational Terms & Algorithmic Cousins](#foundational-terms--algorithmic-cousins)
 - [Fragile Code](#fragile-code)
 - [Freeze Flag (Fixed-Point Iteration)](#freeze-flag-fixed-point-iteration)
@@ -648,6 +649,36 @@ for (int t = 0; t < 100000; t++) {
 * [Boilerplate](#boilerplate) — another case where surface-level confidence (a stated constraint, a passing sample) can mislead without deeper analysis.
 
 ---
+
+## False Floor (Unearned Zero-Init)
+
+**Definition:** Initializing an accumulator meant to track a maximum (or minimum) with a default value — typically `0` — that was never actually produced by any real candidate. If every legitimate candidate turns out worse than that default, the bug stays silent: the code returns the untouched default as if it were a real answer.
+
+**Why it arises:** `0` feels like a "neutral" starting point for a max-tracker, but it's only neutral when the true answer is guaranteed non-negative. The moment values can be negative, `0` becomes an artificial floor — a candidate that was never actually in the running is treated as beatable, and if nothing clears it, the wrong (unearned) value survives to the output.
+
+**Example from practice:** [CF 2264B — Knife's Pill Farm](https://codeforces.com/contest/2264/problem/B) — ratings `a_i` can be negative, so the maximum achievable score can be negative too.
+
+```cpp
+// ❌ WA — mx{} defaults to 0, an unearned floor
+long long mx{};
+for (...) mx = max(mx, m * a[i] - sum);
+
+// ✅ AC — mx seeded with the first real candidate
+long long mx{m * a[m - 1] - sum};
+for (...) mx = max(mx, m * a[i] - sum);
+```
+
+When every candidate is negative, the `❌` version returns `0` — a score that was never actually reachable. The `✅` version seeds `mx` with the first legitimate value in the scan, so the tracker starts *inside* the real candidate space instead of below it.
+
+**How to recognize one:** Any accumulator for a max/min where the domain includes negatives (or otherwise makes `0` non-neutral) and the accumulator is zero-initialized without justification. Ask: *is 0 actually a value my candidates could produce, or did I just assume it's "low enough"?*
+
+**Fix pattern:** Seed with the first real candidate before the loop starts (shown above), or use a true sentinel like `LLONG_MIN` / `INT_MIN` if seeding-with-first-candidate is awkward to express.
+
+**Analogy:** Judging a diving competition and writing "0" on the scoreboard before anyone has dived — then, if every diver scores below zero (a wipeout round), the scoreboard still proudly displays a "0" no diver actually earned.
+
+**Related:**
+* [Sentinel](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#sentinel) — a related but distinct idea: Sentinel is a deliberate placeholder *encoding a boundary condition*; False Floor is an *accidental*, unjustified default masquerading as a real value.
+* [Off-by-one](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#off-by-one) — a sibling initialization pitfall; this one is about the *value* chosen rather than the *index*.
 
 ## Foundational Terms & Algorithmic Cousins
 
