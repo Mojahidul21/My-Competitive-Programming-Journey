@@ -15,18 +15,6 @@ Choose a length-`m` subsequence `b` of `a` (order preserved) to maximize
 
 ## 💡 Core Insight — Telescoping via Summation by Parts
 
-Expand and re-group the sum:
-
-`Σ i·(b_i − b_{i−1}) = m·b_m − Σ b_i` (for `i = 1` to `m−1`)
-
-This is the same family as [Telescoping Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#telescoping-sum) / [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md) — a coefficient-weighted sum collapses to "last term, scaled" minus "sum of everything before it." Once collapsed, the problem splits cleanly: fix `b_m = a[i]` for each candidate position `i`, then minimize `Σ b_1..b_{m−1}` — the sum of the other `m−1` chosen elements, all required to sit before index `i`.
-
-Since summation doesn't care about order, minimizing that sum is just: **pick the `m−1` smallest values from `a[0..i−1]`.**
-
----
-
-## 💡 Core Insight — Telescoping via Summation by Parts
-
 Write out the sum term by term and regroup:
 
 ```
