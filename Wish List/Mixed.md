@@ -1,3 +1,4 @@
+- Abel Summation 
 - Arithmetic Progression Sum
 - CDQ divide-and-conquer
 - Chinese Remainder Theorem (CRT)
