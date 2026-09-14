@@ -261,7 +261,7 @@ for (long long i{m - 1}; i < n; ++i)
     b.pop();
 ```
 
-`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container ([See full solution](https://codeforces.com/contest/2264/submission/390668217).
+`multiset` works identically here (`*s.rbegin()` in place of `b.top()`) — same eviction logic, different container ([See full solution](https://codeforces.com/contest/2264/submission/390668217)).
 
 **How to recognize one:** "Smallest `k` values among elements seen so far, updated incrementally" — especially inside a sliding scan where re-sorting each step would be too slow.
 
