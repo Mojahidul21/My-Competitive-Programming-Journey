@@ -63,6 +63,7 @@ cout << "Final sum: " << sum << endl;
 **Related:** Invariant, Stress Testing
 
 </details>
+
 ---
 
 <details>
