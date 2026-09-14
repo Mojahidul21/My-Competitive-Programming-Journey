@@ -2,7 +2,7 @@
 
 ## 📚 Table of Contents
 
-> ### 📕 Books ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/16.%20Books%20_%20Bannaer%20Image.png)
+> ### 📕 Books ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/16.%20Books%20_%20Bannaer%20Image.jpg)
 > - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 
 
