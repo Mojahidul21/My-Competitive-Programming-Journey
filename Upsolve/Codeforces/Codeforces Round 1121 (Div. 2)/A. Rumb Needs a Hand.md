@@ -17,7 +17,7 @@ The operation itself is an **involution**: it maps `i_j → i_{m-j+1}`, a mirror
 > [!NOTE]
 > The achievable operation isn't "any involution on the misplaced elements" — it's specifically the *mirror* involution. A reader might assume any pairing works; it doesn't. That's the one subtlety worth stating explicitly.
 
-## 🔀 Mermaid Flowchart
+## 🔀 Flowchart
 
 ```mermaid
 flowchart TD
@@ -59,4 +59,3 @@ cout << (is_sorted(a.begin(), a.end()) ? "YES" : "NO") << '\n';
 ## 🔗 Related
 
 * [Reduction](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#reduction) — this problem reduces "does one exotic reversal sort the array" to "is reverse(misplaced) sorted."
-* Not a [Chain Decomposition](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md#chain-decomposition-independent-component-grouping) instance, despite the pairing structure — "sorted" is a single global property of the whole reversed sequence, not something checkable per-pair in isolation.
