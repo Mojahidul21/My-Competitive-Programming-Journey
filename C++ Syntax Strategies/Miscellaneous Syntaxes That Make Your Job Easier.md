@@ -11,7 +11,7 @@ Each entry follows the usual format: Syntax, What it does, Use cases
 ---
 
 <details>
-<summary><code>assert</code></summary>
+<summary>Assert</summary>
 
 **Syntax:**
 ```cpp
@@ -65,7 +65,7 @@ cout << "Final sum: " << sum << endl;
 </details>
 
 <details>
-<summary><code>Comma Operator as Conditional</code></summary>
+<summary>Comma Operator as Conditional</summary>
 
 **What it does:** Chains two expressions with `,`, evaluating left-to-right and discarding the left result. Combined with short-circuit `&&`, it fakes an `if` statement inside a single expression.
 
@@ -103,7 +103,7 @@ cin >> j, i != j && (a.emplace_back(j), true);
 </details>
 
 <details>
-<summary><code>fill</code></summary>
+<summary>Fill</summary>
 
 **What it does:**
 Sets every element in a range to a given value in one call, replacing manual loops like `for (int i = 0; i < n; i++) arr[i] = value;`.
