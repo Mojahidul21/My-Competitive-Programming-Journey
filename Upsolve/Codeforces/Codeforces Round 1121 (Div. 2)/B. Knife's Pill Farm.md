@@ -4,6 +4,7 @@
 > **Difficulty:** Div. 2 B  
 > **AC Submissions:** [`Priority Queue`](https://codeforces.com/contest/2264/submission/390669108) [`Multi Set`](https://codeforces.com/contest/2264/submission/390668217) 
 
+---
 ## 📌 Problem Summary
 
 Choose a length-`m` subsequence `b` of `a` (order preserved) to maximize
