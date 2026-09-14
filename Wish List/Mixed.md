@@ -38,7 +38,9 @@ ___
 - DSU (Union-Find)
 - Explicit Stack
 - Exponential Blowup on Graphs
+- False Floor
 - Fenwick Tree
+- eviction Pattern
 - Greedy Exchange Argument
 - Implicit State Space
 - Indegree Queue
@@ -50,6 +52,7 @@ ___
 - Kahn's BFS
 - Lazy Propagation
 - Link-cut Tree
+- Max Heap
 - Mirror Involution
 - Modmul
 - Modulo by Zero
@@ -84,10 +87,12 @@ ___
 - Topological Sort
 - Unary Minus
 - Undirected Cycle
+- Unearned Zero
 - Union by Rank/Size
 - Wraparound Error
 
 ___
 
-Upsolve:
-https://codeforces.com/contest/2263/problem/B
+Upsolve:  
+* https://codeforces.com/contest/2263/problem/B
+* https://codeforces.com/contest/2264/problem/C
