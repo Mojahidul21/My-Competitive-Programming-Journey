@@ -1,15 +1,28 @@
-- Abel Summation 
+- Abel Summation
+- Andrew's Monotone Chain 
 - Arithmetic Progression Sum
+- Bellman-Ford Algorithm
+- Blossom Algorithm
 - CDQ divide-and-conquer
 - Chinese Remainder Theorem (CRT)
+- DFS
+- Dinic's Algorithm
 - D&C optimization for DP transitions
+- Edmonds-Karp Algorithm
 - Evaluate Postfix with a Value Stack
 - Extended Euclidean Algorithm
 - Fast Fourier Transform
+- Hall's Marriage Theorem
+- Hall's Theorem
+- Hopcroft-Karp
+- Hungarian Algorithm
 - Knapsack
 - Kruskal's MST
+- Kuhn's Algorithm
 - Linear Diophantine Equation
+- Max Flow
 - Merge Sort
+- Min Cut
 - Modular Inverse
 - Shunting-yard algorithm
 ___
@@ -18,29 +31,40 @@ ___
 
 ___
 
+- Acyclic Hierarchy
 - Adversarial Input
 - Adversary argument
 - Aliasing Error
 - Balanced BST
 - BFS-adjacent Technique
 - Bipartite-checking DSU
+- Bipartite Graph
+- Bipartite Matching
 - Bug-prone
+- Closest Pair
+- Collinear Overlap
 - Connected Component
 - Connectivity Queries
+- Convex Hull
 - Convolution Counting
 - Convolution of Two Sequences
 - Cycle Detection
 - Directed Cycle
+- Disconnected Graphs
 - Disproportionately
 - Deep Graph
 - Divide by Symmetry Factor
+- Dijkstra Algorithm
 - DP Array
 - DSU (Union-Find)
+- Epsilon for Comparison
 - Explicit Stack
 - Exponential Blowup on Graphs
+- Eulerian Path
 - Fenwick Tree
 - Eviction Pattern
 - Greedy Exchange Argument
+- Grundy Number
 - Implicit State Space
 - Indegree Queue
 - Infix
@@ -48,21 +72,27 @@ ___
 - Inverse-transform Back to Coefficient
 - Involution
 - Iterative
+- Johnson's Reweighting
 - Kahn's BFS
 - Lazy Propagation
 - Link-cut Tree
 - Max Heap
+- Minimum Excludant
 - Mirror Involution
 - Modmul
 - Modulo by Zero
 - Monotonic Deque
 - Monotonic Stack
+- Nim
+- Non-bipartite
+- Normal Play vs Misère Play
 - NTT
 - Offline Sorting
 - Online Queries
 - Over-engineering
 - Pad to a Power of Two
 - Parity
+- Partizan Game
 - Pigeonhole
 - Point Update
 - Polynomial Coefficient Arrays
@@ -71,6 +101,7 @@ ___
 - Range Aggregates
 - Range Query
 - Range-sum
+- Ray Casting
 - Recursive-descent Parser
 - Recursive DFS
 - Rolling Array
@@ -79,14 +110,19 @@ ___
 - Shifting Window
 - SlidingWindow Aggregate
 - Sparse Table
+- SPFA
+- Sprague-Grundy
 - Stack Overflow
 - Stars-and-Bars
 - Subtle Wrong Answer
+- Successive Shortest Augmenting Paths
+- Surreal Number
 - Tokenize input
 - Topological Sort
 - Unary Minus
 - Undirected Cycle
 - Union by Rank/Size
+- Winding Number
 - Wraparound Error
 
 ___
