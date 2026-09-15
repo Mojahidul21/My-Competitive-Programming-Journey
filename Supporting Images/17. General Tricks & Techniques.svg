@@ -109,7 +109,7 @@
 
   <!-- ===== TITLE ===== -->
   <g filter="url(#shadow)">
-    <text x="20" y="28" font-family="Impact, Arial Black, sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="0.5">General Tricks &amp; Techniques</text>
+    <text x="20" y="30" font-family="Impact, Arial Black, sans-serif" font-size="22" font-weight="300" fill="RED" letter-spacing="0.5">General Tricks &amp; Techniques</text>
   </g>
 
   <!-- ===== 1. WATERMELON SKIN AS CAP ===== -->
