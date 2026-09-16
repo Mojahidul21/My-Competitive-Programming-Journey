@@ -41,6 +41,7 @@ ___
 - Bipartite Graph
 - Bipartite Matching
 - Bug-prone
+- Closed-form Formula
 - Closest Pair
 - Collinear Overlap
 - Connected Component
@@ -49,20 +50,23 @@ ___
 - Convolution Counting
 - Convolution of Two Sequences
 - Cycle Detection
+- Deadlock
 - Directed Cycle
 - Disconnected Graphs
 - Disproportionately
 - Deep Graph
 - Divide by Symmetry Factor
 - Dijkstra Algorithm
+- Double Hashing
 - DP Array
 - DSU (Union-Find)
 - Epsilon for Comparison
 - Explicit Stack
 - Exponential Blowup on Graphs
 - Eulerian Path
-- Fenwick Tree
 - Eviction Pattern
+- Fenwick Tree
+- Floor Division Tricks
 - Greedy Exchange Argument
 - Grundy Number
 - Implicit State Space
@@ -89,13 +93,15 @@ ___
 - NTT
 - Offline Sorting
 - Online Queries
-- Over-engineering
+- Over-Engineering
+- Over-kill
 - Pad to a Power of Two
 - Parity
 - Partizan Game
 - Pigeonhole
 - Point Update
 - Polynomial Coefficient Arrays
+- Polynomial Rolling Hash
 - Polynomial Multiplication
 - Postfix
 - Range Aggregates
@@ -117,6 +123,7 @@ ___
 - Subtle Wrong Answer
 - Successive Shortest Augmenting Paths
 - Surreal Number
+- TLE
 - Tokenize input
 - Topological Sort
 - Unary Minus
