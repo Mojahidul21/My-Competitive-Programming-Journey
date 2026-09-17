@@ -80,6 +80,11 @@ ___
 - Kahn's BFS
 - Lazy Propagation
 - Link-cut Tree
+- Matrix Determinant
+- Matrix Exponentiation
+- Matrix Gaussian Elimination
+- Matrix Multiplication
+- Matrix Rank
 - Max Heap
 - Minimum Excludant
 - Mirror Involution
@@ -131,6 +136,7 @@ ___
 - Union by Rank/Size
 - Winding Number
 - Wraparound Error
+- matrix operations — multiplication, exponentiation, determinant, rank, Gaussian elimination
 
 ___
 
