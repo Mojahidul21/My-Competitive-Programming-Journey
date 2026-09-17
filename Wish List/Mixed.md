@@ -11,6 +11,8 @@
 - Edmonds-Karp Algorithm
 - Evaluate Postfix with a Value Stack
 - Extended Euclidean Algorithm
+- Euclidean Algorithm
+- Fermat's Little Theorem
 - Fast Fourier Transform
 - Hall's Marriage Theorem
 - Hall's Theorem
@@ -24,6 +26,7 @@
 - Merge Sort
 - Min Cut
 - Modular Inverse
+- Sieve of Eratosthenes
 - Shunting-yard algorithm
 ___
 
@@ -31,12 +34,14 @@ ___
 
 ___
 
+- Activity Selection
 - Acyclic Hierarchy
 - Adversarial Input
 - Adversary argument
 - Aliasing Error
 - Balanced BST
 - BFS-adjacent Technique
+- Binary Exponentiation on Matrices
 - Bipartite-checking DSU
 - Bipartite Graph
 - Bipartite Matching
@@ -44,12 +49,16 @@ ___
 - Closed-form Formula
 - Closest Pair
 - Collinear Overlap
+- Combinatorial Probability
+- Comparison Operator
+- Composite Moduli
 - Connected Component
 - Connectivity Queries
 - Convex Hull
 - Convolution Counting
 - Convolution of Two Sequences
 - Cycle Detection
+- Deadline Scheduling
 - Deadlock
 - Directed Cycle
 - Disconnected Graphs
@@ -57,21 +66,33 @@ ___
 - Deep Graph
 - Divide by Symmetry Factor
 - Dijkstra Algorithm
+- Divisor Sums
 - Double Hashing
 - DP Array
 - DSU (Union-Find)
+- Earliest Deadline First (EDF)
 - Epsilon for Comparison
 - Explicit Stack
 - Exponential Blowup on Graphs
 - Eulerian Path
+- Euler's Totient Function
 - Eviction Pattern
+- Fermat's Inverse Trick
+- Fast Exponentiation
 - Fenwick Tree
+- Fibonacci-like Recurrence
 - Floor Division Tricks
+  Fraction Mod
+- Galois Field with Two Elements
 - Greedy Exchange Argument
 - Grundy Number
+- Harmonic Series
+- Hash Map
 - Implicit State Space
 - Indegree Queue
 - Infix
+- Interval Scheduling
+- Interval Scheduling with Weights
 - __int128
 - Inverse-transform Back to Coefficient
 - Involution
@@ -79,25 +100,39 @@ ___
 - Johnson's Reweighting
 - Kahn's BFS
 - Lazy Propagation
+- Linear Recurrence
 - Link-cut Tree
+- Markov Chain
 - Matrix Determinant
 - Matrix Exponentiation
 - Matrix Gaussian Elimination
 - Matrix Multiplication
 - Matrix Rank
+- Matrix Rotations
+- Matrix Systems of Linear Equations.
+- Matrix Transformation
 - Max Heap
+- Max Non-overlapping Interval
+- Max XOR Subset
+- Minimizing Lateness
 - Minimum Excludant
 - Mirror Involution
+- Möbius Function
 - Modmul
+- Modular Arithmetic
 - Modulo by Zero
 - Monotonic Deque
 - Monotonic Stack
+- Multiplicative Function
 - Nim
 - Non-bipartite
+- Non-commutative
+- Non-overlapping Interval
 - Normal Play vs Misère Play
 - NTT
 - Offline Sorting
 - Online Queries
+- Out-of-bounds
 - Over-Engineering
 - Over-kill
 - Pad to a Power of Two
@@ -109,15 +144,18 @@ ___
 - Polynomial Rolling Hash
 - Polynomial Multiplication
 - Postfix
+- Prime Factorization
 - Range Aggregates
 - Range Query
 - Range-sum
 - Ray Casting
+- Recurrence-to-matrix Mapping
 - Recursive-descent Parser
 - Recursive DFS
 - Rolling Array
 - RPN
 - Segment Tree
+- Self-referential
 - Shifting Window
 - SlidingWindow Aggregate
 - Sparse Table
@@ -125,18 +163,27 @@ ___
 - Sprague-Grundy
 - Stack Overflow
 - Stars-and-Bars
+- State Graph
+- Subset-selection
+- Subset-sum
 - Subtle Wrong Answer
 - Successive Shortest Augmenting Paths
 - Surreal Number
+- Target-sum Complement
+- Tie-breaking Rule
+- Timeline Scheduling
 - TLE
 - Tokenize input
 - Topological Sort
+- Touching at a Single Point
 - Unary Minus
 - Undirected Cycle
 - Union by Rank/Size
+- Vault Warning
+- Vector Space Over GF(2)
 - Winding Number
 - Wraparound Error
-- matrix operations — multiplication, exponentiation, determinant, rank, Gaussian elimination
+- XOR-linear-algebra
 
 ___
 
