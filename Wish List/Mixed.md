@@ -6,6 +6,7 @@
 - CDQ divide-and-conquer
 - Chinese Remainder Theorem (CRT)
 - DFS
+- Dijkstra Algorithm
 - Dinic's Algorithm
 - D&C optimization for DP transitions
 - Edmonds-Karp Algorithm
@@ -14,20 +15,24 @@
 - Euclidean Algorithm
 - Fermat's Little Theorem
 - Fast Fourier Transform
+- Floyd-Warshall Algorithm
 - Hall's Marriage Theorem
 - Hall's Theorem
 - Hopcroft-Karp
 - Hungarian Algorithm
 - Knapsack
+- Knuth–Morris–Pratt Algorithm (KMP)
 - Kruskal's MST
 - Kuhn's Algorithm
 - Linear Diophantine Equation
+- Manacher's Algorithm
 - Max Flow
 - Merge Sort
 - Min Cut
 - Modular Inverse
 - Sieve of Eratosthenes
 - Shunting-yard algorithm
+- 0-1 BFS Algorithm
 ___
 
 - template<typename T>
@@ -45,6 +50,7 @@ ___
 - Bipartite-checking DSU
 - Bipartite Graph
 - Bipartite Matching
+- Brute Check
 - Bug-prone
 - Closed-form Formula
 - Closest Pair
@@ -57,9 +63,11 @@ ___
 - Convex Hull
 - Convolution Counting
 - Convolution of Two Sequences
+- Custom Comparator
 - Cycle Detection
 - Deadline Scheduling
 - Deadlock
+- Directed Acyclic Graph (DAG)
 - Directed Cycle
 - Disconnected Graphs
 - Disproportionately
@@ -96,12 +104,19 @@ ___
 - __int128
 - Inverse-transform Back to Coefficient
 - Involution
+- Iteration-count-based Termination
 - Iterative
 - Johnson's Reweighting
 - Kahn's BFS
+- K-th Lexicographically Smallest Substring
 - Lazy Propagation
+- LCP array
+- Lexicographic Substring Ranking
 - Linear Recurrence
 - Link-cut Tree
+- Local Extremum
+- Longest Common Substring between two Strings
+- Longest Repeated Substring
 - Markov Chain
 - Matrix Determinant
 - Matrix Exponentiation
@@ -128,17 +143,23 @@ ___
 - Non-bipartite
 - Non-commutative
 - Non-overlapping Interval
+- Non-trivial Key
+- Non-unimodal Function
 - Normal Play vs Misère Play
 - NTT
+- Number of Distinct Substrings
 - Offline Sorting
 - Online Queries
 - Out-of-bounds
 - Over-Engineering
 - Over-kill
 - Pad to a Power of Two
+- Palindrome
 - Parity
 - Partizan Game
+- Peak and Valley
 - Pigeonhole
+- Plotting
 - Point Update
 - Polynomial Coefficient Arrays
 - Polynomial Rolling Hash
@@ -149,11 +170,13 @@ ___
 - Range Query
 - Range-sum
 - Ray Casting
+- Reallocation
 - Recurrence-to-matrix Mapping
 - Recursive-descent Parser
 - Recursive DFS
 - Rolling Array
 - RPN
+- Sampling
 - Segment Tree
 - Self-referential
 - Shifting Window
@@ -161,13 +184,21 @@ ___
 - Sparse Table
 - SPFA
 - Sprague-Grundy
+- Stable Sort
 - Stack Overflow
 - Stars-and-Bars
 - State Graph
+- String Manipulation
+- Stringstream
+- Subsequence
 - Subset-selection
 - Subset-sum
+- Substring
 - Subtle Wrong Answer
 - Successive Shortest Augmenting Paths
+- Suffix Array
+- Suffix Automaton
+- Suffix Tree
 - Surreal Number
 - Target-sum Complement
 - Tie-breaking Rule
@@ -178,12 +209,17 @@ ___
 - Touching at a Single Point
 - Unary Minus
 - Undirected Cycle
+- Unimodal Cost Function
+- Unimodal Function
 - Union by Rank/Size
+- Unstable Sort
 - Vault Warning
 - Vector Space Over GF(2)
+- WWhitespace Handling
 - Winding Number
 - Wraparound Error
 - XOR-linear-algebra
+- Z-function
 
 ___
 
