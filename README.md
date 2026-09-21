@@ -41,7 +41,7 @@
 
 > ### 🎯 Specific Problem Strategy
 > **Codeforces Tags**
-> - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas.md)
+> - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas%20%E2%80%94%20Recognizing%20%26%20Attacking%20Every%20Codeforces%20Tag.md)
 >
 > **Constructive Algorithms**
 > - [Thinking Procedure: Self-Referential Constructive Problems](Specific%20Problem%20Strategy/Constructive%20Algorithms/Thinking%20Procedure%3A%20Self-Referential%20Constructive%20Problems.md)
