@@ -17,7 +17,7 @@
 
 > ### 🧠 General Tricks & Techniques ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/17.%20General%20Tricks%20%26%20Techniques.svg)
 > **Codeforces Tags**
-> - [The CF Tag Atlas](Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas.md)
+> - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas.md)
 >
 > **Contest Strategy**
 > - [Anchor-and-Derive](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Contest%20Strategy/Anchor%20and%20Derive.md)
