@@ -44,14 +44,18 @@ ___
 - Adversarial Input
 - Adversary argument
 - Aliasing Error
+- Amortized
 - Balanced BST
 - BFS-adjacent Technique
 - Binary Exponentiation on Matrices
+- Binary Lifting
 - Bipartite-checking DSU
 - Bipartite Graph
 - Bipartite Matching
+- Bookkeeping
 - Brute Check
 - Bug-prone
+- Centroid Decomposition
 - Closed-form Formula
 - Closest Pair
 - Collinear Overlap
@@ -83,6 +87,7 @@ ___
 - Explicit Stack
 - Exponential Blowup on Graphs
 - Eulerian Path
+- Euler Tours
 - Euler's Totient Function
 - Eviction Pattern
 - Fermat's Inverse Trick
@@ -110,6 +115,7 @@ ___
 - Kahn's BFS
 - K-th Lexicographically Smallest Substring
 - Lazy Propagation
+- LCA (Lowest Common Ancestor)
 - LCP array
 - Lexicographic Substring Ranking
 - Linear Recurrence
@@ -117,6 +123,7 @@ ___
 - Local Extremum
 - Longest Common Substring between two Strings
 - Longest Repeated Substring
+- Longest Valid Window
 - Markov Chain
 - Matrix Determinant
 - Matrix Exponentiation
@@ -174,6 +181,7 @@ ___
 - Recurrence-to-matrix Mapping
 - Recursive-descent Parser
 - Recursive DFS
+- Rerooting Techniques
 - Rolling Array
 - RPN
 - Sampling
