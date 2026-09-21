@@ -16,9 +16,6 @@
 
 
 > ### 🧠 General Tricks & Techniques ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/17.%20General%20Tricks%20%26%20Techniques.svg)
-> **Codeforces Tags**
-> - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas.md)
->
 > **Contest Strategy**
 > - [Anchor-and-Derive](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Contest%20Strategy/Anchor%20and%20Derive.md)
 > - [Declare Boundaries Before the Loop: Turning Index Arithmetic into Transcription](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20&%20Techniques/Contest%20Strategy/Declare%20Boundaries%20Before%20the%20Loop%20_%20Turning%20Index%20Arithmetic%20into%20Transcription.md)
@@ -43,6 +40,9 @@
 
 
 > ### 🎯 Specific Problem Strategy
+> **Codeforces Tags**
+> - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas.md)
+>
 > **Constructive Algorithms**
 > - [Thinking Procedure: Self-Referential Constructive Problems](Specific%20Problem%20Strategy/Constructive%20Algorithms/Thinking%20Procedure%3A%20Self-Referential%20Constructive%20Problems.md)
 >
