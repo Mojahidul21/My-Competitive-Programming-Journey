@@ -1,3 +1,4 @@
+![18. CF-Tag-Atlas-Hook](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/18.%20CF-Tag-Atlas-Hook.png)
 # The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag
 > **Purpose:** *A field guide*.  
 > 37 tags, one document. For each tag: what it means, how to *smell* it in a fresh problem statement, what to reach for, and where people bleed points. Every section is folded by default — click to expand. Internal links are anchors, so this file is self-contained; no external dependency to navigate it.
