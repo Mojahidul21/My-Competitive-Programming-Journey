@@ -1,9 +1,8 @@
 # CF 2266C — AND, OR, Sort!
-
-**Contest:** Codeforces Round 1122 (Div. 3)
-**Rating:** Div. 3 C
-**Tags:** greedy, prefix sums, constructive
-**Verdict:** Accepted ([submission 391582032](https://codeforces.com/contest/2266/submission/391582032))
+> **Contest:** Codeforces Round 1122 (Div. 3)
+> **Rating:** Div. 3 C
+> **Tags:** `greedy` `string`
+> **Verdict:** Accepted ([submission 391583312](https://codeforces.com/contest/2266/submission/391583312))
 
 ## Problem in one line
 
@@ -42,16 +41,20 @@ flowchart TD
 
 ```
 cost(k) = (# of 1s in s[0 .. k-1])   // must be AND'd down to 0
-        + (# of 0s in s[k .. n-1])  // must be OR'd up to 1
+        + (# of 0s in s[k .. n-1])   // must be OR'd up to 1
 ```
 
 Slide `k` from `0` to `n`, updating the running total in O(1) per step, and take the minimum. This is your loop:
 
 ```cpp
-int ones{}, zeros{(int)count(all(s), '0')}, ans{zeros};
-for (int i{}; i < n; ++i)
-    s[i] != '0' ? ++ones : --zeros,
-    ans = min(ans, ones + zeros);
+int
+ones{},
+zeros{(int)count(s.begin(),s.end(),'0')},
+ans{zeros};
+
+for(int i{};i<n;++i)
+    s[i]!='0'?++ones:--zeros,
+    ans=min(ans,ones+zeros);
 ```
 
 ## Why feasibility doesn't need special-casing
@@ -67,24 +70,28 @@ This is the kind of "the greedy formula silently self-corrects" argument worth r
 
 **❌ Naive: recompute `cost(k)` from scratch for every `k`**
 ```cpp
-int ans = INT_MAX;
-for (int k = 0; k <= n; ++k) {
-    int ones = count(s.begin(), s.begin() + k, '1');
-    int zeros = count(s.begin() + k, s.end(), '0');
+int ans{n};
+for (int ones,zeros,k{}; k <= n; ++k) {
+    ones = count(s.begin(), s.begin() + k, '1'),
+    zeros = count(s.begin() + k, s.end(), '0'),
     ans = min(ans, ones + zeros);
 }
+
 // O(n) per k → O(n^2) total — too slow for n up to 2·10^5
 ```
 
 **✅ Optimal: maintain the running cost while sliding `k`**
 ```cpp
-int ones = 0, zeros = count(s.begin(), s.end(), '0');
-int ans = zeros; // cost(0)
-for (int i = 0; i < n; ++i) {
-    if (s[i] != '0') ++ones;  // s[i] enters the "must become 0" prefix
+int
+ones{},
+zeros{count(s.begin(), s.end(), '0')},
+ans{zeros};
+for (int i{}; i < n; ++i) {
+    if (s[i] == '1') ++ones;  // s[i] enters the "must become 0" prefix
     else --zeros;             // s[i] leaves the "must become 1" suffix
     ans = min(ans, ones + zeros);
 }
+
 // O(n) total
 ```
 
@@ -95,13 +102,10 @@ The only change is turning a recomputation into an incremental update — a very
 O(n) per test case, O(∑n) overall — well inside the 2·10⁵ sum-of-n limit.
 
 ## Practice problems
-
 | Problem | Pattern | Notes |
 |---|---|---|
 | CF 2266C | Sliding split-point argmin | this writeup |
 | TBD | — | fill with another prefix-cost/suffix-cost split-point problem when solved |
 
 ## Related
-
-> [!TIP]
-> This "prefix cost + suffix cost, slide the boundary, O(1) update" shape is common enough that it might deserve its own vocabulary entry (something like *Sliding Split-Point*) if it recurs. Flagging rather than adding pre-emptively — let me know if you want it drafted, and where it should slot alphabetically.
+> TBD
