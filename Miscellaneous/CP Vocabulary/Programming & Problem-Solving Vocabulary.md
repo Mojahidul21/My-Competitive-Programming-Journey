@@ -52,6 +52,7 @@ Lexical ordered.
 - [Sentinel](#sentinel)
 - [Sentinel Padding](#sentinel-padding)
 - [Short-Circuit Evaluation](#short-circuit-evaluation)
+- [Sliding Split-Point](#sliding-split-point)
 - [Telescoping Sum](#telescoping-sum)
 - [TSP (Traveling Salesman Problem)](#tsp-traveling-salesman-problem)
 - [Uncapped](#uncapped)
@@ -1512,6 +1513,31 @@ if (n == 0 || arr[0] == -1) return;
 
 **Analogy:**
 A security check at a gate — if the first guard says "no entry", the second guard is never even consulted.
+
+---
+
+## Sliding Split-Point
+
+**Definition**
+A greedy technique for problems that reduce to choosing a single boundary index `k` that partitions an array/string into a "prefix region" and a "suffix region," each with its own local cost function. Instead of recomputing `cost(k) = prefix_cost(k) + suffix_cost(k)` from scratch for every candidate `k` (O(n) work per candidate → O(n²) total), maintain a running total and update it by O(1) as `k` slides one step to the right — each element crosses from the suffix into the prefix exactly once, so the update only has to account for that one element's contribution flipping sides.
+
+**Why it arises**
+It shows up whenever a problem's optimal target shape is "some prefix satisfying property A, some suffix satisfying property B," and the cost of forcing an element to comply with its region is fixed and known in advance (e.g., a conversion cost, a deletion cost, a count of mismatches). The naive instinct is to loop over every split point and re-scan both sides; the sliding version replaces that re-scan with an incremental `+1`/`−1` as the boundary moves.
+
+**Example from practice**
+[CF 2266C — AND, OR, Sort!](../upsolves/cf-2266c-and-or-sort.md): the sorted target is always `0^k 1^(n-k)` for some `k`. `cost(k)` = (ones in the prefix, which must be AND'd to 0) + (zeros in the suffix, which must be OR'd to 1). Sliding `k` from `0` to `n`, each character crosses the boundary once: if it's a `1`, it now belongs to the prefix and adds `1` to cost; if it's a `0`, it leaves the suffix and subtracts `1` from cost. Track the running minimum — O(n) total instead of O(n²).
+
+**How to recognize**
+- The target/optimal structure is describable as "everything before some index looks like X, everything after looks like Y."
+- You find yourself writing (or about to write) a loop-inside-a-loop where the outer loop picks a split point and the inner loop recomputes a prefix or suffix property.
+- The per-element contribution to the cost only depends on *which side of the boundary it's on*, not on the other elements around it — that's what makes the O(1) update valid.
+
+**Analogy**
+Like sliding a divider down a row of colored tiles and keeping a running score, rather than re-counting the tiles on both sides of the divider every time you move it one slot — each tile only ever needs to be "un-counted" from one side and "counted" into the other.
+
+**Related**
+- [CF 2266C — AND, OR, Sort!](../upsolves/cf-2266c-and-or-sort.md) — source problem
+- (candidate for cross-linking once a second sliding split-point problem is solved — see the TBD practice-problem row in the 2266C writeup)
 
 ---
 
