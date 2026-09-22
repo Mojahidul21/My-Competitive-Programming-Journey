@@ -1525,7 +1525,7 @@ A greedy technique for problems that reduce to choosing a single boundary index 
 It shows up whenever a problem's optimal target shape is "some prefix satisfying property A, some suffix satisfying property B," and the cost of forcing an element to comply with its region is fixed and known in advance (e.g., a conversion cost, a deletion cost, a count of mismatches). The naive instinct is to loop over every split point and re-scan both sides; the sliding version replaces that re-scan with an incremental `+1`/`−1` as the boundary moves.
 
 **Example from practice**
-[CF 2266C — AND, OR, Sort!](../upsolves/cf-2266c-and-or-sort.md): the sorted target is always `0^k 1^(n-k)` for some `k`. `cost(k)` = (ones in the prefix, which must be AND'd to 0) + (zeros in the suffix, which must be OR'd to 1). Sliding `k` from `0` to `n`, each character crosses the boundary once: if it's a `1`, it now belongs to the prefix and adds `1` to cost; if it's a `0`, it leaves the suffix and subtracts `1` from cost. Track the running minimum — O(n) total instead of O(n²).
+[CF 2266C — AND, OR, Sort!](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201122%20(Div.%203)/C.%20AND%2C%20OR%2C%20Sort!.md): the sorted target is always `0^k 1^(n-k)` for some `k`. `cost(k)` = (ones in the prefix, which must be AND'd to 0) + (zeros in the suffix, which must be OR'd to 1). Sliding `k` from `0` to `n`, each character crosses the boundary once: if it's a `1`, it now belongs to the prefix and adds `1` to cost; if it's a `0`, it leaves the suffix and subtracts `1` from cost. Track the running minimum — O(n) total instead of O(n²).
 
 **How to recognize**
 - The target/optimal structure is describable as "everything before some index looks like X, everything after looks like Y."
@@ -1536,8 +1536,7 @@ It shows up whenever a problem's optimal target shape is "some prefix satisfying
 Like sliding a divider down a row of colored tiles and keeping a running score, rather than re-counting the tiles on both sides of the divider every time you move it one slot — each tile only ever needs to be "un-counted" from one side and "counted" into the other.
 
 **Related**
-- [CF 2266C — AND, OR, Sort!](../upsolves/cf-2266c-and-or-sort.md) — source problem
-- (candidate for cross-linking once a second sliding split-point problem is solved — see the TBD practice-problem row in the 2266C writeup)
+- [CF 2266C — AND, OR, Sort!](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201122%20(Div.%203)/C.%20AND%2C%20OR%2C%20Sort!.md) — source problem
 
 ---
 
