@@ -6,7 +6,9 @@
 
 ## Problem in one line
 
-Given a binary string `s`, repeatedly replace `s[i]` with the AND or OR of the prefix `s[0..i]`. Minimum operations to make `s` non-decreasing?
+Given a binary string `s`, repeatedly replace `s[i]` with the AND or OR of the prefix `s[0..i]`. Minimum operations to make `s` non-decreasing?  
+  
+[Full Problem](https://codeforces.com/contest/2266/problem/C)
 
 ## Core insight: the operation is really "force a value"
 
