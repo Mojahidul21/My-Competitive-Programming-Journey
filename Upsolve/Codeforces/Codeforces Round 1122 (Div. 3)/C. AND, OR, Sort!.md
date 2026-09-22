@@ -1,7 +1,7 @@
 # CF 2266C — AND, OR, Sort!
-> **Contest:** Codeforces Round 1122 (Div. 3)
-> **Rating:** Div. 3 C
-> **Tags:** `greedy` `string`
+> **Contest:** Codeforces Round 1122 (Div. 3)  
+> **Rating:** Div. 3 C  
+> **Tags:** `greedy` `string`  
 > **Verdict:** Accepted ([submission 391583312](https://codeforces.com/contest/2266/submission/391583312))
 
 ## Problem in one line
