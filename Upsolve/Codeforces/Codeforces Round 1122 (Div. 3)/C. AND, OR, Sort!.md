@@ -97,6 +97,39 @@ for (int i{}; i < n; ++i) {
 
 The only change is turning a recomputation into an incremental update — a very common Div. 3/4 pattern once a problem reduces to "minimize prefix-cost + suffix-cost over a single split point."
 
+## Accepted Full Solution
+[Submission 391583312](https://codeforces.com/contest/2266/submission/391583312)
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+main(){
+    int t;
+    cin>>t;
+    
+    while(t--){
+        int n;
+        string s;
+        cin>>n>>s;
+
+        if(s[0]!='0')cout<<count(s.begin(),s.end(),'0');
+        else{
+            int
+            ones{},
+            zeros{(int)count(s.begin(),s.end(),'0')},
+            ans{zeros};
+
+            for(int i{};i<n;++i)
+                s[i]!='0'?++ones:--zeros,
+                ans=min(ans,ones+zeros);
+
+            cout<<ans;
+        }
+
+        if(t)cout<<'\n';
+    }
+}
+```
+
 ## Complexity
 
 O(n) per test case, O(∑n) overall — well inside the 2·10⁵ sum-of-n limit.
