@@ -39,7 +39,7 @@
 > - [The Corner-Anchor Pattern](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 
 
-> ### 🎯 Specific Problem Strategy
+> ### 🎯 Specific Problem Strategy ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/19.%20Specific%20Problem%20Strategy.svg)
 > **Codeforces Tags**
 > - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas%20%E2%80%94%20Recognizing%20%26%20Attacking%20Every%20Codeforces%20Tag.md)
 >
