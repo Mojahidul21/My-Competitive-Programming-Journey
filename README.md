@@ -98,7 +98,7 @@
 > - [Mis-1](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Miscellaneous/Mis-1.md)
 
 
-> ### 📝 Wish List
+> ### 📝 Wish List ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/24.%20Wish%20List.svg)
 > - [CP Rating Growth Plan](Wish%20List/CP_Rating_Growth_Plan.md)
 > - [Course To Grab](Wish%20List/Course%20To%20Grab.md)
 > - [Graph Algorithms Study Plan](Wish%20List/Graph%20Algorithms%20Study%20Plan.md)
