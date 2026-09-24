@@ -1,0 +1,86 @@
+<svg width="1400" height="140" viewBox="0 0 1400 140" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1020" />
+      <stop offset="55%" stop-color="#111a33" />
+      <stop offset="100%" stop-color="#0b1020" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#58a6ff" />
+      <stop offset="50%" stop-color="#79c0ff" />
+      <stop offset="100%" stop-color="#ff9d5c" />
+    </linearGradient>
+    <linearGradient id="barGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ff9d5c" />
+      <stop offset="100%" stop-color="#58a6ff" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0.55" />
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1400" height="140" fill="url(#bg)" />
+  <!-- faint grid -->
+  <g stroke="#1c2740" stroke-width="1">
+    <path d="M0 35 H1400 M0 70 H1400 M0 105 H1400" />
+    <path d="M100 0 V140 M300 0 V140 M500 0 V140 M700 0 V140 M900 0 V140 M1100 0 V140 M1300 0 V140" />
+  </g>
+  <!-- twinkling stars -->
+  <g fill="#9fc8ff">
+    <circle cx="60" cy="24" r="1.6">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2.6s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="140" cy="112" r="1.2">
+      <animate attributeName="opacity" values="1;0.2;1" dur="3.1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1330" cy="30" r="1.6">
+      <animate attributeName="opacity" values="0.3;1;0.3" dur="2.2s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1250" cy="100" r="1.2">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2.9s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="1180" cy="45" r="1.3">
+      <animate attributeName="opacity" values="0.2;0.9;0.2" dur="3.4s" repeatCount="indefinite" />
+    </circle>
+  </g>
+  <!-- soft glow behind title -->
+  <ellipse cx="230" cy="70" rx="220" ry="90" fill="url(#glow)" />
+  <!-- title -->
+  <text x="70" y="65" font-family="Segoe UI, Verdana, sans-serif" font-size="40" font-weight="700" fill="url(#textGrad)"> Upsolve </text>
+  <text x="72" y="94" font-family="Segoe UI, Verdana, sans-serif" font-size="15" fill="#8b98b3"> Second attempts, sharper solutions — revisiting contest problem </text>
+  <!-- progress track: contests cleared -->
+  <g transform="translate(560,58)">
+    <rect x="0" y="0" width="480" height="10" rx="5" fill="#1c2740" />
+    <rect x="0" y="0" height="10" rx="5" fill="url(#barGrad)">
+      <animate attributeName="width" values="0;340;340" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite" />
+    </rect>
+    <text x="0" y="-12" font-family="Segoe UI, Verdana, sans-serif" font-size="13" fill="#8b98b3"> Codeforces problems revisited </text>
+  </g>
+  <!-- orbiting marker tracing a loop, echoing "coming back to solve again" -->
+  <g transform="translate(1120,70)">
+    <circle r="46" fill="none" stroke="#2a3a5c" stroke-width="1.5" stroke-dasharray="3 4" />
+    <circle r="5" fill="#ff9d5c">
+      <animateMotion dur="6s" repeatCount="indefinite" path="M46,0 A46,46 0 1,1 45.9,-2 Z" />
+    </circle>
+    <text x="0" y="6" text-anchor="middle" font-family="Segoe UI, Verdana, sans-serif" font-size="20" font-weight="700" fill="#e6edf7"> AC </text>
+  </g>
+  <!-- tag chips -->
+  <g font-family="Segoe UI, Verdana, sans-serif" font-size="12" fill="#8b98b3">
+    <g transform="translate(560,100)">
+      <rect width="86" height="24" rx="12" fill="#152037" stroke="#2a3a5c" />
+      <text x="43" y="16" text-anchor="middle">Deep Dive</text>
+    </g>
+    <g transform="translate(656,100)">
+      <rect width="76" height="24" rx="12" fill="#152037" stroke="#2a3a5c" />
+      <text x="38" y="16" text-anchor="middle">Approach</text>
+    </g>
+    <g transform="translate(742,100)">
+      <rect width="86" height="24" rx="12" fill="#152037" stroke="#2a3a5c" />
+      <text x="43" y="16" text-anchor="middle">Edge Cases</text>
+    </g>
+    <g transform="translate(838,100)">
+      <rect width="70" height="24" rx="12" fill="#152037" stroke="#2a3a5c" />
+      <text x="35" y="16" text-anchor="middle">Tracker</text>
+    </g>
+  </g>
+</svg>
