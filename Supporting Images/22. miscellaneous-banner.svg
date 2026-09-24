@@ -1,0 +1,207 @@
+<svg width="1400" height="140" viewBox="0 0 1400 140" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b0d12" />
+      <stop offset="55%" stop-color="#15171f" />
+      <stop offset="100%" stop-color="#0b0d12" />
+    </linearGradient>
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e8c65a" />
+      <stop offset="45%" stop-color="#fff3c4" />
+      <stop offset="100%" stop-color="#c9ccd1" />
+    </linearGradient>
+    <linearGradient id="silverGold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#d9dde3" />
+      <stop offset="100%" stop-color="#e8c65a" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e8c65a" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#e8c65a" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glowA" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" result="blur">
+        <animate attributeName="stdDeviation" values="0.4;2.4;0.4" dur="2.2s" repeatCount="indefinite" />
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="glowB" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" result="blur">
+        <animate attributeName="stdDeviation" values="2.2;0.3;2.2" dur="2.7s" repeatCount="indefinite" />
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="1400" height="140" fill="url(#bg)" />
+  <!-- faint grid -->
+  <g stroke="#22252f" stroke-width="1">
+    <path d="M0 35 H1400 M0 70 H1400 M0 105 H1400" />
+    <path d="M100 0 V140 M300 0 V140 M500 0 V140 M700 0 V140 M900 0 V140 M1100 0 V140 M1300 0 V140" />
+  </g>
+  <!-- glow behind title -->
+  <ellipse cx="235" cy="70" rx="225" ry="90" fill="url(#glow)" />
+  <!-- title -->
+  <text x="70" y="60" font-family="Segoe UI, Verdana, sans-serif" font-size="34" font-weight="700" fill="url(#titleGrad)"> Miscellaneous </text>
+  <text x="72" y="88" font-family="Segoe UI, Verdana, sans-serif" font-size="15" fill="#a8adb8"> Everything that didn't fit a category, but still earned its place </text>
+  <!-- real-life vignettes flanking the title, in the left margin -->
+  <!-- Gymnast jumping -->
+  <g transform="translate(20,30)">
+    <g>
+      <circle cx="0" cy="-15" r="3.3" fill="url(#silverGold)" />
+      <line x1="0" y1="-11.5" x2="0" y2="-2" stroke="url(#silverGold)" stroke-width="1.3" />
+      <line x1="0" y1="-9" x2="-6" y2="-4" stroke="url(#silverGold)" stroke-width="1.1" />
+      <line x1="0" y1="-9" x2="6" y2="-4" stroke="url(#silverGold)" stroke-width="1.1" />
+      <line x1="0" y1="-2" x2="-5" y2="6" stroke="url(#silverGold)" stroke-width="1.1" />
+      <line x1="0" y1="-2" x2="5" y2="6" stroke="url(#silverGold)" stroke-width="1.1" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-12;0,0" keyTimes="0;0.5;1" dur="1.2s" repeatCount="indefinite" />
+    </g>
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.2s" repeatCount="indefinite" />
+  </g>
+  <!-- Monkey climbing an oily bamboo pole -->
+  <g transform="translate(22,45)">
+    <line x1="0" y1="0" x2="0" y2="44" stroke="url(#silverGold)" stroke-width="2" />
+    <line x1="-5" y1="12" x2="5" y2="12" stroke="url(#silverGold)" stroke-width="0.9" />
+    <line x1="-5" y1="26" x2="5" y2="26" stroke="url(#silverGold)" stroke-width="0.9" />
+    <g>
+      <circle cx="0" cy="0" r="3.3" fill="url(#silverGold)" />
+      <line x1="0" y1="3" x2="-4" y2="8" stroke="url(#silverGold)" stroke-width="1.1" />
+      <line x1="0" y1="3" x2="4" y2="8" stroke="url(#silverGold)" stroke-width="1.1" />
+      <animateTransform attributeName="transform" type="translate" values="0,38; 0,16; 0,24; 0,4; 0,12; 0,38" keyTimes="0;0.4;0.45;0.85;0.9;1" dur="4.2s" repeatCount="indefinite" />
+    </g>
+    <animate attributeName="opacity" values="1;0.25;1" dur="2.1s" repeatCount="indefinite" />
+  </g>
+  <!-- Boat riding the waves -->
+  <g transform="translate(14,100)">
+    <path d="M0,26 q6,-6 12,0 t12,0 t12,0 t12,0" stroke="url(#silverGold)" stroke-width="1.3" fill="none">
+      <animate attributeName="d" values="M0,26 q6,-6 12,0 t12,0 t12,0 t12,0;
+                 M0,26 q6,6 12,0 t12,0 t12,0 t12,0;
+                 M0,26 q6,-6 12,0 t12,0 t12,0 t12,0" dur="2.2s" repeatCount="indefinite" />
+    </path>
+    <g>
+      <path d="M6,20 q10,9 22,0 l-4,7 h-14 z" fill="none" stroke="url(#silverGold)" stroke-width="1.3" />
+      <line x1="17" y1="20" x2="17" y2="4" stroke="url(#silverGold)" stroke-width="1.1" />
+      <path d="M17,5 l10,5 l-10,4 z" fill="url(#silverGold)" opacity="0.75" />
+      <animateTransform attributeName="transform" type="translate" values="0,0;0,-3;0,0;0,2;0,0" dur="2.2s" repeatCount="indefinite" />
+    </g>
+    <animate attributeName="opacity" values="1;0.35;1" dur="2.6s" repeatCount="indefinite" />
+  </g>
+  <!-- real-life vignettes flanking the title on the right side too -->
+  <!-- Person throwing dirt with a shovel -->
+  <g transform="translate(495,34)">
+    <circle cx="0" cy="-15" r="3.3" fill="url(#silverGold)" />
+    <line x1="0" y1="-11.5" x2="0" y2="0" stroke="url(#silverGold)" stroke-width="1.3" />
+    <line x1="0" y1="0" x2="-5" y2="10" stroke="url(#silverGold)" stroke-width="1.1" />
+    <line x1="0" y1="0" x2="5" y2="10" stroke="url(#silverGold)" stroke-width="1.1" />
+    <g>
+      <line x1="0" y1="-9" x2="10" y2="-2" stroke="url(#silverGold)" stroke-width="1.2" />
+      <rect x="9" y="-4" width="6" height="3" fill="url(#silverGold)" />
+      <animateTransform attributeName="transform" type="rotate" values="0 0 -9; -50 0 -9; -50 0 -9; 40 0 -9; 0 0 -9" keyTimes="0;0.3;0.35;0.6;1" dur="2.4s" repeatCount="indefinite" />
+    </g>
+    <circle r="1.6" fill="url(#silverGold)">
+      <animateMotion path="M12,-4 q10,-14 20,-2 q4,4 2,10" dur="2.4s" begin="0.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.05;0.7;0.75" dur="2.4s" begin="0.6s" repeatCount="indefinite" />
+    </circle>
+    <animate attributeName="opacity" values="1;0.3;1" dur="2.4s" repeatCount="indefinite" />
+  </g>
+  <!-- Baby holding a milk-feeder -->
+  <g transform="translate(495,120)">
+    <ellipse cx="0" cy="0" rx="7" ry="9" fill="none" stroke="url(#silverGold)" stroke-width="1.2" />
+    <circle cx="0" cy="-13" r="5" fill="url(#silverGold)" />
+    <g>
+      <line x1="4" y1="-10" x2="10" y2="-14" stroke="url(#silverGold)" stroke-width="1.1" />
+      <rect x="9" y="-19" width="4" height="9" rx="1.5" fill="none" stroke="url(#silverGold)" stroke-width="1.1" />
+      <animateTransform attributeName="transform" type="rotate" values="-4 4 -10; 4 4 -10; -4 4 -10" dur="1.6s" repeatCount="indefinite" />
+    </g>
+    <circle cx="11" cy="-14" r="1" fill="url(#silverGold)">
+      <animate attributeName="cy" values="-14;-18;-14" dur="1.6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;0" dur="1.6s" repeatCount="indefinite" />
+    </circle>
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.9s" repeatCount="indefinite" />
+  </g>
+  <!-- mixed field: geometric shapes, math symbols, and curious-number/concept labels, interleaved -->
+  <!-- 1: hexagon (shape) -->
+  <polygon points="562,38 575,46 575,61 562,69 549,61 549,46" stroke="url(#silverGold)" stroke-width="1.6" fill="none">
+    <animate attributeName="opacity" values="1;0.15;1" dur="1.1s" repeatCount="indefinite" />
+  </polygon>
+  <!-- 2: Vampire Number (concept) -->
+  <text x="586" y="98" font-family="Segoe UI, Verdana, sans-serif" font-size="12" fill="url(#silverGold)" filter="url(#glowA)"> &#129496; Vampire No.
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.6s" repeatCount="indefinite" />
+  </text>
+  <!-- 3: Sigma (symbol) -->
+  <text x="672" y="52" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="28" fill="url(#silverGold)"> &#931;
+    <animate attributeName="opacity" values="1;0.15;1" dur="1.2s" repeatCount="indefinite" />
+  </text>
+  <!-- 4: pentagon-ish (shape) -->
+  <polygon points="722,100 736,100 741,113 729,123 717,113" stroke="url(#silverGold)" stroke-width="1.6" fill="none">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.4s" repeatCount="indefinite" />
+  </polygon>
+  <!-- 5: Golden Ratio (spiral icon + label) -->
+  <g filter="url(#glowB)">
+    <path d="M770,40 a10,10 0 0 1 10,10 a7,7 0 0 1 -7,7 a5,5 0 0 1 -5,-5 a3,3 0 0 1 3,-3" fill="none" stroke="url(#silverGold)" stroke-width="1.4" />
+    <text x="768" y="70" font-family="Segoe UI, Verdana, sans-serif" font-size="12" fill="url(#silverGold)"> Golden Ratio </text>
+    <animate attributeName="opacity" values="1;0.25;1" dur="1.8s" repeatCount="indefinite" />
+  </g>
+  <!-- 6: rotated square (shape) -->
+  <rect x="852" y="24" width="16" height="16" transform="rotate(45 860 32)" stroke="url(#silverGold)" stroke-width="1.6" fill="none">
+    <animate attributeName="opacity" values="1;0.2;1" dur="0.9s" repeatCount="indefinite" />
+  </rect>
+  <!-- 7: pi (symbol) -->
+  <text x="878" y="100" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="24" fill="url(#silverGold)"> &#960;
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.5s" repeatCount="indefinite" />
+  </text>
+  <!-- 8: Happy Number (concept) -->
+  <text x="905" y="45" font-family="Segoe UI, Verdana, sans-serif" font-size="12" fill="url(#silverGold)" filter="url(#glowA)"> &#128522; Happy No.
+    <animate attributeName="opacity" values="1;0.3;1" dur="1.5s" repeatCount="indefinite" />
+  </text>
+  <!-- 9: circle (shape) -->
+  <circle cx="988" cy="70" r="10" stroke="url(#silverGold)" stroke-width="1.6" fill="none">
+    <animate attributeName="opacity" values="0.25;1;0.25" dur="1.3s" repeatCount="indefinite" />
+  </circle>
+  <!-- 10: theta (symbol) -->
+  <text x="1010" y="40" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="24" fill="url(#silverGold)"> &#952;
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.35s" repeatCount="indefinite" />
+  </text>
+  <!-- 11: Manhattan Distance (maze icon + label) -->
+  <g filter="url(#glowB)">
+    <path d="M1035,105 h8 v-8 h8 v-8 h8" fill="none" stroke="url(#silverGold)" stroke-width="1.6" />
+    <text x="1030" y="122" font-family="Segoe UI, Verdana, sans-serif" font-size="11" fill="url(#silverGold)"> Manhattan Dist. </text>
+    <animate attributeName="opacity" values="0.25;1;0.25" dur="1.9s" repeatCount="indefinite" />
+  </g>
+  <!-- 12: triangle (shape), repositioned between pi and Manhattan Distance -->
+  <polygon points="948,96 959,116 937,116" stroke="url(#silverGold)" stroke-width="1.6" fill="none">
+    <animate attributeName="opacity" values="1;0.15;1" dur="1s" repeatCount="indefinite" />
+  </polygon>
+  <!-- 13: Taxicab Number (concept) -->
+  <text x="1050" y="60" font-family="Segoe UI, Verdana, sans-serif" font-size="12" fill="url(#silverGold)" filter="url(#glowA)"> &#128663; Taxicab No.
+    <animate attributeName="opacity" values="0.3;1;0.3" dur="1.7s" repeatCount="indefinite" />
+  </text>
+  <!-- 14: infinity (symbol) -->
+  <text x="1090" y="90" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="24" fill="url(#silverGold)"> &#8734;
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.45s" repeatCount="indefinite" />
+  </text>
+  <!-- terminal panel: live-typing handle -->
+  <g transform="translate(1148,42)">
+    <rect x="0" y="0" width="212" height="56" rx="8" fill="#0f1116" stroke="#3a3d47" />
+    <circle cx="14" cy="14" r="3.5" fill="#e8c65a" />
+    <circle cx="26" cy="14" r="3.5" fill="#c9ccd1" />
+    <circle cx="38" cy="14" r="3.5" fill="#6b6e78" />
+    <text x="14" y="40" font-family="Consolas, 'Courier New', monospace" font-size="15" fill="#f1e3b3">
+      <tspan>&gt; </tspan>
+      <tspan fill="#e6e9ee">Ace_Azimuth_Aviator</tspan>
+    </text>
+    <!-- reveal mask so the handle appears to type in, then loops -->
+    <rect x="14" y="26" width="188" height="18" fill="#0f1116">
+      <animate attributeName="width" values="188;188;0;0;188" keyTimes="0;0.02;0.55;0.6;1" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="x" values="14;14;202;202;14" keyTimes="0;0.02;0.55;0.6;1" dur="6s" repeatCount="indefinite" />
+    </rect>
+    <rect x="15" y="27" width="2.2" height="14" fill="#f1e3b3">
+      <animate attributeName="x" values="15;15;200;200;15" keyTimes="0;0.02;0.5;0.6;1" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="1;1;1;0;0;1;1" keyTimes="0;0.02;0.5;0.52;0.6;0.62;1" dur="6s" repeatCount="indefinite" />
+    </rect>
+  </g>
+</svg>
