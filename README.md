@@ -72,7 +72,7 @@
 > - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
 
-> ### 💻 C++ Syntax Strategies
+> ### 💻 C++ Syntax Strategies ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/21.%20cpp-syntax-strategies-banner.svg)
 > - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
 
 
