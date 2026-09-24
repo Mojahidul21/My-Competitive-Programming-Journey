@@ -82,7 +82,6 @@
 
 
 > ### 🧩 Code Templates ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/23.%20Code%20Template.svg)
-> )
 > **Arrays, Prefix Sum, Suffix Sum, etc.**
 > - [Prefix Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Code%20Templates/Arrays%2C%20Prefix%20Sum%2C%20Suffix%20Sum%2C%20etc./Prefix%20Sum.cpp)
 >
