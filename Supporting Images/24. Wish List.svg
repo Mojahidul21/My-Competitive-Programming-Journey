@@ -1,0 +1,148 @@
+<svg width="1400" height="140" viewBox="0 0 1400 140" xmlns="http://www.w3.org/2000/svg" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <!-- Vibrant sunrise/optimistic green-red palette background -->
+    <linearGradient id="bgOptimistic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#061a10" />
+      <stop offset="50%" stop-color="#0f2618" />
+      <stop offset="100%" stop-color="#140a0a" />
+    </linearGradient>
+    <linearGradient id="titleGradOpt" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="50%" stop-color="#84cc16" />
+      <stop offset="100%" stop-color="#f43f5e" />
+    </linearGradient>
+    <linearGradient id="greenAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="redAccent" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fb7185" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22c55e" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#22c55e" stop-opacity="0" />
+    </radialGradient>
+    <filter id="glowOpt" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" result="blur">
+        <animate attributeName="stdDeviation" values="1;3;1" dur="3s" repeatCount="indefinite" />
+      </feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Background -->
+  <rect width="1400" height="140" fill="url(#bgOptimistic)" />
+  <!-- Organic diagonal light streaks instead of rigid grid -->
+  <g stroke="#1b3823" stroke-width="0.8" opacity="0.6">
+    <path d="M0 0 L1400 140 M200 0 L1600 140 M-200 0 L1200 140" />
+    <path d="M1400 0 L0 140 M1200 0 L-200 140 M1600 0 L200 140" />
+  </g>
+  <!-- Ambient Glow -->
+  <ellipse cx="220" cy="70" rx="200" ry="65" fill="url(#sunGlow)" />
+  <!-- Title & Subtitle -->
+  <text x="65" y="55" font-family="Segoe UI, Verdana, sans-serif" font-size="32" font-weight="700" fill="url(#titleGradOpt)">✨ Wish List</text>
+  <!-- OPTIMISTIC COMPONENT 1: Stair goes to the moon (Left Frame - x: 480 to 600) -->
+  <g transform="translate(485, 20)">
+    <!-- Moon icon -->
+    <path d="M22,8 A10,10 0 1,1 12,18 A12,12 0 1,0 22,8 Z" fill="#facc15" filter="url(#glowOpt)">
+      <animate attributeName="opacity" values="0.7;1;0.7" dur="2.5s" repeatCount="indefinite" />
+    </path>
+    <!-- Ascending Steps -->
+    <path d="M2,46 H12 V40 H18 V34 H24 V28 H30 V22 H36" stroke="#4ade80" stroke-width="2" fill="none" stroke-linecap="round">
+      <animate attributeName="stroke-dasharray" values="0,100; 100,0" dur="4s" repeatCount="indefinite" />
+    </path>
+    <text x="0" y="65" font-family="Consolas, monospace" font-size="11" fill="#4ade80">stairs to moon</text>
+  </g>
+  <!-- OPTIMISTIC COMPONENT 2: Stack of a huge number of books (x: 615 to 720) -->
+  <g transform="translate(620, 25)">
+    <g stroke="#f43f5e" fill="none" stroke-width="1.2">
+      <rect x="2" y="38" width="36" height="5" rx="1" fill="#1e293b" />
+      <rect x="5" y="31" width="30" height="5" rx="1" fill="#1e293b" />
+      <rect x="3" y="24" width="34" height="5" rx="1" fill="#1e293b" />
+      <rect x="6" y="17" width="28" height="5" rx="1" fill="#1e293b" />
+      <rect x="4" y="10" width="32" height="5" rx="1" fill="#1e293b" />
+      <rect x="8" y="3" width="24" height="5" rx="1" fill="#f43f5e" />
+    </g>
+    <!-- Floating particle -->
+    <circle cx="20" cy="-2" r="2" fill="#facc15">
+      <animate attributeName="cy" values="2;-10;2" dur="2s" repeatCount="indefinite" />
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="-2" y="60" font-family="Consolas, monospace" font-size="11" fill="#fb7185">endless books</text>
+  </g>
+  <!-- OPTIMISTIC COMPONENT 3: Huge amount of lemons (x: 750 to 860) -->
+  <g transform="translate(755, 25)">
+    <!-- Lemon cluster vector art -->
+    <path d="M10,25 Q20,10 35,20 Q25,35 10,25 Z" fill="#facc15" filter="url(#glowOpt)">
+      <animateTransform attributeName="transform" type="rotate" values="0 20 20; 10 20 20; 0 20 20" dur="1.5s" repeatCount="indefinite" />
+    </path>
+    <path d="M15,30 Q25,15 40,25 Q30,40 15,30 Z" fill="#eab308" />
+    <path d="M5,20 Q15,5 30,15" stroke="#fef08a" stroke-width="2" fill="none" />
+    <text x="-5" y="60" font-family="Consolas, monospace" font-size="11" fill="#facc15">lemon freshness</text>
+  </g>
+  <!-- OPTIMISTIC COMPONENT 4: Huge numbers of carrots (x: 890 to 990) -->
+  <g transform="translate(895, 25)">
+    <!-- Carrot stack -->
+    <polygon points="15,10 25,35 18,37 8,12" fill="#f97316" />
+    <polygon points="22,15 35,32 30,35 17,18" fill="#ea580c" />
+    <!-- Carrot leaves -->
+    <path d="M15,10 Q12,2 8,0 M15,10 Q18,2 22,0" stroke="#22c55e" stroke-width="2" fill="none" />
+    <text x="-5" y="60" font-family="Consolas, monospace" font-size="11" fill="#fdba74">carrot strength</text>
+  </g>
+  <!-- OPTIMISTIC COMPONENT 5: Chicks playing with mom-hen (x: 1025 to 1130) -->
+  <g transform="translate(1030, 25)">
+    <!-- Mom hen body -->
+    <ellipse cx="20" cy="24" rx="14" ry="10" fill="#f43f5e" />
+    <circle cx="28" cy="16" r="6" fill="#f43f5e" />
+    <path d="M33,15 L37,17 L33,19 Z" fill="#facc15" />
+    <!-- Happy little chicks jumping around -->
+    <circle cx="5" cy="32" r="3" fill="#facc15">
+      <animate attributeName="cy" values="32;24;32" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="20" cy="12" r="3" fill="grey">
+      <animate attributeName="cy" values="40;48;40" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="44" cy="12" r="3" fill="white">
+      <animate attributeName="cy" values="35;43;35" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="40" cy="32" r="3" fill="#facc15">
+      <animate attributeName="cy" values="32;24;32" dur="1.2s" repeatCount="indefinite" />
+    </circle>
+    <text x="-5" y="60" font-family="Consolas, monospace" font-size="11" fill="#f43f5e">happy chicks</text>
+  </g>
+  <!-- OPTIMISTIC COMPONENT 6: Elephant & Banana Trees -->
+  <g transform="translate(1140, 0)">
+    <!-- Elephant Body (Stylized) -->
+    <g transform="translate(30, 50)">
+      <ellipse cx="0" cy="0" rx="32" ry="20" fill="#86efac" />
+      <circle cx="-20" cy="-10" r="18" fill="#86efac" />
+      <path d="M-38,-12 Q-55,-5 -38,8" stroke="#86efac" stroke-width="6" fill="none" stroke-linecap="round" />
+      <circle cx="-25" cy="-15" r="3" fill="#fff" />
+      <circle cx="-25" cy="-15" r="1.5" fill="#111" />
+      <path d="M-30,5 L-20,10 L-30,15 Z" fill="#facc15" />
+      <animateTransform attributeName="transform" type="translate" values="30,50; 30,48; 30,50" dur="3s" repeatCount="indefinite" />
+    </g>
+    <!-- Surroundings: Banana Trees -->
+    <!-- Tree 1 (Left) -->
+    <g transform="translate(0, 30)">
+      <rect x="5" y="30" width="8" height="60" fill="#166534" />
+      <polygon points="15,30 60,10 50,20" fill="#15803d" />
+      <polygon points="-10,30 35,0 28,12" fill="#15803d" />
+      <path d="M35,5 C45,-5 50,15 40,12" stroke="#facc15" stroke-width="2" fill="none" />
+    </g>
+    <!-- Tree 2 (Right, bigger) -->
+    <g transform="translate(80, 10)">
+      <rect x="5" y="30" width="12" height="80" fill="#166534" />
+      <polygon points="20,25 75,-5 65,15" fill="#22c55e" />
+      <polygon points="-15,30 45,-15 38,10" fill="#22c55e" />
+      <path d="M60,5 C70,-5 80,20 65,15" stroke="#eab308" stroke-width="3" fill="none" />
+      <path d="M50,15 C60,5 75,30 60,25" stroke="#eab308" stroke-width="3" fill="none" />
+    </g>
+    <!-- Tree 3 (Behind) -->
+    <rect x="55" y="20" width="10" height="40" fill="#14532d" opacity="0.5" />
+    <text x="0" y="135" font-family="Consolas, monospace" font-size="11" fill="#86efac">elephant empire</text>
+  </g>
+</svg>
