@@ -47,14 +47,14 @@
   <ellipse cx="230" cy="70" rx="220" ry="90" fill="url(#glow)" />
   <!-- title -->
   <text x="70" y="65" font-family="Segoe UI, Verdana, sans-serif" font-size="40" font-weight="700" fill="url(#textGrad)"> Upsolve </text>
-  <text x="72" y="94" font-family="Segoe UI, Verdana, sans-serif" font-size="15" fill="#8b98b3"> Second attempts, sharper solutions — revisiting contest problem </text>
+  <text x="72" y="94" font-family="Segoe UI, Verdana, sans-serif" font-size="15" fill="#8b98b3"> Second attempts, sharper solutions!</text>
   <!-- progress track: contests cleared -->
   <g transform="translate(560,58)">
     <rect x="0" y="0" width="480" height="10" rx="5" fill="#1c2740" />
     <rect x="0" y="0" height="10" rx="5" fill="url(#barGrad)">
       <animate attributeName="width" values="0;340;340" keyTimes="0;0.5;1" dur="4s" repeatCount="indefinite" />
     </rect>
-    <text x="0" y="-12" font-family="Segoe UI, Verdana, sans-serif" font-size="13" fill="#8b98b3"> Codeforces problems revisited </text>
+    <text x="0" y="-12" font-family="Segoe UI, Verdana, sans-serif" font-size="13" fill="#8b98b3"> Contest problems revisited </text>
   </g>
   <!-- orbiting marker tracing a loop, echoing "coming back to solve again" -->
   <g transform="translate(1120,70)">
