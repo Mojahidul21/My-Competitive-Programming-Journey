@@ -56,7 +56,7 @@
 > - [Ask Yourself: A Pre-Attempt Checklist for Math & Number Theory Problems](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/Math%20Problem/Ask%20Yourself%3A%20A%20Pre-Attempt%20Checklist%20for%20Math%20%26%20Number%20Theory%20Problems.md)
 
 
-> ### 🔼 Upsolve
+> ### 🔼 Upsolve ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/20.%20upsolve-banner.svg)
 > **Codeforces**
 > - [Codeforces Round 1065 (Div. 3) — B. Yuu Koito and Minimum Absolute Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 > - [Codeforces Round 1102 (Div. 2) — B. Palindrome, Twelve and Two Terms](Upsolve/Codeforces/Codeforces%20Round%201102%20(Div.%202)/B.%20Palindrome%2C%20Twelve%20and%20Two%20Terms.md)
