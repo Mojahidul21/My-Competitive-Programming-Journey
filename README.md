@@ -76,7 +76,7 @@
 > - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
 
 
-> ### 📖 Miscellaneous
+> ### 📖 Miscellaneous ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/22.%20miscellaneous-banner.svg)
 > **CP Vocabulary**
 > - [Programming & Problem-Solving Vocabulary](Miscellaneous/CP%20Vocabulary/Programming%20&%20Problem-Solving%20Vocabulary.md)
 
