@@ -1,0 +1,215 @@
+<svg viewBox="0 0 1200 380" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" font-family="ui-monospace, 'SF Mono', 'Fira Code', Consolas, monospace" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="380" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#12151c" />
+      <stop offset="1" stop-color="#171b26" />
+    </linearGradient>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="6" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#4A5268" />
+    </marker>
+  </defs>
+  <rect width="1200" height="380" fill="url(#bg)" />
+  <!-- Title band -->
+  <text x="40" y="42" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="600" fill="#E8EAF0">The peak hides between your two best guesses.</text>
+  <text x="40" y="66" font-size="14" fill="#8890A4">2230B, Digit String: minimum deletions to keep a string beautiful</text>
+  <!-- sound toggle button -->
+  <g id="sound-btn" style="cursor:pointer;">
+    <rect x="1000" y="20" width="160" height="32" rx="16" fill="#1c2130" stroke="#3A4358" />
+    <text id="sound-btn-label" x="1080" y="41" font-size="13" fill="#C7CCDA" text-anchor="middle">tap for sound</text>
+  </g>
+  <!-- live readout, top right: 3 stacked texts, only one visible without SMIL support -->
+  <text x="960" y="80" font-size="18" font-weight="700" fill="#C1443C" text-anchor="end" opacity="1"> guess: 3
+    <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.3;0.35;1" values="1;1;0;0" />
+  </text>
+  <text x="960" y="80" font-size="18" font-weight="700" fill="#C1443C" text-anchor="end" opacity="0"> guess: 3
+    <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.31;0.35;0.63;0.66;1" values="0;0;1;1;0;0" />
+  </text>
+  <text x="960" y="80" font-size="18" font-weight="700" fill="#2FB170" text-anchor="end" opacity="0"> min: 2
+    <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.64;0.68;0.97;0.985;1" values="0;0;1;1;0;0" />
+  </text>
+  <line x1="40" y1="80" x2="1160" y2="80" stroke="#232838" stroke-width="1" />
+  <!-- ===================== PANEL 1 ===================== -->
+  <g transform="translate(20,100)">
+    <rect x="-4" y="-4" width="368" height="228" rx="9" fill="none" stroke="#C1443C" stroke-width="3" filter="url(#glow)" opacity="1">
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.3;0.35;1" values="1;1;0;0" />
+    </rect>
+    <rect x="0" y="0" width="360" height="220" rx="6" fill="#161a24" stroke="#232838" />
+    <text x="20" y="30" font-size="13" fill="#8890A4">guess 1</text>
+    <text x="20" y="50" font-size="15" fill="#C7CCDA">purge every 1/3 before the last 2</text>
+    <g transform="translate(35,80)" font-size="20" font-weight="600" text-anchor="middle">
+      <rect x="0" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="21" y="28" fill="#C1443C">1</text>
+      <line x1="6" y1="6" x2="36" y2="36" stroke="#C1443C" stroke-width="2" />
+      <rect x="52" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="73" y="28" fill="#2FB170">2</text>
+      <rect x="104" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="125" y="28" fill="#2FB170">2</text>
+      <rect x="156" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="177" y="28" fill="#C1443C">3</text>
+      <line x1="162" y1="6" x2="192" y2="36" stroke="#C1443C" stroke-width="2" />
+      <rect x="208" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="229" y="28" fill="#C1443C">3</text>
+      <line x1="214" y1="6" x2="244" y2="36" stroke="#C1443C" stroke-width="2" />
+      <rect x="260" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="281" y="28" fill="#2FB170">2</text>
+    </g>
+    <text x="20" y="168" font-size="13" fill="#8890A4">deletes</text>
+    <text x="330" y="168" font-size="22" font-weight="700" fill="#C1443C" text-anchor="end">3</text>
+    <text x="20" y="196" font-size="13" fill="#6A7286">still not the fewest possible</text>
+  </g>
+  <path d="M 384 210 L 404 210" stroke="#4A5268" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- ===================== PANEL 2 ===================== -->
+  <g transform="translate(410,100)">
+    <rect x="-4" y="-4" width="368" height="228" rx="9" fill="none" stroke="#C1443C" stroke-width="3" filter="url(#glow)" opacity="0">
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.31;0.35;0.63;0.66;1" values="0;0;1;1;0;0" />
+    </rect>
+    <rect x="0" y="0" width="360" height="220" rx="6" fill="#161a24" stroke="#232838" />
+    <text x="20" y="30" font-size="13" fill="#8890A4">guess 2</text>
+    <text x="20" y="50" font-size="15" fill="#C7CCDA">purge every 2 after the first 1/3</text>
+    <g transform="translate(35,80)" font-size="20" font-weight="600" text-anchor="middle">
+      <rect x="0" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="21" y="28" fill="#2FB170">1</text>
+      <rect x="52" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="73" y="28" fill="#C1443C">2</text>
+      <line x1="58" y1="6" x2="88" y2="36" stroke="#C1443C" stroke-width="2" />
+      <rect x="104" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="125" y="28" fill="#C1443C">2</text>
+      <line x1="110" y1="6" x2="140" y2="36" stroke="#C1443C" stroke-width="2" />
+      <rect x="156" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="177" y="28" fill="#2FB170">3</text>
+      <rect x="208" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="229" y="28" fill="#2FB170">3</text>
+      <rect x="260" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="281" y="28" fill="#C1443C">2</text>
+      <line x1="266" y1="6" x2="296" y2="36" stroke="#C1443C" stroke-width="2" />
+    </g>
+    <text x="20" y="168" font-size="13" fill="#8890A4">deletes</text>
+    <text x="330" y="168" font-size="22" font-weight="700" fill="#C1443C" text-anchor="end">3</text>
+    <text x="20" y="196" font-size="13" fill="#6A7286">ties guess 1 — neither is optimal</text>
+  </g>
+  <path d="M 774 210 L 794 210" stroke="#4A5268" stroke-width="2" marker-end="url(#arrow)" />
+  <!-- ===================== PANEL 3 ===================== -->
+  <g transform="translate(800,100)">
+    <rect x="-4" y="-4" width="368" height="228" rx="9" fill="none" stroke="#E4B95E" stroke-width="3" filter="url(#glow)" opacity="0">
+      <animate attributeName="opacity" dur="9s" repeatCount="indefinite" keyTimes="0;0.64;0.68;0.97;0.985;1" values="0;0;1;1;0;0" />
+    </rect>
+    <rect x="0" y="0" width="360" height="220" rx="6" fill="#161a24" stroke="#E4B95E" stroke-width="1.5" />
+    <text x="20" y="30" font-size="13" fill="#E4B95E">the actual peak</text>
+    <text x="20" y="50" font-size="15" fill="#C7CCDA">sweep every split point, take the max</text>
+    <g transform="translate(35,80)" font-size="20" font-weight="600" text-anchor="middle">
+      <rect x="0" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="21" y="28" fill="#C1443C">1</text>
+      <line x1="6" y1="6" x2="36" y2="36" stroke="#C1443C" stroke-width="2" />
+      <rect x="52" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="73" y="28" fill="#2FB170">2</text>
+      <rect x="104" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="125" y="28" fill="#2FB170">2</text>
+      <rect x="156" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="177" y="28" fill="#2FB170">3</text>
+      <rect x="208" y="0" width="42" height="42" rx="5" fill="#0f2019" stroke="#2FB170" />
+      <text x="229" y="28" fill="#2FB170">3</text>
+      <rect x="260" y="0" width="42" height="42" rx="5" fill="#241417" stroke="#C1443C" />
+      <text x="281" y="28" fill="#C1443C">2</text>
+      <line x1="266" y1="6" x2="296" y2="36" stroke="#C1443C" stroke-width="2" />
+    </g>
+    <text x="20" y="168" font-size="13" fill="#8890A4">deletes</text>
+    <text x="330" y="168" font-size="22" font-weight="700" fill="#2FB170" text-anchor="end"> 2
+      <animate attributeName="fill" dur="9s" repeatCount="indefinite" keyTimes="0;0.64;0.68;0.72;1" values="#2FB170;#2FB170;#F5DE9A;#2FB170;#2FB170" />
+    </text>
+  </g>
+  <!-- traveling indicator dot, beneath the panels -->
+  <line x1="40" y1="345" x2="1160" y2="345" stroke="#232838" stroke-width="2" />
+  <circle cx="200" cy="345" r="6" fill="#E4B95E">
+    <animate attributeName="cx" dur="9s" repeatCount="indefinite" keyTimes="0;0.3;0.35;0.63;0.68;0.97;1" values="200;200;590;590;980;980;200" />
+    <animate attributeName="r" dur="1.2s" repeatCount="indefinite" values="6;9;6" />
+  </circle>
+  <!-- Footer -->
+  <text x="40" y="368" font-size="12" fill="#5B6478">s = "122332" — same shape as the failing stress test, 1686th case: expected 2, found 3</text>
+  <script type="text/javascript">
+    <![CDATA[
+    (function() {
+      var svg = document.documentElement;
+      var btn = document.getElementById('sound-btn');
+      var label = document.getElementById('sound-btn-label');
+      var ctx = null;
+      var playing = false;
+      var loopTimer = null;
+      var cueTimers = [];
+
+      function tone(startTime, freq, dur, type, peakGain) {
+        var osc = ctx.createOscillator();
+        var gain = ctx.createGain();
+        osc.type = type || 'sine';
+        osc.frequency.setValueAtTime(freq, startTime);
+        gain.gain.setValueAtTime(0.0001, startTime);
+        gain.gain.exponentialRampToValueAtTime(peakGain || 0.15, startTime + 0.02);
+        gain.gain.exponentialRampToValueAtTime(0.0001, startTime + dur);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start(startTime);
+        osc.stop(startTime + dur + 0.05);
+      }
+
+      function scheduleCycle() {
+        var now = ctx.currentTime;
+        // guess 1: low, tense tone at cycle start (t=0s)
+        tone(now + 0.05, 220, 0.35, 'sawtooth', 0.12);
+        // guess 2: same tense tone again at ~35% (~3.15s)
+        cueTimers.push(setTimeout(function() {
+          if (!playing) return;
+          tone(ctx.currentTime + 0.02, 220, 0.35, 'sawtooth', 0.12);
+        }, 3150));
+        // the actual peak: rising two-note chime at ~68% (~6.15s)
+        cueTimers.push(setTimeout(function() {
+          if (!playing) return;
+          var t0 = ctx.currentTime + 0.02;
+          tone(t0, 440, 0.18, 'triangle', 0.14);
+          tone(t0 + 0.16, 660, 0.35, 'triangle', 0.16);
+        }, 6150));
+      }
+
+      function start() {
+        if (!ctx) {
+          ctx = new(window.AudioContext || window.webkitAudioContext)();
+        }
+        if (ctx.state === 'suspended') ctx.resume();
+        playing = true;
+        label.textContent = 'stop sound';
+        if (typeof svg.setCurrentTime === 'function') {
+          try {
+            svg.setCurrentTime(0);
+          } catch (e) {}
+        }
+        scheduleCycle();
+        loopTimer = setInterval(function() {
+          if (typeof svg.setCurrentTime === 'function') {
+            try {
+              svg.setCurrentTime(0);
+            } catch (e) {}
+          }
+          scheduleCycle();
+        }, 9000);
+      }
+
+      function stop() {
+        playing = false;
+        label.textContent = 'tap for sound';
+        if (loopTimer) clearInterval(loopTimer);
+        cueTimers.forEach(clearTimeout);
+        cueTimers = [];
+      }
+      btn.addEventListener('click', function() {
+        if (playing) stop();
+        else start();
+      });
+    })();
+    ]]>
+  </script>
+</svg>
