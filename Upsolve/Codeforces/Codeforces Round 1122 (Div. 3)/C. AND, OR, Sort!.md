@@ -140,7 +140,7 @@ O(n) per test case, O(∑n) overall — well inside the 2·10⁵ sum-of-n limit.
 | Problem | Pattern | Notes |
 |---|---|---|
 | CF 2266C | Sliding split-point argmin | this writeup |
-| TBD | — | fill with another prefix-cost/suffix-cost split-point problem when solved |
+| [CF 2230B](https://codeforces.com/contest/2230/problem/B) | Sliding split and track under certain condition | [AC Solution](https://codeforces.com/contest/2230/submission/391942529) |
 
 ## Related
-TBD
+[CF 2230B](https://codeforces.com/contest/2230/problem/B)
