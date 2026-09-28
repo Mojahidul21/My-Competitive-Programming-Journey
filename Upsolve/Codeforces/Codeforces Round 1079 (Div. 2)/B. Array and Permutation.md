@@ -7,9 +7,10 @@
 | **Tags** | `implementation` `schedules` `sorting` `two pointers` |
 | **Accepted submission** | [392386750](https://codeforces.com/contest/2197/submission/392386750) |
 | **Core idea** | Copying a neighbour never changes the relative order of the values that survive, so the positions in `p` of the values along `a` must be non-decreasing |
-| **Problem** | [2197B: Array and Permutation](https://codeforces.com/contest/2197/problem/B) |
-| **Simulation** | [2197B: Array and Permutation](https://cf-2197b-simulation-array-and-permu.vercel.app/) |
-| **Problem** | [2197B: Array and Permutation](https://codeforces.com/contest/2197/problem/B) |
+| **Problem** | [↗](https://codeforces.com/contest/2197/problem/B) |
+| **Solution** | [↗](https://codeforces.com/contest/2197/submission/392386750) |
+| **Simulation** |↗](https://cf-2197b-simulation-array-and-permu.vercel.app/) |
+| **Video** | [↗](https://www.youtube.com/watch?v=sKg0c92mUKE) |
 
 ---
 
@@ -96,6 +97,7 @@ Positions along `a`: `1, 1, 1, 3, 4`. Non-decreasing, so `1` and `2` die and `3`
 ## Solution
 
 ```cpp
+// https://codeforces.com/contest/2197/submission/392386750
 #include <bits/stdc++.h>
 using namespace std;
 
