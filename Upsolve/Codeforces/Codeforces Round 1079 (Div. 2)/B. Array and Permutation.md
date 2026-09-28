@@ -3,11 +3,13 @@
 | | |
 |---|---|
 | **Contest** | Codeforces Round 1079 (Div. 2) |
-| **Problem** | [2197B: Array and Permutation](https://codeforces.com/contest/2197/problem/B) |
 | **Rating** | *1100 |
 | **Tags** | `implementation` `schedules` `sorting` `two pointers` |
 | **Accepted submission** | [392386750](https://codeforces.com/contest/2197/submission/392386750) |
 | **Core idea** | Copying a neighbour never changes the relative order of the values that survive, so the positions in `p` of the values along `a` must be non-decreasing |
+| **Problem** | [2197B: Array and Permutation](https://codeforces.com/contest/2197/problem/B) |
+| **Simulation** | [2197B: Array and Permutation](https://cf-2197b-simulation-array-and-permu.vercel.app/) |
+| **Problem** | [2197B: Array and Permutation](https://codeforces.com/contest/2197/problem/B) |
 
 ---
 
