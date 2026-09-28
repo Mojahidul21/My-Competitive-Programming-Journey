@@ -272,7 +272,11 @@
   <!-- header -->
   <text x="30" y="30" font-size="22" font-weight="700">Codeforces 2197B — Array and Permutation Visualizer</text>
   <text x="30" y="48" font-size="12" fill="#94a3b8">Step through the accepted check. Press Play to start; browsers need a click before they allow sound.</text>
-  <text x="747" y="571" font-size="16" fill="white">Ace_Azimuth_Aviator</text>
+  <text x="590" y="573" font-size="13" fill="white"> This work is dedicated to <a href="https://github.com/zubaer-ahammed" target="_blank">
+      <tspan fill="blue" font-weight="bold">Md. Zubaer Ahammed</tspan>
+    </a>
+  </text>
+  <!-- <text x="793" y="577" font-size="9" fill="white">Ace_Azimuth_Aviator</text> -->
   <!-- sample tabs -->
   <g id="tab0" class="btn tab">
     <rect x="30" y="58" width="140" height="26" rx="8" />
