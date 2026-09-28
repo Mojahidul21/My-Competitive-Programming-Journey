@@ -84,7 +84,9 @@ The failure marker works because every real position is at most `n - 1`. So `max
 **Sample 3:** `p = 1 3 2 5 4`, `a = 3 3 3 5 4` → **YES**
 
 Positions along `a`: `1, 1, 1, 3, 4`. Non-decreasing, so `1` and `2` die and `3` expands.  
-![](https://github.com/Mojahidul21/Eeperiment/blob/main/2197B-simulation.svg)
+
+  
+[_**Live Simulatiion**_](https://github.com/Mojahidul21/Eeperiment/blob/main/2197B-simulation.svg)
 
 ---
 
