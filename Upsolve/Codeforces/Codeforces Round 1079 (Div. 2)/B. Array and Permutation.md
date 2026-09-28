@@ -5,11 +5,10 @@
 | **Contest** | Codeforces Round 1079 (Div. 2) |
 | **Rating** | *1100 |
 | **Tags** | `implementation` `schedules` `sorting` `two pointers` |
-| **Accepted submission** | [392386750](https://codeforces.com/contest/2197/submission/392386750) |
 | **Core idea** | Copying a neighbour never changes the relative order of the values that survive, so the positions in `p` of the values along `a` must be non-decreasing |
 | **Problem** | [↗](https://codeforces.com/contest/2197/problem/B) |
 | **Solution** | [↗](https://codeforces.com/contest/2197/submission/392386750) |
-| **Simulation** |↗](https://cf-2197b-simulation-array-and-permu.vercel.app/) |
+| **Simulation** | [↗](https://cf-2197b-simulation-array-and-permu.vercel.app/) |
 | **Video** | [↗](https://www.youtube.com/watch?v=sKg0c92mUKE) |
 
 ---
