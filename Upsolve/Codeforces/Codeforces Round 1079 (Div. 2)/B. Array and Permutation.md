@@ -87,6 +87,7 @@ Positions along `a`: `1, 1, 1, 3, 4`. Non-decreasing, so `1` and `2` die and `3`
 
   
 [_Live Simulatiion_](https://cf-2197b-simulation-array-and-permu.vercel.app/)
+[_Video_](https://www.youtube.com/watch?v=sKg0c92mUKE)
 
 ---
 
