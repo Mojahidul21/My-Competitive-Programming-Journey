@@ -5,7 +5,7 @@
 > ### 📕 Books ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/16.%20Books%20_%20Bannaer%20Image.jpg)
 > - [Competitive Programmer's Handbook](Books/Competitive%20Programmer%E2%80%99s%20Handbook.pdf)
 > - [Competitive Programming 3 _ The New Lower Bound of Programming Contests.](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Competitive%20Programming%203%20_%20The%20New%20Lower%20Bound%20of%20Programming%20Contests..pdf)
-> - [Instructor’s Manual to Accompany Introduction to Algorithms CLRS 3e ](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Instructor%E2%80%99s%20Manual%20to%20Accompany%20Introduction%20to%20Algorithms%20CLRS%203e%20.pdf)
+> - [Instructor’s Manual to Accompany `Introduction to Algorithms CLRS 3e` ](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Instructor%E2%80%99s%20Manual%20to%20Accompany%20Introduction%20to%20Algorithms%20CLRS%203e%20.pdf)
 > - [Introduction to Algorithms _ CLRS _ 3e](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Introduction%20to%20Algorithms%20_%20CLRS%20_%203e.pdf)
 > - [Programming Challenges _ The Programming Contest Training Manual](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Programming%20Challenges%20_%20The%20Programming%20Contest%20Training%20Manual.pdf)
 
