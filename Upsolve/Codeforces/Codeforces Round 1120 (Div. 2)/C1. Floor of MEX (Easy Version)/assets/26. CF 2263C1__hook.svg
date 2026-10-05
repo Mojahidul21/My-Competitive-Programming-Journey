@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" font-family="Segoe UI, Helvetica, Arial, sans-serif" xmlns:c2pa="http://c2pa.org/manifest">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b1020" />
+      <stop offset="1" stop-color="#1e1b4b" />
+    </linearGradient>
+    <linearGradient id="ttl" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#38bdf8" />
+      <stop offset="1" stop-color="#a78bfa" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <text x="600" y="92" text-anchor="middle" font-size="60" font-weight="800" fill="url(#ttl)">CF 2263C1 - Floor of MEX (Easy Version)</text>
+  <text x="600" y="132" text-anchor="middle" font-size="24" fill="#cbd5e1">CF 2263C1 · forbid the blocks, merge the ranges, keep the rest</text>
+  <text x="600" y="177" text-anchor="middle" font-size="26" font-weight="700" fill="cyan">n = 10; a = { 2, 1, 1, 1, 2, 2, 2, 2, 2, 1 }</text>
+  <!-- index labels -->
+  <g font-size="18" fill="#94a3b8" text-anchor="middle">
+    <text x="195" y="204">0</text>
+    <text x="285" y="204">1</text>
+    <text x="375" y="204">2</text>
+    <text x="465" y="204">3</text>
+    <text x="555" y="204">4</text>
+    <text x="645" y="204">5</text>
+    <text x="735" y="204">6</text>
+    <text x="825" y="204">7</text>
+    <text x="915" y="204">8</text>
+    <text x="1005" y="204">9</text>
+  </g>
+  <!-- cells: free = green, forbidden = red -->
+  <g>
+    <rect x="152" y="216" width="86" height="76" rx="14" fill="#16a34a" />
+    <rect x="242" y="216" width="86" height="76" rx="14" fill="#16a34a" />
+    <rect x="332" y="216" width="86" height="76" rx="14" fill="#e11d48" />
+    <rect x="422" y="216" width="86" height="76" rx="14" fill="#e11d48" />
+    <rect x="512" y="216" width="86" height="76" rx="14" fill="#e11d48" />
+    <rect x="602" y="216" width="86" height="76" rx="14" fill="#e11d48" />
+    <rect x="692" y="216" width="86" height="76" rx="14" fill="#e11d48" />
+    <rect x="782" y="216" width="86" height="76" rx="14" fill="#e11d48" />
+    <rect x="872" y="216" width="86" height="76" rx="14" fill="#16a34a" />
+    <rect x="962" y="216" width="86" height="76" rx="14" fill="#16a34a" />
+  </g>
+  <g font-size="38" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="195" y="268">✓</text>
+    <text x="285" y="268">✓</text>
+    <text x="375" y="268">✕</text>
+    <text x="465" y="268">✕</text>
+    <text x="555" y="268">✕</text>
+    <text x="645" y="268">✕</text>
+    <text x="735" y="268">✕</text>
+    <text x="825" y="268">✕</text>
+    <text x="915" y="268">✓</text>
+    <text x="1005" y="268">✓</text>
+  </g>
+  <!-- overlapping forbidden blocks, one per k -->
+  <g font-size="18" font-weight="600" fill="#0b1020" text-anchor="start">
+    <rect x="332" y="318" width="86" height="30" rx="8" fill="#fb7185" />
+    <text x="342" y="339">k=1</text>
+    <rect x="332" y="356" width="176" height="30" rx="8" fill="#f472b6" />
+    <text x="342" y="377">k=2</text>
+    <rect x="422" y="394" width="266" height="30" rx="8" fill="#c084fc" />
+    <text x="432" y="415">k=3</text>
+    <rect x="512" y="432" width="356" height="30" rx="8" fill="#818cf8" />
+    <text x="522" y="453">k=4</text>
+  </g>
+  <!-- merged bracket -->
+  <path d="M 332 486 L 332 504 L 868 504 L 868 486" fill="none" stroke="#facc15" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+  <text x="600" y="540" text-anchor="middle" font-size="24" font-weight="700" fill="#facc15">merged forbidden range [2, 7]</text>
+  <text x="600" y="584" text-anchor="middle" font-size="26" font-weight="700" fill="#4ade80">B = { 0, 1, 8, 9 }</text>
+  <text x="600" y="612" text-anchor="middle" font-size="18" fill="#94a3b8">F_k = [ k·a_k , k·a_k + k − 1 ]</text>
+</svg>
