@@ -10,7 +10,7 @@
     </linearGradient>
   </defs>
   <rect width="1200" height="630" fill="url(#bg)" />
-  <text x="600" y="92" text-anchor="middle" font-size="60" font-weight="800" fill="url(#ttl)">CF 2263C1 - Floor of MEX (Easy Version)</text>
+  <text x="600" y="92" text-anchor="middle" font-size="60" font-weight="800" fill="url(#ttl)">CF 2263C1 — Floor of MEX (Easy Version)</text>
   <text x="600" y="132" text-anchor="middle" font-size="24" fill="#cbd5e1">CF 2263C1 · forbid the blocks, merge the ranges, keep the rest</text>
   <text x="600" y="177" text-anchor="middle" font-size="26" font-weight="700" fill="cyan">n = 10; a = { 2, 1, 1, 1, 2, 2, 2, 2, 2, 1 }</text>
   <!-- index labels -->
