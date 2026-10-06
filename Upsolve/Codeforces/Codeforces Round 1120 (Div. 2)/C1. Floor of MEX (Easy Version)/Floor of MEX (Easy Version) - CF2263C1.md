@@ -686,7 +686,7 @@ This is the bug that the article warns about in *Close the last block after the 
 ```cpp
 /*
 Stress test for CF2263C1 - Floor of MEX (Easy version)
-Usage:  stress_test <your-solution-exe> [rounds]
+Usage:               stress_test <your-solution-exe> [rounds]
 Windows PowerShell:  .\stress_test.exe .\sol.exe 200
 Windows cmd:         stress_test.exe sol.exe 200
 Linux / macOS:       ./stress_test ./sol 200
