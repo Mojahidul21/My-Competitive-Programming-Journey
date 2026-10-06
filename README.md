@@ -7,6 +7,7 @@
 > - [Competitive Programming CP3 _ The New Lower Bound of Programming Contests.](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Competitive%20Programming%203%20_%20The%20New%20Lower%20Bound%20of%20Programming%20Contests..pdf)
 > - [Competitive Programming CP4-Book1](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Competitive%20Programming%20CP4-Book1.pdf)
 > - [Competitive Programming CP4-Book2](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Competitive%20Programming%20CP4-Book2.pdf)
+> - [Crash Course Coding Companion](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Crash%20Course%20Coding%20Companion.pdf)
 > - [Instructor’s Manual _to accompany_ `Introduction to Algorithms CLRS 3e` ](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Instructor%E2%80%99s%20Manual%20to%20Accompany%20Introduction%20to%20Algorithms%20CLRS%203e%20.pdf)
 > - [Introduction to Algorithms _ CLRS _ 3e](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Introduction%20to%20Algorithms%20_%20CLRS%20_%203e.pdf)
 > - [Programming Challenges _ The Programming Contest Training Manual](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Programming%20Challenges%20_%20The%20Programming%20Contest%20Training%20Manual.pdf)
