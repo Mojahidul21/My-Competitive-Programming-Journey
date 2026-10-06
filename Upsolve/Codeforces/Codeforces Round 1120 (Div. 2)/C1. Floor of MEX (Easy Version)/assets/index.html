@@ -1,219 +1,432 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CF 2263C1 · Floor of MEX · Simulation</title>
-<style>
-:root{--bg:#0b1020;--card:#131a33;--ink:#e2e8f0;--mut:#94a3b8;--ok:#16a34a;--bad:#e11d48;--cur:#f59e0b;--probe:#8b5cf6;--btn:#4338ca}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,"Segoe UI",Arial,sans-serif}
-main{max-width:980px;margin:0 auto;padding:20px 16px 40px}
-h1{margin:0 0 4px;font-size:1.7rem;background:linear-gradient(90deg,#38bdf8,#a78bfa);-webkit-background-clip:text;background-clip:text;color:transparent}
-.sub{color:var(--mut);margin:0 0 16px}
-.card{background:var(--card);border-radius:14px;padding:14px 16px;margin-bottom:14px}
-textarea{width:100%;margin-top:6px;background:#0b1020;color:var(--ink);border:1px solid #334155;border-radius:10px;padding:8px;font:15px ui-monospace,Consolas,monospace}
-button{background:var(--btn);color:#fff;border:0;border-radius:9px;padding:8px 14px;font-weight:600;cursor:pointer;margin:6px 6px 0 0}
-button.alt{background:#1e293b}
-.cells{display:flex;flex-wrap:wrap;gap:6px}
-.cell{width:52px;text-align:center}
-.cell small{display:block;color:var(--mut);font-size:12px}
-.cell b{display:block;height:46px;line-height:46px;border-radius:10px;background:#334155;font-size:20px;transition:background .35s}
-.cell.bad b{background:var(--bad)}.cell.ok b{background:var(--ok)}
-.cell.cur b{outline:3px solid var(--cur)}.cell.probe b{outline:3px dashed var(--probe)}
-.legend{color:var(--mut);font-size:13px;margin-top:8px}
-.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
-.chip{padding:3px 9px;border-radius:999px;background:#1e293b;font:13px ui-monospace,Consolas,monospace}
-.chip.hi{background:var(--cur);color:#111}
-#msg{font-size:1.05rem;min-height:3.2em;margin-top:10px}
-#err{color:#fda4af;margin-top:6px}
-#out{font:15px ui-monospace,Consolas,monospace;white-space:pre-wrap;color:#86efac;margin:6px 0}
-label.inline{margin-left:8px;color:var(--mut);font-size:14px}
-code{background:#1e293b;padding:1px 5px;border-radius:5px}
-</style>
-</head>
-<body>
-<main>
-  <h1>Floor of MEX: range merge simulation</h1>
-  <p class="sub">Codeforces 2263C1. Every <code>a_k</code> forbids one block <code>[k·a_k, k·a_k + k − 1]</code>. Collect the blocks, sort, merge, and keep the rest.</p>
-  <p class="sub">Need more clarification on how to use this simulation? See the <a href="https://github.com/Mojahidul21/Eeperiment/blob/main/Upsolve2/CF-2263C1-Floor-of-MEX.md#simulation" target="_blank" rel="noopener noreferrer">Simulation section of the article</a>.
-</p>
-
-  <section class="card">
-    <label for="inp"><b>Your input</b>: one test case. <code>n</code> on the first line, <code>a₁ … aₙ</code> on the second (1 ≤ n ≤ 40, 0 ≤ aᵢ ≤ n).</label>
-    <textarea id="inp" rows="3" spellcheck="false">6
-1 2 1 1 1 1</textarea>
-    <button id="load">Load input</button>
-    <button class="alt" data-s="6;0 3 2 2 2 1">Sample 1</button>
-    <button class="alt" data-s="5;2 1 1 1 1">Sample 2</button>
-    <button class="alt" data-s="6;1 2 1 1 1 1">Sample 3</button>
-    <button class="alt" data-s="5;1 1 2 2 1">a = [1,1,2,2,1] (not sorted)</button>
-    <div id="err"></div>
-  </section>
-
-  <section class="card">
-    <div id="cells" class="cells"></div>
-    <div class="legend">Grey = undecided · dashed purple = block of the current k · amber = current merged block · red = forbidden · green = free (in B)</div>
-    <div id="chips" class="chips"></div>
-    <div id="msg"></div>
-    <div>
-      <button id="play">Play</button>
-      <button id="prev" class="alt">◀ Prev</button>
-      <button id="next" class="alt">Step ▶</button>
-      <button id="reset" class="alt">Reset</button>
-      <label class="inline">Speed <input id="spd" type="range" min="1" max="9" value="5"></label>
-      <label class="inline"><input id="snd" type="checkbox" checked> Sound</label>
-      <label class="inline" id="step"></label>
-    </div>
-  </section>
-
-  <section class="card" id="res" hidden>
-    <b>Output in Codeforces format</b>
-    <div id="out"></div>
-    <div id="chk"></div>
-  </section>
-</main>
-
-<script>
-const $ = id => document.getElementById(id);
-let A = [], FR = [], pos = 0, tm = null, ac = null;
-
-function buildFrames(a) {
-  const n = a.length, F = [], rg = [], paint = Array(n).fill(0);
-  let sorted = false, cur = null, probe = null, hi = -1;
-  const snap = (t, tone) => F.push({
-    t, tone, p: paint.slice(), rg: rg.map(x => x.slice()), sorted,
-    cur: cur && cur.slice(), probe: probe && probe.slice(), hi, done: false
-  });
-  for (let k = 1; k <= n; k++) {
-    const v = a[k - 1], l = k * v, r0 = l + k - 1;
-    if (l >= n) {
-      probe = null;
-      snap(`Phase 1 · k = ${k}: l = k·a_k = ${k}·${v} = ${l} ≥ n = ${n}. The block is outside the array, skip it.`, 'skip');
-    } else {
-      const r = Math.min(r0, n - 1);
-      rg.push([l, r, k]); probe = [l, r];
-      snap(`Phase 1 · k = ${k}: l = ${k}·${v} = ${l}, r = l + k − 1 = ${r0}` + (r0 > r ? `, clipped to ${r}` : '') + `. Keep range [${l}, ${r}].`, 'add');
-    }
-  }
-  probe = null;
-  rg.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
-  sorted = true;
-  if (!rg.length) {
-    snap('Phase 2 · no range was kept, so nothing is forbidden.', 'sort');
-  } else {
-    snap('Phase 2 · sort the kept ranges by left end (then by right end).', 'sort');
-    cur = [rg[0][0], rg[0][1]]; hi = 0;
-    snap(`Phase 3 · start with the first range as the current block [${cur[0]}, ${cur[1]}].`, 'add');
-    for (let i = 1; i < rg.length; i++) {
-      const ll = rg[i][0], rr = rg[i][1]; hi = i;
-      if (ll > cur[1]) {
-        for (let j = cur[0]; j <= cur[1]; j++) paint[j] = 1;
-        const old = cur.slice(); cur = [ll, rr];
-        snap(`Phase 3 · next range [${ll}, ${rr}]: ${ll} > ${old[1]}, a gap. Paint [${old[0]}, ${old[1]}] as forbidden and start a new block [${ll}, ${rr}].`, 'gap');
-      } else {
-        const old = cur[1]; cur[1] = Math.max(cur[1], rr);
-        snap(`Phase 3 · next range [${ll}, ${rr}]: ${ll} ≤ ${old}, overlap. ` + (cur[1] > old ? `Extend the block to [${cur[0]}, ${cur[1]}].` : `The block stays [${cur[0]}, ${cur[1]}].`), 'merge');
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CF 2263C1 · Floor of MEX · Simulation</title>
+    <style>
+      :root {
+        --bg: #0b1020;
+        --card: #131a33;
+        --ink: #e2e8f0;
+        --mut: #94a3b8;
+        --ok: #16a34a;
+        --bad: #e11d48;
+        --cur: #f59e0b;
+        --probe: #8b5cf6;
+        --btn: #4338ca
       }
-    }
-    for (let j = cur[0]; j <= cur[1]; j++) paint[j] = 1;
-    const last = cur.slice(); cur = null; hi = -1;
-    snap(`Phase 3 · the loop ended. Paint the last block [${last[0]}, ${last[1]}].`, 'gap');
-  }
-  snap('Phase 4 · every cell that is not forbidden goes into B.', 'done');
-  F[F.length - 1].done = true;
-  return F;
-}
 
-// Does B = (unpainted cells) really give f(B, k) = a_k for every k?
-function check(a, p) {
-  const n = a.length, pre = [0];
-  for (let i = 0; i < n; i++) pre.push(pre[i] + (p[i] ? 0 : 1));
-  for (let k = 1; k <= n; k++) {
-    let m = 0;
-    while (m * k < n && pre[Math.min(n, m * k + k)] - pre[m * k] > 0) m++;
-    if (m !== a[k - 1]) return false;
-  }
-  return true;
-}
+      * {
+        box-sizing: border-box
+      }
 
-function tone(f, d, ty, v) {
-  if (!$('snd').checked) return;
-  try {
-    if (!ac) ac = new (window.AudioContext || window.webkitAudioContext)();
-    if (ac.state === 'suspended') ac.resume();
-    const o = ac.createOscillator(), g = ac.createGain(), t = ac.currentTime;
-    o.type = ty || 'sine'; o.frequency.value = f;
-    g.gain.setValueAtTime(v || 0.08, t);
-    g.gain.exponentialRampToValueAtTime(0.0001, t + d);
-    o.connect(g); g.connect(ac.destination); o.start(t); o.stop(t + d);
-  } catch (e) {}
-}
-function sound(f) {
-  const T = {skip: [170, .35, 'triangle'], add: [320 + (pos % 8) * 50, .28, 'sine'], sort: [440, .4, 'square'],
-             gap: [560, .3, 'sine'], merge: [400, .25, 'sine']};
-  if (f.tone === 'done') { [523, 659, 784, 1047].forEach((x, i) => setTimeout(() => tone(x, .45), i * 140)); return; }
-  const s = T[f.tone]; if (s) tone(s[0], s[1], s[2]);
-}
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font: 16px/1.5 system-ui, "Segoe UI", Arial, sans-serif
+      }
 
-function render() {
-  const f = FR[pos];
-  $('cells').innerHTML = A.map((_, i) => {
-    let c = 'cell';
-    if (f.p[i]) c += ' bad';
-    if (f.done) c = 'cell ' + (f.p[i] ? 'bad' : 'ok');
-    if (f.cur && i >= f.cur[0] && i <= f.cur[1]) c += ' cur';
-    if (f.probe && i >= f.probe[0] && i <= f.probe[1]) c += ' probe';
-    const mark = f.done ? (f.p[i] ? '✕' : '✓') : (f.p[i] ? '✕' : '');
-    return `<div class="${c}"><small>${i}</small><b>${mark}</b></div>`;
-  }).join('');
-  $('chips').innerHTML = f.rg.map((r, i) =>
-    `<span class="chip${i === f.hi ? ' hi' : ''}">${f.sorted ? '' : 'k=' + r[2] + ': '}[${r[0]}, ${r[1]}]</span>`).join('')
-    || '<span class="chip">no ranges kept yet</span>';
-  $('msg').textContent = f.t;
-  $('step').textContent = `step ${pos + 1} / ${FR.length}`;
-  $('res').hidden = !f.done;
-  if (f.done) {
-    const B = []; A.forEach((_, i) => { if (!f.p[i]) B.push(i); });
-    $('out').textContent = B.length + '\n' + B.join(' ');
-    $('chk').textContent = check(A, f.p)
-      ? '✓ Verified: f(B, k) = a_k for every k, so this array is valid and B is a correct answer.'
-      : '⚠ This array breaks the problem guarantee (no valid B exists for it), so the output above is not a real answer.';
-  }
-}
+      main {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 20px 16px 40px
+      }
 
-function stop() { if (tm) { clearInterval(tm); tm = null; } $('play').textContent = 'Play'; }
-function go(p, silent) { pos = Math.max(0, Math.min(FR.length - 1, p)); render(); if (!silent) sound(FR[pos]); }
-function play() {
-  if (tm) { stop(); return; }
-  if (pos >= FR.length - 1) go(0, true);
-  $('play').textContent = 'Pause';
-  tm = setInterval(() => { if (pos >= FR.length - 1) { stop(); return; } go(pos + 1); if (pos >= FR.length - 1) stop(); }, 2000 - $('spd').value * 190);
-}
+      h1 {
+        margin: 0 0 4px;
+        font-size: 1.7rem;
+        background: linear-gradient(90deg, #38bdf8, #a78bfa);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent
+      }
 
-function load(txt) {
-  const bad = m => { $('err').textContent = m; return false; };
-  const tk = txt.trim().split(/\s+/).filter(Boolean);
-  if (tk.length < 2) return bad('Give n on the first line and n numbers on the second line.');
-  if (!tk.every(x => /^\d+$/.test(x))) return bad('Use only non-negative integers.');
-  const n = +tk[0];
-  if (n < 1 || n > 40) return bad('n must be between 1 and 40 for this visual.');
-  if (tk.length !== n + 1) return bad(`Expected ${n} numbers after n, found ${tk.length - 1}.`);
-  const a = tk.slice(1).map(Number);
-  if (a.some(x => x > n)) return bad('Every a_i must satisfy 0 ≤ a_i ≤ n.');
-  $('err').textContent = '';
-  stop(); A = a; FR = buildFrames(a); go(0, true);
-  return true;
-}
+      .sub {
+        color: var(--mut);
+        margin: 0 0 16px
+      }
 
-$('load').onclick = () => load($('inp').value);
-document.querySelectorAll('[data-s]').forEach(b => b.onclick = () => { $('inp').value = b.dataset.s.replace(';', '\n'); load($('inp').value); });
-$('play').onclick = play;
-$('next').onclick = () => { stop(); go(pos + 1); };
-$('prev').onclick = () => { stop(); go(pos - 1, true); };
-$('reset').onclick = () => { stop(); go(0, true); };
-$('spd').oninput = () => { if (tm) { stop(); play(); } };
-load($('inp').value);
-</script>
-</body>
+      .card {
+        background: var(--card);
+        border-radius: 14px;
+        padding: 14px 16px;
+        margin-bottom: 14px
+      }
+
+      textarea {
+        width: 100%;
+        margin-top: 6px;
+        background: #0b1020;
+        color: var(--ink);
+        border: 1px solid #334155;
+        border-radius: 10px;
+        padding: 8px;
+        font: 15px ui-monospace, Consolas, monospace
+      }
+
+      button {
+        background: var(--btn);
+        color: #fff;
+        border: 0;
+        border-radius: 9px;
+        padding: 8px 14px;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 6px 6px 0 0
+      }
+
+      button.alt {
+        background: #1e293b
+      }
+
+      .cells {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px
+      }
+
+      .cell {
+        width: 52px;
+        text-align: center
+      }
+
+      .cell small {
+        display: block;
+        color: var(--mut);
+        font-size: 12px
+      }
+
+      .cell b {
+        display: block;
+        height: 46px;
+        line-height: 46px;
+        border-radius: 10px;
+        background: #334155;
+        font-size: 20px;
+        transition: background .35s
+      }
+
+      .cell.bad b {
+        background: var(--bad)
+      }
+
+      .cell.ok b {
+        background: var(--ok)
+      }
+
+      .cell.cur b {
+        outline: 3px solid var(--cur)
+      }
+
+      .cell.probe b {
+        outline: 3px dashed var(--probe)
+      }
+
+      .legend {
+        color: var(--mut);
+        font-size: 13px;
+        margin-top: 8px
+      }
+
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 8px
+      }
+
+      .chip {
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: #1e293b;
+        font: 13px ui-monospace, Consolas, monospace
+      }
+
+      .chip.hi {
+        background: var(--cur);
+        color: #111
+      }
+
+      #msg {
+        font-size: 1.05rem;
+        min-height: 3.2em;
+        margin-top: 10px
+      }
+
+      #err {
+        color: #fda4af;
+        margin-top: 6px
+      }
+
+      #out {
+        font: 15px ui-monospace, Consolas, monospace;
+        white-space: pre-wrap;
+        color: #86efac;
+        margin: 6px 0
+      }
+
+      label.inline {
+        margin-left: 8px;
+        color: var(--mut);
+        font-size: 14px
+      }
+
+      code {
+        background: #1e293b;
+        padding: 1px 5px;
+        border-radius: 5px
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Floor of MEX: range merge simulation</h1>
+      <p class="sub">Codeforces 2263C1. Every <code>a_k</code> forbids one block <code>[k·a_k, k·a_k + k − 1]</code>. Collect the blocks, sort, merge, and keep the rest.</p>
+      <p class="sub">Need more clarification on how to use this simulation? See the <a href="https://github.com/Mojahidul21/Eeperiment/blob/main/Upsolve2/CF-2263C1-Floor-of-MEX.md#simulation" target="_blank" rel="noopener noreferrer">Simulation section of the article</a>. </p>
+      <section class="card"><label for="inp"><b>Your input</b>: one test case. <code>n</code> on the first line, <code>a₁ … aₙ</code> on the second (1 ≤ n ≤ 40, 0 ≤ aᵢ ≤ n).</label><textarea id="inp" rows="3" spellcheck="false">6
+1 2 1 1 1 1</textarea><button id="load">Load input</button><button class="alt" data-s="6;0 3 2 2 2 1">Sample 1</button><button class="alt" data-s="5;2 1 1 1 1">Sample 2</button><button class="alt" data-s="6;1 2 1 1 1 1">Sample 3</button><button class="alt" data-s="5;1 1 2 2 1">a = [1,1,2,2,1] (not sorted)</button>
+        <div id="err"></div>
+      </section>
+      <section class="card">
+        <div id="cells" class="cells"></div>
+        <div class="legend">Grey = undecided · dashed purple = block of the current k · amber = current merged block · red = forbidden · green = free (in B)</div>
+        <div id="chips" class="chips"></div>
+        <div id="msg"></div>
+        <div><button id="play">Play</button><button id="prev" class="alt">◀ Prev</button><button id="next" class="alt">Step ▶</button><button id="reset" class="alt">Reset</button><label class="inline">Speed <input id="spd" type="range" min="1" max="9" value="5"></label><label class="inline"><input id="snd" type="checkbox" checked> Sound</label><label class="inline" id="step"></label></div>
+      </section>
+      <section class="card" id="res" hidden><b>Output in Codeforces format</b>
+        <div id="out"></div>
+        <div id="chk"></div>
+      </section>
+    </main>
+    <script>
+      const $ = id => document.getElementById(id);
+      let A = [],
+        FR = [],
+        pos = 0,
+        tm = null,
+        ac = null;
+
+      function buildFrames(a) {
+        const n = a.length,
+          F = [],
+          rg = [],
+          paint = Array(n).fill(0);
+        let sorted = false,
+          cur = null,
+          probe = null,
+          hi = -1;
+        const snap = (t, tone) => F.push({
+          t,
+          tone,
+          p: paint.slice(),
+          rg: rg.map(x => x.slice()),
+          sorted,
+          cur: cur && cur.slice(),
+          probe: probe && probe.slice(),
+          hi,
+          done: false
+        });
+        for (let k = 1; k <= n; k++) {
+          const v = a[k - 1],
+            l = k * v,
+            r0 = l + k - 1;
+          if (l >= n) {
+            probe = null;
+            snap(`Phase 1 · k = ${k}: l = k·a_k = ${k}·${v} = ${l} ≥ n = ${n}. The block is outside the array, skip it.`, 'skip');
+          } else {
+            const r = Math.min(r0, n - 1);
+            rg.push([l, r, k]);
+            probe = [l, r];
+            snap(`Phase 1 · k = ${k}: l = ${k}·${v} = ${l}, r = l + k − 1 = ${r0}` + (r0 > r ? `, clipped to ${r}` : '') + `. Keep range [${l}, ${r}].`, 'add');
+          }
+        }
+        probe = null;
+        rg.sort((x, y) => x[0] - y[0] || x[1] - y[1]);
+        sorted = true;
+        if (!rg.length) {
+          snap('Phase 2 · no range was kept, so nothing is forbidden.', 'sort');
+        } else {
+          snap('Phase 2 · sort the kept ranges by left end (then by right end).', 'sort');
+          cur = [rg[0][0], rg[0][1]];
+          hi = 0;
+          snap(`Phase 3 · start with the first range as the current block [${cur[0]}, ${cur[1]}].`, 'add');
+          for (let i = 1; i < rg.length; i++) {
+            const ll = rg[i][0],
+              rr = rg[i][1];
+            hi = i;
+            if (ll > cur[1]) {
+              for (let j = cur[0]; j <= cur[1]; j++) paint[j] = 1;
+              const old = cur.slice();
+              cur = [ll, rr];
+              snap(`Phase 3 · next range [${ll}, ${rr}]: ${ll} > ${old[1]}, a gap. Paint [${old[0]}, ${old[1]}] as forbidden and start a new block [${ll}, ${rr}].`, 'gap');
+            } else {
+              const old = cur[1];
+              cur[1] = Math.max(cur[1], rr);
+              snap(`Phase 3 · next range [${ll}, ${rr}]: ${ll} ≤ ${old}, overlap. ` + (cur[1] > old ? `Extend the block to [${cur[0]}, ${cur[1]}].` : `The block stays [${cur[0]}, ${cur[1]}].`), 'merge');
+            }
+          }
+          for (let j = cur[0]; j <= cur[1]; j++) paint[j] = 1;
+          const last = cur.slice();
+          cur = null;
+          hi = -1;
+          snap(`Phase 3 · the loop ended. Paint the last block [${last[0]}, ${last[1]}].`, 'gap');
+        }
+        snap('Phase 4 · every cell that is not forbidden goes into B.', 'done');
+        F[F.length - 1].done = true;
+        return F;
+      }
+      // Does B = (unpainted cells) really give f(B, k) = a_k for every k?
+      function check(a, p) {
+        const n = a.length,
+          pre = [0];
+        for (let i = 0; i < n; i++) pre.push(pre[i] + (p[i] ? 0 : 1));
+        for (let k = 1; k <= n; k++) {
+          let m = 0;
+          while (m * k < n && pre[Math.min(n, m * k + k)] - pre[m * k] > 0) m++;
+          if (m !== a[k - 1]) return false;
+        }
+        return true;
+      }
+
+      function tone(f, d, ty, v) {
+        if (!$('snd').checked) return;
+        try {
+          if (!ac) ac = new(window.AudioContext || window.webkitAudioContext)();
+          if (ac.state === 'suspended') ac.resume();
+          const o = ac.createOscillator(),
+            g = ac.createGain(),
+            t = ac.currentTime;
+          o.type = ty || 'sine';
+          o.frequency.value = f;
+          g.gain.setValueAtTime(v || 0.08, t);
+          g.gain.exponentialRampToValueAtTime(0.0001, t + d);
+          o.connect(g);
+          g.connect(ac.destination);
+          o.start(t);
+          o.stop(t + d);
+        } catch (e) {}
+      }
+
+      function sound(f) {
+        const T = {
+          skip: [170, .35, 'triangle'],
+          add: [320 + (pos % 8) * 50, .28, 'sine'],
+          sort: [440, .4, 'square'],
+          gap: [560, .3, 'sine'],
+          merge: [400, .25, 'sine']
+        };
+        if (f.tone === 'done') {
+          [523, 659, 784, 1047].forEach((x, i) => setTimeout(() => tone(x, .45), i * 140));
+          return;
+        }
+        const s = T[f.tone];
+        if (s) tone(s[0], s[1], s[2]);
+      }
+
+      function render() {
+        const f = FR[pos];
+        $('cells').innerHTML = A.map((_, i) => {
+          let c = 'cell';
+          if (f.p[i]) c += ' bad';
+          if (f.done) c = 'cell ' + (f.p[i] ? 'bad' : 'ok');
+          if (f.cur && i >= f.cur[0] && i <= f.cur[1]) c += ' cur';
+          if (f.probe && i >= f.probe[0] && i <= f.probe[1]) c += ' probe';
+          const mark = f.done ? (f.p[i] ? '✕' : '✓') : (f.p[i] ? '✕' : '');
+          return `<div class="${c}"><small>${i}</small><b>${mark}</b></div>`;
+        }).join('');
+        $('chips').innerHTML = f.rg.map((r, i) => `<span class="chip${i === f.hi ? ' hi' : ''}">${f.sorted ? '' : 'k=' + r[2] + ': '}[${r[0]}, ${r[1]}]</span>`).join('') || '<span class="chip">no ranges kept yet</span>';
+        $('msg').textContent = f.t;
+        $('step').textContent = `step ${pos + 1} / ${FR.length}`;
+        $('res').hidden = !f.done;
+        if (f.done) {
+          const B = [];
+          A.forEach((_, i) => {
+            if (!f.p[i]) B.push(i);
+          });
+          $('out').textContent = B.length + '\n' + B.join(' ');
+          $('chk').textContent = check(A, f.p) ? '✓ Verified: f(B, k) = a_k for every k, so this array is valid and B is a correct answer.' : '⚠ This array breaks the problem guarantee (no valid B exists for it), so the output above is not a real answer.';
+        }
+      }
+
+      function stop() {
+        if (tm) {
+          clearInterval(tm);
+          tm = null;
+        }
+        $('play').textContent = 'Play';
+      }
+
+      function go(p, silent) {
+        pos = Math.max(0, Math.min(FR.length - 1, p));
+        render();
+        if (!silent) sound(FR[pos]);
+      }
+
+      function play() {
+        if (tm) {
+          stop();
+          return;
+        }
+        if (pos >= FR.length - 1) go(0, true);
+        $('play').textContent = 'Pause';
+        tm = setInterval(() => {
+          if (pos >= FR.length - 1) {
+            stop();
+            return;
+          }
+          go(pos + 1);
+          if (pos >= FR.length - 1) stop();
+        }, 2000 - $('spd').value * 190);
+      }
+
+      function load(txt) {
+        const bad = m => {
+          $('err').textContent = m;
+          return false;
+        };
+        const tk = txt.trim().split(/\s+/).filter(Boolean);
+        if (tk.length < 2) return bad('Give n on the first line and n numbers on the second line.');
+        if (!tk.every(x => /^\d+$/.test(x))) return bad('Use only non-negative integers.');
+        const n = +tk[0];
+        if (n < 1 || n > 40) return bad('n must be between 1 and 40 for this visual.');
+        if (tk.length !== n + 1) return bad(`Expected ${n} numbers after n, found ${tk.length - 1}.`);
+        const a = tk.slice(1).map(Number);
+        if (a.some(x => x > n)) return bad('Every a_i must satisfy 0 ≤ a_i ≤ n.');
+        $('err').textContent = '';
+        stop();
+        A = a;
+        FR = buildFrames(a);
+        go(0, true);
+        return true;
+      }
+      $('load').onclick = () => load($('inp').value);
+      document.querySelectorAll('[data-s]').forEach(b => b.onclick = () => {
+        $('inp').value = b.dataset.s.replace(';', '\n');
+        load($('inp').value);
+      });
+      $('play').onclick = play;
+      $('next').onclick = () => {
+        stop();
+        go(pos + 1);
+      };
+      $('prev').onclick = () => {
+        stop();
+        go(pos - 1, true);
+      };
+      $('reset').onclick = () => {
+        stop();
+        go(0, true);
+      };
+      $('spd').oninput = () => {
+        if (tm) {
+          stop();
+          play();
+        }
+      };
+      load($('inp').value);
+    </script>
+  </body>
 </html>
