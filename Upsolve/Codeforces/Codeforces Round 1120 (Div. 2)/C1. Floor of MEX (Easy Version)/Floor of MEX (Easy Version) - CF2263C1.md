@@ -1,4 +1,4 @@
-![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/26.%20CF%202263C1__hook.svg)
+![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201120%20(Div.%202)/C1.%20Floor%20of%20MEX%20(Easy%20Version)/assets/26.%20CF%202263C1__hook.svg)
 # CF 2263C1 - Floor of MEX (Easy Version)
 
 ### Forbid the blocks, merge the ranges, keep the rest
