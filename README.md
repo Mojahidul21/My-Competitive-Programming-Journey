@@ -8,6 +8,7 @@
 > - [Competitive Programming CP4-Book1](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Competitive%20Programming%20CP4-Book1.pdf)
 > - [Competitive Programming CP4-Book2](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Competitive%20Programming%20CP4-Book2.pdf)
 > - [Crash Course Coding Companion](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Crash%20Course%20Coding%20Companion.pdf)
+> - [Guide to Competitive Programming _ Learning and Improving Algorithms Through Contests _ Antti Laaksonen](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Guide%20to%20Competitive%20Programming%20_%20Learning%20and%20Improving%20Algorithms%20Through%20Contests%20_%20Antti%20Laaksonen.pdf)
 > - [Instructor’s Manual _to accompany_ `Introduction to Algorithms CLRS 3e` ](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Instructor%E2%80%99s%20Manual%20to%20Accompany%20Introduction%20to%20Algorithms%20CLRS%203e%20.pdf)
 > - [Introduction to Algorithms _ CLRS _ 3e](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Introduction%20to%20Algorithms%20_%20CLRS%20_%203e.pdf)
 > - [Programming Challenges _ The Programming Contest Training Manual](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Books/Programming%20Challenges%20_%20The%20Programming%20Contest%20Training%20Manual.pdf)
