@@ -517,4 +517,267 @@ I hope to upsolve more problems that are this interesting and to keep turning ea
 ---
 
 ## Appendix: Run the Stress Test Yourself
-Processing ...
+
+Optional practice. The stress test below will help you deeply debugging.
+
+### What this stress test checks (and what it does not)
+
+The problem accepts **any** valid set `B`, so there is no single expected output to compare with. Instead, the tester checks the *meaning* of your answer:
+
+1. It picks a random hidden set and computes the array `a` by brute force.
+2. It runs your program on that array.
+3. It takes the `B` your program printed and recomputes `f(B, k)` for every `k`. Every value must equal `a_k`.
+
+| Question | Which check answers it | Input size |
+|---|---|---|
+| Is my output **correct**? | This stress test | Small random cases (`n ≤ 12`) |
+| Is my program **fast enough**? | The worst-case estimate from [Detect TLE before Getting WA](#detect-tle-before-getting-wa) | `n = 100000` |
+
+A stress test with `n ≤ 12` can never catch a TLE. Both checks are needed.
+
+### What you need
+
+- **g++** installed on your Windows 11 computer.
+- **Sublime Text** (or any text editor) to save the two files.
+- **Command Prompt** or **PowerShell** (Windows Terminal opens PowerShell by default on Windows 11).
+
+### Step 1. Make a folder and save two files
+
+Create one folder, for example `CF-2263C1`. Avoid spaces in the folder path. Save these two files inside it with Sublime Text (**File → Save As**):
+
+```text
+CF-2263C1/
+├── sol.cpp            ← your accepted solution (from the Implementation section)
+└── stress_test.cpp    ← the tester (code at the end of this appendix)
+```
+
+### Step 2. Open a terminal inside that folder
+
+- Open the folder in **File Explorer**, right-click an empty space, and choose **Open in Terminal**. This opens PowerShell in that folder.
+- Or: click the address bar of File Explorer, type `cmd`, and press **Enter**. This opens Command Prompt in that folder.
+
+The prompt should end with the folder name, for example `...\CF-2263C1>`. You are already inside the project folder, so do not run `cd` again.
+
+Check that g++ is available:
+
+```text
+g++ --version
+```
+
+If you see a version number, continue. If you see "not recognized", see the troubleshooting table below.
+
+### Step 3. Compile both programs
+
+```text
+g++ -O2 -o sol sol.cpp
+```
+```text
+g++ -O2 -o stress_test stress_test.cpp
+```
+
+On Windows this creates `sol.exe` and `stress_test.exe` in the same folder.
+
+### Step 4. Run the stress test
+
+The command is `stress_test <your solution> <number of rounds>`. Each round tests 50 random cases, so 200 rounds means 10000 cases.
+
+**PowerShell**
+
+```text
+.\stress_test.exe .\sol.exe 200
+```
+
+**Command Prompt**
+
+```text
+stress_test.exe sol.exe 200
+```
+
+**Linux / macOS**
+
+```text
+./stress_test ./sol 200
+```
+
+> [!NOTE]
+> PowerShell does not run a program from the current folder unless you write `.\` in front of its name. Command Prompt does not need it.
+
+### Step 5. Read the result
+
+A correct solution prints one line after a few seconds:
+
+```text
+OK: 10000 random cases passed
+```
+
+During the run the tester creates two helper files, `input.txt` and `output.txt`, in the same folder. They are overwritten every round and are safe to delete afterwards.
+
+### Step 6. Check that the tester can catch bugs
+
+Before trusting a stress tester, break your own solution on purpose and make sure the tester notices. Do both experiments, and restore the code after each one.
+
+**Experiment 1: print the wrong index**
+
+In `sol.cpp`, change the last printing line:
+
+```cpp
+if(ans[i])cout<<i<<' ';        // original
+```
+```cpp
+if(ans[i])cout<<i+1<<' ';      // deliberate bug
+```
+
+Compile only the solution again, then run the same Step 4 command:
+
+```text
+g++ -O2 -o sol sol.cpp
+```
+
+You should see:
+
+```text
+FAIL in round 1, test case 1
+n = 7
+a = [0, 0, 0, 0, 2, 2, 1]
+your B = [5, 6, 7]
+Reason: an element is outside 0 .. n-1
+```
+
+Change `i+1` back to `i`, compile again, and confirm that `OK: 10000 random cases passed` returns.
+
+**Experiment 2: forget to close the last block**
+
+In `sol.cpp`, put `//` in front of the paint line that sits after the merge loop (the one with the comment `close the last block`):
+
+```cpp
+//for(int j{l};j<=r;++j)ans[j]=0;      // close the last block
+```
+
+Compile and run again. You should see:
+
+```text
+FAIL in round 1, test case 1
+n = 7
+a = [0, 0, 0, 0, 2, 2, 1]
+your B = [0, 1, 2, 3, 4, 5, 6]
+Reason: f(B, 1) = 7 but a_1 = 0
+```
+
+This is the bug that the article warns about in *Close the last block after the loop*. Remove the `//`, compile, and confirm `OK` again.
+
+> [!TIP]
+> **A stress tester should be tested too.** If a deliberately broken solution still passes, the tester is not checking what you think it is checking.
+
+### If something goes wrong
+
+| What you see | What it means | What to do |
+|---|---|---|
+| `g++ is not recognized` | The compiler folder is not in your Windows PATH | Open a new terminal after installing, or add the compiler's `bin` folder to PATH |
+| `stress_test.exe is not recognized` in PowerShell | PowerShell needs `.\` for programs in the current folder | Write `.\stress_test.exe .\sol.exe 200` |
+| `Your program crashed or could not be started` | The solution name is wrong, it was not compiled, or it returned an error | Check that `sol.exe` exists in the folder and runs on its own |
+| `FAIL ... Reason: ...` | Your output is not a valid answer for that array | Use the printed `n`, `a`, and `your B` to trace your code by hand |
+| `cd` says "cannot find the path specified" | You are already inside the project folder | Skip `cd` and run the commands directly |
+
+### Code: `stress_test.cpp`
+
+<details>
+<summary>stress_test.cpp</summary>
+
+```cpp
+/*
+Stress test for CF2263C1 - Floor of MEX (Easy version)
+Usage:  stress_test <your-solution-exe> [rounds]
+Windows PowerShell:  .\stress_test.exe .\sol.exe 200
+Windows cmd:         stress_test.exe sol.exe 200
+Linux / macOS:       ./stress_test ./sol 200
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int mexOfFloors(const vector<int>& B, int k) {   // f(B, k) = mex({ floor(y / k) : y in B })
+  set<int> s;
+  for (int y : B) s.insert(y / k);
+  int m = 0;
+  while (s.count(m)) ++m;
+  return m;
+}
+
+void show(const char* name, const vector<int>& v) {
+  cout << name << " = [";
+  for (size_t i = 0; i < v.size(); ++i) cout << (i ? ", " : "") << v[i];
+  cout << "]\n";
+}
+
+int main(int argc, char** argv) {
+  string exe = argc > 1 ? argv[1] : "sol.exe";
+  int rounds = argc > 2 ? atoi(argv[2]) : 200;
+  const int T = 50;                               // test cases per round
+  mt19937 rng(12345);                             // fixed seed: same tests every run
+  const int density[4] = {10, 30, 60, 90};        // chance (%) that y is in the hidden set
+
+  for (int round = 1; round <= rounds; ++round) {
+    // 1. write input.txt: pick a random hidden set, compute a by brute force
+    vector<vector<int>> A(T);
+    {
+      ofstream in("input.txt");
+      in << T << '\n';
+      for (auto& a : A) {
+        int n = (int)(rng() % 12) + 1;
+        int p = density[rng() % 4];
+        vector<int> hidden;
+        for (int y = 0; y < n; ++y)
+          if ((int)(rng() % 100) < p) hidden.push_back(y);
+        a.resize(n);
+        for (int k = 1; k <= n; ++k) a[k - 1] = mexOfFloors(hidden, k);
+        in << n << '\n';
+        for (int x : a) in << x << ' ';
+        in << '\n';
+      }
+    }
+
+    // 2. run your program: input.txt -> output.txt
+    string cmd = exe + " < input.txt > output.txt";
+    if (system(cmd.c_str()) != 0) {
+      cout << "Your program crashed or could not be started.\nCommand tried: " << cmd << '\n';
+      return 1;
+    }
+
+    // 3. check every answer: it must really produce the array a
+    ifstream out("output.txt");
+    for (int c = 0; c < T; ++c) {
+      int n = (int)A[c].size(), m;
+      vector<int> B;
+      string why;
+      if (!(out >> m) || m < 0 || m > n) why = "the printed size m is missing or out of range";
+      else {
+        B.resize(m);
+        for (int& y : B)
+          if (!(out >> y)) { why = "the output ended before all m numbers were printed"; break; }
+      }
+      if (why.empty()) {
+        set<int> seen;
+        for (int y : B) {
+          if (y < 0 || y >= n) { why = "an element is outside 0 .. n-1"; break; }
+          if (!seen.insert(y).second) { why = "an element is printed twice"; break; }
+        }
+      }
+      if (why.empty())
+        for (int k = 1; k <= n; ++k)
+          if (mexOfFloors(B, k) != A[c][k - 1]) {
+            why = "f(B, " + to_string(k) + ") = " + to_string(mexOfFloors(B, k)) + " but a_" + to_string(k) + " = " + to_string(A[c][k - 1]);
+            break;
+          }
+      if (!why.empty()) {
+        cout << "FAIL in round " << round << ", test case " << c + 1 << "\nn = " << n << '\n';
+        show("a", A[c]); show("your B", B);
+        cout << "Reason: " << why << '\n';
+        return 1;
+      }
+    }
+  }
+  cout << "OK: " << rounds * T << " random cases passed\n";
+}
+```
+
+</details>
