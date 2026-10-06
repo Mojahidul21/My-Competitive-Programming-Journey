@@ -537,7 +537,7 @@ A stress test with `n ≤ 12` can never catch a TLE. Both checks are needed.
 
 ### What you need
 
-- **g++** installed on your Windows 11 computer.
+- **g++** installed on your (Windows 11) computer.
 - **Sublime Text** (or any text editor) to save the two files.
 - **Command Prompt** or **PowerShell** (Windows Terminal opens PowerShell by default on Windows 11).
 
