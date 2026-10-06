@@ -3,7 +3,6 @@
 
 ### Forbid the blocks, merge the ranges, keep the rest
 
-
 | Field | Value |
 |---|---|
 | **Platform** | Codeforces |
