@@ -265,6 +265,9 @@ Forbidden = `{1, 3, 4, 5}`, free = `{0, 2}`. Output `2` / `0 2`. ✅
 ### Deployed on Vercel
 [Live simulation](https://simulation-cf-2263c1.vercel.app/)
 
+### Video on Youtube
+[See the video](https://www.youtube.com/watch?v=DJuu_Mr8qrA)
+
 ### Storyboard
 
 Sample 2, `n = 5`. 🟩 = still free, 🟥 = forbidden.
