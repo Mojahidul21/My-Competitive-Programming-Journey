@@ -88,6 +88,8 @@
 
 > ### 💻 C++ Syntax Strategies ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/21.%20cpp-syntax-strategies-banner.svg)
 > - [Lambda Functions in C++ — with count_if in Action](C++%20Syntax%20Strategies/Lambda%20Functions%20in%20C++%20—%20with%20count_if%20in%20Action.md)
+> - [The Little Tools of Nothing](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/C%2B%2B%20Syntax%20Strategies/The%20Little%20Tools%20of%20Nothing.md)
+> - [Miscellaneous Syntaxes That Make Your Job Easier](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/C%2B%2B%20Syntax%20Strategies/Miscellaneous%20Syntaxes%20That%20Make%20Your%20Job%20Easier.md)
 
 
 > ### 📖 Miscellaneous ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/22.%20miscellaneous-banner.svg)
