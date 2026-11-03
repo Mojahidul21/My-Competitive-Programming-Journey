@@ -65,6 +65,91 @@ cout << "Final sum: " << sum << endl;
 </details>
 
 <details>
+<summary>Boolalpha</summary>
+
+**Syntax:**
+```cpp
+#include <iostream>
+cout << boolalpha;   // print bools as "true" / "false"
+cout << noboolalpha; // back to 1 / 0 (the default)
+```
+
+**What it does:**
+By default, `cout` prints a `bool` as `1` or `0`. `boolalpha` is a stream manipulator that switches the stream to print the words `true` and `false` instead. It also changes how `cin` reads: with `boolalpha` set, input must be the literal words `true` or `false`.
+
+**Use case 1 — Printing the result of a comparison:**
+```cpp
+cout << (3 < 5) << endl;
+// Output: 1
+
+cout << boolalpha << (3 < 5) << endl;
+// Output: true
+```
+
+**Use case 2 — Readable debug output for predicates:**
+```cpp
+bool isPrime(int n) {
+    if (n < 2) return false;
+    for (int d = 2; d * d <= n; d++)
+        if (n % d == 0) return false;
+    return true;
+}
+
+int main() {
+    cout << boolalpha;
+    cout << "isPrime(1)  = " << isPrime(1) << endl;
+    cout << "isPrime(7)  = " << isPrime(7) << endl;
+    cout << "isPrime(12) = " << isPrime(12) << endl;
+}
+// Output:
+// isPrime(1)  = false
+// isPrime(7)  = true
+// isPrime(12) = false
+```
+
+**Use case 3 — It is sticky until you turn it off:**
+```cpp
+cout << boolalpha;
+cout << true << " " << false << endl;
+// Output: true false
+
+cout << noboolalpha;
+cout << true << " " << false << endl;
+// Output: 1 0
+```
+
+**Use case 4 — Reading `true` / `false` from input:**
+```cpp
+bool a, b;
+cin >> boolalpha >> a >> b;   // input: true false
+cout << boolalpha << a << " " << b << endl;
+// Output: true false
+// With input "1 0" instead, extraction fails (failbit is set)
+// because boolalpha input only accepts the words.
+```
+
+**Use case 5 — Only `bool` is affected, not `int`:**
+```cpp
+cout << boolalpha;
+cout << 1 << " " << true << endl;
+// Output: 1 true
+// The int 1 is still printed as a number;
+// only values of type bool are printed as words.
+```
+
+**Notes:**
+- Header: `<iostream>` (the flag itself lives in `<ios>`, which it includes)
+- The setting is **sticky**: it stays on for that stream until you apply `noboolalpha`
+- Equivalent flag form: `cout.setf(ios::boolalpha);` and `cout.unsetf(ios::boolalpha);`
+- Prints lowercase `true` / `false`. If a problem wants `YES` / `NO` or `Yes` / `No`, use a ternary instead: `cout << (ok ? "YES" : "NO");`
+- Mostly a debugging and readability aid. Judges almost never expect `true` / `false` in the output, so check the statement before leaving it in a submission
+- Applies to `cin` as well, and once it is set, `1` / `0` are no longer accepted as bool input
+
+**Related:** Assert, Ternary Operator
+
+</details>
+
+<details>
 <summary>Comma Operator as Conditional</summary>
 
 **What it does:** Chains two expressions with `,`, evaluating left-to-right and discarding the left result. Combined with short-circuit `&&`, it fakes an `if` statement inside a single expression.
