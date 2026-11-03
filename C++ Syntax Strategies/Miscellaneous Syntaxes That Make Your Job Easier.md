@@ -64,6 +64,8 @@ cout << "Final sum: " << sum << endl;
 
 </details>
 
+___
+
 <details>
 <summary>Boolalpha</summary>
 
@@ -149,6 +151,8 @@ cout << 1 << " " << true << endl;
 
 </details>
 
+___
+
 <details>
 <summary>Comma Operator as Conditional</summary>
 
@@ -189,6 +193,7 @@ cin >> j, i != j && (a.emplace_back(j), true);
 
 </details>
 
+___
 
 <details>
 <summary>Fill</summary>
