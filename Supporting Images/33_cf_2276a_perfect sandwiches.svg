@@ -1,0 +1,449 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="Segoe UI,Arial,sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fff8e7" />
+      <stop offset="1" stop-color="#f3dfb5" />
+    </linearGradient>
+    <linearGradient id="ch" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffe680" />
+      <stop offset="1" stop-color="#f2b705" />
+    </linearGradient>
+    <linearGradient id="sx" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffc766" />
+      <stop offset="1" stop-color="#e8590c" />
+    </linearGradient>
+    <radialGradient id="sa" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#ff9a8f" />
+      <stop offset=".6" stop-color="#d9412f" />
+      <stop offset="1" stop-color="#8e2a1c" />
+    </radialGradient>
+    <radialGradient id="sb" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#ffb0a0" />
+      <stop offset=".6" stop-color="#e5604a" />
+      <stop offset="1" stop-color="#a03323" />
+    </radialGradient>
+    <radialGradient id="pl" cx=".5" cy=".4" r=".7">
+      <stop offset="0" stop-color="#ffffff" />
+      <stop offset="1" stop-color="#cdd9e6" />
+    </radialGradient>
+    <linearGradient id="br" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f1cf9b" />
+      <stop offset="1" stop-color="#d9a863" />
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-opacity=".3" />
+    </filter>
+  </defs>
+  <rect width="800" height="450" rx="16" fill="url(#bg)" stroke="#d9c98a">
+    <animate id="base" attributeName="stroke-opacity" values="1;1" dur="27.5s" begin="0s;base.end" />
+  </rect>
+  <g opacity="1">
+    <animate attributeName="opacity" values="1;0;0" keyTimes="0;0.0397;1" begin="base.begin+12.4s" dur="15.1s" />
+    <text x="400" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#4a3412">Example 1 · regular: a = 6 cheese, b = 4 sausage</text>
+    <ellipse cx="200" cy="335" rx="165" ry="70" fill="url(#pl)" stroke="#9fb3c8" stroke-width="2" filter="url(#sh)" />
+    <ellipse cx="200" cy="335" rx="135" ry="54" fill="none" stroke="#b9c8d8" />
+    <rect x="90" y="262" width="220" height="118" rx="34" fill="url(#br)" stroke="#a8793f" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0221;1" begin="base.begin+0.4s" dur="27.1s" />
+    </rect>
+    <text x="200" y="430" text-anchor="middle" font-size="14" fill="#6b5a3a">sandwich 1</text>
+    <ellipse cx="600" cy="335" rx="165" ry="70" fill="url(#pl)" stroke="#9fb3c8" stroke-width="2" filter="url(#sh)" />
+    <ellipse cx="600" cy="335" rx="135" ry="54" fill="none" stroke="#b9c8d8" />
+    <rect x="490" y="262" width="220" height="118" rx="34" fill="url(#br)" stroke="#a8793f" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0221;1" begin="base.begin+0.4s" dur="27.1s" />
+    </rect>
+    <text x="600" y="430" text-anchor="middle" font-size="14" fill="#6b5a3a">sandwich 2</text>
+    <text x="30" y="55" font-size="13" fill="#6b5a3a">cheese a = 6</text>
+    <text x="480" y="55" font-size="13" fill="#6b5a3a">sausage b = 4</text>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;100.0 206;100.0 206" keyTimes="0;0.0455;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+5.5s" dur="22.0s" />
+      <g transform="translate(30,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="10" cy="12" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="26" cy="26" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;98.0 206;98.0 206" keyTimes="0;0.0465;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+6.0s" dur="21.5s" />
+      <g transform="translate(82,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="24" cy="10" r="3" fill="#c98f00" opacity=".45" />
+        <circle cx="12" cy="27" r="4" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;396.0 206;396.0 206" keyTimes="0;0.0476;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+6.5s" dur="21.0s" />
+      <g transform="translate(134,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="18" cy="18" r="5" fill="#c98f00" opacity=".45" />
+        <circle cx="30" cy="8" r="2" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;394.0 206;394.0 206" keyTimes="0;0.0488;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+7.0s" dur="20.5s" />
+      <g transform="translate(186,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="9" cy="28" r="3" fill="#c98f00" opacity=".45" />
+        <circle cx="28" cy="24" r="4" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-8.0 206;-8.0 206" keyTimes="0;0.05;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+7.5s" dur="20.0s" />
+      <g transform="translate(238,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#sx)" stroke="#b34a08" stroke-width="2">
+          <animate attributeName="stroke-width" values="2;7;2;7;2" begin="base.begin+2.5s" dur="2.5s" />
+        </rect>
+        <circle cx="12" cy="10" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="26" cy="28" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;340.0 206;340.0 206" keyTimes="0;0.0513;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+8.0s" dur="19.5s" />
+      <g transform="translate(290,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#sx)" stroke="#b34a08" stroke-width="2">
+          <animate attributeName="stroke-width" values="2;7;2;7;2" begin="base.begin+2.5s" dur="2.5s" />
+        </rect>
+        <circle cx="22" cy="12" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="10" cy="26" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-331 266;-331 266" keyTimes="0;0.0455;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+5.5s" dur="22.0s" />
+      <g transform="translate(500,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-327 266;-327 266" keyTimes="0;0.0465;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+6.0s" dur="21.5s" />
+      <g transform="translate(558,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sb)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-47 266;-47 266" keyTimes="0;0.0476;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+6.5s" dur="21.0s" />
+      <g transform="translate(616,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-43 266;-43 266" keyTimes="0;0.0488;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+7.0s" dur="20.5s" />
+      <g transform="translate(674,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sb)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g transform="translate(200,238)">
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="0;1.25;1;1" keyTimes="0;0.0173;0.0289;1" begin="base.begin+10.2s" dur="17.3s" />
+        <rect x="-100" y="-17" width="200" height="30" rx="15" fill="#2e9e5b" opacity="0">
+          <set attributeName="opacity" to="1" begin="base.begin+10.2s" dur="17.3s" />
+        </rect>
+        <text y="4" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" opacity="0">3 cheese &gt; 2 sausage ✔
+          <set attributeName="opacity" to="1" begin="base.begin+10.2s" dur="17.3s" />
+        </text>
+      </g>
+    </g>
+    <g transform="translate(600,238)">
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="0;1.25;1;1" keyTimes="0;0.0173;0.0289;1" begin="base.begin+10.2s" dur="17.3s" />
+        <rect x="-100" y="-17" width="200" height="30" rx="15" fill="#2e9e5b" opacity="0">
+          <set attributeName="opacity" to="1" begin="base.begin+10.2s" dur="17.3s" />
+        </rect>
+        <text y="4" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" opacity="0">3 cheese &gt; 2 sausage ✔
+          <set attributeName="opacity" to="1" begin="base.begin+10.2s" dur="17.3s" />
+        </text>
+      </g>
+    </g>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">The pool: 6 cheese slices, 4 sausage slices.</tspan>
+      <tspan x="400" dy="23">Every slice must be used. No “equal” rule anywhere!</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="base.begin+0.3s" dur="2.1s" />
+    </text>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">Surplus cheese c = a − b = 2 (orange).</tspan>
+      <tspan x="400" dy="23">Each sandwich needs ≥ 1 surplus cheese → k ≤ 2</tspan>
+      <tspan x="400" dy="23">Each sandwich needs ≥ 1 sausage → k ≤ 4</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="base.begin+2.5s" dur="2.8s" />
+    </text>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">Each sandwich gets (its sausage + 1) cheese.</tspan>
+      <tspan x="400" dy="23">The “+1” is what makes cheese strictly greater.</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="base.begin+5.4s" dur="4.699999999999999s" />
+    </text>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">k = min(a − b, b) = min(2, 4) = 2 ✔</tspan>
+      <tspan x="400" dy="23">Here it happens to be 2 + 2 sausage and 3 + 3 cheese.</tspan>
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0471;1" begin="base.begin+10.5s" dur="17.0s" />
+    </text>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0411;1" begin="base.begin+12.9s" dur="14.6s" />
+    <text x="400" y="30" text-anchor="middle" font-size="19" font-weight="700" fill="#4a3412">Example 2 · irregular: a = 7 cheese, b = 5 sausage</text>
+    <ellipse cx="200" cy="335" rx="165" ry="70" fill="url(#pl)" stroke="#9fb3c8" stroke-width="2" filter="url(#sh)" />
+    <ellipse cx="200" cy="335" rx="135" ry="54" fill="none" stroke="#b9c8d8" />
+    <rect x="90" y="262" width="220" height="118" rx="34" fill="url(#br)" stroke="#a8793f" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0426;1" begin="base.begin+13.4s" dur="14.1s" />
+    </rect>
+    <text x="200" y="430" text-anchor="middle" font-size="14" fill="#6b5a3a">sandwich 1</text>
+    <ellipse cx="600" cy="335" rx="165" ry="70" fill="url(#pl)" stroke="#9fb3c8" stroke-width="2" filter="url(#sh)" />
+    <ellipse cx="600" cy="335" rx="135" ry="54" fill="none" stroke="#b9c8d8" />
+    <rect x="490" y="262" width="220" height="118" rx="34" fill="url(#br)" stroke="#a8793f" stroke-width="2" opacity="0">
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.0426;1" begin="base.begin+13.4s" dur="14.1s" />
+    </rect>
+    <text x="600" y="430" text-anchor="middle" font-size="14" fill="#6b5a3a">sandwich 2</text>
+    <text x="30" y="55" font-size="13" fill="#6b5a3a">cheese a = 7</text>
+    <text x="480" y="55" font-size="13" fill="#6b5a3a">sausage b = 5</text>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;75.0 206;75.0 206" keyTimes="0;0.1111;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+18.5s" dur="9.0s" />
+      <g transform="translate(30,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="10" cy="12" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="26" cy="26" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;73.0 206;73.0 206" keyTimes="0;0.1176;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+19.0s" dur="8.5s" />
+      <g transform="translate(82,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="24" cy="10" r="3" fill="#c98f00" opacity=".45" />
+        <circle cx="12" cy="27" r="4" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;71.0 206;71.0 206" keyTimes="0;0.125;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+19.5s" dur="8.0s" />
+      <g transform="translate(134,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="18" cy="18" r="5" fill="#c98f00" opacity=".45" />
+        <circle cx="30" cy="8" r="2" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;344.0 206;344.0 206" keyTimes="0;0.1333;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+20.0s" dur="7.5s" />
+      <g transform="translate(186,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="9" cy="28" r="3" fill="#c98f00" opacity=".45" />
+        <circle cx="28" cy="24" r="4" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;342.0 206;342.0 206" keyTimes="0;0.1429;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+20.5s" dur="7.0s" />
+      <g transform="translate(238,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#ch)" stroke="#b7950b" stroke-width="2"></rect>
+        <circle cx="12" cy="10" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="26" cy="28" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-35.0 206;-35.0 206" keyTimes="0;0.1538;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+21.0s" dur="6.5s" />
+      <g transform="translate(290,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#sx)" stroke="#b34a08" stroke-width="2">
+          <animate attributeName="stroke-width" values="2;7;2;7;2" begin="base.begin+15.5s" dur="2.5s" />
+        </rect>
+        <circle cx="22" cy="12" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="10" cy="26" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;288.0 206;288.0 206" keyTimes="0;0.1667;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+21.5s" dur="6.0s" />
+      <g transform="translate(342,64)" filter="url(#sh)">
+        <rect width="40" height="40" rx="6" fill="url(#sx)" stroke="#b34a08" stroke-width="2">
+          <animate attributeName="stroke-width" values="2;7;2;7;2" begin="base.begin+15.5s" dur="2.5s" />
+        </rect>
+        <circle cx="14" cy="20" r="4" fill="#c98f00" opacity=".45" />
+        <circle cx="28" cy="12" r="3" fill="#c98f00" opacity=".45" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-362 266;-362 266" keyTimes="0;0.1111;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+18.5s" dur="9.0s" />
+      <g transform="translate(500,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-358 266;-358 266" keyTimes="0;0.1176;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+19.0s" dur="8.5s" />
+      <g transform="translate(558,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sb)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-354 266;-354 266" keyTimes="0;0.125;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+19.5s" dur="8.0s" />
+      <g transform="translate(616,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-105 266;-105 266" keyTimes="0;0.1333;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+20.0s" dur="7.5s" />
+      <g transform="translate(674,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sb)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g>
+      <animateTransform attributeName="transform" type="translate" values="0 0;-101 266;-101 266" keyTimes="0;0.1429;1" calcMode="spline" keySplines="0.3 0 0.2 1;0 0 1 1" begin="base.begin+20.5s" dur="7.0s" />
+      <g transform="translate(732,84)" filter="url(#sh)">
+        <circle r="21" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
+        <ellipse cx="-7" cy="-9" rx="8" ry="4" fill="#fff" opacity=".4" />
+        <circle r="9" fill="none" stroke="#6e1f14" stroke-opacity=".35" />
+      </g>
+    </g>
+    <g transform="translate(200,238)">
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="0;1.25;1;1" keyTimes="0;0.0698;0.1163;1" begin="base.begin+23.2s" dur="4.3s" />
+        <rect x="-100" y="-17" width="200" height="30" rx="15" fill="#2e9e5b" opacity="0">
+          <set attributeName="opacity" to="1" begin="base.begin+23.2s" dur="4.3s" />
+        </rect>
+        <text y="4" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" opacity="0">4 cheese &gt; 3 sausage ✔
+          <set attributeName="opacity" to="1" begin="base.begin+23.2s" dur="4.3s" />
+        </text>
+      </g>
+    </g>
+    <g transform="translate(600,238)">
+      <g>
+        <animateTransform attributeName="transform" type="scale" values="0;1.25;1;1" keyTimes="0;0.0698;0.1163;1" begin="base.begin+23.2s" dur="4.3s" />
+        <rect x="-100" y="-17" width="200" height="30" rx="15" fill="#2e9e5b" opacity="0">
+          <set attributeName="opacity" to="1" begin="base.begin+23.2s" dur="4.3s" />
+        </rect>
+        <text y="4" text-anchor="middle" font-size="14" font-weight="700" fill="#fff" opacity="0">3 cheese &gt; 2 sausage ✔
+          <set attributeName="opacity" to="1" begin="base.begin+23.2s" dur="4.3s" />
+        </text>
+      </g>
+    </g>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">Irregular case: 7 cheese, 5 sausage.</tspan>
+      <tspan x="400" dy="23">Can unequal sandwiches still work? Let’s see.</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="base.begin+13.3s" dur="2.1s" />
+    </text>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">Surplus cheese c = a − b = 2 (orange).</tspan>
+      <tspan x="400" dy="23">Surplus is the tight pile: k ≤ 2 (sausage alone allows k ≤ 5)</tspan>
+      <tspan x="400" dy="23">So 5 sausage slices must be shared by 2 sandwiches.</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="base.begin+15.5s" dur="2.8s" />
+    </text>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">Split sausage unevenly: 3 on one sandwich, 2 on the other.</tspan>
+      <tspan x="400" dy="23">Cheese = sausage + 1, so 4 and 3. Not identical, and that is allowed!</tspan>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.08;0.92;1" begin="base.begin+18.4s" dur="4.699999999999999s" />
+    </text>
+    <text x="400" y="158" text-anchor="middle" font-size="16" fill="#2b2110" opacity="0">
+      <tspan x="400" dy="0">k = min(a − b, b) = min(2, 5) = 2 ✔</tspan>
+      <tspan x="400" dy="23">Unequal cheese (4, 3) and unequal sausage (3, 2): every sandwich still wins.</tspan>
+      <animate attributeName="opacity" values="0;1;1" keyTimes="0;0.2;1" begin="base.begin+23.5s" dur="4.0s" />
+    </text>
+  </g>
+  <style>
+    <![CDATA[
+    .btn {
+      cursor: pointer
+    }
+
+    .btn rect {
+      fill: #fffdf5;
+      stroke: #b9a56a;
+      stroke-width: 1.5
+    }
+
+    .btn:hover rect {
+      fill: #ffe9a8
+    }
+
+    .btn:active rect {
+      fill: #f2b705
+    }
+
+    .btn text {
+      font-size: 11.5px;
+      fill: #4a3412;
+      pointer-events: none;
+      user-select: none
+    }
+    ]]>
+  </style>
+  <g id="controls" transform="translate(242,412)">
+    <g class="btn" data-act="play">
+      <rect x="0" width="60" height="24" rx="12" />
+      <text x="30" y="16" text-anchor="middle">▶ Play</text>
+    </g>
+    <g class="btn" data-act="pause">
+      <rect x="64" width="60" height="24" rx="12" />
+      <text x="94" y="16" text-anchor="middle">⏸ Pause</text>
+    </g>
+    <g class="btn" data-act="resume">
+      <rect x="128" width="60" height="24" rx="12" />
+      <text x="158" y="16" text-anchor="middle">⏵ Resume</text>
+    </g>
+    <g class="btn" data-act="reset">
+      <rect x="192" width="60" height="24" rx="12" />
+      <text x="222" y="16" text-anchor="middle">↺ Reset</text>
+    </g>
+    <g class="btn" data-act="stop">
+      <rect x="256" width="60" height="24" rx="12" />
+      <text x="286" y="16" text-anchor="middle">■ Stop</text>
+    </g>
+  </g>
+  <script>
+    <![CDATA[
+    (function() {
+      var svg = document.documentElement,
+        stopped = false;
+      var act = {
+        play: function() {
+          if (stopped || svg.animationsPaused()) {
+            stopped = false;
+            svg.unpauseAnimations();
+          } else {
+            svg.setCurrentTime(0);
+          }
+        },
+        pause: function() {
+          svg.pauseAnimations();
+        },
+        resume: function() {
+          stopped = false;
+          svg.unpauseAnimations();
+        },
+        reset: function() {
+          stopped = false;
+          svg.setCurrentTime(0);
+          svg.unpauseAnimations();
+        },
+        stop: function() {
+          svg.setCurrentTime(0);
+          svg.pauseAnimations();
+          stopped = true;
+        }
+      };
+      document.querySelectorAll("#controls .btn").forEach(function(b) {
+        b.addEventListener("click", function() {
+          act[b.getAttribute("data-act")]();
+        });
+      });
+    })();
+    ]]>
+  </script>
+
+  <text
+    x="785"
+    y="441"
+    text-anchor="end"
+    font-family="'Caveat', cursive"
+    font-size="12"
+    font-weight="600"
+    fill="#FFFFFF"
+    letter-spacing="0.4">
+    Ace_Azimuth_Aviator
+</text>
+
+</svg>
