@@ -7,8 +7,6 @@
 > **Problem:** https://codeforces.com/contest/2276/problem/A  
 > **Solution:** https://codeforces.com/contest/2276/submission/397285022 
 
-![Animated walkthrough: 6 cheese, 4 sausage, 2 sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/33_cf_2276a_perfect%20sandwiches.svg)
-
 ---
 
 ## 1. The problem in plain words
@@ -59,6 +57,8 @@ c = a − b = Σ extra_i
 ```
 
 If `c ≤ 0` there is no surplus at all, so not even one sandwich can have more cheese than sausage. The answer is `−1`.
+
+![Animated walkthrough: 6 cheese, 4 sausage, 2 sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/33_cf_2276a_perfect%20sandwiches.svg)
 
 ---
 
