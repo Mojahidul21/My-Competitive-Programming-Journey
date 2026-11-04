@@ -46,7 +46,7 @@
     <text x="208" y="202" text-anchor="middle">★ 800</text>
   </g>
   <rect x="252" y="182" width="210" height="30" rx="15" fill="#2e9e5b" />
-  <text x="357" y="203" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Consolas,Menlo,monospace">min(a − b, b)</text>
+  <text x="357" y="203" text-anchor="middle" font-size="16" font-weight="700" fill="#fff" font-family="Consolas,Menlo,monospace">min(a − b, b) or -1</text>
   <!-- floating decorations -->
   <g filter="url(#sh)">
     <g>
@@ -78,20 +78,25 @@
   <!-- sandwich -->
   <ellipse cx="780" cy="226" rx="150" ry="22" fill="url(#pl)" stroke="#9fb3c8" stroke-width="2" filter="url(#sh)" />
   <g filter="url(#sh)">
-    <rect x="692" y="176" width="176" height="42" rx="20" fill="url(#br)" stroke="#a8793f" stroke-width="2" />
-    <rect x="696" y="156" width="168" height="24" rx="5" fill="url(#ch)" stroke="#b7950b" stroke-width="2" />
-    <g transform="rotate(-2.5 780 140)">
-      <rect x="700" y="136" width="160" height="22" rx="5" fill="url(#sx)" stroke="#b34a08" stroke-width="2" />
-    </g>
-    <ellipse cx="740" cy="130" rx="30" ry="11" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
-    <ellipse cx="820" cy="130" rx="30" ry="11" fill="url(#sa)" stroke="#6e1f14" stroke-width="2" />
+    <!-- bottom bread slice (flat, sandwich-style) -->
+    <rect x="700" y="178" width="160" height="28" rx="6" fill="url(#br)" stroke="#a8793f" stroke-width="2" />
+    <!-- sausage filling -->
+    <rect x="708" y="158" width="144" height="22" rx="4" fill="url(#sx)" stroke="#b34a08" stroke-width="2" />
+    <!-- cheese slice (slightly larger, peeking out) -->
+    <rect x="704" y="140" width="152" height="20" rx="3" fill="url(#ch)" stroke="#b7950b" stroke-width="2" />
+    <!-- top bread slice (flat) -->
     <g>
-      <animateTransform attributeName="transform" type="translate" values="0 0;0 -9;0 0" dur="2.6s" repeatCount="indefinite" />
-      <path d="M692 112 Q692 58 780 58 Q868 58 868 112 Q868 120 858 120 L702 120 Q692 120 692 112Z" fill="url(#br)" stroke="#a8793f" stroke-width="2" />
-      <circle cx="740" cy="84" r="3" fill="#fff6dc" />
-      <circle cx="780" cy="76" r="3" fill="#fff6dc" />
-      <circle cx="820" cy="86" r="3" fill="#fff6dc" />
+      <animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="2.6s" repeatCount="indefinite" />
+      <rect x="700" y="116" width="160" height="28" rx="6" fill="url(#br)" stroke="#a8793f" stroke-width="2" />
+      <!-- subtle seeds / texture on top bread -->
+      <circle cx="730" cy="128" r="2.5" fill="#fff6dc" />
+      <circle cx="760" cy="122" r="2.5" fill="#fff6dc" />
+      <circle cx="790" cy="130" r="2.5" fill="#fff6dc" />
+      <circle cx="820" cy="124" r="2.5" fill="#fff6dc" />
     </g>
+    <!-- optional sausage bits on the side for interest -->
+    <ellipse cx="695" cy="155" rx="12" ry="8" fill="url(#sa)" stroke="#6e1f14" stroke-width="1.5" transform="rotate(-25 695 155)" />
+    <ellipse cx="865" cy="148" rx="11" ry="7" fill="url(#sa)" stroke="#6e1f14" stroke-width="1.5" transform="rotate(20 865 148)" />
   </g>
   <text x="990" y="258" text-anchor="end" font-size="11" fill="black">Ace_Azimuth_Aviator</text>
 </svg>
