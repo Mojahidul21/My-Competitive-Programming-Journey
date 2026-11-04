@@ -1,3 +1,4 @@
+![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/34.%202276a-banner.svg)
 # 🥪 2276A — Perfect Sandwiches
 
 > **Educational Codeforces Round 195 (Div. 2)  
