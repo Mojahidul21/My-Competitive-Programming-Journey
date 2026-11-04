@@ -4,7 +4,7 @@
 > Problem A  
 > Tag: greedy, math, \*800**  
 > **One-line answer:** `f(a, b) = min(a − b, b) if a > b, otherwise −1  
-> **Problem:** https://codeforces.com/contest/2276/problem/A
+> **Problem:** https://codeforces.com/contest/2276/problem/A  
 > **Solution:** https://codeforces.com/contest/2276/submission/397285022 
 
 ![Animated walkthrough: 6 cheese, 4 sausage, 2 sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/33_cf_2276a_perfect%20sandwiches.svg)
