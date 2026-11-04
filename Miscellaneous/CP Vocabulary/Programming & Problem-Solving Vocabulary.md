@@ -33,7 +33,7 @@ Lexical ordered.
 - [Freeze Flag (Fixed-Point Iteration)](#freeze-flag-fixed-point-iteration)
 - [Greedy Peel](#greedy-peel)
 - [Guard / Guard Clause](#guard--guard-clause)
-- [Hidden Assumptions](hidden-assumptions)
+- [Hidden Assumptions](#hidden-assumptions)
 - [Invariant](#invariant)
 - [Irreducible Fraction](#irreducible-fraction)
 - [Lambda (Lambda Function)](#lambda-lambda-function)
