@@ -3,7 +3,7 @@
 > **Educational Codeforces Round 195 (Div. 2)  
 > Problem A  
 > Tag: greedy, math, \*800**  
-> **One-line answer:** `f(a, b) = min(a − b, b) if a > b, otherwise −1
+> **One-line answer:** `f(a, b) = min(a − b, b) if a > b, otherwise −1  
 > **Problem Link:** https://codeforces.com/contest/2276/problem/A 
 
 ![Animated walkthrough: 6 cheese, 4 sausage, 2 sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/33_cf_2276a_perfect%20sandwiches.svg)
