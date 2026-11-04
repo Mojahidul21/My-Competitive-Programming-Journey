@@ -243,3 +243,4 @@ main(){
 * If there is no surplus, the answer is `−1`.
 * The real trap is **adding a rule the statement never gave**. List the constraints literally, then solve exactly those.
 * Related links: (Hidden Assumptions)[https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20%26%20Problem-Solving%20Vocabulary.md#hidden-assumptions]
+* [Hidden Assumptions](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Miscellaneous/CP%20Vocabulary/Programming%20%26%20Problem-Solving%20Vocabulary.md#hidden-assumptions)
