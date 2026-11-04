@@ -975,7 +975,7 @@ The input `5 2` exposes it: the true answer is `2`, using cheese `(2, 3)`, which
 **Analogy.** It is like adding a house rule to a board game and then arguing the official rulebook is wrong. Your plan works perfectly under the house rules and falls apart in the real game.
 
 **Related.**
-- [2276A Perfect Sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Educational%20Codeforces%20Round%20195%20(Rated%20for%20Div.%202)/A.%20Perfect%20Sandwiches.md): `Remind` and `Lessons` sections.
+- [Cf 2276A Perfect Sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Educational%20Codeforces%20Round%20195%20(Rated%20for%20Div.%202)/A.%20Perfect%20Sandwiches.md): `Remind` and `Lessons` sections.
 
 ___
 
