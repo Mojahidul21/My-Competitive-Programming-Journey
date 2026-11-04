@@ -3,7 +3,7 @@
 > **Educational Codeforces Round 195 (Div. 2)  
 > Problem A  
 > Tag: greedy, math, \*800**  
-> **One-line answer:** `f(a, b) = min(a − b, b) if a > b, otherwise −1  
+> **One-line answer:** f(a, b) = min(a − b, b) if a > b, otherwise −1  
 > **Problem:** https://codeforces.com/contest/2276/problem/A  
 > **Solution:** https://codeforces.com/contest/2276/submission/397285022 
 
