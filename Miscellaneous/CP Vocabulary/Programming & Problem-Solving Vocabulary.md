@@ -940,6 +940,42 @@ A safety lock — you check the condition before pulling the trigger. The gun (c
 
 ---
 
+## Hidden Assumptions
+
+**Definition.** A hidden assumption is a rule you add to a problem without noticing, so it feels like part of the statement but is not. It narrows the problem you solve to a smaller one than the one given, so your solution can be correct for your version and wrong for the real one.
+
+**Why it arises.**
+- **Pattern matching:** the problem looks like one you have solved, so the old problem's rules get copied over.
+- **Mental simplification:** "equal", "sorted", "distinct" or "connected" make a problem easier to picture, so the mind inserts them.
+- **Sample bias:** the samples happen to satisfy an extra property, and you treat it as a rule.
+- **Early commitment:** once you start coding an idea, you stop checking it against the statement.
+
+**Example from practice.** *2276A Perfect Sandwiches*: the statement only requires `cheese > sausage` in each sandwich. It tempts you to assume every sandwich is identical, so the count must divide both `a` and `b`.
+
+| ❌ Assumed | ✅ Actually stated |
+|-----------|-------------------|
+| every sandwich has the same cheese and the same sausage | only `cheese_i > sausage_i` in each sandwich |
+| the count must divide `a` and `b` | the slice counts per sandwich can differ |
+| cheese must be at least `2 ×` sausage | cheese only needs to be `1` more |
+
+The input `5 2` exposes it: the true answer is `2`, using cheese `(2, 3)`, which no equal split can produce.
+
+**How to recognize.**
+- Your solution needs a property that you cannot point to in the statement.
+- You find yourself saying "obviously", "of course" or "each one would be the same".
+- Samples pass, but a tiny odd case such as `(5, 2)` fails.
+- You are patching one failing case after another instead of rethinking the model.
+
+**Habit that prevents it.**
+1. Write each rule as an inequality or equation, exactly as written.
+2. Write down what the statement does **not** promise (equal, sorted, distinct, adjacent).
+3. Test your model on the smallest odd and unbalanced cases by hand.
+
+**Analogy.** It is like adding a house rule to a board game and then arguing the official rulebook is wrong. Your plan works perfectly under the house rules and falls apart in the real game.
+
+**Related.**
+- [2276A Perfect Sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Educational%20Codeforces%20Round%20195%20(Rated%20for%20Div.%202)/A.%20Perfect%20Sandwiches.md): `Remind` and `Lessons` sections.
+
 ## Invariant
 
 **Definition:**
