@@ -104,6 +104,10 @@ flowchart TD
     N5 --> N8["Only case that can improve"]
 ```
 
+<p align="center">
+  <img src="https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/37.%202280c%20_%20three-cases.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
+</p>
+
 - ❌ **Segment far away:** the peak gap survives untouched, so the result is $\ge d_x$. No improvement.
 - ❌ **Segment swallows both $a_x$ and $a_{x+1}$:** the peak becomes $2d_x \ge d_x$. Worse.
 - ✅ **Segment contains exactly one of them:** the peak turns into a *border* gap with a new value. This is the only way to win.
@@ -123,6 +127,10 @@ flowchart TD
 | **Starts at $x+1$** | $[x+1, r]$ | $r = x+1, \dots, n-1$ |
 
 That is at most $n$ candidates in total. The "enormous search space" collapsed to a line.
+
+<p align="center">
+  <img src="https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/38.%202280c%20_%20two-families.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
+</p>
 
 ```mermaid
 flowchart LR
@@ -197,7 +205,7 @@ auto calc = [&](int l, int r, int inner) {
 ## Storyboard: sample 6 in problem statement, frame by frame
 
 <p align="center">
-  <img src="https://github.com/Mojahidul21/Eeperiment/blob/main/Upsolve%20_%20Reverse%20and%20Double%20_%202280c/05-storyboard-sample6.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
+  <img src="https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/39.%202280c%20_%20storyboard-sample6.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
 </p>
 
 $a = [8,3,9,9,9,8]$ (0-based indices $0..5$)
