@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Mojahidul21/Eeperiment/blob/main/Upsolve%20_%20Reverse%20and%20Double%20_%202280c/01-hook.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
+  <img src="https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/35.%202280c%20_%20hook.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
 </p>
 
 # Codeforces 2280C — Reverse and Double
