@@ -75,7 +75,7 @@ So the gaps fall into exactly **three groups**:
 | **Border** | the two gaps touching the segment | $\lvert a_{l-1} - 2a_r\rvert$ and $\lvert a_{r+1} - 2a_l\rvert$ |
 
 <p align="center">
-  <img src="https://github.com/Mojahidul21/Eeperiment/blob/main/Upsolve%20_%20Reverse%20and%20Double%20_%202280c/02-gap-anatomy.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
+  <img src="https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/36.%202280c%20_%20gap-anatomy.svg" alt="From 4.5 x 10^10 candidate segments to at most n" width="820">
 </p>
 
 > [!NOTE]
