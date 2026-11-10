@@ -50,6 +50,9 @@
 
 
 > ### 🎯 Specific Problem Strategy ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/19.%20Specific%20Problem%20Strategy.svg)
+> **Aliens Trick**
+> - [The Aliens Trick: Put a Price on K](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/The%20Aliens%20Trick%3A%20Put%20a%20Price%20on%20K.md)
+>
 > **Codeforces Tags**
 > - [The CF Tag Atlas — Recognizing & Attacking Every Codeforces Tag](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Specific%20Problem%20Strategy/The%20CF%20Tag%20Atlas%20%E2%80%94%20Recognizing%20%26%20Attacking%20Every%20Codeforces%20Tag.md)
 >
