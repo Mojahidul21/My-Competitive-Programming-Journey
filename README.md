@@ -86,7 +86,6 @@
 > - [Codeforces Round 1119 (Div. 3) — D. MEX Multiset](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/D.%20MEX%20Multiset.md)
 > - [Codeforces Round 1121 (Div. 2) — B. Knife's Pill Farm](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/B.%20Knife's%20Pill%20Farm.md#-core-insight--telescoping-via-summation-by-parts-1)
 > - [Codeforces Round 1122 (Div. 3) — C. AND, OR, Sort!](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201122%20(Div.%203)/C.%20AND%2C%20OR%2C%20Sort!.md)
-> - [To be Upsolved (tracker)](Upsolve/Codeforces/To%20be%20upsolved.md)
 
 
 > ### 💻 C++ Syntax Strategies ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/21.%20cpp-syntax-strategies-banner.svg)
