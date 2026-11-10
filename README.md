@@ -78,13 +78,13 @@
 > - [Codeforces Round 1117 (Div. 2) — C. Spying on the Beaver](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201117%20(Div.%202)/C.%20Spying%20on%20the%20Beaver.md)
 > - [Codeforces Round 1120 (Div. 2) — C1. Floor of MEX (Easy Version)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201120%20(Div.%202)/C1.%20Floor%20of%20MEX%20(Easy%20Version)/Floor%20of%20MEX%20(Easy%20Version)%20-%20CF2263C1.md)
 > - [Codeforces Round 1121 (Div. 2) — A. Rumb Needs a Hand](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/A.%20Rumb%20Needs%20a%20Hand.md)
+> - [Codeforces Round 1121 (Div. 2) — B. Knife's Pill Farm](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/B.%20Knife's%20Pill%20Farm.md#-core-insight--telescoping-via-summation-by-parts-1)
 > - [Codeforces Round 1133 (Div. 2) — C. Reverse and Double](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201133%20(Div.%202)/C.%20Reverse%20and%20Double.md)
 > - [Educational Codeforces Round 190 (Rated for Div. 2) — B. Digit String](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Educational%20Codeforces%20Round%20190%20(Rated%20for%20Div.%202)/B.%20Digit%20String.md)
 > - [Educational Codeforces Round 195 (Rated for Div. 2) — A. Perfect Sandwiches](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Educational%20Codeforces%20Round%20195%20(Rated%20for%20Div.%202)/A.%20Perfect%20Sandwiches.md)
 > - [Codeforces Round 1065 (Div. 3) — B. Yuu Koito and Minimum Absolute Sum](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/General%20Tricks%20%26%20Techniques/Telescoping%20Sums/The%20Corner-Anchor%20Pattern.md)
 > - [Codeforces Round 1119 (Div. 3) — C. 101](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/C.%20101.md)
 > - [Codeforces Round 1119 (Div. 3) — D. MEX Multiset](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201119%20(Div.%203)/D.%20MEX%20Multiset.md)
-> - [Codeforces Round 1121 (Div. 2) — B. Knife's Pill Farm](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201121%20(Div.%202)/B.%20Knife's%20Pill%20Farm.md#-core-insight--telescoping-via-summation-by-parts-1)
 > - [Codeforces Round 1122 (Div. 3) — C. AND, OR, Sort!](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201122%20(Div.%203)/C.%20AND%2C%20OR%2C%20Sort!.md)
 
 
