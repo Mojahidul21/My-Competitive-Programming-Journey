@@ -71,6 +71,7 @@
 > - [DeepInfra Round 1 (Codeforces Round 1126, Div. 1 + Div. 2) — B. MEX Game](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/DeepInfra%20Round%201%20(Codeforces%20Round%201126%2C%20Div.%201%20%2B%20Div.%202)/B.%20MEX%20Game.md)
 > - [Codeforces Round 1078 (Div. 2) — B. Offshores](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201078%20(Div.%202)/B.%20Offshores.md)
 > - [Codeforces Round 1079 (Div. 2) — B. Array and Permutation](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201079%20(Div.%202)/B.%20Array%20and%20Permutation.md)
+> - [Codeforces Round 1095 (Div. 2) — C. Mental Monumental (Easy Version)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201095%20(Div.%202)/C.%20Mental%20Monumental%20(Easy%20Version).md)
 > - [Codeforces Round 1102 (Div. 2) — B. Palindrome, Twelve and Two Terms](Upsolve/Codeforces/Codeforces%20Round%201102%20(Div.%202)/B.%20Palindrome%2C%20Twelve%20and%20Two%20Terms.md)
 > - [Codeforces Round 1116 (Div. 2) — B. Domino Tiles: Approach](Upsolve/Codeforces/Codeforces%20Round%201116%20(Div.%202)/B.%20Domino%20Tiles/Approach.md)
 > - [Codeforces Round 1116 (Div. 2) — C. Hot Potatoes at the Fairy Warehouse: Approach](Upsolve/Codeforces/Codeforces%20Round%201116%20(Div.%202)/C.%20Hot%20Potatoes%20at%20the%20Fairy%20Warehouse/Approach.md)
