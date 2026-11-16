@@ -1,128 +1,147 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 512" width="900" height="512" xmlns:c2pa="http://c2pa.org/manifest">
-<defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#1e3a5f"/></linearGradient><filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
-<rect width="900" height="512" rx="18" fill="url(#bg)"/>
-<text x="450" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="24" font-weight="bold" fill="#f8fafc">Sample 3 — 8 10 10 12 12 14, step by step</text>
-<text x="450" y="64" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#c7d2fe">the array never changes · cells at positions 0 and 7 are the mirror sentinels (dashed)</text>
-<rect x="40" y="90" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="90" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="113" font-family="Georgia,serif" font-size="15" fill="#fde68a">initial (with sentinels)</text>
-<rect x="40" y="136" width="42" height="34" rx="7" fill="#1d4ed8" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="136" width="42" height="34" rx="7" fill="#16a34a" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="136" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="136" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="159" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=1:  gl=2  gr=2  lc=2  →  8 > 2, count ✔</text>
-<rect x="40" y="182" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="182" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="182" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="182" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="182" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="182" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="182" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="182" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="205" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=2:  gl=2  gr=10  lc=10  →  10 = 10, skip ✘</text>
-<rect x="40" y="228" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="228" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="228" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="228" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="228" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="228" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="228" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="228" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="251" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=3:  gl=10  gr=2  lc=10  →  10 = 10, skip ✘</text>
-<rect x="40" y="274" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="274" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="274" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="274" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="274" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="274" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="274" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="274" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="297" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=4:  gl=2  gr=12  lc=12  →  12 = 12, skip ✘</text>
-<rect x="40" y="320" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="320" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="320" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="320" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="320" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="320" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="320" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="320" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="343" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=5:  gl=12  gr=2  lc=12  →  12 = 12, skip ✘</text>
-<rect x="40" y="366" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="61" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="90" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="111" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
-<rect x="140" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="161" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="190" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="211" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
-<rect x="240" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5"/>
-<text x="261" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="290" y="366" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5"/>
-<text x="311" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<rect x="340" y="366" width="42" height="34" rx="7" fill="#16a34a" stroke="#0f172a" stroke-width="1.5"/>
-<text x="361" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
-<rect x="390" y="366" width="42" height="34" rx="7" fill="#1d4ed8" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5"/>
-<text x="411" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
-<text x="450" y="389" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=6:  gl=2  gr=2  lc=2  →  14 > 2, count ✔</text>
-<text x="40" y="427" font-family="Georgia,serif" font-size="18" fill="#86efac">Count = 2  ✔ matches the expected output</text>
-<g fill="#fde68a" filter="url(#glow)"><path d="M640 482 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z"><animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite"/></path><path d="M868 468 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z"><animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite"/></path></g>
-<text x="880" y="498" text-anchor="end" font-family="'Segoe Script','Brush Script MT','Lucida Handwriting','Comic Sans MS',cursive" font-size="20" fill="#fef3c7" filter="url(#glow)">Ace_Azimuth_Aviator</text>
-<metadata><c2pa:manifest>AAAWgmp1bWIAAAAeanVtZGMycGEAEQAQgAAAqgA4m3EDYzJwYQAAABZcanVtYgAAAEdqdW1kYzJtYQARABCAAACqADibcQN1cm46YzJwYTo5YzUxY2I4ZS02MzA0LTQ5NzMtYTc3ZC05MDk2NDk2ZTQwNzcAAAADl2p1bWIAAAApanVtZGMyYXMAEQAQgAAAqgA4m3EDYzJwYS5hc3NlcnRpb25zAAAAALxqdW1iAAAARGp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuaW5ncmVkaWVudC52MwAAAAAYYzJzaCImzySDsokTrYR5c/gMPQ0AAABwY2JvcqNpZGM6Zm9ybWF0bWltYWdlL3N2Zyt4bWxqaW5zdGFuY2VJRHgseG1wOmlpZDpiOTcyMDIwYy0xNjU0LTRkZDItOGI1Yi1jODgwNzQzOTFiNjdscmVsYXRpb25zaGlwaHBhcmVudE9mAAAB4mp1bWIAAABBanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5hY3Rpb25zLnYyAAAAABhjMnNoL96OxqrEs7vglOOOEAjakQAAAZljYm9yomdhY3Rpb25zgqJmYWN0aW9ua2MycGEub3BlbmVkanBhcmFtZXRlcnOha2luZ3JlZGllbnRzgaJjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggApQiXPpC22dbxDHBRs2njpELA5SN4ywrSARDEJlmxyWkZmFjdGlvbngdY29tLmFudGhyb3BpYy5jbGF1ZGUucHJvdmlkZWRqcGFyYW1ldGVyc6F4H2NvbS5hbnRocm9waWMub3JpZ2luLWNvbmZpZGVuY2VndW5rbm93bmtkZXNjcmlwdGlvbnhmQ2xhdWRlIHByb3ZpZGVkIHRoaXMgZmlsZSBhdCB0aGUgcmVxdWVzdCBvZiBhIHVzZXIgYW5kIG1heSBoYXZlIGNyZWF0ZWQgb3IgbW9kaWZpZWQgdGhlIGZpbGUgY29udGVudHMubXNvZnR3YXJlQWdlbnShZG5hbWVmQ2xhdWRlcmFsbEFjdGlvbnNJbmNsdWRlZPUAAADIanVtYgAAAEBqdW1kY2JvcgARABCAAACqADibcRNjMnBhLmhhc2guZGF0YQAAAAAYYzJzaIBSK6D3umk1QaZXrVAjPRcAAACAY2JvcqVjYWxnZnNoYTI1NmNwYWRMAAAAAAAAAAAAAAAAZGhhc2hYIMe+bsFzyVuaKOcmKhS+R/aRj5UMEUN5a0yJZRI0lXriZG5hbWVuanVtYmYgbWFuaWZlc3RqZXhjbHVzaW9uc4GiZXN0YXJ0GT5nZmxlbmd0aBkeBAAAAj5qdW1iAAAAJ2p1bWRjMmNsABEAEIAAAKoAOJtxA2MycGEuY2xhaW0udjIAAAACD2Nib3KlY2FsZ2ZzaGEyNTZpc2lnbmF0dXJleE1zZWxmI2p1bWJmPS9jMnBhL3VybjpjMnBhOjljNTFjYjhlLTYzMDQtNDk3My1hNzdkLTkwOTY0OTZlNDA3Ny9jMnBhLnNpZ25hdHVyZWppbnN0YW5jZUlEeCx4bXA6aWlkOjNhZTY4OGU1LTA3MTUtNDA2My05OWU5LTJkMjg0Y2Y4OTI1YnJjcmVhdGVkX2Fzc2VydGlvbnODomN1cmx4LXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaW5ncmVkaWVudC52M2RoYXNoWCAClCJc+kLbZ1vEMcFGzaeOkQsDlI3jLCtIBEMQmWbHJaJjdXJseCpzZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmFjdGlvbnMudjJkaGFzaFggKQFPzekzYFlPHZMafP/M36B58NG231AhgYWWMJjWkOmiY3VybHgpc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5oYXNoLmRhdGFkaGFzaFggLb/JRV/o8/oznXhZIFY654lQFPzcIMqRB3nR6RtBXb50Y2xhaW1fZ2VuZXJhdG9yX2luZm+jZG5hbWVvQW50aHJvcGljIEZpbGVzZ3ZlcnNpb25lMS4wLjBrc3BlY1ZlcnNpb25lMi40LjAAABA4anVtYgAAAChqdW1kYzJjcwARABCAAACqADibcQNjMnBhLnNpZ25hdHVyZQAAABAIY2JvctKEWQISogEmGCFZAgowggIGMIIBjaADAgECAhRA5aAK7sI50L64g/oGQgU9Z1UTADAKBggqhkjOPQQDAzBJMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEuMCwGA1UEAxMlQW50aHJvcGljIENvbnRlbnQgQ3JlZGVudGlhbHMgUm9vdCBDQTAeFw0yNjA4MDcxODQzNTZaFw0yODA4MDYxOTQzNTZaMEQxFzAVBgNVBAoTDkFudGhyb3BpYywgUEJDMSkwJwYDVQQDEyBBbnRocm9waWMgQ2xhdWRlIENvbnRlbnQgU2lnbmluZzBZMBMGByqGSM49AgEGCCqGSM49AwEHA0IABJh6CmvLUBgFFNU0vUKlOVtE6djd17L5SuwX0LemFisBM3dkd/3cyjxFA3Qo5S46fX0/ihY0VZ7mfb9KF703t5OjWDBWMA4GA1UdDwEB/wQEAwIHgDAVBgNVHSUEDjAMBgorBgEEAYPoXgIBMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUzlHiBIFOZFsj+OPEz5o+nMHXXMIwCgYIKoZIzj0EAwMDZwAwZAIwMXMdFJ4BetLLVY7ORuE9noqbbAZOZn/aArXyTwFAZfKrPzxF2vPoJNf1+UCdg1XGAjBwX1zd9WGqYkqmL5SFqw1QySjr1zJfpJM9+1rdDwSPLMOPOjKuiXjoU/pUUeG9RwmhY3BhZFkNngAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPZYQA8Zw59pmAE4bBsvmEChjSjYGa1Ti2P9Am+LCvtkO04mJIir4rg6OZ2GG4zzz2u4Z0f9fukxPpggo4azGxgktOM=</c2pa:manifest></metadata></svg>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="1" stop-color="#1e3a5f" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="512" rx="18" fill="url(#bg)" />
+  <text x="450" y="40" text-anchor="middle" font-family="Georgia,serif" font-size="24" font-weight="bold" fill="#f8fafc">Sample 3 — 8 10 10 12 12 14, step by step</text>
+  <text x="450" y="64" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#c7d2fe">the array never changes · cells at positions 0 and 7 are the mirror sentinels (dashed)</text>
+  <rect x="40" y="90" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="90" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="90" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="113" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="113" font-family="Georgia,serif" font-size="15" fill="#fde68a">initial (with sentinels)</text>
+  <rect x="40" y="136" width="42" height="34" rx="7" fill="#1d4ed8" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="136" width="42" height="34" rx="7" fill="#16a34a" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="136" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="136" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="136" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="159" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="159" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=1: gl=2 gr=2 lc=2 → 8 > 2, count ✔</text>
+  <rect x="40" y="182" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="182" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="182" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="182" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="182" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="182" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="182" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="182" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="205" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="205" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=2: gl=2 gr=10 lc=10 → 10 = 10, skip ✘</text>
+  <rect x="40" y="228" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="228" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="228" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="228" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="228" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="228" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="228" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="228" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="251" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="251" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=3: gl=10 gr=2 lc=10 → 10 = 10, skip ✘</text>
+  <rect x="40" y="274" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="274" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="274" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="274" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="274" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="274" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="274" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="274" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="297" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="297" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=4: gl=2 gr=12 lc=12 → 12 = 12, skip ✘</text>
+  <rect x="40" y="320" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="320" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="320" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="320" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="320" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="320" width="42" height="34" rx="7" fill="#b45309" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="320" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="320" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="343" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="343" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=5: gl=12 gr=2 lc=12 → 12 = 12, skip ✘</text>
+  <rect x="40" y="366" width="42" height="34" rx="7" fill="#334155" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="61" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="90" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="111" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">8</text>
+  <rect x="140" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="161" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="190" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="211" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">10</text>
+  <rect x="240" y="366" width="42" height="34" rx="7" fill="#334155" stroke="#0f172a" stroke-width="1.5" />
+  <text x="261" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="290" y="366" width="42" height="34" rx="7" fill="#1d4ed8" stroke="#0f172a" stroke-width="1.5" />
+  <text x="311" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <rect x="340" y="366" width="42" height="34" rx="7" fill="#16a34a" stroke="#0f172a" stroke-width="1.5" />
+  <text x="361" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">14</text>
+  <rect x="390" y="366" width="42" height="34" rx="7" fill="#1d4ed8" stroke-dasharray="4 3" stroke="#94a3b8" stroke-width="1.5" />
+  <text x="411" y="389" text-anchor="middle" font-family="Georgia,serif" font-size="17" font-weight="bold" fill="#f8fafc">12</text>
+  <text x="450" y="389" font-family="Georgia,serif" font-size="15" fill="#fde68a">i=6: gl=2 gr=2 lc=2 → 14 > 2, count ✔</text>
+  <text x="40" y="427" font-family="Georgia,serif" font-size="18" fill="#86efac">Count = 2 ✔ matches the expected output</text>
+  <g fill="#fde68a" filter="url(#glow)">
+    <path d="M640 482 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3z">
+      <animate attributeName="opacity" values="1;0.15;1" dur="1.6s" repeatCount="indefinite" />
+    </path>
+    <path d="M868 468 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2z">
+      <animate attributeName="opacity" values="0.2;1;0.2" dur="2s" repeatCount="indefinite" />
+    </path>
+  </g>
+  <text x="880" y="498" text-anchor="end" font-family="'Segoe Script','Brush Script MT','Lucida Handwriting','Comic Sans MS',cursive" font-size="20" fill="#fef3c7" filter="url(#glow)">Ace_Azimuth_Aviator</text>
+</svg>
