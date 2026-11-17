@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" role="img" aria-label="Dry run of the present array on samples 3 and 4" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Dry run of the present array on samples 3 and 4</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="1" stop-color="#1e1b4b" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" />
+    </filter>
+  </defs>
+  <rect width="900" height="560" rx="18" fill="url(#bg)" />
+  <text x="450" y="42" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="28" font-weight="800" fill="#fde68a">Consume-and-Mark: the present array at work</text>
+  <text x="40" y="80" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="800" fill="#93c5fd">Sample 3 → YES</text>
+  <text x="40" y="114" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" font-weight="500" fill="#94a3b8">middle of a (idx 2..3)</text>
+  <g>
+    <rect x="260" y="90" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="295.0" y="120.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">4</text>
+  </g>
+  <g>
+    <rect x="340" y="90" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="375.0" y="120.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">3</text>
+  </g>
+  <text x="40" y="168" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" font-weight="500" fill="#94a3b8">present[ ]</text>
+  <text x="295" y="162" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">v=4</text>
+  <text x="375" y="162" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">v=3</text>
+  <g>
+    <g>
+      <rect x="260" y="172" width="70" height="40" rx="10" fill="#059669" stroke="#e2e8f0" stroke-width="2" />
+      <text x="295.0" y="198.3" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">true</text>
+    </g>
+  </g>
+  <g>
+    <g>
+      <rect x="340" y="172" width="70" height="40" rx="10" fill="#059669" stroke="#e2e8f0" stroke-width="2" />
+      <text x="375.0" y="198.3" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">true</text>
+    </g>
+  </g>
+  <g opacity="0">
+    <g>
+      <rect x="340" y="172" width="70" height="40" rx="10" fill="#475569" stroke="#e2e8f0" stroke-width="2" />
+      <text x="375.0" y="198.3" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">false</text>
+    </g>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3333;0.3458;0.9750;0.9875;1" dur="12s" repeatCount="indefinite" />
+  </g>
+  <text x="40" y="250" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" font-weight="500" fill="#94a3b8">b middle (idx 2..3)</text>
+  <g>
+    <rect x="520" y="222" width="70" height="46" rx="10" fill="#7c2d12" stroke="#fbbf24" stroke-width="2" />
+    <text x="555.0" y="252.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#fde68a">-1</text>
+  </g>
+  <g>
+    <rect x="600" y="222" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="635.0" y="252.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">3</text>
+  </g>
+  <path d="M635 220 C560 198, 460 198, 380 216" stroke="#a3e635" stroke-width="3" fill="none" stroke-dasharray="8 5" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2500;0.2625;0.4583;0.4708;1" dur="12s" repeatCount="indefinite" />
+  </path>
+  <text x="590" y="200" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="17" fill="#86efac" font-weight="800" opacity="0">✓ consumed · mok stays true
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.4583;0.4708;0.9750;0.9875;1" dur="12s" repeatCount="indefinite" />
+  </text>
+  <text x="620" y="200" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" fill="#fde68a" opacity="0">-1 → skip (b_i &gt; 0 is false)
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.1250;0.1375;0.2500;0.2625;1" dur="12s" repeatCount="indefinite" />
+  </text>
+  <text x="40" y="310" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="800" fill="#93c5fd">Sample 4 → NO</text>
+  <text x="40" y="344" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" font-weight="500" fill="#94a3b8">middle of a (idx 2..3)</text>
+  <g>
+    <rect x="260" y="320" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="295.0" y="350.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">4</text>
+  </g>
+  <g>
+    <rect x="340" y="320" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="375.0" y="350.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">3</text>
+  </g>
+  <text x="40" y="398" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" font-weight="500" fill="#94a3b8">present[ ]</text>
+  <text x="295" y="392" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">v=4</text>
+  <text x="375" y="392" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">v=3</text>
+  <g>
+    <g>
+      <rect x="260" y="402" width="70" height="40" rx="10" fill="#059669" stroke="#e2e8f0" stroke-width="2" />
+      <text x="295.0" y="428.3" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">true</text>
+    </g>
+  </g>
+  <g>
+    <g>
+      <rect x="340" y="402" width="70" height="40" rx="10" fill="#059669" stroke="#e2e8f0" stroke-width="2" />
+      <text x="375.0" y="428.3" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">true</text>
+    </g>
+  </g>
+  <g opacity="0">
+    <g>
+      <rect x="340" y="402" width="70" height="40" rx="10" fill="#475569" stroke="#e2e8f0" stroke-width="2" />
+      <text x="375.0" y="428.3" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="700" fill="#f8fafc">false</text>
+    </g>
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3333;0.3458;0.9750;0.9875;1" dur="12s" repeatCount="indefinite" />
+  </g>
+  <text x="40" y="480" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="14" font-weight="500" fill="#94a3b8">b middle (idx 2..3)</text>
+  <g>
+    <rect x="520" y="452" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="555.0" y="482.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">3</text>
+  </g>
+  <g>
+    <rect x="600" y="452" width="70" height="46" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="635.0" y="482.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">3</text>
+  </g>
+  <path d="M555 450 C500 428, 440 428, 380 446" stroke="#a3e635" stroke-width="3" fill="none" stroke-dasharray="8 5" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.2500;0.2625;0.4583;0.4708;1" dur="12s" repeatCount="indefinite" />
+  </path>
+  <path d="M635 450 C560 422, 460 422, 380 446" stroke="#f87171" stroke-width="3" fill="none" stroke-dasharray="8 5" opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.5833;0.5958;0.8333;0.8458;1" dur="12s" repeatCount="indefinite" />
+  </path>
+  <text x="590" y="430" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="15" fill="#86efac" font-weight="700" opacity="0">1st 3 consumes it ✓
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.3333;0.3458;0.5833;0.5958;1" dur="12s" repeatCount="indefinite" />
+  </text>
+  <text x="590" y="414" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="16" fill="#f87171" font-weight="800" opacity="0">2nd 3 finds false ✗ → mok = false
+    <animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;0.6667;0.6792;0.9750;0.9875;1" dur="12s" repeatCount="indefinite" />
+  </text>
+  <text x="872" y="538" text-anchor="end" font-family="'Segoe Script','Bradley Hand','Brush Script MT','Lucida Handwriting','Comic Sans MS',cursive" font-size="20" fill="#fef3c7" filter="url(#glow)">Ace_Azimuth_Aviator
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite" />
+  </text>
+  <polygon points="657.0,512.0 658.2,516.8 663.0,518.0 658.2,519.2 657.0,524.0 655.8,519.2 651.0,518.0 655.8,516.8" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="1.6s" begin="0.0s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 657 518;90 657 518" dur="3s" begin="0.0s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="722.0,500.0 722.8,503.2 726.0,504.0 722.8,504.8 722.0,508.0 721.2,504.8 718.0,504.0 721.2,503.2" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.0s" begin="0.35s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 722 504;90 722 504" dur="3s" begin="0.35s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="812.0,503.0 813.0,507.0 817.0,508.0 813.0,509.0 812.0,513.0 811.0,509.0 807.0,508.0 811.0,507.0" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.3s" begin="0.7s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 812 508;90 812 508" dur="3s" begin="0.7s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="864.0,510.0 864.8,513.2 868.0,514.0 864.8,514.8 864.0,518.0 863.2,514.8 860.0,514.0 863.2,513.2" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="1.6s" begin="1.0499999999999998s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 864 514;90 864 514" dur="3s" begin="1.0499999999999998s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="687.0,539.0 687.6,541.4 690.0,542.0 687.6,542.6 687.0,545.0 686.4,542.6 684.0,542.0 686.4,541.4" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.0s" begin="1.4s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 687 542;90 687 542" dur="3s" begin="1.4s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="767.0,539.0 768.0,543.0 772.0,544.0 768.0,545.0 767.0,549.0 766.0,545.0 762.0,544.0 766.0,543.0" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.4s" begin="1.75s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 767 544;90 767 544" dur="3s" begin="1.75s" repeatCount="indefinite" />
+  </polygon>
+</svg>

@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520" role="img" aria-label="Slide-difference trick: one step changes the multiset by one leaver and one arriver" xmlns:c2pa="http://c2pa.org/manifest">
+  <title>Slide-difference trick: one step changes the multiset by one leaver and one arriver</title>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0f172a" />
+      <stop offset="1" stop-color="#1e1b4b" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="b" />
+      <feMerge>
+        <feMergeNode in="b" />
+        <feMergeNode in="b" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2" />
+    </filter>
+    <marker id="ar" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8z" fill="#f87171" />
+    </marker>
+  </defs>
+  <rect width="900" height="520" rx="18" fill="url(#bg)" />
+  <text x="450" y="44" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="30" font-weight="800" fill="#fde68a">The Slide-Difference Trick</text>
+  <text x="60" y="130" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="800" fill="#93c5fd">window i</text>
+  <text x="42" y="250" text-anchor="start" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="18" font-weight="800" fill="#93c5fd">window i+1</text>
+  <text x="200.0" y="92" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">pos s</text>
+  <text x="300.0" y="92" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">pos s+1</text>
+  <text x="400.0" y="92" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">pos ·</text>
+  <text x="500.0" y="92" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">pos ·</text>
+  <text x="600.0" y="92" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">pos i</text>
+  <text x="700.0" y="92" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="13" font-weight="500" fill="#94a3b8">pos i+1</text>
+  <g>
+    <rect x="154" y="105" width="92" height="56" rx="10" fill="#dc2626" stroke="#e2e8f0" stroke-width="2" />
+    <text x="200.0" y="140.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>s</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="254" y="105" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="300.0" y="140.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>s+1</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="354" y="105" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="400.0" y="140.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>·</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="454" y="105" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="500.0" y="140.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>·</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="554" y="105" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="600.0" y="140.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>i</tspan>
+    </text>
+  </g>
+  <rect x="654" y="105" width="92" height="56" rx="10" fill="none" stroke="#64748b" stroke-dasharray="6 5" />
+  <rect x="154" y="225" width="92" height="56" rx="10" fill="none" stroke="#64748b" stroke-dasharray="6 5" />
+  <g>
+    <rect x="254" y="225" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="300.0" y="260.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>s+1</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="354" y="225" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="400.0" y="260.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>·</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="454" y="225" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="500.0" y="260.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>·</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="554" y="225" width="92" height="56" rx="10" fill="#334155" stroke="#e2e8f0" stroke-width="2" />
+    <text x="600.0" y="260.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>i</tspan>
+    </text>
+  </g>
+  <g>
+    <rect x="654" y="225" width="92" height="56" rx="10" fill="#059669" stroke="#e2e8f0" stroke-width="2" />
+    <text x="700.0" y="260.7" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="22" font-weight="700" fill="#f8fafc">a <tspan font-size='14' dy='6'>i+1</tspan>
+    </text>
+  </g>
+  <path d="M200.0 170 V212" stroke="#f87171" stroke-width="4" fill="none" marker-end="url(#ar)" />
+  <text x="180.0" y="190" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="26" fill="#f87171" font-weight="800">✖
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" repeatCount="indefinite" />
+  </text>
+  <text x="720.0" y="190" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="26" fill="#34d399" font-weight="800">✚
+    <animate attributeName="opacity" values="1;0.2;1" dur="1.6s" begin="0.8s" repeatCount="indefinite" />
+  </text>
+  <text x="200.0" y="318" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="16" font-weight="800" fill="#f87171">leaver</text>
+  <text x="700.0" y="318" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="16" font-weight="800" fill="#34d399">arriver</text>
+  <rect x="90" y="340" width="720" height="130" rx="16" fill="#0b1220" stroke="#475569" />
+  <text x="450" y="372" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="19" font-weight="600" fill="#e2e8f0">multiset(a) changes by − a <tspan font-size='12' dy='5'>s</tspan>
+    <tspan dy='-5'> + a</tspan>
+    <tspan font-size='12' dy='5'>i+1</tspan>
+  </text>
+  <text x="450" y="402" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="19" font-weight="600" fill="#e2e8f0">multiset(b) changes by − b <tspan font-size='12' dy='5'>s</tspan>
+    <tspan dy='-5'> + b</tspan>
+    <tspan font-size='12' dy='5'>i+1</tspan>
+  </text>
+  <text x="450" y="434" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="16" font-weight="600" fill="#fef3c7">both windows equal ⇒ both changes equal ; a is a permutation ⇒ a <tspan font-size='12' dy='5'>s</tspan>
+    <tspan dy='-5'> ≠ a</tspan>
+    <tspan font-size='12' dy='5'>i+1</tspan>
+  </text>
+  <text x="450" y="458" text-anchor="middle" font-family="'Segoe UI','Trebuchet MS',Verdana,sans-serif" font-size="19" font-weight="800" fill="#86efac">⇒ b <tspan font-size='12' dy='5'>s</tspan>
+    <tspan dy='-5'> = a</tspan>
+    <tspan font-size='12' dy='5'>s</tspan>
+    <tspan dy='-5'> and b</tspan>
+    <tspan font-size='12' dy='5'>i+1</tspan>
+    <tspan dy='-5'> = a</tspan>
+    <tspan font-size='12' dy='5'>i+1</tspan>
+  </text>
+  <text x="872" y="498" text-anchor="end" font-family="'Segoe Script','Bradley Hand','Brush Script MT','Lucida Handwriting','Comic Sans MS',cursive" font-size="20" fill="#fef3c7" filter="url(#glow)">Ace_Azimuth_Aviator
+    <animate attributeName="opacity" values="0.8;1;0.8" dur="2.4s" repeatCount="indefinite" />
+  </text>
+  <polygon points="657.0,472.0 658.2,476.8 663.0,478.0 658.2,479.2 657.0,484.0 655.8,479.2 651.0,478.0 655.8,476.8" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="1.6s" begin="0.0s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 657 478;90 657 478" dur="3s" begin="0.0s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="722.0,460.0 722.8,463.2 726.0,464.0 722.8,464.8 722.0,468.0 721.2,464.8 718.0,464.0 721.2,463.2" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.0s" begin="0.35s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 722 464;90 722 464" dur="3s" begin="0.35s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="812.0,463.0 813.0,467.0 817.0,468.0 813.0,469.0 812.0,473.0 811.0,469.0 807.0,468.0 811.0,467.0" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.3s" begin="0.7s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 812 468;90 812 468" dur="3s" begin="0.7s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="864.0,470.0 864.8,473.2 868.0,474.0 864.8,474.8 864.0,478.0 863.2,474.8 860.0,474.0 863.2,473.2" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="1.6s" begin="1.0499999999999998s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 864 474;90 864 474" dur="3s" begin="1.0499999999999998s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="687.0,499.0 687.6,501.4 690.0,502.0 687.6,502.6 687.0,505.0 686.4,502.6 684.0,502.0 686.4,501.4" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.0s" begin="1.4s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 687 502;90 687 502" dur="3s" begin="1.4s" repeatCount="indefinite" />
+  </polygon>
+  <polygon points="767.0,499.0 768.0,503.0 772.0,504.0 768.0,505.0 767.0,509.0 766.0,505.0 762.0,504.0 766.0,503.0" fill="#fde68a">
+    <animate attributeName="opacity" values="0.15;1;0.15" dur="2.4s" begin="1.75s" repeatCount="indefinite" />
+    <animateTransform attributeName="transform" type="rotate" values="0 767 504;90 767 504" dur="3s" begin="1.75s" repeatCount="indefinite" />
+  </polygon>
+</svg>
