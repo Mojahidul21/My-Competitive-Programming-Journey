@@ -71,7 +71,7 @@
 
 > ### 🔼 Upsolve ![](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Supporting%20Images/20.%20upsolve-banner.svg)
 > **Codeforces**
-> - [Nebius Round 2 (Codeforces Round 1088, Div. 1 + Div. 2) — C1. Equal Multisets (Easy Version)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/DeepInfra%20Round%201%20(Codeforces%20Round%201126%2C%20Div.%201%20%2B%20Div.%202)/B.%20MEX%20Game.md)
+> - [Nebius Round 2 (Codeforces Round 1088, Div. 1 + Div. 2) — C1. Equal Multisets (Easy Version)](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Nebius%20Round%202%20(Codeforces%20Round%201088%2C%20Div.%201%20%2B%20Div.%202)/C1.%20Equal%20Multisets%20(Easy%20Version).md)
 > - [DeepInfra Round 1 (Codeforces Round 1126, Div. 1 + Div. 2) — B. MEX Game](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/DeepInfra%20Round%201%20(Codeforces%20Round%201126%2C%20Div.%201%20%2B%20Div.%202)/B.%20MEX%20Game.md)
 > - [Codeforces Round 1078 (Div. 2) — B. Offshores](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201078%20(Div.%202)/B.%20Offshores.md)
 > - [Codeforces Round 1079 (Div. 2) — B. Array and Permutation](https://github.com/Mojahidul21/My-Competitive-Programming-Journey/blob/main/Upsolve/Codeforces/Codeforces%20Round%201079%20(Div.%202)/B.%20Array%20and%20Permutation.md)
